@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: RailwayCargoLoading
+  title: Railway Cargo Loading
+  author: S.
+  description: 'If you thought bombs on trains were bad, now we have trains on bombs.
+
+
+    Couple the correct railroad cars to the train to disarm the module.
+
+
+    ------
+
+    Update log:
+
+    2020-01-27:
+
+    * Rewritten a few lines in the manual for clarification. This does not affect
+    any gameplay rules.
+
+    * TPP support changes:
+
+    - * Moved some note positions slightly as the TPP indicator covered up part of
+    the note sometimes.
+
+    - * Fixed an error that would occur if the player tried to couple null.
+
+    - * Added chat feedback for players trying to flip non-existant notes.
+
+    - * Added administrator autosolve support.
+
+    While the manual has changed, the old manual is still applicable. Should you desire
+    to keep your manuals up to date, only page 5 needs to be reprinted.
+
+
+    2020-01-26:
+
+    * The entire train now no longer gets reset when striking.
+
+    While the manual has changed a little due to this, an entire reprint is not strictly
+    required. Just cross out the sentence that says a new train must be built from
+    the start on page 1, or reprint just that page.
+
+
+    2020-01-23:
+
+    * Initial Release
+
+
+    ------
+
+    Found an issue? You can find me at discord.gg/lotsofs , but I am also pingable
+    in the official KTANE discord server, or the KTANE modding discord server. Or
+    just post a comment below. '
+  version: 1.0
+  outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
+    Nobody Explodes\mods
+  previewImage: {fileID: 2800000, guid: f6f316cbef127bf4eb6ce309b1595d30, type: 3}
