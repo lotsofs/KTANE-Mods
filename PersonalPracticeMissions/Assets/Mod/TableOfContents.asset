@@ -61,3 +61,11 @@ MonoBehaviour:
     - NoisyBomb
     - TapTap
     - BigBombII
+  - Title: Finding Meaning
+    MissionIDs:
+    - Tension
+    - Trauma
+    - Release
+    - Laundromat
+    - BigBombIII
+    - BigBoss
