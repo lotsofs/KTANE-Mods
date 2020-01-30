@@ -21,48 +21,37 @@
                 <div class="page-content">
                     <img src="img/Component/Module Name.svg" class="diagram">
                     <h2>On the Subject of Microphones</h2>
-                    <p class="flavour-text">Check. Check. One, two, three.</p>
+                    <p class="flavour-text">Shhhh, it can hear us.</p>
 
-                    <p>Here are templates for commonly used manual features. Make sure to always use closing tags (the ones with a <code>/</code> in them).</p>
+					<ul>
+						<li>The module presents a microphone on the left. To disarm the module, it must be destroyed by blowing out its diaphragm.</li>
+						<li>The microphone has built-in security systems that will automatically disable it if it gets overloaded.</li>
+						<li>However, there is a deaf spot between the microphone's blow out point, and the volume at which the security kicks in.</li>
+						<li>To blow out the diaphragm, set the volume knob to the microphone's deaf spot, then play a loud sound into the microphone for the correct duration.</li>
+						<li>A volume knob is found in the bottom right. It ranges from 0 to 5. Pressing it will increase volume by one, looping around back to 0 when going above the maximum.</li>
+						<li>There is also a record button in the top right, which enables/disables the microphone. There also may be a pop filter.</li>
+						</ul>
 
-                    <h3>Bullet Points (Unordered Lists)</h3>
-                    <ul>
-                        <li>Bullet points should use the <code>&lt;ul&gt;&lt;/ul&gt;</code> and <code>&lt;li&gt;&lt;/li&gt;</code> tags.</li>
-                        <li>
-                            You can even have nested bullet points:
-                            <ul>
-                                <li>Indented</li>
-                                <li>Bullet Points</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Or numbered lists:
-                            <ol>
-                                <li>Indented</li>
-                                <li>Bullet Points</li>
-                            </ol>
-                        </li>
-                    </ul>
 
-                    <h3>Numbered Lists (Ordered Lists)</h3>
-                    <ol>
-                        <li>Numbered lists should use the <code>&lt;ol&gt;&lt;/ol&gt;</code> and <code>&lt;li&gt;&lt;/li&gt;</code> tags.</li>
-                        <li>Nested lists work just like unordered lists (see above).</li>
-                    </ol>
+                    <h3>Examples of loud enough sounds</h3>
+					<p>The bomb itself can only produce two sounds loud enough to blow the microphone's diaphragm, these being:</p>
+					<ul>
+					<li>The striking sound</li>
+					<li>The bomb exploding</li>
+					</ul>
+					<p>Unfortunately, both of these two sounds come with negative side-effects. There are no other known audio sources present on the bomb that are loud enough. It is adviced that the defuser instead uses an external device for the production of the required loud sound.</p>
 
-                    <h3>Text</h3>
-                    <p>Use paragraph tags (<code>&lt;p&gt;&lt;/p&gt;</code>) for text blocks. In addition, for text formatting, use:</p>
-                    <ul>
-                        <li>
-                            <strong>Bold</strong>: <code>&lt;strong&gt;&lt;/strong&gt;</code> (HTML) or <code>font-weight: bold;</code> (CSS).
-                            <ul><li>Bold in table headers should be achieved through the use of the <code>&lt;th&gt;&lt;/th&gt;</code> tag.</li></ul>
-                        </li>
-                        <li><em>Underline</em>: <code>&lt;em&gt;&lt;/em&gt;</code> (HTML) or <code>text-decoration: underline;</code> (CSS).</li>
-                        <li>Line<br />Break: <code>&lt;br /&gt;</code> (HTML)</li>
-                    </ul>
-                    <p>For the most part, HTML versions of bolding and underlining is recommended. Note that italics are not used in vanilla manuals besides flavor text and references to appendices, and therefore is not included above. Also, here are some sample headings:</p>
-                    <h3>Example Big Heading</h3>
-                    <h4>Example Small Heading</h4>
+
+                    <h3>Step one:</h3>
+					<p>Calculate the microphone's deaf spot:</p>
+					<ol>
+						<li>Take the initial position of the volume knob. This can range from 0, at the bottom of the module, to 5, at the top.</li>
+						<li>Subtract 1 for each Stereo RCA port on the bomb. (Each red-white pair counts as one port.)</li>
+						<li>If there is a pop filter on the module, add 1. Pop filters can be identified as large round dark-colored filters placed over the microphone.</li>
+						<li>If the value is negative, multiply it by -2.</li>
+						<li>If the value is higher than 5, change it to 0.</li>
+					</ol>
+					<p class="appendix-reference">See Appendix C for port identification reference.</p>
                 </div>
                 <div class="page-footer relative-footer">Page 1 of 3</div>
             </div>
@@ -72,84 +61,37 @@
                     <span class="page-header-section-title">Module Name</span>
                 </div>
                 <div class="page-content">
-                    <h3>Example Tables</h3>
-                    <table>
-                        <tr>
-                            <th>Part of table</th>
-                            <th>How to make</th>
-                        </tr>
-                        <tr>
-                            <th>Rows and Columns</th>
-                            <td>
-                                Use <code>&lt;tr&gt;&lt;/tr&gt;</code> for rows.
-                                Use <code>&lt;th&gt;&lt;/th&gt;</code> or <code>&lt;td&gt;&lt;/td&gt;</code> for columns within rows (see below).
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Headings (left column and top row, in most cases)</th>
-                            <td>Use <code>&lt;th&gt;&lt;/th&gt;</code></td>
-                        </tr>
-                        <tr>
-                            <th>Cells</th>
-                            <td>Use <code>&lt;td&gt;&lt;/td&gt;</code></td>
-                        </tr>
-                        <tr>
-                            <th rowspan="2">Merged Cells</th>
-                            <td>Use <code>rowspan="_"</code> for merging cells vertically.</td>
-                        </tr>
-                        <tr>
-                            <td>Use <code>colspan="_"</code> for merging cells horizontally.</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Note that merged cells created in other rows are skipped in affected rows (see HTML for above row).</td>
-                        </tr>
-                    </table>
-                    <p>If the table contents are not wide enough, tables are centered by default due to the <code>table</code> rule of the first <code>&lt;style&gt;</code> block (see above code).</p>
-                    <table class="center">
-                        <tr>
-                            <th>Cell 1</th>
-                            <td>Cell 2</td>
-                        </tr>
-                        <tr>
-                            <th>Cell 3</th>
-                            <td>Cell 4</td>
-                        </tr>
-                    </table>
+					
+					
+					<h3>Step two:</h3>
+					<p>If the red LED on the record button is already flashing without any input from the defuser, the module is currently listening in on the defuser. If the red LED is already completely off, this step can be skipped.</p>
+					<ul>
+					<li>Pressing the button to stop the recording manually will incur a strike, as will lowering the volume knob.</li>
+					<li>The recording must be force-stopped by intentionally causing the microphone's security system to kick in. </li>
+					<li>This can be done by setting the volume knob to above the deaf spot and then playing the loud sound. (Set the volume to 5 if the deaf spot is 5, as this is the maximum; do not attempt to move the volume knob beyond 5.)</li>
+					<li>If the played sound is loud enough, the security will kick in. This will stop the recording, indicated by the LED turning off completely. Leave the sound playing if this does not happen immediately.</li>
+					</ul>
 
-                    <h3>Images</h3>
-                    <p>Use the <code>&lt;img src="_" /&gt;</code> tag for images. Make sure to put your images into the <code class="notcode">/img/[Module Name]/</code> folder. Adjust the width with CSS, using <code>width: _%;</code> (recommended) or <code>width: _px;</code>. Example:</p>
-                    <img style='width: 100%' src="img/Example Image.png" />
-
-                    <h3>Making the PDF</h3>
-                    <p>To make a PDF version of your manual, open the HTML file in Google Chrome and open the "Print" dialog (Usually <kbd>CTRL</kbd>+<kbd>P</kbd>) and choose "Save as PDF" as the destination.</p>
-                </div>
+					<h3>Step three:</h3>
+					<p>With the recording stopped, the volume knob can now safely be lowered and adjusted at will.</p>
+					<ol>
+						<li>Set the volume knob to the microphone's deaf spot.</li>
+						<li>Press the record button to enable the microphone.</li>
+						<li>Play the loud sound. At this point, if the volume knob is set incorrectly, the recording will stop and a strike will be incurred (in that order).</li>
+						<li>If successful, do <b>not</b> stop the sound or touch the volume knob at this point, unless the instructions from step four specify otherwise.</li>
+					</ol>
+					
+					<h3>Step four:</h3>
+					<ol>
+						<li>If the deaf spot is 0, the volume knob must be increased by 1 until it reaches maximum volume 5. Do this with a speed of at most one increase per tick of the bomb's timer.</li>
+						<li>If the deaf spot is 1, change the volume to 5 at any point, and leave it there for at least one tick of the bomb's timer and at most three. Then set it to 0.</li>
+						<li>If the deaf spot is 2, change the volume to 3 after at least 5 ticks of the bomb's timer.</li>
+						<li>If the deaf spot is 5, change it to 4 before seven ticks of the bomb's timer have passed. Leave it there for at least 1 tick, then change it back to 5.</li>
+					</ol>
+					                </div>
                 <div class="page-footer relative-footer">Page 2 of 3</div>
             </div>
-            <div class="page page-bg-03">
-                <div class="page-header">
-                    <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
-                    <span class="page-header-section-title">Appendix Name</span>
-                </div>
-                <div class="page-content">
-                    <h2>Appendix M: Additional Notes</h2>
-                    <p>Here other things to keep in mind when making a manual page:</p>
-                    <ul>
-                        <li><strong>There are comments <code>/* ... */</code> in the CSS code in the <code>&lt;style&gt;</code> blocks containing instructions. Follow those instructions before finishing your manual.</strong></li>
-                        <li>Normal and Needy module manual pages are formatted similarly. Widget manual pages are appendices and are formatted as such.</li>
-                        <li>Each manual or appendix page should have a <code>&lt;div class="page-footer...</code> at the bottom of the page, updated accordingly.</li>
-                        <li>Don't be afraid to ask for help if needed!</li>
-                        <li>
-                            A few things to reiterate:
-                            <ul>
-                                <li>Make sure to never forget closing tags (the ones with a <code>/</code> in them).</li>
-                                <li>For the most part, HTML versions of bolding and underlining is recommended.</li>
-                                <li>Italics are not used in vanilla manuals besides flavor text and references to appendices, and therefore is not included above. </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="page-footer relative-footer">Page 3 of 3</div>
-            </div>
+            
         </div>
     </div>
 </body>
