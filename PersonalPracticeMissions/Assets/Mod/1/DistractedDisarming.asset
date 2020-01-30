@@ -21,7 +21,7 @@ MonoBehaviour:
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 8
+    - Count: 7
       AllowedSources: 1
       ComponentTypes: 
       SpecialComponentType: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - TurnTheKey
-    - Count: 2
+    - Count: 3
       AllowedSources: 1
       ComponentTypes: 
       SpecialComponentType: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Maze-tropolis
   Description: It's easy to get lost with this bomb.
   GeneratorSetting:
-    TimeLimit: 240
+    TimeLimit: 360
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

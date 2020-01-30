@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Staying Hydrated
   Description: Are you staying hydrated to help you concentrate? This bomb is.
   GeneratorSetting:
-    TimeLimit: 240
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

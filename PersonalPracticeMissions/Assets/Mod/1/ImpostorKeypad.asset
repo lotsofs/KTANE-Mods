@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Impostor Keypad
   Description: These are all just regular keypads, but something's not quite right.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 540
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

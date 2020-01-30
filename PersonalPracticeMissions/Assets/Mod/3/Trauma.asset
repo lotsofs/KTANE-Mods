@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Trauma
   Description: This bomb may cause trauma. Then again, which bomb doesn't?
   GeneratorSetting:
-    TimeLimit: 480
+    TimeLimit: 540
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
