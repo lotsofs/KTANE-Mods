@@ -21,6 +21,23 @@ public class MovableObject : MonoBehaviour {
             // TODO: throw a warning
         }
         _index = _locations.FindIndex(v => v == transform.localPosition);
+        if (_index == -1) {
+            SetPosition(0);
+        }
+    }
+
+    public void SetPosition(int index) {
+        if (index >= 0 && index < _locations.Count) {
+            _index = index;
+            transform.localPosition = _locations[index];
+            transform.localRotation = _rotations[index];
+        }
+        else {
+            // TODO: throw a warning or error
+            _index = 0;
+            transform.localPosition = _locations[0];
+            transform.localRotation = _rotations[0];
+        }
     }
 
     /// <summary>
@@ -29,6 +46,20 @@ public class MovableObject : MonoBehaviour {
     public void MoveToggleLoop() {
         _index++;
         if (_index >= _locations.Count) {
+            _index = 0;
+        }
+        if (_moveRoutine != null) {
+            StopCoroutine(_moveRoutine);
+        }
+        _moveRoutine = StartCoroutine(MoveToggleLoopCoroutine());
+    }
+
+    /// <summary>
+    /// Move object to next position in position array
+    /// </summary>
+    public void MoveTo(int index) {
+        _index = index;
+        if (_index >= _locations.Count || _index < 0) {
             _index = 0;
         }
         if (_moveRoutine != null) {

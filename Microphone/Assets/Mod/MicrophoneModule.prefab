@@ -25,7 +25,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1014302925558994
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 23694505186195690}
   - component: {fileID: 114033330669980620}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TopLeftBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1197425145123032
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -434,6 +434,8 @@ GameObject:
   - component: {fileID: 114890078004899158}
   - component: {fileID: 114513783642948120}
   - component: {fileID: 114930217606418250}
+  - component: {fileID: 114896240304458224}
+  - component: {fileID: 114685061377367090}
   m_Layer: 0
   m_Name: MicrophoneModule
   m_TagString: Untagged
@@ -472,7 +474,7 @@ GameObject:
   - component: {fileID: 23230934211847724}
   - component: {fileID: 114589590923638456}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: BottomCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +912,7 @@ GameObject:
   - component: {fileID: 23329794775044424}
   - component: {fileID: 114707171994317968}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: TopRightBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,7 +948,7 @@ GameObject:
   - component: {fileID: 23158330512490248}
   - component: {fileID: 114393958126764082}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: MiddleCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1042,7 +1044,7 @@ GameObject:
   - component: {fileID: 23929565835903028}
   - component: {fileID: 114121829545220154}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: BottomBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,8 +1345,9 @@ Transform:
   - {fileID: 4788063215567900}
   - {fileID: 4220910686418776}
   - {fileID: 4337315250527918}
+  - {fileID: 4840014770006104}
   m_Father: {fileID: 4878260998155116}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -29.465002, z: 90.00001}
 --- !u!4 &4326449300670026
 Transform:
@@ -1710,11 +1713,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197425145123032}
-  m_LocalRotation: {x: -0, y: -0.079760194, z: -0, w: 0.99681413}
-  m_LocalPosition: {x: -0.02628802, y: 0.061399993, z: 0.00041765673}
-  m_LocalScale: {x: 0.114410944, y: -0.000113130176, z: 0.11441096}
+  m_LocalRotation: {x: 0.12470119, y: 0.124701425, z: -0.6960233, w: 0.6960251}
+  m_LocalPosition: {x: -0.09462601, y: -0.15719056, z: -6.223097}
+  m_LocalScale: {x: 13.202779, y: -0.013054979, z: 13.202783}
   m_Children: []
-  m_Father: {fileID: 4878260998155116}
+  m_Father: {fileID: 4311100379685964}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -9.150001, z: 0}
 --- !u!4 &4842987238435114
@@ -1775,7 +1778,6 @@ Transform:
   - {fileID: 4432467972961220}
   - {fileID: 4962120202161980}
   - {fileID: 4867163333180652}
-  - {fileID: 4840014770006104}
   - {fileID: 4311100379685964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4031,7 +4033,7 @@ TextMesh:
     0'
   m_OffsetZ: 0
   m_CharacterSize: 0.25
-  m_LineSpacing: 1
+  m_LineSpacing: 0.96
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
@@ -4574,6 +4576,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114685061377367090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334006671463074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db75a083040e35748b5399409d230692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bombInfo: {fileID: 114355099774635268}
+  _bombAudio: {fileID: 114814878480539318}
 --- !u!114 &114686102113492432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4713,7 +4728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb74a2e51369a248b54c000f3dc7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _configure: 1
+  _configure: 0
   _locations:
   - {x: 0.0612001, y: 0.01386, z: -0.0602}
   - {x: 0.0612001, y: 0.01386, z: -0.0518}
@@ -4807,6 +4822,28 @@ MonoBehaviour:
   ModuleType: Microphone
   ModuleDisplayName: Microphone
   RequiresTimerVisibility: 0
+--- !u!114 &114896240304458224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334006671463074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d34ae7292209243b299a2e19dc30a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bombInfo: {fileID: 114355099774635268}
+  _bombModule: {fileID: 114890078004899158}
+  _bombHelper: {fileID: 114685061377367090}
+  _volumeSelectable: {fileID: 114395803565894856}
+  _recordSelectable: {fileID: 114166380625395540}
+  _volumeKnob: {fileID: 114832149629163786}
+  _popFilter: {fileID: 1222833333854600}
+  _microphones:
+  - {fileID: 1578305074932376}
+  - {fileID: 1007002511184860}
+  _popFilterRatio: 0.345
 --- !u!114 &114930217606418250
 MonoBehaviour:
   m_ObjectHideFlags: 1
