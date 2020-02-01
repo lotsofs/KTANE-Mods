@@ -22,6 +22,7 @@ public class MicrophoneModule : MonoBehaviour {
 	[SerializeField] GameObject _popFilter;
 	[SerializeField] GameObject[] _microphones;
 	[SerializeField] BlinkenLight _led;
+	[SerializeField] Shake _microphonePadShaker;
 
 	[Space]
 
@@ -250,6 +251,7 @@ public class MicrophoneModule : MonoBehaviour {
 		if (_step == 5) {
 			return;
 		}
+		_microphonePadShaker.TurnOn(false);
 		_step = 5;
 		StartCoroutine(Solving());
 	}
@@ -280,6 +282,8 @@ public class MicrophoneModule : MonoBehaviour {
 		_stepFourSubstep = 0;
 		_stepFourSubSubstep = 0;
 		_stepFourVolumeShouldEndAt = _deafSpot;
+		_microphonePadShaker.TurnOn(false);
+		_microphonePadShaker.SetShake(0);
 	}
 
 	/// <summary>
@@ -338,15 +342,13 @@ public class MicrophoneModule : MonoBehaviour {
 			Debug.LogFormat("[Microphone #{0}] Picked up an alarm clock.", _bombHelper.ModuleId);
 			if (_currentKnobPosition > _deafSpot) {
 				Debug.LogFormat("[Microphone #{0}] Picked up an alarm clock, but the recording volume is set too high ({1}). Security kicked in and stopped the recording.", _bombHelper.ModuleId, _currentKnobPosition);
-				_recording = false;
-				_step = 3;
+				StartStepThree();
 				_bombModule.HandleStrike();
 				Debug.LogFormat("[Microphone #{0}] Strike: Security kicked in beyond step two. Returning to start of step three.", _bombHelper.ModuleId);
 			}
 			else if (_currentKnobPosition < _deafSpot) {
 				Debug.LogFormat("[Microphone #{0}] Picked up an alarm clock, but the recording volume is set too low ({1}). Stopping the recording since it can't hear anything anyway.", _bombHelper.ModuleId, _currentKnobPosition);
-				_recording = false;
-				_step = 3;
+				StartStepThree();
 				_bombModule.HandleStrike();
 				Debug.LogFormat("[Microphone #{0}] Strike: Recording was forcefully stopped. Returning to start of step three.", _bombHelper.ModuleId);
 			}
@@ -471,9 +473,11 @@ public class MicrophoneModule : MonoBehaviour {
 			_timerTicks++;
 			_timerCount = currentTime;
 		}
+		_microphonePadShaker.TurnOn(true);
 		switch (_stepFourSubstep) {
 			case 0:
 				_stepFourSubstep += StepFourPointOne() ? 1 : 0;
+				_microphonePadShaker.SetShake(0.1f);
 				break;
 			case 1:
 				_stepFourSubstep += StepFourPointTwo() ? 1 : 0;
@@ -486,9 +490,11 @@ public class MicrophoneModule : MonoBehaviour {
 				break;
 			case 4:
 				_stepFourSubstep += StepFourPointFive() ? 1 : 0;
+				_microphonePadShaker.SetShake(_stepFourSubSubstep == 0 ? 0.2f : 0);
 				break;
 			case 5:
 				_stepFourSubstep += StepFourPointSix() ? 1 : 0;
+				_microphonePadShaker.SetShake(0.2f + Mathf.Min(0.8f, (float)_timerTicks / 10f));
 				break;
 			case 6:
 				Debug.LogFormat("[Microphone #{0}] Step four complete: Module disarmed. Sound used: Alarm clock.", _bombHelper.ModuleId);
@@ -539,6 +545,7 @@ public class MicrophoneModule : MonoBehaviour {
 			Debug.LogFormat("[Microphone #{0}] Alarm clock succesfully played into the microphone for an extended duration, as the microphone wasn't round. Popping...", _bombHelper.ModuleId, _currentKnobPosition, _stepFourVolumeShouldEndAt);
 			return true;
 		}
+		_microphonePadShaker.SetShake(_timerTicks / 10);
 		return false;
 	}
 
@@ -633,7 +640,7 @@ public class MicrophoneModule : MonoBehaviour {
 			_bombModule.HandleStrike();
 			return false;
 		}
-		if (_stepFourSubSubstep == 1 && _timerTicks > 3 && _currentKnobPosition == 5) {
+		if (_stepFourSubSubstep == 1 && _timerTicks > 3 && _currentKnobPosition != 1) {
 			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was set back to 1 too late. It was meant to be set to 5 for at most three ticks of the bomb's timer.", _bombHelper.ModuleId);
 			StartStepThree();
 			_bombModule.HandleStrike();
@@ -687,7 +694,7 @@ public class MicrophoneModule : MonoBehaviour {
 		if (!StepFourIsAlarmStillRunning()) {
 			return false;
 		}
-		if (_timerTicks >= 10 && _currentKnobPosition != 4) {
+		if (_stepFourSubSubstep == 0 && _timerTicks >= 10 && _currentKnobPosition != 4) {
 			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was set to 5 for too long. It was meant to be set to 4 before ten ticks of the bomb's timer.", _bombHelper.ModuleId);
 			StartStepThree();
 			_bombModule.HandleStrike();

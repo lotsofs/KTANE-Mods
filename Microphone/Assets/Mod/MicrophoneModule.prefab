@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 65025884417366738}
   - component: {fileID: 23650397011553078}
   - component: {fileID: 114601448050150070}
+  - component: {fileID: 114506695036466682}
   m_Layer: 0
   m_Name: MicrophoneBackground
   m_TagString: Untagged
@@ -4528,6 +4529,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114506695036466682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151006088631552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8a8c27b576e9941a76b71e57d79eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxShake: {x: 0.002, y: 0, z: 0.002}
 --- !u!114 &114513783642948120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4965,6 +4978,7 @@ MonoBehaviour:
   - {fileID: 1578305074932376}
   - {fileID: 1007002511184860}
   _led: {fileID: 114206131433783118}
+  _microphonePadShaker: {fileID: 114506695036466682}
   _popFilterRatio: 0.345
 --- !u!114 &114930217606418250
 MonoBehaviour:
