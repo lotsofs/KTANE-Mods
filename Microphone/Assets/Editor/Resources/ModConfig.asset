@@ -14,8 +14,13 @@ MonoBehaviour:
   id: Microphone
   title: Microphone
   author: S.
-  description: Microphones
-  version: WIP
+  description: "Shhhh, it can hear us.\n\r\nBlow out the microphone's diaphragm by
+    playing a loud sound into it while manipulating the microphone's recording volume
+    in the correct way.\n\r\n------\r\nUpdate log:\r\n\r\n2020-02-02:\r\n* Initial
+    Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
+    , but I am also pingable in the official KTANE discord server, or the KTANE modding
+    discord server. Or just post a comment below."
+  version: v0.1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes\mods
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 38aa55188022a404bbb99b83697c8e46, type: 3}
