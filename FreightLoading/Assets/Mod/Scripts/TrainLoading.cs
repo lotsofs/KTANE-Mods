@@ -878,24 +878,34 @@ public class TrainLoading : MonoBehaviour {
         }
     }
 
-    IEnumerator HandleForcedSolve() {
+    IEnumerator TwitchHandleForcedSolve() {
         int correctIndex;
         while (_currentStage < 16) {
+            if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
+                _note.MagnetPressable.OnInteract();
+                yield return new WaitForSeconds(0.3f);
+            }
             correctIndex = _selectableCars.FindIndex(car => car == _correctCar);
             for (int i = 0; i < _selectableCars.Count; i++) {
                 if (i == correctIndex) {
                     _okButton.OnInteract();
-                    yield return new WaitForSeconds(3.1f);
+                    if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
+                        _note.MagnetPressable.OnInteract();
+                    }
+                    while (_trainCycler.Transitioning) {
+                        yield return true;
+                        yield return new WaitForSeconds(0.1f);
+                    }
                     break;
                 }
                 _upButton.OnInteract();
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
 
-    public void TwitchHandleForcedSolve() {
-        StartCoroutine(HandleForcedSolve());
+    public void TwitchHandleForcedSolvae() {
+        StartCoroutine(TwitchHandleForcedSolve());
     }
 
     #endregion
