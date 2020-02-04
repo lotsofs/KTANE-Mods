@@ -17,15 +17,19 @@ MonoBehaviour:
   description: "Shhhh, it can hear us.\n\r\nBlow out the microphone's diaphragm by
     playing a loud sound into it while manipulating the microphone's recording volume
     in the correct way.\n\n------\nIncludes support for mods:\nTwitch Plays, w/ Autosolve\n\n------\r\nUpdate
-    log:\r\n\r\n2020-02-04:\n* Fixed he LED not behaving correctly if the player somehow
-    managed to get to step 4 before the lights come on at the start.\n* TPP Support
-    changes:\n- * Sequential autosolving\n- * Added the ability to play an alternative
-    sound if the TP host has the alarm set to autosnooze, but the player must work
-    for it.\n\n2020-02-03:\n* Fixed a critical error that would occur when the player
-    uses customized sound mods. The module is now compatible with those mods.\n\n2020-02-02:\r\n*
-    Initial Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
-    , but I am also pingable in the official KTANE discord server, or the KTANE modding
-    discord server. Or just post a comment below."
+    log:\r\n\r\n2020-02-04:\n* Changed an ambiguous sentence in the manual.\n* Added
+    an appendix with some fun excerpts.\n* Fixed he LED not behaving correctly if
+    the player somehow managed to get to step 4 before the lights come on at the start.\n*
+    TPP Support changes:\n- * Sequential autosolving\n- * Added the ability to play
+    an alternative sound if the TP host has the alarm set to autosnooze, but the player
+    must work for it.\nReprinting the manual is not strictly required, as the rules
+    haven't changed. However, if you'd like to keep your prints up to date for aesthetic
+    reasons, then you must reprint the manual.\n\n2020-02-03:\n* Fixed a critical
+    error that would occur when the player uses customized sound mods. The module
+    is now compatible with those mods.\n\n2020-02-02:\r\n* Initial Release\r\n\r\n------\r\nFound
+    an issue? You can find me at discord.gg/lotsofs , but I am also pingable in the
+    official KTANE discord server, or the KTANE modding discord server. Or just post
+    a comment below."
   version: v1.0
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
