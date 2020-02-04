@@ -65,8 +65,6 @@ public class MicrophoneModule : MonoBehaviour {
 	/// Find the alarm clock, configure the module, etc
 	/// </summary>
 	void StartModule() {
-		//GameObject alarm = GameObject.Find("alarm_clock_beep");
-		//GameObject strike = GameObject.Find("strike");
 		AudioSource[] strikes = (AudioSource[])Resources.FindObjectsOfTypeAll<AudioSource>();
 		AudioSource[] alarms = (AudioSource[])Resources.FindObjectsOfTypeAll<AudioSource>();
 		if (alarms.Length == 0) {
@@ -167,7 +165,7 @@ public class MicrophoneModule : MonoBehaviour {
 		//DebugTest();
 		//return;
 		TPUpdate();
-		
+
 		switch (_step) {
 			case 2:
 				StepTwoStrikeSound();
@@ -197,6 +195,9 @@ public class MicrophoneModule : MonoBehaviour {
 			if (alarm.isPlaying) {
 				return true;
 			}
+		}
+		if (_tpNoise != null) {
+			return true;
 		}
 		return false;
 	}
@@ -790,19 +791,38 @@ public class MicrophoneModule : MonoBehaviour {
 
 	#region twitch plays
 
-	#pragma warning disable 414
-	public readonly string TwitchHelpMessage = "Hit the record button: !{0} record/r. Set the volume knob to 3: !{0} volume 3/v3. " 
-		+ "Submitting multiple commands is possible by listing them in sequence and using wait 2/w2 to wait 2 timer ticks in between: !{0} wait 2 volume 4 w1 v5";
+#pragma warning disable 414
+	public readonly string TwitchHelpMessage = "Hit the record button: !{0} record/r. Set the volume knob to 3: !{0} volume 3/v3. "
+		+ "Submitting multiple commands is possible by listing them in sequence and using wait 2/w2 to wait 2 timer ticks in between. Example: \"!{0} wait 2 volume 4 w1 v5\". "
+		+ "!alarm snooze not working? Use \"!{0} request twitch plays to please play a loud sound.\" (punctuation sensitive), and the module will see what it can do for you.";
 	#pragma warning restore 414
 
 	static List<int> _tpTotalSolving = new List<int>();
 	static List<int> _tpReadyForSilence = new List<int>();
-	static KMAudio.KMAudioRef _tpAlarm = null;
+	static KMAudio.KMAudioRef _tpNoise = null;
 	static int _tpLastSolved = -1;
 	bool _tpAbort = false;
 
+	public IEnumerator TpPlayPinkNoise() {
+		if (_tpNoise != null && _tpNoise.StopSound != null) {
+			_tpNoise.StopSound();
+		}
+		_tpNoise = null;
+		Debug.LogFormat("[Microphone #{0}] A pink noise sound is being played. This will be registered as an alarm clock.", _bombHelper.ModuleId);
+		_tpNoise = _bombAudio.PlaySoundAtTransformWithRef("PinkNoise", this.transform);
+		yield return new WaitForSeconds(20f);
+		if (_tpNoise != null && _tpNoise.StopSound != null) {
+			_tpNoise.StopSound();
+		}
+		_tpNoise = null;
+	}
+
 	public IEnumerator ProcessTwitchCommand(string command) {
 		command = command.ToLowerInvariant().Trim();
+		if (command == "request twitch plays to please play a loud sound.") {
+			yield return "sendtochat Request granted, playing a loud sound for twenty seconds.";
+			StartCoroutine(TpPlayPinkNoise());
+		}
 		command = command.Replace("volume ", "v");
 		command = command.Replace("wait ", "w");
 		command = command.Replace("v ", "v");
@@ -867,10 +887,8 @@ public class MicrophoneModule : MonoBehaviour {
 	}
 
 	public IEnumerator TwitchHandleForcedSolve() {
-		Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Force-solve engaged.", _bombHelper.ModuleId);
 		// add myself to the solving list
 		_tpTotalSolving.Add(_bombHelper.ModuleId);
-		Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Added microphone to microphone solve list. List size is now {1}.", _bombHelper.ModuleId, _tpTotalSolving.Count);
 
 		// Wait for the alarm to come on
 		while (!AlarmIsPlaying()) {
@@ -879,16 +897,13 @@ public class MicrophoneModule : MonoBehaviour {
 
 		// complete step 2
 		if (_step == 2) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Module is on step two. Setting volume to 5 to complete the step.", _bombHelper.ModuleId);
 			while (_currentKnobPosition != 5) {
 				_volumeSelectable.OnInteract();
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 				yield return new WaitForSeconds(0.1f);
 			}
 		}
 		// check if we're still on step 2 after the previous stuff
 		if (_step == 2) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Volume is at 5 but step two hasn't finished yet. Waiting until it does.", _bombHelper.ModuleId);
 			while (_step != 3) {
 				yield return true;
 				yield return null;
@@ -897,100 +912,76 @@ public class MicrophoneModule : MonoBehaviour {
 
 		// complete step 3
 		if (_step == 3) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Module is on step three. Starting recording at {1} to complete the step.", _bombHelper.ModuleId, _deafSpot);
 			while (_currentKnobPosition != _deafSpot) {
 				_volumeSelectable.OnInteract();
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 				yield return new WaitForSeconds(0.1f);
 			}
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Volume is set correctly, hitting record button.", _bombHelper.ModuleId);
 			_recordSelectable.OnInteract();
 			yield return new WaitForSeconds(0.1f);
 		}
 
 		// complete step 4
 		if (_step == 4) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Module is on step four. Performing special operations.", _bombHelper.ModuleId);
 			if (_tpAbort) goto cleanup;
 			// 4.1
 			if (_deafSpot == 5) {
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point one (deaf spot is 5).", _bombHelper.ModuleId);
 				while (_currentKnobPosition != 4) {
 					_volumeSelectable.OnInteract();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 					yield return new WaitForSeconds(0.1f);
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Knob set. Must wait one second.", _bombHelper.ModuleId);
 				while (_timerTicks != 1) {
 					yield return null;
 					if (_tpAbort) goto cleanup;
 				}
 				while (_currentKnobPosition != 5) {
 					_volumeSelectable.OnInteract();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 					yield return new WaitForSeconds(0.1f);
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point one completed.", _bombHelper.ModuleId);
 			}
 			// 4.2
 			if (_deafSpot == 2) {
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point two (deaf spot is 2).", _bombHelper.ModuleId);
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Must wait five seconds.", _bombHelper.ModuleId);
 				while (_currentKnobPosition != 3) {
 					while (_timerTicks != 5) {
 						yield return null;
 						if (_tpAbort) goto cleanup;
 					}
 					_volumeSelectable.OnInteract();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 					yield return new WaitForSeconds(0.1f);
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point two completed.", _bombHelper.ModuleId);
 			}
 			// 4.3
 			if (_deafSpot == 1) {
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point three (deaf spot is 1).", _bombHelper.ModuleId);
 				while (_currentKnobPosition != 5) {
 					_volumeSelectable.OnInteract();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 					yield return new WaitForSeconds(0.1f);
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Knob set. Must wait one second.", _bombHelper.ModuleId);
 				while (_timerTicks != 1) {
 					yield return null;
 					if (_tpAbort) goto cleanup;
 				}
 				while (_currentKnobPosition != 1) {
 					_volumeSelectable.OnInteract();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
 					yield return new WaitForSeconds(0.1f);
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point three completed.", _bombHelper.ModuleId);
 			}
 			// 4.4
 			if (_deafSpot == 0) {
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point four (deaf spot is 0).", _bombHelper.ModuleId);
 				_volumeSelectable.OnInteract();
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Knob set. Must wait one second.", _bombHelper.ModuleId);
 				yield return new WaitForSeconds(0.1f);
 				if (_tpAbort) goto cleanup;
 				while (_currentKnobPosition != 5) {
 					yield return null;
 					if (_timerTicks != 0) {
 						_volumeSelectable.OnInteract();
-						Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Changed volume to {1}.", _bombHelper.ModuleId, _currentKnobPosition);
-						Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Knob set. Must wait one second.", _bombHelper.ModuleId);
 						yield return new WaitForSeconds(0.1f);
 					}
 					if (_tpAbort) goto cleanup;
 				}
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point four completed.", _bombHelper.ModuleId);
 			}
 			if (_tpAbort) goto cleanup;
 			// the module solos from here, it no longer requires active input
@@ -1009,36 +1000,27 @@ public class MicrophoneModule : MonoBehaviour {
 	IEnumerator ContinueForceSolve() {
 		// 4.5
 		if (_bombInfo.IsIndicatorPresent(Indicator.SND)) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point five (SND indicator is present).", _bombHelper.ModuleId);
 			_tpReadyForSilence.Add(_bombHelper.ModuleId);
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Ready to mute the sound. Waiting for others.", _bombHelper.ModuleId);
 			while (AlarmIsPlaying()) {
 				yield return WaitForAlarmState(false);
 			}
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Alarm turned off. Waiting for it to be turned on again.", _bombHelper.ModuleId);
 			_tpReadyForSilence.Remove(_bombHelper.ModuleId);
 			while (!AlarmIsPlaying()) {
 				yield return WaitForAlarmState(true);
 			}
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Alarm turned on again.", _bombHelper.ModuleId);
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point five completed.", _bombHelper.ModuleId);
 		}
 		// 4.6
 		if (_micType == 1) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Performing step four, point six (microphone is not round).", _bombHelper.ModuleId);
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Waiting.", _bombHelper.ModuleId);
 			while (_step < 5) {
 				if (_tpAbort) goto cleanup;
 				yield return null;
 			}
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Step four, point six completed.", _bombHelper.ModuleId);
 		}
 	cleanup:
 		TpModuleDone();
 	}
 
 	void TpModuleDone() {
-		Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Finished disarming. Cleaning up.", _bombHelper.ModuleId);
 		if (_tpReadyForSilence.Contains(_bombHelper.ModuleId)) {
 			_tpReadyForSilence.Remove(_bombHelper.ModuleId);
 		}
@@ -1046,7 +1028,6 @@ public class MicrophoneModule : MonoBehaviour {
 			_tpTotalSolving.Remove(_bombHelper.ModuleId);
 			_tpLastSolved = _bombHelper.ModuleId;
 		}
-		Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Removed microphone from microphone solve list. List size is now {1}.", _bombHelper.ModuleId, _tpTotalSolving.Count);
 	}
 
 	IEnumerator WaitForAlarmState(bool desiredState) {
@@ -1071,11 +1052,10 @@ public class MicrophoneModule : MonoBehaviour {
 		if (_tpTotalSolving.Count == 0 && _tpLastSolved == _bombHelper.ModuleId) {
 			// no autosolve queue, but we were the last one to be removed from it.
 			// it is our duty to turn off the alarm if it's running.
-			if (_tpAlarm != null && _tpAlarm.StopSound != null) {
-				_tpAlarm.StopSound();
-				Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Alarm sound turned off because noone was using it.", _bombHelper.ModuleId);
+			if (_tpNoise != null && _tpNoise.StopSound != null) {
+				_tpNoise.StopSound();
 			}
-			_tpAlarm = null;
+			_tpNoise = null;
 			_tpLastSolved = -1;
 			return;
 		}
@@ -1083,7 +1063,6 @@ public class MicrophoneModule : MonoBehaviour {
 		// check if i'm detecting a strike
 		// is the bomb striking or did the module somehow pass elsewise?
 		if (!_tpAbort && _striking) {
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Module detected a strike sound, skipping ahead to cleanup as it got solved.", _bombHelper.ModuleId);
 			_tpAbort = true;
 			return;
 		}
@@ -1092,11 +1071,10 @@ public class MicrophoneModule : MonoBehaviour {
 		// do we need silence?
 		if (_tpReadyForSilence.Count == _tpTotalSolving.Count) {
 			if (AlarmIsPlaying()) {
-				if (_tpAlarm != null && _tpAlarm.StopSound != null) {
-					_tpAlarm.StopSound();
-					Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Alarm sound turned off by popular demand (probably due to an SND indicator).", _bombHelper.ModuleId);
+				if (_tpNoise != null && _tpNoise.StopSound != null) {
+					_tpNoise.StopSound();
 				}
-				_tpAlarm = null;
+				_tpNoise = null;
 			}
 			return;
 		}
@@ -1115,12 +1093,11 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <param name="on"></param>
 	public void TurnOnTpAlarm() {
 		if (!AlarmIsPlaying()) {
-			if (_tpAlarm != null && _tpAlarm.StopSound != null) {
-				_tpAlarm.StopSound();
+			if (_tpNoise != null && _tpNoise.StopSound != null) {
+				_tpNoise.StopSound();
 			}
-			_tpAlarm = null;
-			Debug.LogFormat("[Microphone #{0}] AUTOSOLVER: Alarm sound turned on.", _bombHelper.ModuleId);
-			_tpAlarm = _bombAudio.PlayGameSoundAtTransformWithRef(KMSoundOverride.SoundEffect.AlarmClockBeep, this.transform);
+			_tpNoise = null;
+			_tpNoise = _bombAudio.PlaySoundAtTransformWithRef("PinkNoise", this.transform);
 		}
 	}
 
@@ -1130,10 +1107,10 @@ public class MicrophoneModule : MonoBehaviour {
 	public void TPCleanup() {
 		_tpTotalSolving.Clear();
 		StopAllCoroutines();
-		if (_tpAlarm != null && _tpAlarm.StopSound != null) {
-			_tpAlarm.StopSound();
+		if (_tpNoise != null && _tpNoise.StopSound != null) {
+			_tpNoise.StopSound();
 		}
-		_tpAlarm = null;
+		_tpNoise = null;
 	}
 
 	#endregion
