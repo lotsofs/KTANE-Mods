@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class TrainCycler : MonoBehaviour {
     [SerializeField] ReferenceTransform _derailPoint;
     [Space]
     [SerializeField] SecurityTimer _securityTimer;
-    bool _transitioning = false;
+    [NonSerialized] public bool Transitioning = false;
     Coroutine _currentRoutine;
 
     /// <summary>
@@ -31,7 +32,7 @@ public class TrainCycler : MonoBehaviour {
         _stage = stage - 1;     // from 1 to 0 based
         _index = 0;
         _trainCars = trains;
-        if (_stage <= 0 && !_transitioning) {
+        if (_stage <= 0 && !Transitioning) {
             NewTrain();
         }
     }
@@ -55,7 +56,7 @@ public class TrainCycler : MonoBehaviour {
     /// </summary>
     void DisplayTrain() {
         _carSprites[_stage].sprite = _trainCars[_index].Appearance;
-        _transitioning = false;
+        Transitioning = false;
     }
 
     /// <summary>
@@ -63,7 +64,7 @@ public class TrainCycler : MonoBehaviour {
     /// </summary>
     /// <param name="forward"></param>
     public void Cycle(bool forward) {
-        if (_transitioning) {
+        if (Transitioning) {
             return;
         }
         _index += forward ? 1 : -1;
@@ -81,10 +82,10 @@ public class TrainCycler : MonoBehaviour {
     /// </summary>
     /// <returns></returns>
     public int SelectCurrent() {
-        if (_transitioning) {
+        if (Transitioning) {
             return -1;
         }
-        _transitioning = true;
+        Transitioning = true;
         return _index;
     }
 
@@ -226,7 +227,7 @@ public class TrainCycler : MonoBehaviour {
                 car.localPosition = Vector3.SmoothDamp(car.localPosition, destination, ref velocity, time);
                 car.localRotation = Quaternion.RotateTowards(car.localRotation, rotation, time / 10);
                 elapsedTime -= Time.deltaTime;
-                if (_transitioning && elapsedTime <= 0f) {
+                if (Transitioning && elapsedTime <= 0f) {
                     _index = 0;
                     if (derail) {
                         car.localPosition = _base.Position;
@@ -239,7 +240,7 @@ public class TrainCycler : MonoBehaviour {
                 yield return null;
             }
             car.localPosition = destination;
-            _transitioning = false;
+            Transitioning = false;
         }
         // this isn't the first rail car, move both the current and the previous which is still on screen
         else {
@@ -255,9 +256,9 @@ public class TrainCycler : MonoBehaviour {
                     carP.gameObject.SetActive(false);
                 }
                 elapsedTime -= Time.deltaTime;
-                if (_transitioning && elapsedTime <= 0f) {
+                if (Transitioning && elapsedTime <= 0f) {
                     DisplayTrain();
-                    _transitioning = false;
+                    Transitioning = false;
                     if (derail) {
                         NewTrain();
                     }
