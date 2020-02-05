@@ -9,44 +9,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ListenCarefully
+  m_Name: DoubleModsIII
   m_EditorClassIdentifier: 
-  DisplayName: Listen Carefully
-  Description: Listen carefully to this bomb, or you might miss important information.
+  DisplayName: Double Mods III
+  Description: You know the deal by now; don't blow up.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 900
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 1
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Listening
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 05000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonV2
-    - Count: 1
+      - PianoKeys
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordV2
-    - Count: 1
+      - TwoBits
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SillySlots
+      - ForeignExchangeRates
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizAdventureGame
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ChessModule
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - murder
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ThirdBase
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Laundry
   PacingEventsEnabled: 1

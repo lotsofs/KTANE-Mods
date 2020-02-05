@@ -60,12 +60,23 @@ MonoBehaviour:
     - TenMinutesII
     - NoisyBomb
     - TapTap
+    - DoubleModsII
     - BigBombII
   - Title: Finding Meaning
     MissionIDs:
     - Tension
     - Trauma
     - Release
+    - KnockKnock
+    - AnAdventure
+    - TwoIsLove
+    - RingRing
+    - SeriousBusiness
+    - NoTimeForGames
+    - EncryptedTransmissions
+    - AMinuteAModuleIII
+    - TenMinutesIII
+    - DoubleModsIII
     - Laundromat
     - BigBombIII
     - BigBoss

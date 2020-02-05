@@ -9,38 +9,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Laundromat
+  m_Name: RingRing
   m_EditorClassIdentifier: 
-  DisplayName: Laundromat
-  Description: 'Run your own laundromat! '
+  DisplayName: Ring Ring
+  Description: Is this another one of your jokes? No, bombs don't have time for silliness.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
-    FrontFaceOnly: 1
+    FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Laundry
-    - Count: 11
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKey
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 05000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - SillySlots
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - NeedyKnobV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BattleshipModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
+      - HexamazeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizAdventureGame
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - YahtzeeModule
   PacingEventsEnabled: 1

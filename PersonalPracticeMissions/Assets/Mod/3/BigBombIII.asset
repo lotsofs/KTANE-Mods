@@ -20,7 +20,7 @@ MonoBehaviour:
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 4
+    - Count: 3
       AllowedSources: 3
       ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
       SpecialComponentType: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - Listening
-    - Count: 6
+    - Count: 7
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0

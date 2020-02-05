@@ -9,32 +9,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Laundromat
+  m_Name: TwoIsLove
   m_EditorClassIdentifier: 
-  DisplayName: Laundromat
-  Description: 'Run your own laundromat! '
+  DisplayName: Two Is Love
+  Description: Because one is lone, but two is love.
   GeneratorSetting:
     TimeLimit: 300
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
-    FrontFaceOnly: 1
+    FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Laundry
-    - Count: 11
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKey
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 05000000
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - NeedyVentV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0d000000
       SpecialComponentType: 0
       ModTypes: []
     - Count: 1
@@ -42,5 +36,23 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NeedyKnobV2
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Third Base
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PianoKeys
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKeyAdvanced
   PacingEventsEnabled: 1
