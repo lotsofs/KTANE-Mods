@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: PracticeMakesPerfect
+  m_Name: CleaningYourMess
   m_EditorClassIdentifier: 
-  DisplayName: Practice Makes Perfect
-  Description: Practising helps you improve your skills. To help you improve faster,
-    this bomb is real instead of a dud.
+  DisplayName: Cleaning Your Mess
+  Description: Cleaning up after yourself can be a good idea, but sometimes you might
+    want to keep some of that mess around.
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 540
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
@@ -26,37 +26,13 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MemoryV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0b00000008000000
-      SpecialComponentType: 0
-      ModTypes: []
+      - Laundry
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BlindAlleyModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - FollowTheLeaderModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - AnagramsModule
-      - WordScrambleModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
+      - ButtonV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -68,23 +44,29 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordV2
+      - SouvenirModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MazeV2
+      - spwiz3DMaze
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TurnTheKeyAdvanced
+      - FollowTheLeaderModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TurnTheKey
+      - LEDEnc
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SkewedSlotsModule
   PacingEventsEnabled: 1

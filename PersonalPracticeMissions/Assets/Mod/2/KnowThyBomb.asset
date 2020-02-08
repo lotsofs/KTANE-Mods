@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Know Thy Bomb
   Description: Knowing what you're looking at is half the work. Unfortunately, bombs
-    don't their leave work half finished.
+    don't leave their work half finished.
   GeneratorSetting:
     TimeLimit: 240
     NumStrikes: 3

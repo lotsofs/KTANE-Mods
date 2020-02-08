@@ -44,15 +44,14 @@ MonoBehaviour:
     - StayingHydrated
     - LossForWords
     - SafeKeeping
-    - KnowThyBomb
-    - ForgettableBomb
     - Casino
-    - PracticeMakesPerfect
     - Flashbang
     - SquareBomb
     - Roundabout
     - LookCarefully
     - ListenCarefully
+    - ForgettableBomb
+    - KnowThyBomb
     - Breather
     - MemoryAid
     - AMinuteAModuleII
@@ -74,9 +73,15 @@ MonoBehaviour:
     - SeriousBusiness
     - NoTimeForGames
     - EncryptedTransmissions
+    - CleaningYourMess
+    - LearningAbility
     - AMinuteAModuleIII
+    - FiringMechanism
+    - LettersGame
+    - NumbersGameII
     - TenMinutesIII
     - DoubleModsIII
+    - NeedyKeys
     - Laundromat
     - BigBombIII
     - BigBoss

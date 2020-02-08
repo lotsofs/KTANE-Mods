@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: PracticeMakesPerfect
+  m_Name: LettersGame
   m_EditorClassIdentifier: 
-  DisplayName: Practice Makes Perfect
-  Description: Practising helps you improve your skills. To help you improve faster,
-    this bomb is real instead of a dud.
+  DisplayName: Letters Game
+  Description: Disarming a bomb most definitely isn't a game. But it does involve
+    letters.
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 427
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
@@ -26,65 +26,35 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MemoryV2
+      - LEDEnc
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 0b00000008000000
+      ComponentTypes: 0d000000
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - NeedyVentV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BlindAlleyModule
+      - ThirdBase
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - ChessModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - AnagramsModule
-      - WordScrambleModule
+      - spwiz3DMaze
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SillySlots
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PasswordV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MazeV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKeyAdvanced
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKey
+      - PianoKeys
   PacingEventsEnabled: 1
