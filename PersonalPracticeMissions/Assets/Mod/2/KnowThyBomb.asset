@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Knowing what you're looking at is half the work. Unfortunately, bombs
     don't leave their work half finished.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

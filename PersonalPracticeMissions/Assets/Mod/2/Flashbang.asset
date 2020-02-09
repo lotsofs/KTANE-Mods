@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Flashbangs flash and they bang. This bomb does both, but it is not
     merely a flashbang.
   GeneratorSetting:
-    TimeLimit: 390
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

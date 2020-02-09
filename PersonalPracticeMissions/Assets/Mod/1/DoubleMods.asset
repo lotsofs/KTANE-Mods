@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Double Mods
   Description: No vanillas here. Wait, is that a good or a bad thing?
   GeneratorSetting:
-    TimeLimit: 1260
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Nine Minutes
   Description: You get nine minutes. This could be tight.
   GeneratorSetting:
-    TimeLimit: 540
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

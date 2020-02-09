@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: No scissors, no keeping track of stuff, no working things out. Just
     press, flip or switch things. When has disarming a bomb ever been so easy?
   GeneratorSetting:
-    TimeLimit: 330
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

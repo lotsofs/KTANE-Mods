@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: A Minute A Module III
   Description: U get 11 modules and 11 minutes. What else u get is a surprise.
   GeneratorSetting:
-    TimeLimit: 660
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

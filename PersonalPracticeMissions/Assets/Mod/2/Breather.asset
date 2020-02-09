@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Breather
   Description: Time to take a breather, so here's a bomb.
   GeneratorSetting:
-    TimeLimit: 270
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

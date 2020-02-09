@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Double Mods II
   Description: We have learnt so much together. This is where it gets put to the test.
   GeneratorSetting:
-    TimeLimit: 1380
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Tension
   Description: Tension is rising.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

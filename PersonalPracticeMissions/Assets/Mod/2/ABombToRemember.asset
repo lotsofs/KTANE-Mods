@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Some bombs are more memorable than others. The ones that go off more
     so than the ones that don't.
   GeneratorSetting:
-    TimeLimit: 270
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

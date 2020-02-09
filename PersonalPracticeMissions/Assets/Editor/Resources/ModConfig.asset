@@ -11,26 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: PersonalPracticeMissions
-  title: Personal Practice Missions
+  id: PPMTest
+  title: PPM Test
   author: S.
-  description: "These are some missions I made for myself & my friends (this is you
-    if I linked this to you) to practice/learn some modded modules. Most if not all
-    of them are nothing special, but maybe there's a few in there that are suitable
-    or pose an interesting challenge to experienced players.\n\nEach section consists
-    of three sub-sections: New modules are introduced first, then there's some missions
-    mixing it up, followed by a handful of more challenging bombs.\n\nGet the modules
-    here:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1930830340 \n\nOther
-    mods required to play these missions:\nAny case that supports 31 modules, which
-    is included in here:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1982096203\n\n===Contains===\n[WIP]
-    Road To Centurion, a mission pack that introduces Centurion Modules in a semi-randomly
-    selected order:\n* Section 1: Color Flash, Turn The Key, Turn The Keys, 3D Maze,
-    Skewed Slots, Follow The Leader, Blind Alley, Hexamaze, Battleship, LED Encryption,
-    Yahtzee\n* Section 2: Word Scramble, Anagrams, The Square Button, Simon States,
-    Round Keypad, Listening, Morsematics, Forget Me Not, Plumbing, Safety Safe, Silly
-    Slots, Souvenir\n* Section 3: Piano Keys, Two Bits, Foreign Exchange Rates, Adventure
-    Game, Chess, Murder, Third Base, Laundry. Needies: Answering Questions, Rotary
-    Phone"
+  description: "Used for testing the balancing for 1 expert\n\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1930830340
+    \n\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1982096203"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods

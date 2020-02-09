@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: The Button must be released at a certain time. If you don't, your time
     has come.
   GeneratorSetting:
-    TimeLimit: 90
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Ten Minutes II
   Description: You get 10 minutes. ... Wait, didn't we...
   GeneratorSetting:
-    TimeLimit: 602
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Interactive Battleship
   Description: Can you balance battleship with interactives?
   GeneratorSetting:
-    TimeLimit: 450
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

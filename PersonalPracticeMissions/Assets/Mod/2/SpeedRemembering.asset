@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: 'The first step of remembering is looking at what needs to be remembered.
     If you look too fast, you won''t remember. '
   GeneratorSetting:
-    TimeLimit: 180
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

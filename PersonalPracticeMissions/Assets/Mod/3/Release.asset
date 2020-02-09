@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Release
   Description: All that built up tension and trauma; time to vent it all out.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

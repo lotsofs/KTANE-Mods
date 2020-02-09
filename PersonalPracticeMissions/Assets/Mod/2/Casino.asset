@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Casino
   Description: 'Play now. Win now. Jackpot: Explosions!'
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

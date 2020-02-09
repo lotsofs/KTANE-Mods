@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Big Boss
   Description: This bomb is boss. Can you defeat it?
   GeneratorSetting:
-    TimeLimit: 1800
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0

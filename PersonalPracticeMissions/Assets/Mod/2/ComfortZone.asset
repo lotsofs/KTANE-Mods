@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Comfort Zone
   Description: Yet another familiar bomb. But just when you're getting comfortable...
   GeneratorSetting:
-    TimeLimit: 540
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

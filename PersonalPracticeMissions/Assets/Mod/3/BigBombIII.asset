@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Big Bomb III
   Description: Yet another big bomb. And you still get ample time!
   GeneratorSetting:
-    TimeLimit: 1800
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0

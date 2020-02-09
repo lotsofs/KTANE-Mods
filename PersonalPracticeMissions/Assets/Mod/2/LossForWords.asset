@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Some bombs leave you at an utter loss for words, which isn't helping
     matters.
   GeneratorSetting:
-    TimeLimit: 180
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

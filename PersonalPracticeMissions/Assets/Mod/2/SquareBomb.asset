@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb is very square. Careful, edges are sharp. Careful, bomb will
     explode.
   GeneratorSetting:
-    TimeLimit: 480
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

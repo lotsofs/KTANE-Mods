@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Tap Tap
   Description: I hope...
   GeneratorSetting:
-    TimeLimit: 60
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

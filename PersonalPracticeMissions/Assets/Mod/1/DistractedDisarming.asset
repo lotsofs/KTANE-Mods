@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: 'They say distracted driving is dangerous. One thing is more dangerous:
     Distracted bomb disarming!'
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 5
     FrontFaceOnly: 0

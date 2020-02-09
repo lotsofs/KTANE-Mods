@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb is familiar too. Didn't we have a familiar one already? And
     yet, this one's different.
   GeneratorSetting:
-    TimeLimit: 1260
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

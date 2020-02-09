@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Roundabout
   Description: This bomb just sends you in circles.
   GeneratorSetting:
-    TimeLimit: 500
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: How is one supposed to fire the Torpedo if one has to keep their hand
     on this lever all the time?
   GeneratorSetting:
-    TimeLimit: 320
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Ten Minutes
   Description: You get ten minutes. ... Wait, didn't we have this bomb before?
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

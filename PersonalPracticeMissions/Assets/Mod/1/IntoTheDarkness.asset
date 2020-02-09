@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Don't see anything? Well, at least the sides of the bomb are perfectly
     visible. Be quick though, or you'll lose more than just your sight.
   GeneratorSetting:
-    TimeLimit: 60
+    TimeLimit: 3600
     NumStrikes: 1
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

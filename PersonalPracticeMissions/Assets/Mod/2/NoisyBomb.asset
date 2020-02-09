@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb is really loud. Just be sure to avoid the loudest of them
     all.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
