@@ -160,7 +160,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Silly Slots
+      - SillySlots
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
