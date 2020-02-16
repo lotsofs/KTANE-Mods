@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: An Adventure
   Description: Every bomb is an adventure. Make the most of it.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 540
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
