@@ -57,9 +57,9 @@ MonoBehaviour:
     - AMinuteAModuleII
     - SpeedRemembering
     - TenMinutesII
-    - NoisyBomb
     - TapTap
     - DoubleModsII
+    - NoisyBomb
     - BigBombII
   - Title: Finding Meaning
     MissionIDs:
