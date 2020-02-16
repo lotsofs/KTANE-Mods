@@ -55,5 +55,5 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - Listening
-      - Blind Alley
+      - BlindAlleyModule
   PacingEventsEnabled: 1
