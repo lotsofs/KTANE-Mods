@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: No Time For Games
   Description: Bombs aren't a game. This one is no exception.
   GeneratorSetting:
-    TimeLimit: 510
+    TimeLimit: 630
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

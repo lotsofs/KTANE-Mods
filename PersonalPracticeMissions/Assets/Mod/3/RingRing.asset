@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Ring Ring
   Description: Is this another one of your jokes? No, bombs don't have time for silliness.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

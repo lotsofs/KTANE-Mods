@@ -16,7 +16,7 @@ MonoBehaviour:
     for security and efficient transmission. Likewise, it is in your best interest
     for this bomb not to explode.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 390
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

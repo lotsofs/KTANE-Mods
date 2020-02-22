@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Serious Business
   Description: A murder case is serious business, but so is a bomb. Get to it.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

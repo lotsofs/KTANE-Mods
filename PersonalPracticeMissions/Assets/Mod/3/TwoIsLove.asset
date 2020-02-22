@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Two Is Love
   Description: Because one is lone, but two is love.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 450
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

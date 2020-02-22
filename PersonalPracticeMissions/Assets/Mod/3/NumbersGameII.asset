@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Disarming this bomb most definitely is a game. A deadly one. And it
     involves numbers.
   GeneratorSetting:
-    TimeLimit: 488
+    TimeLimit: 546
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
