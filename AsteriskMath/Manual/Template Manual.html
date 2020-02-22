@@ -194,10 +194,10 @@
                         <li>Take the serial number. Convert letters to their numeric position in the alphabet, then change every 1 to a 27 and every 0 to an 11. Multiply by the six resulting values.</li>
                         <li>If there is one strike on the bomb, multiply by 3. Multiply by 5 if there are two or more strikes.</li>
                         <li>If the resulting number has fewer than two non-zero digits, multiply by 7 until it doesn't.</li>
-                        <li>Take the two least significant non-zero digits to form a two-digit number. Multiply by 7 if this two-digit number is greater than 59. Repeat this step until the two-digit number is 59 or smaller.</li>
+                        <li>Take the two least significant non-zero digits to form a two-digit number (in order of appearance). Multiply by 7 if this two-digit number is greater than 59. Repeat this step until the two-digit number is 59 or smaller.</li>
                         <li>Press the green button on the module when the two seconds digits on the bomb's timer match the two-digit number above. Pressing it at the wrong time will cause a strike.</li>
                         <li>Pressing at the right time will disarm the module and multiply the number by the amount of minutes shown on the timer when pressing the button, sans any full hours remaining, or by 60 if this amount is less than one.</li>
-                        <li>The least significant non-zero digit of this new number and the digit before it form another two-digit number, with which the Asterisk Number will be mutated by.</li>
+                        <li>The least significant non-zero digit of this new number and the digit before it form another two-digit number (in order of appearance), by which the Asterisk Number will be mutated upon solving of the module.</li>
                     </ol>
                     
                     <table align="center">
@@ -236,7 +236,7 @@
                     <p class="flavour-text">This is making me dizzy, and you're telling me I have to do maths problems while looking at it?</p>
                     <ul>
                         <li>The module presents a spinning disc with colored numbers, partially covered up by another spinning disc.</li>
-                        <li>Each colored number is accompanied by three buttons. The <b>+</b> button increases it by 1, the <b>-</b> button decreases it by 1, and the <b>R</b> button resets it to its original value.</li>
+                        <li>Each colored number is accompanied by three buttons. The <b>+</b> button increases it by 1, the <b>-</b> button decreases it by 1, and the <b>R</b> button resets it to its original value. Buttons can be held.</li>
                         <li>The numbers will loop around to 0 if they go above 99, and vice versa.</li>
                         <li>Change each number to its corresponding value, based on its color, initial value, and the Asterisk Number. Use the table to find the correct value.</li>
                         <li>Use the submit button to submit the numbers. Submitting any incorrect number will cause a strike and reset the incorrect numbers.</li>
@@ -363,8 +363,8 @@
                     <ul>
                         <li>Take the first indicator from the table below present on the bomb and perform its operation. Use 'NLL' if no indicators are present. If the number goes above 127 or below 0, it will wrap around.</li>
                         <li>Evaluate the condition in the 'condition' column. If it is false, go to the rule under 'goto' and perform its operation and evaluate its condition.</li>
-                        <li>When a condition is true, break out of the table and input the resulting value using the binary switches, then press submit.</li>
-                        <li>Submitting a wrong value causes a strike. Submitting the right value will disarm the module, and mutate the Asterisk Number by the value of the position in the alphabet of the middle letter of the rule used to break out.</li>
+                        <li>When a condition is true, exit out of the table and input the resulting value using the binary switches, then press submit.</li>
+                        <li>Submitting a wrong value causes a strike. Submitting the right value will disarm the module, and mutate the Asterisk Number by the value of the position in the alphabet of the middle letter of the rule used to exit out.</li>
                     </ul>
 
 
@@ -379,7 +379,7 @@
                         <td>CAR</td><td>If the number is greater than 99, remove the center digit. If not, swap the digits around.</td><td>Nothing's changed after performing the operation.</td><td>IND</td>
                     </tr>
                     <tr>
-                        <td>CLR</td><td>If a PS/2 port is present, multiply by 2. Otherwise, divide by 2 and round down.</td><td>More than 1 PS/2 port is present.</td><td>CAR</td>
+                        <td>CLR</td><td>If a DVI-D port is present, multiply by 2. Otherwise, divide by 2. Round down.</td><td>2 or more DVI-D ports are present.</td><td>CAR</td>
                     </tr>
                     <tr>
                         <td>FRK</td><td>Round to the nearest multiple of 8.</td><td>Number contains an odd digit.</td><td>NLL</td>
