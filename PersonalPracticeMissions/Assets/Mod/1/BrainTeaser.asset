@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb is playing tricks on your brain. Be careful, or it will play
     the ultimate trick on your brain.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 450
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

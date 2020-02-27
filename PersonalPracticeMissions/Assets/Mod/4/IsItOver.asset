@@ -9,51 +9,70 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ColorBlind
+  m_Name: IsItOver
   m_EditorClassIdentifier: 
-  DisplayName: Color Blind
-  Description: Unfortunately, this bomb is not suitable for the blind of color. Or
-    the blind at all for that matter. And yet here we are.
+  DisplayName: Is It Over?
+  Description: No, it's not over. Unless by over you mean division, because that there
+    will be.
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 900
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SkewedSlotsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - LEDEnc
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
     - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BlindAlleyModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 020000000a000000090000000300000005000000
-      SpecialComponentType: 0
-      ModTypes: []
+      - ButtonV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - MorseV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - Laundry
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Logic
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - NeedyKnobV2
   PacingEventsEnabled: 1

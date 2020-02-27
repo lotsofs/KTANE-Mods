@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: 'Left is port, right is starboard. Or is it the other way around? Yes,
     it is. No. Uhhh, okay. What''s the middle called? '
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 5
     FrontFaceOnly: 1

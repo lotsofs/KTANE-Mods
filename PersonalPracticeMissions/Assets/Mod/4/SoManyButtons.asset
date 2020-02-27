@@ -9,33 +9,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ColorBlind
+  m_Name: SoManyButtons
   m_EditorClassIdentifier: 
-  DisplayName: Color Blind
-  Description: Unfortunately, this bomb is not suitable for the blind of color. Or
-    the blind at all for that matter. And yet here we are.
+  DisplayName: So Many Buttons
+  Description: Too many! But which are to be pressed?
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 720
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 020000000a000000090000000300000005000000
+      ComponentTypes: 07000000
       SpecialComponentType: 0
       ModTypes: []
     - Count: 1
@@ -43,17 +30,58 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - MemoryV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - KeypadV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - PianoKeys
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ThirdBase
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ChessModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ForeignExchangeRates
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BrokenButtonsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CaesarCipherModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0e000000
+      SpecialComponentType: 0
+      ModTypes: []
   PacingEventsEnabled: 1

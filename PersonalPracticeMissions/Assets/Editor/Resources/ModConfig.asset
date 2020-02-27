@@ -30,7 +30,8 @@ MonoBehaviour:
     Round Keypad, Listening, Morsematics, Forget Me Not, Plumbing, Safety Safe, Silly
     Slots, Souvenir\n* Section 3: Piano Keys, Two Bits, Foreign Exchange Rates, Adventure
     Game, Chess, Murder, Third Base, Laundry. Needies: Answering Questions, Rotary
-    Phone"
+    Phone\n* Section 4: Logic, CryptModule, CaesarCipherModule, BitmapsModule, WordSearchModule,
+    BrokenButtonsModule, DoubleOhModule, neutralization, Filibuster"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods

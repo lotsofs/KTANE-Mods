@@ -85,3 +85,27 @@ MonoBehaviour:
     - Laundromat
     - BigBombIII
     - BigBoss
+  - Title: Meeting Halfway
+    MissionIDs:
+    - BeepBeep
+    - Chemistry
+    - WordyBomb
+    - WordyBombII
+    - WordyBombIII
+    - Silence
+    - WordyBombIV
+    - WordyBombV
+    - IsItOver
+    - SouvenirSurprise
+    - Lambdic
+    - PrettyPictures
+    - SoManyButtons
+    - LowCommunicativeModules
+    - AMinuteAModuleIV
+    - OldTimeyBomb
+    - TenMinutesIV
+    - TrueRandom
+    - ScroogesBomb
+    - DoubleModsIV
+    - BigBombIV
+    - BigBossII

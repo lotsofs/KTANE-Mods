@@ -9,41 +9,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ColorBlind
+  m_Name: ScroogesBomb
   m_EditorClassIdentifier: 
-  DisplayName: Color Blind
-  Description: Unfortunately, this bomb is not suitable for the blind of color. Or
-    the blind at all for that matter. And yet here we are.
+  DisplayName: Scrooge's Bomb
+  Description: '"He put his hand upon the key he had relinquished, turned it sturdily,
+    and defused this bomb."'
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 540
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 020000000a000000090000000300000005000000
+      ComponentTypes: 0d0000000e0000000f000000
       SpecialComponentType: 0
       ModTypes: []
-    - Count: 1
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - TurnTheKeyAdvanced
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -55,5 +43,41 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - ColourFlash
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BlindAlleyModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MazeV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KeypadV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Listening
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CryptModule
   PacingEventsEnabled: 1

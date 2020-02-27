@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BigBoss
+  m_Name: BigBossII
   m_EditorClassIdentifier: 
-  DisplayName: Big Boss
-  Description: This bomb is boss. Can you defeat it?
+  DisplayName: Big Boss II
+  Description: You've defeated one boss, now meet the boss's boss.
   GeneratorSetting:
     TimeLimit: 1800
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 20
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
@@ -27,6 +27,7 @@ MonoBehaviour:
       ModTypes:
       - NeedyKnobV2
       - NeedyVentV2
+      - Filibuster
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -68,44 +69,87 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwiz3DMaze
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
       - BattleshipModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PasswordV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
       - MazeV2
-    - Count: 2
+    - Count: 1
       AllowedSources: 3
-      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000b0000000a0000000c000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - DoubleOhModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - neutralization
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CaesarCipherModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BitmapsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CryptModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BrokenButtonsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WordSearchModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Logic
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Listening
+      - ColourFlash
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KeypadV2
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0200000003000000040000000500000006000000070000000c0000000b0000000a0000000900000008000000
+      SpecialComponentType: 0
+      ModTypes:
+      - 
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - LEDEnc
-      - HexamazeModule
-      - SkewedSlotsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -118,13 +162,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ThirdBase
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - murder
+      - ForeignExchangeRates
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -136,71 +174,48 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAdventureGame
+      - murder
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ForeignExchangeRates
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TwoBits
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PianoKeys
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SillySlots
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MorseV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SimonV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
+      - ThirdBase
       - FollowTheLeaderModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColourFlash
+      - SkewedSlotsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - KeypadV2
+      - YahtzeeModule
+      - SimonV2
+      - PianoKeys
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Listening
+      - BlindAlleyModule
+      - PasswordV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MorseV2
+      - SillySlots
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - HexamazeModule
+      - spwiz3DMaze
+      - spwizAdventureGame
   PacingEventsEnabled: 1

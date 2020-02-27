@@ -9,46 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: FlipAndSwitch
+  m_Name: OldTimeyBomb
   m_EditorClassIdentifier: 
-  DisplayName: Flip And Switch
-  Description: No scissors, no keeping track of stuff, no working things out. Just
-    press, flip or switch things. When has disarming a bomb ever been so easy?
+  DisplayName: Old Timey Bomb
+  Description: This bomb is old-fashioned, and maybe even a bit broken. But don't
+    be fooled, it is just as capable of detonation.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 705
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 03000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0500000004000000
-      SpecialComponentType: 0
-      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -60,5 +32,59 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LEDEnc
+      - YahtzeeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKey
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ButtonV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Listening
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ChessModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - NeedyKnobV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - DoubleOhModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BrokenButtonsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CryptModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CaesarCipherModule
   PacingEventsEnabled: 1

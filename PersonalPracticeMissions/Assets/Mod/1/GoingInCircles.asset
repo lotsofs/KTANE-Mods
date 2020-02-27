@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Where do these wires go? I can't shake the feeling that we're going
     in circles. Who knows what's on the inside of this bomb?
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 450
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

@@ -9,35 +9,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ColorBlind
+  m_Name: Lambdic
   m_EditorClassIdentifier: 
-  DisplayName: Color Blind
-  Description: Unfortunately, this bomb is not suitable for the blind of color. Or
-    the blind at all for that matter. And yet here we are.
+  DisplayName: Lambdic
+  Description: "Lalalalala! What's that, bomb? You want attention? Sorry, can't hear
+    you! \n\nIf we ignore the bomb long enough, it will go away on its own."
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 540
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 020000000a000000090000000300000005000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - LEDEnc
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -49,11 +38,23 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - KeypadV2
+    - Count: 6
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Listening
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - Laundry
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Logic
   PacingEventsEnabled: 1

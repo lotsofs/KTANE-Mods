@@ -9,33 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: ColorBlind
+  m_Name: WordyBomb
   m_EditorClassIdentifier: 
-  DisplayName: Color Blind
-  Description: Unfortunately, this bomb is not suitable for the blind of color. Or
-    the blind at all for that matter. And yet here we are.
+  DisplayName: Wordy Bomb
+  Description: Why use many words for what can be said in little? Unfortunately, this
+    bomb does not care for efficiency.
   GeneratorSetting:
-    TimeLimit: 570
+    TimeLimit: 420
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 020000000a000000090000000300000005000000
+      ComponentTypes: 0d000000
       SpecialComponentType: 0
       ModTypes: []
     - Count: 1
@@ -43,17 +31,35 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - AnagramsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - WordScrambleModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - ThirdBase
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WordSearchModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizAdventureGame
+      - murder
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 060000000c000000
+      SpecialComponentType: 0
+      ModTypes: []
   PacingEventsEnabled: 1

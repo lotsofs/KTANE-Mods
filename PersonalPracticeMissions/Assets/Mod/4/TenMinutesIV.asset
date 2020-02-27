@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: TenMinutesIII
+  m_Name: TenMinutesIV
   m_EditorClassIdentifier: 
-  DisplayName: Ten Minutes III
-  Description: You get 10 minutes. This time, something's different though.
+  DisplayName: Ten Minutes IV
+  Description: 10 minutes, 10 modules. Oh, and that needy of course.
   GeneratorSetting:
-    TimeLimit: 603
+    TimeLimit: 604
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 20
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
@@ -56,6 +56,14 @@ MonoBehaviour:
       - murder
       - ThirdBase
       - Laundry
+      - DoubleOhModule
+      - neutralization
+      - WordSearchModule
+      - BrokenButtonsModule
+      - CryptModule
+      - BitmapsModule
+      - CaesarCipherModule
+      - Logic
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 0d0000000e0000000f000000
@@ -63,4 +71,5 @@ MonoBehaviour:
       ModTypes:
       - NeedyVentV2
       - NeedyKnobV2
+      - Filibuster
   PacingEventsEnabled: 1

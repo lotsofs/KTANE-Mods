@@ -9,20 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: TenMinutesIII
+  m_Name: TrueRandom
   m_EditorClassIdentifier: 
-  DisplayName: Ten Minutes III
-  Description: You get 10 minutes. This time, something's different though.
+  DisplayName: True Random
+  Description: 'I honestly wish I could tell you more, but this bomb is truly deceptive.
+    Anything goes with this bomb. '
   GeneratorSetting:
-    TimeLimit: 603
+    TimeLimit: 1800
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 20
+    TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 10
+    - Count: 23
       AllowedSources: 3
-      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
       SpecialComponentType: 0
       ModTypes:
       - spwiz3DMaze
@@ -56,11 +57,15 @@ MonoBehaviour:
       - murder
       - ThirdBase
       - Laundry
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0d0000000e0000000f000000
-      SpecialComponentType: 0
-      ModTypes:
+      - DoubleOhModule
+      - neutralization
+      - WordSearchModule
+      - BrokenButtonsModule
+      - CryptModule
+      - BitmapsModule
+      - CaesarCipherModule
+      - Logic
       - NeedyVentV2
       - NeedyKnobV2
+      - Filibuster
   PacingEventsEnabled: 1

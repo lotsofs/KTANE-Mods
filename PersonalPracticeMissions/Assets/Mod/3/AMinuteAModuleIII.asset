@@ -16,7 +16,7 @@ MonoBehaviour:
   GeneratorSetting:
     TimeLimit: 660
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 90
+    TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
