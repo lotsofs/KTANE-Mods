@@ -26,7 +26,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitMapsModule
+      - BitmapsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 

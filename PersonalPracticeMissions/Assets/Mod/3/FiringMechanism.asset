@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Name: FiringMechanism
   m_EditorClassIdentifier: 
   DisplayName: Firing Mechanism
-  Description: How is one supposed to fire the Torpedo if one has to keep their hand
-    on this lever all the time?
+  Description: Fire away with those torpedos, but make sure not to overcharge them.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
@@ -23,10 +22,10 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 0d000000
+      ComponentTypes: 0e000000
       SpecialComponentType: 0
       ModTypes: []
-    - Count: 5
+    - Count: 6
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0

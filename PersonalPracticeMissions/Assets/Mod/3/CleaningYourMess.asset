@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Cleaning up after yourself can be a good idea, but sometimes you might
     want to keep some of that mess around.
   GeneratorSetting:
-    TimeLimit: 810
+    TimeLimit: 900
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0

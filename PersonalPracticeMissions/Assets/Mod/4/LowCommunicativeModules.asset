@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: LowCommunicativeModules
   m_EditorClassIdentifier: 
-  DisplayName: LowCommunicativeModules
+  DisplayName: Low Communicative Modules
   Description: The modules on this bomb require low communication. Just hand them
     out, then do the working out. Perfect for those who want to disarm in silence.
     :)

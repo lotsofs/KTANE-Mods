@@ -142,8 +142,7 @@ MonoBehaviour:
       AllowedSources: 3
       ComponentTypes: 0200000003000000040000000500000006000000070000000c0000000b0000000a0000000900000008000000
       SpecialComponentType: 0
-      ModTypes:
-      - 
+      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 

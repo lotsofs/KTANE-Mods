@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: You've demonstrated a knack for learning modules. But do you really
     understand them?
   GeneratorSetting:
-    TimeLimit: 750
+    TimeLimit: 810
     NumStrikes: 3
     TimeBeforeNeedyActivation: 20
     FrontFaceOnly: 0
