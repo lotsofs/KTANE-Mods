@@ -14,13 +14,13 @@ MonoBehaviour:
   DisplayName: Impostor Keypad
   Description: These are all just regular keypads, but something's not quite right.
   GeneratorSetting:
-    TimeLimit: 750
+    TimeLimit: 660
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 4
+    - Count: 5
       AllowedSources: 3
       ComponentTypes: 04000000
       SpecialComponentType: 0
@@ -36,10 +36,4 @@ MonoBehaviour:
       ComponentTypes: 0200000003000000050000000c000000090000000a00000008000000
       SpecialComponentType: 0
       ModTypes: []
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SkewedSlotsModule
   PacingEventsEnabled: 1

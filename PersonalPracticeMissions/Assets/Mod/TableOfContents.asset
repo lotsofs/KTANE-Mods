@@ -16,13 +16,13 @@ MonoBehaviour:
   - Title: Double It Up
     MissionIDs:
     - LimitedFreedom
-    - NumbersGame
-    - ImpostorKeypad
+    - BrainTeaser
     - GoingInCircles
     - LuckOfTheDraw
+    - ImpostorKeypad
     - ShipsAhoy
     - Mazetropolis
-    - BrainTeaser
+    - NumbersGame
     - ColorBlind
     - ButtonsAndTimers
     - FlipAndSwitch

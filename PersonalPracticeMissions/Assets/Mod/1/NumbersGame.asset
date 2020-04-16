@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Disarming a bomb most definitely isn't a game. But it does involve
     numbers.
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 1050
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1
@@ -37,4 +37,16 @@ MonoBehaviour:
       ComponentTypes: 020000000900000003000000
       SpecialComponentType: 0
       ModTypes: []
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - LEDEnc
   PacingEventsEnabled: 1
