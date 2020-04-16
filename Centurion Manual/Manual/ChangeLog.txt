@@ -10,3 +10,17 @@ Vanilla_AlternativeNumbering:
 
 Modded Manuals:
 * By default, besides distinction between solvable, needy & appendix, page ordering will be determined by module release date, similar to how the vanilla manual is not sorted alphabetically either.  
+
+Road To Centurion 1:
+* Page numbering may not be accurate, due to the non-chronological order I am processing these
+* Colour Flash: BTS changes & Ink splatter patterns
+* Turn The Key: Ink splatter
+* Turn The Keys: Ink splatter, BTS changes.
+-- Removed mention of keypad & who's on first, as these are not actually required and caused the text to not fit on the page
+* 3D Maze: BTS Stuff, Ink Splatters
+-- Added a reference to Appendix A
+* Skewed Slots: Ink
+-- Appendix placed in appendices
+
+
+
