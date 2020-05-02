@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb not only explodes, it will also release toxic gas into the
     room. It must be neutralized.
   GeneratorSetting:
-    TimeLimit: 500
+    TimeLimit: 800
     NumStrikes: 3
     TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: And why does the bomb have to be so cryptic about it? Can it at least
     just give us what we need to know normally?
   GeneratorSetting:
-    TimeLimit: 540
+    TimeLimit: 660
     NumStrikes: 3
     TimeBeforeNeedyActivation: 30
     FrontFaceOnly: 0
