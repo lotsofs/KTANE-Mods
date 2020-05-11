@@ -33,13 +33,13 @@ public class TheHeartModule : MonoBehaviour {
 	}
 	
 	void Defibrilate() {
-		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 55);
+		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 1);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if ( Mathf.Abs((int)_bombInfo.GetTime() - _activationTime) >= 60) {
-			Debug.Log("HEEEY");
+			Debug.Log("Do something");
 		}
 	}
 }
