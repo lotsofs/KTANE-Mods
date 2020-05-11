@@ -31,14 +31,13 @@ public class HeartBeat : MonoBehaviour {
 			_doubleBeatHappened = false;
 			_elapsedTime = 0;
 			transform.localScale = _baseSize * _firstBeatSize;
-			_bombAudio.PlaySoundAtTransform("HeartA", this.transform);
+			_bombAudio.PlaySoundAtTransform("HeartIn", this.transform);
 		}
 		else if (Beating && !_doubleBeatHappened && _elapsedTime > _doubleBeatTime * Interval) {
 			_doubleBeatHappened = true;
 			transform.localScale = _baseSize * _secondBeatSize;
-			string areyoufuckingjOking = "HeartB";
+			string areyoufuckingjOking = "HeartOut";
 			_bombAudio.PlaySoundAtTransform(areyoufuckingjOking, this.transform);
-			Debug.Log("FFS");
 		}
 		else if (transform.localScale.x > _baseSize.x) {
 			transform.localScale *= (1f - (Time.deltaTime * _shrinkRate * Interval));
