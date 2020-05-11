@@ -21,6 +21,7 @@ public class HeartBeat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		_bombAudio.PlaySoundAtTransform("PinkNoise", this.transform);
 		_baseSize = transform.localScale;
 	}
 
@@ -31,12 +32,14 @@ public class HeartBeat : MonoBehaviour {
 			_doubleBeatHappened = false;
 			_elapsedTime = 0;
 			transform.localScale = _baseSize * _firstBeatSize;
-			_bombAudio.PlaySoundAtTransform("HeartA", this.transform);
+			//_bombAudio.PlaySoundAtTransformWithRef("HeartA", this.transform);
 		}
 		else if (Beating && !_doubleBeatHappened && _elapsedTime > _doubleBeatTime * Interval) {
 			_doubleBeatHappened = true;
 			transform.localScale = _baseSize * _secondBeatSize;
-			_bombAudio.PlaySoundAtTransform("HeartB", this.transform);
+			//string areyoufuckingjOking = "heartB";
+			//_bombAudio.PlaySoundAtTransform(areyoufuckingjOking, this.transform);
+			Debug.Log("FFS");
 		}
 		else if (transform.localScale.x > _baseSize.x) {
 			transform.localScale *= (1f - (Time.deltaTime * _shrinkRate * Interval));
