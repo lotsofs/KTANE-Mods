@@ -11,10 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: Temp
-  title: Temp
+  id: TheHeart
+  title: The Heart
   author: S.
-  description: Temp Desc
+  description: '"Heartbeat, Regular, Single, 01-01, LOOP.wav" by InspectorJ (www.jshaw.co.uk)
+    of Freesound.org'
   version: 0
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
