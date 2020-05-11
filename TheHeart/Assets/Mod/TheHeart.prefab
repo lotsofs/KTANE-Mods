@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 114880016559636012}
   - component: {fileID: 114413002778253470}
   - component: {fileID: 64880836325881158}
+  - component: {fileID: 114121141882076730}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -376,6 +377,8 @@ MonoBehaviour:
   _bombAudio: {fileID: 114196654713711394}
   _heartBeat: {fileID: 114413002778253470}
   _theHeartSelectable: {fileID: 114863412677572856}
+  _aedChargeTime: 3.5
+  _aedPlaySoundAt: 2.5
 --- !u!114 &114102562748438862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,6 +392,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bombInfo: {fileID: 114390794217187884}
   _bombAudio: {fileID: 114196654713711394}
+--- !u!114 &114121141882076730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206858346864570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1675560866, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114196654713711394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,12 +470,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44727227009ab6d4481dcc3c30d941c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombAudio: {fileID: 114196654713711394}
+  _bombAudio: {fileID: 114121141882076730}
   Interval: 1
   _doubleBeatTime: 0.3
-  _shrinkRate: 0.03
-  _firstBeatSize: 1.03
-  _secondBeatSize: 1.028
+  _shrinkRate: 0.06
+  _firstBeatSize: 1.06
+  _secondBeatSize: 1.056
 --- !u!114 &114429256178277108
 MonoBehaviour:
   m_ObjectHideFlags: 1
