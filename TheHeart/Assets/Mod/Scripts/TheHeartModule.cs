@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class TheHeartModule : MonoBehaviour {
@@ -21,62 +23,131 @@ public class TheHeartModule : MonoBehaviour {
 
 	int _solvableModulesCount;
 	int _modulesRemaining = -1;
+	int _solvedHearts = 0;
+	int _heartCounts = 0;
 
 	int _resets = 0;
 	bool _solving = false;
+	bool _solved = false;
+	bool _justStruck = false;
 
 	[SerializeField] float _aedChargeTime = 5f;
 	[SerializeField] float _aedPlaySoundAt = 4f;
 	bool _aedSoundPlaying = true;
 	float _aedCharge;
 
+	Coroutine _heartColor;
+
 	// Use this for initialization
 	void Start () {
-		_solvableModulesCount = _bombInfo.GetSolvableModuleIDs().Count;
+		// set some variables
 		_activationTime = (int)_bombInfo.GetTime();
-		StartModule();
+		GetModules();
+
+		// set buttons etc
+		_theHeartSelectable.OnInteract += delegate { Defibrillate(); return false; };
 		_bombModule.OnActivate += ActivateModule;
+		StartCoroutine(HeartSpeedRegulator());
+		_heartBeat.OnColorGone += StrikeOut;
+	}
+
+	void StrikeOut(object obj, EventArgs e) {
+		_bombModule.HandleStrike();
 	}
 
 	void ActivateModule() {
 		//_aedSoundPlaying = false;
-		_solvableModulesCount = _bombInfo.GetSolvableModuleIDs().Count;
+		GetModules();
 		StartHeart();
 	}
 
-	void StartModule() {
-		_theHeartSelectable.OnInteract += delegate { Defibrilate(); return false; };
+	void GetModules() {
+		List<string> solvableModules = _bombInfo.GetSolvableModuleIDs();
+		_solvableModulesCount = solvableModules.Count;
+
+		int hearts = 0;
+		foreach (string module in solvableModules) {
+			if (module == _bombModule.ModuleType) {
+				hearts++;
+			}
+		}
+		_heartCounts = hearts;
 	}
 	
-	void Defibrilate() {
+	void Defibrillate() {
 		if (_aedCharge > 0) {
 			return;
 		}
 		_aedCharge = _aedChargeTime;
 		_aedSoundPlaying = false;
-		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 3);
-		_bombAudio.PlaySoundAtTransform("DefibrillatorThump", this.transform);
+		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 5);
+		_heartBeat.WhatIsOopQuestionMark(1);
+		//_bombAudio.PlaySoundAtTransform("WhyDoesThisNotWork", this.transform);
+		// heart is still beating. strike.
 		if (_heartBeat.Beating) {
 			Debug.LogFormat("[The Heart #{0}] STRIKE!: Attempt to defibrilate a beating heart. Oof.", _bombHelper.ModuleId);
 			_bombModule.HandleStrike();
+			_justStruck = true;
 			return;
 		}
-		_resets++;
-		Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {1} seconds for the {2}th time.", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
-		StartHeart();
+		// start heart if the moduel isnt solved yet
+		if (!_solved) {
+			_resets++;
+			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {1} seconds for the {2}th time.", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
+			StartHeart();
+		}
 	}
 
 	void StartHeart() {
 		_activationTime = (int)_bombInfo.GetTime();
 		_heartBeat.Beating = true;
+
+		_justStruck = false;
+		_heartBeat.ResetInterval();
+		if (_heartColor != null) {
+			StopCoroutine(_heartColor);
+		}
+		_heartColor = StartCoroutine(_heartBeat.ReplenishColor());
 	}
 
 	void StopHeart(string reason) {
+		if (!_heartBeat.Beating) {
+			// already stopped
+			return;
+		}
+		
 		Debug.LogFormat("[The Heart #{0}] STOPPING at {1} seconds because {2}", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), reason);
 		_heartBeat.Beating = false;
+		// solve the heart if conditions apply
+		if (_solving) {
+
+			StartCoroutine(SolveDelay());
+		}
+		else {
+			if (_heartColor != null) {
+				StopCoroutine(_heartColor);
+			}
+			_heartColor = StartCoroutine(_heartBeat.DepleteColor());
+		}
+	}
+
+	IEnumerator SolveDelay() {
+		for (int i = 0; i <= _bombHelper.ModuleId % _heartCounts; i++) {
+			yield return null;
+		}
+		if (_justStruck) {
+			yield return new WaitForSeconds(1);
+		}
 		if (_solving) {
 			_bombModule.HandlePass();
 			Debug.LogFormat("[The Heart #{0}] SOLVED!", _bombHelper.ModuleId);
+			_solved = true;
+		}
+		else {
+			if (_heartColor != null) {
+				StopCoroutine(_heartColor);
+			}
+			_heartColor = StartCoroutine(_heartBeat.DepleteColor());
 		}
 	}
 
@@ -88,23 +159,49 @@ public class TheHeartModule : MonoBehaviour {
 	}
 
 	void EvaluateSolves() {
-		int unsolvedModules = _solvableModulesCount - _bombInfo.GetSolvedModuleIDs().Count;
-		
-		if (unsolvedModules != _modulesRemaining) {
-			if (_modulesRemaining != -1) {
-				Debug.LogFormat("[The Heart #{0}] A module was solved. {1} unsolved modules remain.", _bombHelper.ModuleId, _modulesRemaining);
-			}
-			_modulesRemaining = unsolvedModules;
+		if (_solved) {
+			return;
 		}
-		if (!_solving && unsolvedModules <= _resets) {
-			Debug.LogFormat("[The Heart #{0}] The amount of times the heart has been defibrilated equals or exceeds the amount of remaining unsolved modules. Module will be solved the next time the heart stops.", _bombHelper.ModuleId);
+		if (_solvableModulesCount == 0) {
+			// deal with some bug that can happen at the start where it doesn't detect modules straight away.
+			_solving = false;
+			return;
+		}
+
+		List<string> solvedModules = _bombInfo.GetSolvedModuleIDs();
+		int unsolvedModules = _solvableModulesCount - solvedModules.Count;
+
+		// the amount of solves has changed
+		if (unsolvedModules != _modulesRemaining) {
+			// check if this is module initialization
+			if (_modulesRemaining != -1) {
+				Debug.LogFormat("[The Heart #{0}] A module was solved. {1} unsolved modules remain.", _bombHelper.ModuleId, unsolvedModules);
+			}
+			// update solve amount
+			_modulesRemaining = unsolvedModules;
+			// check for other hearts
+			int solvedHearts = 0;
+			foreach (string module in solvedModules) {
+				if (module == _bombModule.ModuleType) {
+					solvedHearts++;
+				}
+			}
+			if (_solvedHearts != solvedHearts) {
+				_solvedHearts = solvedHearts;
+				Debug.LogFormat("[The Heart #{0}] A The Heart module was solved. Now at {1} solved hearts.", _bombHelper.ModuleId, _solvedHearts);
+			}
+		}
+		// calculate minimum reset requirement
+		int minimumResetCount = _modulesRemaining + _solvedHearts * 2;
+		// check if our requirement is met
+		if (!_solving && minimumResetCount <= _resets) {
+			Debug.LogFormat("[The Heart #{0}] Defib count >= Unsolved Modules + Solved Hearts * 2 ({1} >= {2} + {3} * 2). Module will be solved the next time the heart stops.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			_solving = true;
 		}
-		else if (_solving && unsolvedModules > _resets) {
-			// set solving back to false because apparently something got miscalculated
+		else if (_solving && minimumResetCount > _resets) {
+			Debug.LogFormat("[The Heart #{0}] Will no longer solve on the next stop; Defib count < Unsolved Modules + Solved Hearts * 2 ({1} < {2} + {3} * 2).", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			_solving = false;
 		}
-		// todo: Evaluate solved hearts.
 	}
 
 	void RechargeAED() {
@@ -112,7 +209,8 @@ public class TheHeartModule : MonoBehaviour {
 			_aedCharge -= Time.deltaTime;
 		}
 		if (!_aedSoundPlaying && _aedCharge < _aedPlaySoundAt) {
-			_bombAudio.PlaySoundAtTransform("DefibrillatorCharging", this.transform);
+			_heartBeat.WhatIsOopQuestionMark(2);
+			//_bombAudio.PlaySoundAtTransform("Uuuuugh", this.transform);
 			_aedSoundPlaying = true;
 		}
 	}
@@ -120,8 +218,9 @@ public class TheHeartModule : MonoBehaviour {
 	void EvaluateStoppingConditions() {
 		int timeRemaining = (int)_bombInfo.GetTime();
 		if (!_heartBeat.Beating) {
-			// heart is already stopped. Do nothing.
+			// heart is already stopped. Do nothing, but do update stuff.
 			_bombTick = (int)_bombInfo.GetTime();
+			_strikes = _bombInfo.GetStrikes();
 			return;
 		}
 		
@@ -150,5 +249,34 @@ public class TheHeartModule : MonoBehaviour {
 		//	StopHeart("The timer jumped up by more than one second, implying a solved module somewhere");
 		//}
 		_bombTick = (int)_bombInfo.GetTime();
+	}
+
+	IEnumerator HeartSpeedRegulator() {
+		yield return new WaitForSeconds(1);
+		_modulesRemaining = _solvableModulesCount;
+		int interimRemaining = _modulesRemaining;
+		float chance = 0;
+		while (!_solved) {
+			yield return null;
+			if (!_heartBeat.Beating) {
+				interimRemaining = _modulesRemaining;
+				chance = UnityEngine.Random.Range(0f, 1f);
+				continue;
+			}
+			if (interimRemaining != _modulesRemaining) {
+				//float wait = UnityEngine.Random.Range(0, 3);
+				interimRemaining = _modulesRemaining;
+				//yield return new WaitForSeconds(wait);
+				_heartBeat.TargetInterval *= 0.8f;
+				continue;
+			}
+			if (interimRemaining == _modulesRemaining) {
+				if (chance > 0.5) {
+					yield return new WaitForSeconds(20);
+					_heartBeat.TargetInterval *= 1.2f;
+					chance = 0;
+				}
+			}
+		}
 	}
 }

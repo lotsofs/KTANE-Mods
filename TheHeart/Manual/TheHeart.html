@@ -25,13 +25,27 @@
                     <ul>
                         <li>This module presents a beating heart. It pumps blood to the other modules on the bomb.</li>
                         <li>If the heart beats normally, no action needs to be taken.</li>
-                        <li>Incurring a strike on the bomb will cause the heart to stop beating. Additionally, the heart will stop beating exactly a minute after they've been started, as counted by the bomb's countdown timer. Lastly, the heart will also stop beating when the bomb's countdown timer reaches 1 second remaining.</li>
-                        <li>A stopped heart must be defribrilated. This can be done by simply pressing the heart once.</li>
-                        <li>Failure to defibrilate a stopped heart in time will incur a strike on the bomb.</li>
-                        <li>Do not attempt to defibrilate a beating heart. This will incur a strike on the bomb.</li>
-                        <li>The module can be solved by solving other modules. Solved modules do not require blood. Therefore, when enough modules are solved the heart is no longer needed.</li>
-                        <li>This point occurs when the amount of times the heart has been defibrilated is greater than or equal to the amount of unsolved modules on the bomb plus two times the amount of solved other hearts.</li>
-                        <li>The module will then automatically solve the next time the heart stops beating. Solved hearts will no longer require defibrilation.</li>
+                        <li>Incurring a strike on the bomb will cause the heart to stop beating. 
+						Additionally, the heart will stop beating when the bomb's timer differs by exactly a minute or more from the time it was at when the heart last started again. 
+						Lastly, the heart will also stop beating when the bomb's countdown timer reaches below 1 second remaining.</li>
+						<li>A stopped heart will gradually lose its color until there is none left.</li>
+                    </ul>
+
+					<h3>Defibrillation</h3>
+					<ul>
+						<li>A stopped heart must be defribrillated. This can be done by simply pressing on the heart once.</li>
+						<li>Defibrillation must occur before the heart becomes fully decolorized.</li>
+						<li>Upon defibrillation, the heart will restart and regain its healthy color.</li>
+                        <li>Failure to defibrillate a stopped heart in time will incur a strike on the bomb.</li>
+                        <li>Do not attempt to defibrillate a beating heart. This will incur a strike on the bomb.</li>
+					</ul>
+					
+					<h3>Disarming the module</h3>
+					<ul>	
+                        <li>Solved modules do not require blood. Therefore, when enough other modules are solved the heart is no longer needed and this module will also become disarmed.</li>
+                        <li>The point at which this occurs is when the amount of times the heart has been defibrillated is greater than or equal to the amount of remaining unsolved modules on the bomb plus two times the amount of solved other hearts.</li>
+                        <li>The module will then automatically solve the next time the heart stops beating. Solved hearts will no longer require defibrillation.</li>
+						<!-- <li>If the heart stops because of a strike occuring on the bomb, the module will not be disarmed even if conditions are met.</li> -->
                     </ul>
                 </div>
                 <div class="page-footer relative-footer">Page 1 of 1</div>
