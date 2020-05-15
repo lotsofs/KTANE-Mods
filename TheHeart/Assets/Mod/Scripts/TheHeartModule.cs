@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -39,7 +40,7 @@ public class TheHeartModule : MonoBehaviour {
 	Coroutine _heartColor;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		// set some variables
 		_activationTime = (int)_bombInfo.GetTime();
 		GetModules();
@@ -59,6 +60,10 @@ public class TheHeartModule : MonoBehaviour {
 		//_aedSoundPlaying = false;
 		GetModules();
 		StartHeart();
+		if (DateTime.Today.Month == 4 && DateTime.Today.Day == 1) {
+			_heartBeat.RandomizeColor();
+			// april fools
+		}
 	}
 
 	void GetModules() {
@@ -73,7 +78,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		_heartCounts = hearts;
 	}
-	
+
 	void Defibrillate() {
 		if (_aedCharge > 0) {
 			return;
@@ -96,6 +101,9 @@ public class TheHeartModule : MonoBehaviour {
 			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {1} seconds for the {2}th time.", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
 			StartHeart();
 		}
+		else {
+			_heartBeat.RandomizeColor();
+		}
 	}
 
 	void StartHeart() {
@@ -115,7 +123,7 @@ public class TheHeartModule : MonoBehaviour {
 			// already stopped
 			return;
 		}
-		
+
 		Debug.LogFormat("[The Heart #{0}] STOPPING at {1} seconds because {2}", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), reason);
 		_heartBeat.Beating = false;
 		// solve the heart if conditions apply
@@ -152,7 +160,7 @@ public class TheHeartModule : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		RechargeAED();
 		EvaluateStoppingConditions();
 		EvaluateSolves();
@@ -223,9 +231,9 @@ public class TheHeartModule : MonoBehaviour {
 			_strikes = _bombInfo.GetStrikes();
 			return;
 		}
-		
+
 		// check for < 1 second remaining
-		if (timeRemaining == 0) {
+		if (timeRemaining == 0 && !_zeroSecondsHit) {
 			_zeroSecondsHit = true;
 			StopHeart("the timer has reached fewer than 1 seconds remaining.");
 		}
@@ -243,7 +251,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		// check for large jumps in the timer (time mode)
 		if (_bombTick - timeRemaining >= 2) {
-			StopHeart("The timer jumped down by more than one second, implying a strike happened somewhere");
+			StopHeart("the timer jumped down by more than one second, implying a strike happened somewhere");
 		}
 		//else if ((int)_bombInfo.GetTime() - _bombTick >= 2) {
 		//	StopHeart("The timer jumped up by more than one second, implying a solved module somewhere");
@@ -277,6 +285,66 @@ public class TheHeartModule : MonoBehaviour {
 					chance = 0;
 				}
 			}
+		}
+	}
+
+
+#pragma warning disable 414
+	public readonly string TwitchHelpMessage = "'!{0} defibrillate' to defibrillate the heart. Append with seconds (00-59) to defibrillate the heart at that specific amount of seconds, eg.: '!{0} defibrillate 00' to defibrillate on the whole minute exactly.";
+#pragma warning restore 414
+
+	public IEnumerator ProcessTwitchCommand(string command) {
+		command = command.ToLowerInvariant().Trim();
+		List<string> split = command.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+		if (split[0] != "defibrilate" && split[0] != "defibrillate" && split[0] != "defib") {
+			yield break;
+		}
+		if (split.Count == 1) {
+			_theHeartSelectable.OnInteract();
+		}
+		else {
+			for (int i = 0; i < split[1].Length; i++) {
+				if (!char.IsDigit(split[1][i])) {
+					yield break;
+				}
+			}
+			int time = int.Parse(split[1]);
+			if (time < 00 || time > 59) {
+				yield break;
+			}
+			bool done = false;
+			while (!done) {
+				yield return null;
+				int seconds = (int)_bombInfo.GetTime() % 60;
+				if (seconds == time) {
+					_theHeartSelectable.OnInteract();
+					done = true;
+				}
+			}
+		}
+	}
+
+	public void TwitchHandleForcedSolve() {
+		StartCoroutine(ForceSolve());
+	}
+
+	IEnumerator ForceSolve() {
+		yield return new WaitForSeconds(((_bombHelper.ModuleId % _heartCounts) % 539) / 9f);
+		while (!_solved) {
+			if (_heartBeat.Beating == true) {
+				yield return new WaitForSeconds(10f);
+				StopHeart("the module is being automatically solved so we will just stop the heart every 10 real-time seconds.");
+			}
+			if (_heartBeat.Beating == false) {
+				yield return null;
+				for (int i = 0; i < _bombHelper.ModuleId % _heartCounts; i++) {
+					yield return null;
+				}
+				if (!_solved) {
+					_theHeartSelectable.OnInteract();
+				}
+			}
+			yield return null;
 		}
 	}
 }

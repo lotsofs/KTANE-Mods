@@ -141,7 +141,11 @@ public class HeartBeat : MonoBehaviour {
 			_renderer.material.color = col;
 			yield return null;
 		}
-		Debug.Log(col.r);
 		_renderer.material.color = new Color(0.8f, 0, 0);
+	}
+
+	public void RandomizeColor() {
+		Color random = new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f));
+		_renderer.material.color = random;
 	}
 }
