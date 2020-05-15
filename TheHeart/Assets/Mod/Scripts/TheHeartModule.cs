@@ -85,7 +85,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		_aedCharge = _aedChargeTime;
 		_aedSoundPlaying = false;
-		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 5);
+		_bombHelper.GenericButtonPress(_theHeartSelectable, false, 3);
 		_heartBeat.WhatIsOopQuestionMark(1);
 		//_bombAudio.PlaySoundAtTransform("WhyDoesThisNotWork", this.transform);
 		// heart is still beating. strike.

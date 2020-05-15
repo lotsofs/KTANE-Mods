@@ -14,9 +14,13 @@ MonoBehaviour:
   id: TheHeart
   title: The Heart
   author: S.
-  description: '"Heartbeat, Regular, Single, 01-01, LOOP.wav" by InspectorJ (www.jshaw.co.uk)
-    of Freesound.org'
+  description: "It's true; bombs can feel emotions too. How exciting is that?\n\r\nDefibrillate
+    the heart until it solves. When does it solve? Well, there's the trick...\n\r\n------\r\nIncludes
+    support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate log:\r\n2020-05-15:\r\n*
+    Initial Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
+    , but I am also pingable in the official KTANE discord server, or the KTANE modding
+    discord server. Or just post a comment below."
   version: 0
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: f0014720cf8b499439b3ecf801a63f44, type: 3}
