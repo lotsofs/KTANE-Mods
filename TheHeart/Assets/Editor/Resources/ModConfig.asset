@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: TheHeart
+  title: The Heart
+  author: S.
+  description: "It's true; bombs can feel emotions too. How exciting is that?\n\r\nDefibrillate
+    the heart until it solves. When does it solve? Well, there's the trick...\n\r\n------\r\nIncludes
+    support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate log:\r\n2020-05-15:\r\n*
+    Initial Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
+    , but I am also pingable in the official KTANE discord server, or the KTANE modding
+    discord server. Or just post a comment below."
+  version: 0
+  outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
+    Nobody Explodes - Mod Building\mods
+  previewImage: {fileID: 2800000, guid: f0014720cf8b499439b3ecf801a63f44, type: 3}

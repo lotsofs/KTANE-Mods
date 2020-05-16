@@ -571,7 +571,7 @@ public class TrainLoading : MonoBehaviour {
     void Stage14() {
         if (PreviousCarIsPassenger()) {
             Debug.LogFormat("[Railway Cargo Loading #{0}] Car {1}: Previous car is a passenger car.", _bombHelper.ModuleId, _currentStage);
-            bool correct = EvaluatePassengerCarLookupTable(13);
+            bool correct = EvaluatePassengerCarLookupTable(14);
             if (!correct) {
                 Debug.LogFormat("[Railway Cargo Loading #{0}] Car {1}: None of the passenger car rules apply. Moving to freight.", _bombHelper.ModuleId, _currentStage);
             }
