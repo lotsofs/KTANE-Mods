@@ -22,8 +22,8 @@ MonoBehaviour:
     - ImpostorKeypad
     - ShipsAhoy
     - Mazetropolis
-    - NumbersGame
     - ColorBlind
+    - NumbersGame
     - ButtonsAndTimers
     - FlipAndSwitch
     - BattleshipRace

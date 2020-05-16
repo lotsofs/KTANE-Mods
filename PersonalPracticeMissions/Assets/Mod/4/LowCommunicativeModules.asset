@@ -80,7 +80,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - Logic
-    - Count: 2
+    - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
