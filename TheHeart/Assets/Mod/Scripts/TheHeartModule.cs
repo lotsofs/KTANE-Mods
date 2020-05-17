@@ -301,6 +301,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		if (split.Count == 1) {
 			_theHeartSelectable.OnInteract();
+			yield return null;
 		}
 		else {
 			for (int i = 0; i < split[1].Length; i++) {
