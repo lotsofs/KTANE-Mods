@@ -290,7 +290,7 @@ public class TheHeartModule : MonoBehaviour {
 
 
 #pragma warning disable 414
-	public readonly string TwitchHelpMessage = "'!{0} defibrillate' to defibrillate the heart. Append with seconds (00-59) to defibrillate the heart at that specific amount of seconds, eg.: '!{0} defibrillate 00' to defibrillate on the whole minute exactly.";
+	public readonly string TwitchHelpMessage = "'!{0} defibrillate' to defibrillate the heart. Optionally, append with seconds (00-59) to defibrillate the heart at that specific amount of seconds, eg.: '!{0} defibrillate 00' to defibrillate on the whole minute exactly.";
 #pragma warning restore 414
 
 	public IEnumerator ProcessTwitchCommand(string command) {
