@@ -313,12 +313,18 @@ public class TheHeartModule : MonoBehaviour {
 				yield break;
 			}
 			bool done = false;
+			yield return null;
+			int currentTime = (int)_bombInfo.GetTime() % 60;
+			if (time > currentTime || time <= currentTime - 15) {
+				yield return "waiting music";
+			}
 			while (!done) {
-				yield return null;
+				yield return "trycancel The Heart has stopped waiting for defibrillation due to a request to cancel!";
 				int seconds = (int)_bombInfo.GetTime() % 60;
 				if (seconds == time) {
 					_theHeartSelectable.OnInteract();
 					done = true;
+					yield return "end waiting music";
 				}
 			}
 		}
