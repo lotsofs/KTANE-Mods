@@ -14,9 +14,14 @@ MonoBehaviour:
   id: TheHeart
   title: The Heart
   author: S.
-  description: "It's true; bombs can feel emotions too. How exciting is that?\n\r\nDefibrillate
-    the heart until it solves. When does it solve? Well, there's the trick...\n\r\n------\r\nIncludes
-    support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate log:\r\n2020-05-15:\r\n*
+  description: "It's true; bombs can feel emotions too. How exciting is that?\r\n\r\nDefibrillate
+    the heart until it solves. When does it solve? Well, there's the trick...\r\n\r\n------\r\nDisclaimer:\r\nThis
+    module is a pseudo-needy. It will behave like a needy module until its solve conditions
+    are met.\r\n\r\n------\r\nIncludes support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate
+    log:\n2020-05-17:\n* Twitch plays stuff:\n-- Added the word 'optional' to the
+    help message to clarify that adding seconds is not needed.\n-- Fixed the module
+    yelling 'invalid command' despite a command being valid.\n-- Added elevator music
+    when delaying the defib for over 15 seconds.\n\nUpdate log:\r\n2020-05-15:\r\n*
     Initial Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
     , but I am also pingable in the official KTANE discord server, or the KTANE modding
     discord server. Or just post a comment below."
