@@ -109,3 +109,29 @@ MonoBehaviour:
     - DoubleModsIV
     - BigBombIV
     - BigBossII
+  - Title: Great Progress Is Made
+    MissionIDs:
+    - FightForYourLife
+    - Labyrinth
+    - AccessDenied
+    - BombOfManyFaces
+    - DfeuseThisBobm
+    - AnimalShelter
+    - NumbersGameIII
+    - ColorsGame
+    - DeskJob
+    - Locator
+    - BombGoBlinky
+    - FullGamer
+    - TimedReading
+    - TakeYourTime
+    - VacationsOver
+    - NoInvitation
+    - AMinuteAModuleV
+    - TenMinutesV
+    - TrueRandomII
+    - DoubleModsV
+    - BigBombV
+    - BigBossIII
+  - Title: Back To The Roots
+    MissionIDs: []
