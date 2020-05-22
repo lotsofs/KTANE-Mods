@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Listen Carefully
   Description: Listen carefully to this bomb, or you might miss important information.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 480
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -26,12 +26,12 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - Listening
-    - Count: 6
+    - Count: 1
       AllowedSources: 3
       ComponentTypes: 05000000
       SpecialComponentType: 0
       ModTypes: []
-    - Count: 2
+    - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Battleship Race
   Description: Defuser vs Expert. Who can disarm their modules first?
   GeneratorSetting:
-    TimeLimit: 510
+    TimeLimit: 600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 5
     FrontFaceOnly: 0

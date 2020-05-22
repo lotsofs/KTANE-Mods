@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: 'Surely nobody is able to remember all this. Perhaps you should use
     a pen. '
   GeneratorSetting:
-    TimeLimit: 599
+    TimeLimit: 915
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Unfortunately, this bomb is not suitable for the blind of color. Or
     the blind at all for that matter. And yet here we are.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 570
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

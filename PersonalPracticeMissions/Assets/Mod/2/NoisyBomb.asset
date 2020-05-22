@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: NoisyBomb
   m_EditorClassIdentifier: 
   DisplayName: Noisy Bomb
-  Description: This bomb is really loud. Just be sure to avoid the loudest of them
-    all.
+  Description: This bomb is really loud. Just be sure to avoid the loudest sound of
+    them all.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

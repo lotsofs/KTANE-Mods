@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: The manual for this bomb has been kept safely... Inside a safe... Which
     is on the bomb.
   GeneratorSetting:
-    TimeLimit: 360
+    TimeLimit: 480
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Luck Of The Draw
   Description: Now we need luck to disarm bombs? Might as well cut random wires!
   GeneratorSetting:
-    TimeLimit: 330
+    TimeLimit: 480
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

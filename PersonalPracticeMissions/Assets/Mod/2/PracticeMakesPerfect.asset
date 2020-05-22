@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Practising helps you improve your skills. To help you improve faster,
     this bomb is real instead of a dud.
   GeneratorSetting:
-    TimeLimit: 540
+    TimeLimit: 600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SillySlotsModule
+      - SillySlots
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 

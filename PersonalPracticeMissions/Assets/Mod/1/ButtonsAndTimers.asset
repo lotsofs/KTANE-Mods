@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: The Button must be released at a certain time. If you don't, your time
     has come.
   GeneratorSetting:
-    TimeLimit: 90
+    TimeLimit: 390
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1
@@ -27,9 +27,15 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - TurnTheKey
-    - Count: 4
+    - Count: 3
       AllowedSources: 3
       ComponentTypes: 03000000
       SpecialComponentType: 0
       ModTypes: []
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SkewedSlotsModule
   PacingEventsEnabled: 1

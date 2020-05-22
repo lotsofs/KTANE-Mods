@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: 'This bomb looks familiar, but you might not be as free with it as
     you''re used to. Not that bombs give you much freedom to begin with. '
   GeneratorSetting:
-    TimeLimit: 450
+    TimeLimit: 510
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

@@ -14,8 +14,28 @@ MonoBehaviour:
   id: PersonalPracticeMissions
   title: Personal Practice Missions
   author: S.
-  description: Personal Practice Missions
+  description: "These are some missions I made for myself & my friends (this is you
+    if I linked this to you) to practice/learn some modded modules. Most if not all
+    of them are nothing special, but maybe there's a few in there that are suitable
+    or pose an interesting challenge to experienced players.\r\n\r\nEach section consists
+    of three sub-sections: New modules are introduced first, then there's some missions
+    mixing it up, followed by a handful of more challenging bombs.\r\n\r\nGet the
+    modules here:\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1930830340\r\n\r\nOther
+    mods required to play these missions:\r\nAny case that supports 31 modules, which
+    is included in here:\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1982096203\r\n\r\n===Contains===\r\n[WIP]
+    Road To Centurion, a mission pack that introduces Centurion Modules in a semi-randomly
+    selected order:\r\n* Section 1: Color Flash, Turn The Key, Turn The Keys, 3D Maze,
+    Skewed Slots, Follow The Leader, Blind Alley, Hexamaze, Battleship, LED Encryption,
+    Yahtzee\r\n* Section 2: Word Scramble, Anagrams, The Square Button, Simon States,
+    Round Keypad, Listening, Morsematics, Forget Me Not, Plumbing, Safety Safe, Silly
+    Slots, Souvenir\r\n* Section 3: Piano Keys, Two Bits, Foreign Exchange Rates,
+    Adventure Game, Chess, Murder, Third Base, Laundry. Needies: Answering Questions,
+    Rotary Phone\r\n* Section 4: Logic, CryptModule, CaesarCipherModule, BitmapsModule,
+    WordSearchModule, BrokenButtonsModule, DoubleOhModule, neutralization, Filibuster\r\n*
+    Section 5: MouseInTheMaze, NumberPad, TheGamepadModule, monsplodeFight, SeaShells,
+    RockPaperScissorsLizardSpockModule, CoordinatesModule, RubiksCubeModule, BinaryLeds,
+    Needy Math, spwizTetris"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
-    Nobody Explodes\mods
-  previewImage: {fileID: 0}
+    Nobody Explodes - Mod Building\mods
+  previewImage: {fileID: 2800000, guid: 958c76c271d32394e81821b057ed289a, type: 3}

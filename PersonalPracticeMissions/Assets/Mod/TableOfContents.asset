@@ -16,14 +16,14 @@ MonoBehaviour:
   - Title: Double It Up
     MissionIDs:
     - LimitedFreedom
-    - NumbersGame
-    - ImpostorKeypad
+    - BrainTeaser
     - GoingInCircles
     - LuckOfTheDraw
+    - ImpostorKeypad
     - ShipsAhoy
     - Mazetropolis
-    - BrainTeaser
     - ColorBlind
+    - NumbersGame
     - ButtonsAndTimers
     - FlipAndSwitch
     - BattleshipRace
@@ -44,20 +44,94 @@ MonoBehaviour:
     - StayingHydrated
     - LossForWords
     - SafeKeeping
-    - KnowThyBomb
-    - ForgettableBomb
     - Casino
-    - PracticeMakesPerfect
     - Flashbang
     - SquareBomb
     - Roundabout
     - LookCarefully
     - ListenCarefully
+    - ForgettableBomb
+    - KnowThyBomb
     - Breather
     - MemoryAid
     - AMinuteAModuleII
     - SpeedRemembering
     - TenMinutesII
-    - NoisyBomb
     - TapTap
+    - DoubleModsII
+    - NoisyBomb
     - BigBombII
+  - Title: Finding Meaning
+    MissionIDs:
+    - Tension
+    - Trauma
+    - Release
+    - KnockKnock
+    - AnAdventure
+    - TwoIsLove
+    - RingRing
+    - SeriousBusiness
+    - NoTimeForGames
+    - EncryptedTransmissions
+    - CleaningYourMess
+    - LearningAbility
+    - AMinuteAModuleIII
+    - FiringMechanism
+    - LettersGame
+    - NumbersGameII
+    - TenMinutesIII
+    - DoubleModsIII
+    - NeedyKeys
+    - Laundromat
+    - BigBombIII
+    - BigBoss
+  - Title: Meeting Halfway
+    MissionIDs:
+    - BeepBeep
+    - Chemistry
+    - WordyBomb
+    - WordyBombII
+    - WordyBombIII
+    - Silence
+    - WordyBombIV
+    - WordyBombV
+    - IsItOver
+    - SouvenirSurprise
+    - Lambdic
+    - PrettyPictures
+    - SoManyButtons
+    - LowCommunicativeModules
+    - AMinuteAModuleIV
+    - OldTimeyBomb
+    - TenMinutesIV
+    - TrueRandom
+    - ScroogesBomb
+    - DoubleModsIV
+    - BigBombIV
+    - BigBossII
+  - Title: Great Progress Is Made
+    MissionIDs:
+    - FightForYourLife
+    - Labyrinth
+    - AccessDenied
+    - BombOfManyFaces
+    - DfeuseThisBobm
+    - AnimalShelter
+    - NumbersGameIII
+    - ColorsGame
+    - DeskJob
+    - Locator
+    - BombGoBlinky
+    - FullGamer
+    - TimedReading
+    - TakeYourTime
+    - VacationsOver
+    - NoInvitation
+    - AMinuteAModuleV
+    - TenMinutesV
+    - TrueRandomII
+    - DoubleModsV
+    - BigBombV
+    - BigBossIII
+  - Title: Back To The Roots
+    MissionIDs: []

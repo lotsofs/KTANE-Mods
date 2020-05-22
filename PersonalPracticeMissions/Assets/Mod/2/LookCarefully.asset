@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Look Carefully
   Description: Look carefully at this bomb, or you might miss important information.
   GeneratorSetting:
-    TimeLimit: 240
+    TimeLimit: 420
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
