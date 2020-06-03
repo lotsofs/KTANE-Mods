@@ -232,6 +232,15 @@ public class TheHeartModule : MonoBehaviour {
 			return;
 		}
 
+		// check for strikes
+		if (_bombInfo.GetStrikes() > _strikes) {
+			StopHeart("a strike happened on the bomb.");
+			_strikes = _bombInfo.GetStrikes();
+		}
+		// check for large jumps in the timer (time mode)
+		if (_bombTick - timeRemaining >= 2) {
+			StopHeart("the timer jumped down by more than one second, implying a strike happened somewhere");
+		}
 		// check for < 1 second remaining
 		if (timeRemaining == 0 && !_zeroSecondsHit) {
 			_zeroSecondsHit = true;
@@ -244,15 +253,7 @@ public class TheHeartModule : MonoBehaviour {
 		if ((Mathf.Abs(_activationTime - timeRemaining)) >= 60) {
 			StopHeart("the timer differs by a minute or more from when the heart last started.");
 		}
-		// check for strikes
-		if (_bombInfo.GetStrikes() > _strikes) {
-			StopHeart("a strike happened on the bomb.");
-			_strikes = _bombInfo.GetStrikes();
-		}
-		// check for large jumps in the timer (time mode)
-		if (_bombTick - timeRemaining >= 2) {
-			StopHeart("the timer jumped down by more than one second, implying a strike happened somewhere");
-		}
+
 		//else if ((int)_bombInfo.GetTime() - _bombTick >= 2) {
 		//	StopHeart("The timer jumped up by more than one second, implying a solved module somewhere");
 		//}
