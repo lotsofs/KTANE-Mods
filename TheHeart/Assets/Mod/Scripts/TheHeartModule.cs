@@ -50,6 +50,9 @@ public class TheHeartModule : MonoBehaviour {
 		_bombModule.OnActivate += ActivateModule;
 		StartCoroutine(HeartSpeedRegulator());
 		_heartBeat.OnColorGone += StrikeOut;
+
+		Debug.LogFormat("[The Heart #{0}] Formula: Defib count >= Unsolved Modules + Solved Hearts * 2 (D >= U + S*2).", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
+
 	}
 
 	void StrikeOut(object obj, EventArgs e) {
@@ -98,7 +101,7 @@ public class TheHeartModule : MonoBehaviour {
 		// start heart if the moduel isnt solved yet
 		if (!_solved) {
 			_resets++;
-			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {1} seconds for the {2}th time.", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
+			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
 			StartHeart();
 		}
 		else {
@@ -148,6 +151,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		if (_solving) {
 			_bombModule.HandlePass();
+
 			Debug.LogFormat("[The Heart #{0}] SOLVED!", _bombHelper.ModuleId);
 			_solved = true;
 		}
@@ -183,7 +187,7 @@ public class TheHeartModule : MonoBehaviour {
 		if (unsolvedModules != _modulesRemaining) {
 			// check if this is module initialization
 			if (_modulesRemaining != -1) {
-				Debug.LogFormat("[The Heart #{0}] A module was solved. {1} unsolved modules remain.", _bombHelper.ModuleId, unsolvedModules);
+				Debug.LogFormat("[The Heart #{0}] A module was solved. {2} unsolved modules remain. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, unsolvedModules, _solvedHearts);
 			}
 			// update solve amount
 			_modulesRemaining = unsolvedModules;
@@ -196,18 +200,18 @@ public class TheHeartModule : MonoBehaviour {
 			}
 			if (_solvedHearts != solvedHearts) {
 				_solvedHearts = solvedHearts;
-				Debug.LogFormat("[The Heart #{0}] A The Heart module was solved. Now at {1} solved hearts.", _bombHelper.ModuleId, _solvedHearts);
+				Debug.LogFormat("[The Heart #{0}] The module solved just now was a The Heart. Now at {3} solved hearts. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			}
 		}
 		// calculate minimum reset requirement
-		int minimumResetCount = _modulesRemaining + _solvedHearts * 2;
+		int minimumResetCount = _modulesRemaining + (_solvedHearts * 2);
 		// check if our requirement is met
-		if (!_solving && minimumResetCount <= _resets) {
-			Debug.LogFormat("[The Heart #{0}] Defib count >= Unsolved Modules + Solved Hearts * 2 ({1} >= {2} + {3} * 2). Module will be solved the next time the heart stops.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
+		if (!_solving && _resets >= minimumResetCount) {
+			Debug.LogFormat("[The Heart #{0}] The formula now evaluates to TRUE. ({1} >= {2} + {3} * 2). Module will be solved the next time the heart stops.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			_solving = true;
 		}
-		else if (_solving && minimumResetCount > _resets) {
-			Debug.LogFormat("[The Heart #{0}] Will no longer solve on the next stop; Defib count < Unsolved Modules + Solved Hearts * 2 ({1} < {2} + {3} * 2).", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
+		else if (_solving && _resets < minimumResetCount) {
+			Debug.LogFormat("[The Heart #{0}] Will no longer solve on the next stop; Formula evaluates to FALSE again. ({1} >= {2} + {3} * 2).", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			_solving = false;
 		}
 	}
