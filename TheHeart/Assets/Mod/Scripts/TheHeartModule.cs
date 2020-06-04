@@ -37,6 +37,9 @@ public class TheHeartModule : MonoBehaviour {
 	bool _aedSoundPlaying = true;
 	float _aedCharge;
 
+	float _solveCooldown = 0f;
+	[SerializeField] float _solveCooldownLength = 10f;
+
 	Coroutine _heartColor;
 
 	// Use this for initialization
@@ -51,11 +54,12 @@ public class TheHeartModule : MonoBehaviour {
 		StartCoroutine(HeartSpeedRegulator());
 		_heartBeat.OnColorGone += StrikeOut;
 
-		Debug.LogFormat("[The Heart #{0}] Formula: Defib count >= Unsolved Modules + Solved Hearts * 2 (D >= U + S*2).", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
+		//Debug.LogFormat("[The Heart #{0}] Formula: Defib count >= Unsolved Modules + Solved Hearts * 2 (D >= U + S*2).", _bombHelper.ModuleId, (int)_bombInfo.GetTime(), _resets);
 
 	}
 
 	void StrikeOut(object obj, EventArgs e) {
+		Debug.LogFormat("[The Heart #{0}] STRIKE!: Failure to defibrillate the heart in time.", _bombHelper.ModuleId);
 		_bombModule.HandleStrike();
 	}
 
@@ -93,7 +97,7 @@ public class TheHeartModule : MonoBehaviour {
 		//_bombAudio.PlaySoundAtTransform("WhyDoesThisNotWork", this.transform);
 		// heart is still beating. strike.
 		if (_heartBeat.Beating) {
-			Debug.LogFormat("[The Heart #{0}] STRIKE!: Attempt to defibrilate a beating heart. Oof.", _bombHelper.ModuleId);
+			Debug.LogFormat("[The Heart #{0}] STRIKE!: Defibrillated a beating heart. Oof.", _bombHelper.ModuleId);
 			_bombModule.HandleStrike();
 			_justStruck = true;
 			return;
@@ -101,7 +105,7 @@ public class TheHeartModule : MonoBehaviour {
 		// start heart if the moduel isnt solved yet
 		if (!_solved) {
 			_resets++;
-			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
+			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Solved modules: {2}", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
 			StartHeart();
 		}
 		else {
@@ -131,7 +135,6 @@ public class TheHeartModule : MonoBehaviour {
 		_heartBeat.Beating = false;
 		// solve the heart if conditions apply
 		if (_solving) {
-
 			StartCoroutine(SolveDelay());
 		}
 		else {
@@ -143,19 +146,22 @@ public class TheHeartModule : MonoBehaviour {
 	}
 
 	IEnumerator SolveDelay() {
+		// wait a couple of frames, ensure that each heart is solved one by one as opposed to at the same time so that they can detect other hearts solving.
 		for (int i = 0; i <= _bombHelper.ModuleId % _heartCounts; i++) {
 			yield return null;
 		}
+		// this heart stopped because this very heart was being zapped. Wait a second before solving to show the red status light.
 		if (_justStruck) {
 			yield return new WaitForSeconds(1);
 		}
-		if (_solving) {
+		if (_solving && (_solveCooldown <= 0 || (int)_bombInfo.GetTime() < 1)) {
 			_bombModule.HandlePass();
 
 			Debug.LogFormat("[The Heart #{0}] SOLVED!", _bombHelper.ModuleId);
 			_solved = true;
 		}
 		else {
+			Debug.LogFormat("[The Heart #{0}] --> Postponing solve until next stop because another heart was solved fewer than {1} seconds ago.", _bombHelper.ModuleId, _solveCooldownLength);
 			if (_heartColor != null) {
 				StopCoroutine(_heartColor);
 			}
@@ -168,6 +174,7 @@ public class TheHeartModule : MonoBehaviour {
 		RechargeAED();
 		EvaluateStoppingConditions();
 		EvaluateSolves();
+		_solveCooldown -= Time.deltaTime;
 	}
 
 	void EvaluateSolves() {
@@ -187,7 +194,7 @@ public class TheHeartModule : MonoBehaviour {
 		if (unsolvedModules != _modulesRemaining) {
 			// check if this is module initialization
 			if (_modulesRemaining != -1) {
-				Debug.LogFormat("[The Heart #{0}] A module was solved. {2} unsolved modules remain. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, unsolvedModules, _solvedHearts);
+				Debug.LogFormat("[The Heart #{0}] A module was solved. {2} unsolved modules remain. Defibs: {1}", _bombHelper.ModuleId, _resets, unsolvedModules, _solvedHearts);
 			}
 			// update solve amount
 			_modulesRemaining = unsolvedModules;
@@ -200,20 +207,21 @@ public class TheHeartModule : MonoBehaviour {
 			}
 			if (_solvedHearts != solvedHearts) {
 				_solvedHearts = solvedHearts;
-				Debug.LogFormat("[The Heart #{0}] The module solved just now was a The Heart. Now at {3} solved hearts. Formula: {1} >= {2} + {3}*2", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
+				_solveCooldown = _solveCooldownLength;
+				Debug.LogFormat("[The Heart #{0}] --> This module was a The Heart.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			}
 		}
-		// calculate minimum reset requirement
-		int minimumResetCount = _modulesRemaining + (_solvedHearts * 2);
+		//// calculate minimum reset requirement
+		//int minimumResetCount = _modulesRemaining + (_solvedHearts * 2);
 		// check if our requirement is met
-		if (!_solving && _resets >= minimumResetCount) {
-			Debug.LogFormat("[The Heart #{0}] The formula now evaluates to TRUE. ({1} >= {2} + {3} * 2). Module will be solved the next time the heart stops.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
+		if (!_solving && _resets >= _modulesRemaining) {
+			Debug.LogFormat("[The Heart #{0}] --> Condition met. Solving on next stop.", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
 			_solving = true;
 		}
-		else if (_solving && _resets < minimumResetCount) {
-			Debug.LogFormat("[The Heart #{0}] Will no longer solve on the next stop; Formula evaluates to FALSE again. ({1} >= {2} + {3} * 2).", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
-			_solving = false;
-		}
+		//else if (_solving && _resets < minimumResetCount) {
+		//	Debug.LogFormat("[The Heart #{0}] --> Will no longer solve; Formula evaluates to FALSE again. ({1} >= {2} + {3} * 2).", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts);
+		//	_solving = false;
+		//}
 	}
 
 	void RechargeAED() {
@@ -230,38 +238,38 @@ public class TheHeartModule : MonoBehaviour {
 	void EvaluateStoppingConditions() {
 		int timeRemaining = (int)_bombInfo.GetTime();
 		if (!_heartBeat.Beating) {
-			// heart is already stopped. Do nothing, but do update stuff.
+			// heart is already stopped. Do nothing, but do update variables.
 			_bombTick = (int)_bombInfo.GetTime();
 			_strikes = _bombInfo.GetStrikes();
 			return;
 		}
 
 		// check for strikes
-		if (_bombInfo.GetStrikes() > _strikes) {
+		if (_bombInfo.GetStrikes() != _strikes) {
 			StopHeart("a strike happened on the bomb.");
 			_strikes = _bombInfo.GetStrikes();
 		}
-		// check for large jumps in the timer (time mode)
-		if (_bombTick - timeRemaining >= 2) {
-			StopHeart("the timer jumped down by more than one second, implying a strike happened somewhere");
+		// check for large downard jumps in the timer (time mode)
+		else if (_bombTick - timeRemaining >= 2) {
+			StopHeart("the timer jumped down by more than one second, implying a strike happened somewhere.");
+		}
+		// check for large upward jumps in the timer (time mode) while in solving state
+		else if (_solving && _bombTick - timeRemaining <= -2 && timeRemaining - _activationTime >= 60) {
+			Debug.LogFormat("[The Heart #{0}] EDGE CASE: The timer made a large upward jump. It now differs by a minute or more from when the heart last started. The heart is in a solving state. New reference time: {1}", _bombHelper.ModuleId, timeRemaining);
 		}
 		// check for < 1 second remaining
-		if (timeRemaining == 0 && !_zeroSecondsHit) {
+		else if (timeRemaining == 0 && !_zeroSecondsHit) {
 			_zeroSecondsHit = true;
-			StopHeart("the timer has reached fewer than 1 seconds remaining.");
+			StopHeart("the bomb's timer reached below 1 second remaining.");
 		}
 		else if (_zeroSecondsHit && timeRemaining >= 1f) {
 			_zeroSecondsHit = false;
 		}
 		// check if it's been a minute since the last defib
-		if ((Mathf.Abs(_activationTime - timeRemaining)) >= 60) {
+		else if ((Mathf.Abs(_activationTime - timeRemaining)) >= 60) {
 			StopHeart("the timer differs by a minute or more from when the heart last started.");
 		}
-
-		//else if ((int)_bombInfo.GetTime() - _bombTick >= 2) {
-		//	StopHeart("The timer jumped up by more than one second, implying a solved module somewhere");
-		//}
-		_bombTick = (int)_bombInfo.GetTime();
+		_bombTick = timeRemaining;
 	}
 
 	IEnumerator HeartSpeedRegulator() {

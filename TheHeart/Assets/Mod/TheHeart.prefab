@@ -379,6 +379,7 @@ MonoBehaviour:
   _theHeartSelectable: {fileID: 114863412677572856}
   _aedChargeTime: 3.5
   _aedPlaySoundAt: 2.5
+  _solveCooldownLength: 2
 --- !u!114 &114102562748438862
 MonoBehaviour:
   m_ObjectHideFlags: 1
