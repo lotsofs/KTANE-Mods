@@ -18,17 +18,25 @@ MonoBehaviour:
     the heart until it solves. When does it solve? Well, there's the trick...\r\n\r\n------\r\nDisclaimer:\r\nThis
     module is a pseudo-needy. It will behave like a needy module until its solve conditions
     are met.\r\n\r\n------\r\nIncludes support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate
-    log:\n2020-05-20:\n* Updated the manual to clarify and emphasize some things,
-    and fixed the SVG (the status light was black). This update does not change any
-    rules, so a manual reprint is not strictly required, but it is recommended if
-    you plan on sharing the manual with friends.\n\n2020-05-17:\n* Twitch plays stuff:\n--
-    Added the word 'optional' to the help message to clarify that adding seconds is
-    not needed.\n-- Fixed the module yelling 'invalid command' despite a command being
-    valid.\n-- Added elevator music when delaying the defib for over 15 seconds.\n\n2020-05-15:\r\n*
+    log:\r\n2020-06-07:\r\nMANUAL REPRINT REQUIRED: \r\n* Removed the rule about adding
+    2 times the amount of solved hearts, and replaced it with a simple 'two hearts
+    can not solve at once' rule. This will prevent multiple hearts stalling the bomb
+    for more time than the sum of each heart individually.\r\n* Will no longer solve
+    in response to other modules being solved in timemode, as players calculating/knowing
+    how much time is added for each solved module is outside of the scope of this
+    module. Added an extra rule that deals specifically with this scenario, to avoid
+    the module stalling the bomb for multiple minutes.\r\n\r\n2020-05-20:\r\n* Updated
+    the manual to clarify and emphasize some things, and fixed the SVG (the status
+    light was black). This update does not change any rules, so a manual reprint is
+    not strictly required, but it is recommended if you plan on sharing the manual
+    with friends.\r\n\r\n2020-05-17:\r\n* Twitch plays stuff:\r\n-- Added the word
+    'optional' to the help message to clarify that adding seconds is not needed.\r\n--
+    Fixed the module yelling 'invalid command' despite a command being valid.\r\n--
+    Added elevator music when delaying the defib for over 15 seconds.\r\n\r\n2020-05-15:\r\n*
     Initial Release\r\n\r\n------\r\nFound an issue? You can find me at discord.gg/lotsofs
     , but I am also pingable in the official KTANE discord server, or the KTANE modding
     discord server. Or just post a comment below."
-  version: 0
+  version: 1.1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
   previewImage: {fileID: 2800000, guid: f0014720cf8b499439b3ecf801a63f44, type: 3}
