@@ -14,27 +14,32 @@ MonoBehaviour:
   id: RailwayCargoLoading
   title: Railway Cargo Loading
   author: S.
-  description: "If you thought bombs on trains were bad, now we have trains on bombs.\n\nCouple
-    the correct railroad cars to the train to disarm the module.\n\n------\r\nIncludes
-    support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\nUpdate log:\n2020-02-06:\n*
+  description: "If you thought bombs on trains were bad, now we have trains on bombs.\r\n\r\nCouple
+    the correct railroad cars to the train to disarm the module.\r\n\r\n------\r\nIncludes
+    support for mods:\r\nTwitch Plays, w/ Autosolve\r\n\r\n------\r\nUpdate log:\r\n2020-06-07:\n*
+    Manual: Added a bullet point to each of the car tables' instructions referring
+    to the cargo notes section. A reprint is recommended for pages 6 and 7, but not
+    strictly needed, as no rules have been changed.\n* Twitch Plays: Block any commands
+    coming in during a stage transition. This should avoid issues with accidental
+    double-sending of commands, as well as overenthusiastic caboose connectors.\n\n2020-02-06:\r\n*
     Fixed a bug that would cause the module to immediately skip to car 13's rules
-    on car 14, without evaluating its own rules first. \n\n2020-02-04:\n* TPP support
-    changes:\n- * Sequential autosolving\n\n2020-01-27:\n* Rewritten a few lines in
-    the manual for clarification. This does not affect any gameplay rules.\n* TPP
-    support changes:\n- * Moved some note positions slightly as the TPP indicator
-    covered up part of the note sometimes.\n- * Fixed an error that would occur if
-    the player tried to couple null.\n- * Added chat feedback for players trying to
-    flip non-existant notes.\n- * Added administrator autosolve support.\nWhile the
-    manual has changed, the old manual is still applicable. Should you desire to keep
-    your manuals up to date, only page 5 needs to be reprinted.\n\n2020-01-26:\n*
-    The entire train now no longer gets reset when striking.\nWhile the manual has
+    on car 14, without evaluating its own rules first.\r\n\r\n2020-02-04:\r\n* TPP
+    support changes:\r\n- * Sequential autosolving\r\n\r\n2020-01-27:\r\n* Rewritten
+    a few lines in the manual for clarification. This does not affect any gameplay
+    rules.\r\n* TPP support changes:\r\n- * Moved some note positions slightly as
+    the TPP indicator covered up part of the note sometimes.\r\n- * Fixed an error
+    that would occur if the player tried to couple null.\r\n- * Added chat feedback
+    for players trying to flip non-existant notes.\r\n- * Added administrator autosolve
+    support.\r\nWhile the manual has changed, the old manual is still applicable.
+    Should you desire to keep your manuals up to date, only page 5 needs to be reprinted.\r\n\r\n2020-01-26:\r\n*
+    The entire train now no longer gets reset when striking.\r\nWhile the manual has
     changed a little due to this, an entire reprint is not strictly required. Just
     cross out the sentence that says a new train must be built from the start on page
-    1, or reprint just that page.\n\n2020-01-23:\n* Initial Release\n\n------\nFound
+    1, or reprint just that page.\r\n\r\n2020-01-23:\r\n* Initial Release\r\n\r\n------\r\nFound
     an issue? You can find me at discord.gg/lotsofs , but I am also pingable in the
     official KTANE discord server, or the KTANE modding discord server. Or just post
-    a comment below. "
-  version: 1.3
+    a comment below."
+  version: 1.4
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
   previewImage: {fileID: 2800000, guid: f6f316cbef127bf4eb6ce309b1595d30, type: 3}
