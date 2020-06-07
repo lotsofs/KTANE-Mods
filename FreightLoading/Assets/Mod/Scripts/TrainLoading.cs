@@ -732,9 +732,14 @@ public class TrainLoading : MonoBehaviour {
 #pragma warning restore 414
 
     public IEnumerator ProcessTwitchCommand(string command) {
-        command = command.ToLowerInvariant().Trim();
 
-        if (command == "magnet") {
+        
+        command = command.ToLowerInvariant().Trim();
+        
+        if (_trainCycler.Transitioning) {
+            yield return "sendtochat Please wait for the train assembly crew to finish before attaching another train car.";
+        }
+        else if (command == "magnet") {
             if (_note.MagnetPressable.gameObject.activeInHierarchy) {
                 _note.MagnetPressable.OnInteract();
             }
