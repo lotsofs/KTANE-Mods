@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: ColorsGame
   m_EditorClassIdentifier: 
-  DisplayName: ColorsGame
+  DisplayName: Colors Game
   Description: Disarming a bomb most definitely isn't a game. But it does involve
     colors.
   GeneratorSetting:

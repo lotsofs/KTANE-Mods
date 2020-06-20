@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Dfeuse This Bobm
   Description: Don't stubmle over yoru words.
   GeneratorSetting:
-    TimeLimit: 530
+    TimeLimit: 600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 40
     FrontFaceOnly: 0

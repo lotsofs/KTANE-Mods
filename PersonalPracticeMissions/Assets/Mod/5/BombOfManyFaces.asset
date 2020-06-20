@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: BombOfManyFaces
   m_EditorClassIdentifier: 
   DisplayName: Bomb Of Many Faces
-  Description: This bomb is not what it appears to be. Then again, which bomb has?
+  Description: This bomb is not what it appears to be. Then again, which bomb is?
   GeneratorSetting:
     TimeLimit: 530
     NumStrikes: 3
