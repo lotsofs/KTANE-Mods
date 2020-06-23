@@ -61,3 +61,27 @@ MonoBehaviour:
     - DoubleModsII
     - NoisyBomb
     - BigBombII
+  - Title: Finding Meaning
+    MissionIDs:
+    - Tension
+    - Trauma_1
+    - Release
+    - KnockKnock
+    - AnAdventure
+    - TwoIsLove
+    - RingRing
+    - SeriousBusiness
+    - NoTimeForGames
+    - EncryptedTransmissions
+    - CleaningYourMess
+    - LearningAbility
+    - AMinuteAModuleIII
+    - FiringMechanism
+    - LettersGame
+    - NumbersGameII
+    - TenMinutesIII
+    - DoubleModsIII
+    - NeedyKeys
+    - Laundromat
+    - BigBombIII
+    - BigBoss
