@@ -1,0 +1,321 @@
+Flavor Text:
+There is one thing missing from this great bomb: A celebrity endorsed used module shop. That's why I founded Sunshine Used Modules. Every one of these beauties is freshly painted; they look brand-new. We have new models coming in every morning (usually around 2AM). We can get you anything! And if you see the module of your dreams? Tell us, we can acquire it for you!
+
+
+Types:
+Big
+Normal
+Poorfamily
+Executive
+Richfamily
+Worker
+Taxi
+Ignore
+Leisureboat
+Workerboat
+Motorbike
+
+
+Modules:
+Vanilla Simple Wires
+Vanilla The Button
+Vanilla Keypad
+Vanilla Simon Says
+Vanilla Who's On First
+Vanilla Memory
+Vanilla Morse Code
+Vanilla Complicated Wires
+Vanilla Wire Sequences
+Vanilla Maze
+Vanilla Password
+Color Flash
+Piano Keys
+Semaphore
+Emoji Math
+Switches
+Two Bits
+Anagrams
+Word Scramble
+Combination Lock
+The Square Button
+Simon States
+Round Keypads
+Listening
+Foreign Exchange Rates
+Orientation Cube
+Morsematics
+Connection Check
+Letter Keys
+Forget Me Not
+Astrology
+Logic
+Crazy Talk
+Adventure Game
+Turn The Key
+Mystic Square
+Plumbing
+Cruel Piano Keys
+Safety Safe
+Cryptography
+Chess
+Turn The Keys
+Mouse In The Maze
+3D Maze
+Silly Slots
+Number Pad
+Probing
+Resistors
+Skewed Slots
+Caesar Cipher
+Perspective Pegs
+Microcontroller
+Murder
+The Gamepad
+Tic-Tac-Toe
+Monsplode, Fight!
+Shape Shift
+Follow The Leader
+Friendship
+The Bulb
+Alphabet
+Blind Alley
+Sea Shells
+English Test
+Rock-Paper-Scissors-Lizard-Spock
+Hexamaze
+Bitmaps
+Colored Squares
+Adjacent Letters
+Third Base
+Translated Who's On First
+Souvenir
+Word Search
+Broken Buttons
+Simon Screams
+Laundry
+Modules Against Humanity
+Complicated Buttons
+Battleship
+Text Field
+Symbolic Password
+Wire Placement
+Double-Oh
+Cheap Checkout
+Coordinates
+Light Cycle
+Rhythms
+Translated The Button
+Translated Morse Code
+Translated Password
+Color Math
+Only Connect
+Neutralization
+Web Design
+Chord Qualities
+Creation
+Rubik's Cube
+FizzBuzz
+The Clock
+LED Encryption
+Bitwise Operations
+Fast Math
+Minesweeper
+Zoo
+Binary LEDs
+Boolean Venn Diagram
+Point of Order
+Ice Cream
+The Screw
+Yahtzee
+X-Ray
+Color Morse
+Mastermind
+Cruel Mastermind
+Gridlock
+Big Circle
+Morse-A-Maze
+Colored Switches
+Perplexing Wires
+Monsplode Trading Cards
+Game of Life Simple
+Game of Life Cruel
+Nonogram
+S.E.T.
+Painting
+Color Generator
+Symbol Cycle
+Hunting
+Extended Password
+Curriculum
+Braille
+Mafia
+Festive Piano Keys
+Flags
+Timezone
+Polyhedral Maze
+Symbolic Coordinates
+Poker
+Sonic the Hedgehog
+Poetry
+Button Sequence
+Algebra
+Visual Impairment
+The Jukebox
+Identity Parade
+Maintenance
+Blind Maze
+Backgrounds
+Mortal Kombat
+Mashematics
+Faulty Backgrounds
+Radiator
+Modern Cipher
+LED Grid
+Sink
+The iPhone
+The Swan
+Waste Management
+Human Resources
+Skyrim
+Burglar Alarm
+Press X
+European Travel
+Error Codes
+LEGOs
+Rubik's Clock
+Font Select
+The Stopwatch
+Pie
+The Wire
+The London Underground
+Logic Gates
+Forget Everything
+Grid Matching
+Color Decoding
+The Sun
+Playfair Cipher
+Tangrams
+The Number
+Cooking
+Superlogic
+The Moon
+The Cube
+Dr. Doctor
+Tax Returns
+The Jewel Vault
+Digital Root
+Graffiti Numbers
+Marble Tumble
+X01
+Logical Buttons
+The Code
+Tap Code
+Simon Sings
+Simon Sends
+Synonyms
+Greek Calculus
+Simon Shrieks
+Complex Keypad
+Subways
+Lasers
+Turtle Robot
+Guitar Chords
+Calendar
+USA Maze
+Binary Tree
+The Time Keeper
+Lightspeed
+Black Hole
+Simon's Star
+Morse War
+The Stock Market
+Mineseeker
+Maze Scrambler
+The Number Cipher
+Alphabet Numbers
+British Slang
+Double Color
+Maritime Flags
+Equations
+Pattern Cube
+Know Your Way
+Splitting The Loot
+Simon Samples
+Character Shift
+Uncolored Squares
+Dragon Energy
+Flashing Lights
+3D Tunnels
+Synchronization
+The Switch
+Reverse Morse
+Manometers
+Shikaku
+Wire Spaghetti
+Tennis
+Module Homework
+Benedict Cumberbatch
+Signals
+Horrible Memory
+Boggle
+Boolean Maze
+Sonic & Knuckles
+Quintuples
+The Sphere
+Coffeebucks
+Colorful Madness
+Bases
+Lion's Share
+Snooker
+Blackjack
+Party Time
+Accumulation
+The Plunger Button
+The Digit
+The Jack-O'-Lantern
+T-Words
+Divided Squares
+Connection Device
+Instructions
+Valves
+Encrypted Morse
+The Crystal Maze
+Cruel Countdown
+Countdown
+Catchphrase
+Blockbusters
+IKEA
+Retirement
+Periodic Table
+101 Dalmatians
+Schlag den Bomb
+Mahjong
+Kudosudoku
+The Radio
+Modulo
+Number Nimbleness
+Challenge & Contact
+The Triangle
+Sueet Wall
+Christmas Presents
+Hieroglyphics
+Functions
+Scripting
+Simon Spins
+Ten-Button Color Code
+Cursed Double-Oh
+Crackbox
+Street Fighter
+The Labyrinth
+Spinning Buttons
+The Festive Jukebox
+Skinny Wires
+The Hangover
+Factory Maze
+Binary Puzzle
+Broken Guitar Chords
+Regular Crazy Talk
+Hogwarts
+Dominoes
+Simon Speaks
+Discolored Squares
