@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -434690030, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: LegionariiTOC
+  m_EditorClassIdentifier: 
+  Title: The Legionarii
+  Sections:
+  - Title: 2015
+    MissionIDs:
+    - L0101Maze
+  - Title: 2016
+    MissionIDs:
+    - L0201CombinationLock
+    - L0202ForgetMeNot
+    - L0203Cryptography
+    - L0204SkewedSlots
+    - L0205Friendship
+    - L0206AdjacentLetters
+    - L0207TextField
+  - Title: 2017
+    MissionIDs:
+    - L0301Rhythms
+    - L0302LedEncryption
+    - L0303Yahtzee

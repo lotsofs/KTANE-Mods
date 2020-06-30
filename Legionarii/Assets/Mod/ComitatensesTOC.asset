@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -434690030, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: ComitatensesTOC
+  m_EditorClassIdentifier: 
+  Title: The Comitatenses
+  Sections:
+  - Title: 2015
+    MissionIDs:
+    - C0101Password
+  - Title: 2016
+    MissionIDs:
+    - C0201TwoBits
+    - C0202ForeignExchangeRates
+    - C0203TurnTheKey
+    - C0204SillySlots
+    - C0205TicTacToe
+    - C0206RockPaperScissorsLizardSpock
+    - C0207ModulesAgainstHumanity
+  - Title: 2017
+    MissionIDs:
+    - C0301TranslatedMorseCode
+    - C0302FizzBuzz
+    - C0303IceCream
+    - C0304MorseAMaze
