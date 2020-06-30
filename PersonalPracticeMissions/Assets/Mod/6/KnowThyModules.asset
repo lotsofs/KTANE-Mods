@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: KnowThyModules
   m_EditorClassIdentifier: 
-  DisplayName: KnowThyModules
+  DisplayName: Know Thy Modules
   Description: Knowledge is half the work, especially on this bomb. Good luck!
   GeneratorSetting:
     TimeLimit: 732

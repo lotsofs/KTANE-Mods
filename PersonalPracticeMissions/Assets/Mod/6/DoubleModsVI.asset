@@ -9,56 +9,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Familiarity
+  m_Name: DoubleModsVI
   m_EditorClassIdentifier: 
-  DisplayName: Familiarity
-  Description: It can be stressful to learn something new every bomb. So here's a
-    bomb you know!
+  DisplayName: Double Mods VI
+  Description: There are vanillas on this bomb. Wait, is that a good or bad thing?
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 900
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - VentGasTranslated
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RubiksCubeModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - NumberPad
     - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - neutralization
-      - MorseV2
-      - SillySlots
+      - SimonScreamsModule
     - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BrokenButtonsModule
-      - WordSearchModule
-      - TwoBits
-    - Count: 1
+      - BigButtonTranslated
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Laundry
+      - PasswordsTranslated
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - symbolicPasswordModule
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MorseCodeTranslated
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WhosOnFirstTranslated
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - complicatedButtonsModule
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ModuleAgainstHumanity
   PacingEventsEnabled: 1

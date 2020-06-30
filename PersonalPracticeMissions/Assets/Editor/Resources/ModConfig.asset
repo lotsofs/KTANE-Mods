@@ -34,7 +34,10 @@ MonoBehaviour:
     WordSearchModule, BrokenButtonsModule, DoubleOhModule, neutralization, Filibuster\r\n*
     Section 5: MouseInTheMaze, NumberPad, TheGamepadModule, monsplodeFight, SeaShells,
     RockPaperScissorsLizardSpockModule, CoordinatesModule, RubiksCubeModule, BinaryLeds,
-    Needy Math, spwizTetris"
+    Needy Math, spwizTetris\n* Section 6: WhosOnFirstTranslated\r, SimonScreamsModule\r,
+    ModuleAgainstHumanity\r, complicatedButtonsModule\r, symbolicPasswordModule\r,
+    BigButtonTranslated\r, MorseCodeTranslated\r, PasswordsTranslated\r, monsplodeWho\r,
+    VentGasTranslated"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods

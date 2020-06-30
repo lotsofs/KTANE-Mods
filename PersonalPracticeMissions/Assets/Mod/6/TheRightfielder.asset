@@ -87,5 +87,5 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - symbolicPasswordsModule
+      - symbolicPasswordModule
   PacingEventsEnabled: 1
