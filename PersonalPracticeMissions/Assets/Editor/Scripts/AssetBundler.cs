@@ -62,11 +62,6 @@ public class AssetBundler
     /// List of MonoScripts modified during the bundling process that need to be restored after.
     /// </summary>
     private List<string> scriptPathsToRestore = new List<string>();
-    
-    /// <summary>
-    /// A variable for holding the current BuildTarget, for Mac compatibility.
-    /// </summary>
-    BuildTarget target = BuildTarget.StandaloneWindows;
     #endregion
 
     [MenuItem("Keep Talking ModKit/Build AssetBundle _F6", priority = 10)]
@@ -97,7 +92,6 @@ public class AssetBundler
 
         bundler.assemblyName = ModConfig.ID;
         bundler.outputFolder = ModConfig.OutputFolder + "/" + bundler.assemblyName;
-        if (Application.platform == RuntimePlatform.OSXEditor) bundler.target = BuildTarget.StandaloneOSX;
 
         bool success = false;
 
@@ -245,15 +239,15 @@ public class AssetBundler
             .ToList();
 
         string unityAssembliesLocation;
-        switch (Application.platform)
+        switch (System.Environment.OSVersion.Platform)
         {
-            case RuntimePlatform.OSXEditor:
-                unityAssembliesLocation = EditorApplication.applicationPath + "/Contents/Managed/";
+            case PlatformID.MacOSX:
+            case PlatformID.Unix:
+                unityAssembliesLocation = EditorApplication.applicationPath.Replace("Unity.app", "Unity.app/Contents/Managed/");
                 break;
-            case RuntimePlatform.LinuxEditor:
-            case RuntimePlatform.WindowsEditor:
+            case PlatformID.Win32NT:
             default:
-                unityAssembliesLocation = Path.Combine(Path.GetDirectoryName(EditorApplication.applicationPath), @"Data/Managed/");
+                unityAssembliesLocation = EditorApplication.applicationPath.Replace("Unity.exe", "Data/Managed/");
                 break;
         }
 
@@ -271,7 +265,7 @@ public class AssetBundler
         int apiCompatibilityLevel = 1; //NET_2_0 compatibility level is enum value 1
         Assembly assembly = Assembly.GetAssembly(typeof(MonoScript));
         var monoIslandType = assembly.GetType("UnityEditor.Scripting.MonoIsland");
-        object monoIsland = Activator.CreateInstance(monoIslandType, target, apiCompatibilityLevel, scriptArray, referenceArray, defineArray, outputFilename);
+        object monoIsland = Activator.CreateInstance(monoIslandType, BuildTarget.StandaloneWindows, apiCompatibilityLevel, scriptArray, referenceArray, defineArray, outputFilename);
 
         //MonoCompiler itself
         var monoCompilerType = assembly.GetType("UnityEditor.Scripting.Compilers.MonoCSharpCompiler");
@@ -429,7 +423,7 @@ public class AssetBundler
         BuildPipeline.BuildAssetBundles(
             TEMP_BUILD_FOLDER, 
             BuildAssetBundleOptions.DeterministicAssetBundle | BuildAssetBundleOptions.CollectDependencies, 
-            target);
+            BuildTarget.StandaloneWindows);
 #pragma warning restore 618
 
         //We are only interested in the BUNDLE_FILENAME bundle (and not the extra AssetBundle or the manifest files
@@ -648,8 +642,7 @@ public class AssetBundler
                                 str.Add(obj.gameObject.name);
                                 obj = obj.parent;
                             }
-                            Debug.LogWarningFormat("There is an unassigned material on the following object: {0}", string.Join(" > ", str.ToArray()));
-                            continue;
+                            Debug.LogErrorFormat("There is an unassigned material on the following object: {0}", string.Join(" > ", str.ToArray()));
                         }
                         materialInfo.ShaderNames.Add(material.shader.name);
 

@@ -166,7 +166,7 @@ public class KMMissionTableOfContentsEditor : Editor
         EditorGUILayout.LabelField(string.Format("{0}.", sectionIndex + 1), GUILayout.Width(30));
 
         SerializedProperty titleProperty = sectionProperty.FindPropertyRelative("Title");
-        titleProperty.stringValue = EditorGUILayout.TextField(titleProperty.stringValue).Trim();
+        titleProperty.stringValue = EditorGUILayout.TextField(titleProperty.stringValue);
 
         GUILayout.FlexibleSpace();
 

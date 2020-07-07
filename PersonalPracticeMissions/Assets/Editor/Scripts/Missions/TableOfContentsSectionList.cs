@@ -48,20 +48,30 @@ namespace Assets.Editor
 
         protected void DrawSectionMissionEntry(Rect rect, int index, bool isActive, bool isFocused)
         {
-            var missionIDProperty = List.serializedProperty.GetArrayElementAtIndex(index);
+            //var missionIDProperty = List.serializedProperty.GetArrayElementAtIndex(index);
 
-            KMMission mission = KMMissionTableOfContentsEditor.GetMission(missionIDProperty.stringValue);
+            //KMMission mission = KMMissionTableOfContentsEditor.GetMission(missionIDProperty.stringValue);
 
-            string sectionLabel = String.Format("{0}.{1}",
-                    sectionNum,
-                    index + 1);
+            //string sectionLabel = String.Format("{0}.{1}", sectionNum, index + 1);
+            //EditorGUI.PrefixLabel(new Rect(rect.x, rect.y, 30, EditorGUIUtility.singleLineHeight), new GUIContent(sectionNum + "." + (index + 1)));
 
-            EditorGUI.PrefixLabel(new Rect(rect.x, rect.y, 30, EditorGUIUtility.singleLineHeight), new GUIContent(sectionLabel));
-            EditorGUI.LabelField(
-                new Rect(rect.x + 30, rect.y, 200, EditorGUIUtility.singleLineHeight),
-                missionIDProperty.stringValue);
+            string missionID = ((KMMissionTableOfContents)List.serializedProperty.serializedObject.targetObject).Sections[sectionNum - 1].MissionIDs[index];
+            EditorGUI.LabelField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), sectionNum + "." + (index + 1) + " " + missionID);
 
-            if (!IsValidMission(missionIDProperty.stringValue))
+            if (Event.current.type == EventType.ContextClick && rect.Contains(Event.current.mousePosition))
+            {
+                List<String> missionIDs = KMMissionTableOfContentsEditor.GetAllMissions().Where(x => x != null).Select(x => x.ID).ToList();
+
+                GenericMenu missionMenu = new GenericMenu();
+                missionMenu.AddItem(new GUIContent("Delete " + missionID), false, OnDeleteContextMenuClicked, index);
+                for (int i = 0; i < missionIDs.Count; i++)
+                {
+                    int j = i;
+                    missionMenu.AddItem(new GUIContent("Insert before " + missionID + "/" + missionIDs[i]), false, () => OnInsertBeforeContextMenuClicked(index, missionIDs[j]));
+                }
+                missionMenu.ShowAsContext();
+            }
+            /*if (!IsValidMission(missionIDProperty.stringValue))
             {
                 EditorGUI.HelpBox(new Rect(rect.x + 30 + 200, rect.y, 200, EditorGUIUtility.singleLineHeight), "Mission not found!", MessageType.Error);
             }
@@ -77,7 +87,22 @@ namespace Assets.Editor
                 EditorGUI.LabelField(new Rect(rect.x + x, rect.y, 300, EditorGUIUtility.singleLineHeight),
                     mission.DisplayName);
                 x += 300;
-            }
+            }*/
+        }
+
+        private void OnDeleteContextMenuClicked(object userData)
+        {
+            int missionIndex = (int)userData;
+
+            List.serializedProperty.DeleteArrayElementAtIndex(missionIndex);
+            serializedTableOfContents.ApplyModifiedProperties();
+        }
+
+        private void OnInsertBeforeContextMenuClicked(int index, string missionID)
+        {
+            List.serializedProperty.InsertArrayElementAtIndex(index);
+            List.serializedProperty.GetArrayElementAtIndex(index).stringValue = missionID;
+            serializedTableOfContents.ApplyModifiedProperties();
         }
 
         protected int GetRectWidth(String str)
