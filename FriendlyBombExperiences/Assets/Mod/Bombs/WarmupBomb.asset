@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: WarmupBomb
+  m_EditorClassIdentifier: 
+  DisplayName: Warmup Bomb
+  Description: 
+  GeneratorSetting:
+    TimeLimit: 5999
+    NumStrikes: 99
+    TimeBeforeNeedyActivation: 90
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 11
+      AllowedSources: 0
+      ComponentTypes: 02000000040000000300000005000000060000000700000008000000090000000c0000000b0000000a000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKeyAdvanced
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 0f000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 4
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ColourFlash
+      - spwiz3DMaze
+      - SkewedSlotsModule
+      - FollowTheLeaderModule
+      - BlindAlleyModule
+      - HexamazeModule
+      - BattleshipModule
+      - LEDEnc
+      - YahtzeeModule
+      - AnagramsModule
+      - WordScrambleModule
+      - KeypadV2
+      - SimonV2
+      - ButtonV2
+      - Listening
+      - MorseV2
+      - MazeV2
+      - PasswordV2
+      - SillySlots
+      - PianoKeys
+      - TwoBits
+      - ForeignExchangeRates
+      - spwizAdventureGame
+      - ChessModule
+      - Laundry
+      - murder
+      - ThirdBase
+      - Logic
+      - CryptModule
+      - CaesarCipherModule
+      - BitmapsModule
+      - WordSearchModule
+      - BrokenButtonsModule
+      - DoubleOhModule
+      - neutralization
+      - Emoji Math
+      - MouseInTheMaze
+      - NumberPad
+      - TheGamepadModule
+      - monsplodeFight
+      - SeaShells
+      - RockPaperScissorsLizardSpockModule
+      - CoordinatesModule
+      - RubiksCubeModule
+      - BinaryLeds
+      - WhosOnFirstTranslated
+      - complicatedButtonsModule
+      - BigButtonTranslated
+      - MorseCodeTranslated
+      - PasswordsTranslated
+      - EnglishTest
+      - Microphone
+      - turtleRobot
+      - RailwayCargoLoading
+  PacingEventsEnabled: 1

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: A0201SimonStates
   m_EditorClassIdentifier: 
   DisplayName: July 8 - August 13
-  Description: Almost exactly a year later, the first mods were made.
+  Description: Most of these descriptions will be empty, unless there's something
+    to be noted. Happy defusing!
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -20,12 +21,6 @@ MonoBehaviour:
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - KeypadV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
@@ -43,7 +38,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SEMAPHORE!!!!!
+      - Semaphore
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
@@ -79,7 +74,13 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - COMBINATIONLOCK!!!!!
+      - combinationLock
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KeypadV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
