@@ -17,4 +17,5 @@ MonoBehaviour:
     MissionIDs:
     - WarmupBomb
     - TougherBomb
+    - TortureBomb
     - LolBomb

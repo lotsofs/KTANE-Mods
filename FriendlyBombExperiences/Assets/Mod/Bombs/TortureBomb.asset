@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: TougherBomb
+  m_Name: TortureBomb
   m_EditorClassIdentifier: 
-  DisplayName: Tougher Bomb
+  DisplayName: Torture Bomb
   Description: 
   GeneratorSetting:
     TimeLimit: 5999
@@ -20,19 +20,13 @@ MonoBehaviour:
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 3
-      AllowedSources: 0
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKeyAdvanced
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 0f000000
       SpecialComponentType: 0
       ModTypes:
       - VentGasTranslated
-    - Count: 17
+    - Count: 25
       AllowedSources: 0
       ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
       SpecialComponentType: 0
@@ -90,8 +84,7 @@ MonoBehaviour:
       - EnglishTest
       - Microphone
       - turtleRobot
-      - RailwayCargoLoading
-      - TheHeart
+      - TurnTheKeyAdvanced
       - FestivePianoKeys
     - Count: 1
       AllowedSources: 0
@@ -105,4 +98,22 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - SouvenirModule
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheHeart
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - theSwan
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - RailwayCargoLoading
   PacingEventsEnabled: 1
