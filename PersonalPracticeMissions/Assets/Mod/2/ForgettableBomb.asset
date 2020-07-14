@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: ForgettableBomb
   m_EditorClassIdentifier: 
-  DisplayName: Forgettable bomb
+  DisplayName: Forgettable Bomb
   Description: Some bombs are more forgettable than others. The ones that go off more
     so than the ones that don't.
   GeneratorSetting:

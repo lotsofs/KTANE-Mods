@@ -26,9 +26,9 @@ MonoBehaviour:
     - NumbersGame
     - ButtonsAndTimers
     - FlipAndSwitch
-    - BattleshipRace
-    - AMinuteAModule
     - InteractiveBattleship
+    - AMinuteAModule
+    - BattleshipRace
     - TimeIsKey
     - DistractedDisarming
     - TenMinutes
