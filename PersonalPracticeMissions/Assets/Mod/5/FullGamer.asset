@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Ok, fine. Go play your silly games. Let this bomb explode so you can
     have your last few minutes of fun.
   GeneratorSetting:
-    TimeLimit: 470
+    TimeLimit: 530
     NumStrikes: 3
     TimeBeforeNeedyActivation: 40
     FrontFaceOnly: 0

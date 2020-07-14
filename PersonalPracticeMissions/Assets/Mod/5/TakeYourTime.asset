@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: TakeYourTime
   m_EditorClassIdentifier: 
   DisplayName: Take Your Time
-  Description: Great, now you have all the time in the world, but can't understand
-    a thing of what it says.
+  Description: Great, now you have all the time in the world. But all that time will
+    go to waste because you can't understand a thing of what the bomb is telling you.
   GeneratorSetting:
     TimeLimit: 600
     NumStrikes: 3
