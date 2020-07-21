@@ -1130,11 +1130,11 @@ public class MicrophoneModule : MonoBehaviour {
 
 		foreach (AudioSource a in testA) {
 			if (a.isPlaying && !testB.Contains(a)) {
-				Debug.Log("Start: " + a.gameObject.name);
+				Debug.Log("Start: " + a.gameObject.name + " @ " + string.Format("{0} {1} {2}", a.transform.position.x, a.transform.position.y, a.transform.position.z));
 				testB.Add(a);
 			}
 			else if (!a.isPlaying && testB.Contains(a)) {
-				Debug.Log("Stop: " + a.gameObject.name);
+				Debug.Log("Stop: " + a.gameObject.name + " @ " + string.Format("{0} {1} {2}", a.transform.position.x, a.transform.position.y, a.transform.position.z));
 				testB.Remove(a);
 			}
 		}
