@@ -3,8 +3,6 @@ using System;
 using UnityEngine;
 using System.Reflection;
 
-// ----- Code courtesy of HexiCube ----- //
-
 public class Lighting : MonoBehaviour {
 
 
@@ -13,29 +11,31 @@ public class Lighting : MonoBehaviour {
 	public const float ON_LEVEL = 0.5f;
 
 	float _lightIntensity;
+	Color _lightColor;
 	bool _bombStarted = false;
 	public Light RoomLight;
 	public KMGameplayRoom Room;
 	public KMAudio Sound;
+	public KMBombInfo BombInfo;
+	bool _redLightFlashing = false;
+	Coroutine _redLightRoutine;
 
 	// Use this for initialization
 	void Start () {
 		_lightIntensity = RoomLight.intensity;
+		_lightColor = RoomLight.color;
 		ChangeLights(false);
 		Room.OnLightChange += ChangeLights;
 	}
 
 	void ChangeLights(bool on) {
 		if (_bombStarted) {
-			if (on) {
-				// pacing event: darkness
-				StartCoroutine(HandlePacingLights(on));
-			}
+			// pacing event: darkness
+			StartCoroutine(HandlePacingLights(on));
 		}
 		else {
 			if (on) {
 				// start of round lights on
-				RegisterOneMinPacing();
 				Sound.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.Switch, RoomLight.transform);
 				SetAmbient(ON_LEVEL);
 				_bombStarted = true;
@@ -62,6 +62,17 @@ public class Lighting : MonoBehaviour {
 		}
 	}
 
+	void Update() {
+		if (!_redLightFlashing && BombInfo.IsBombPresent() && BombInfo.GetTime() < 60.0f) {
+			// turn on the flashy red light
+			if (_redLightRoutine != null) {
+				StopCoroutine(_redLightRoutine);
+				_redLightRoutine = null;
+			}
+			_redLightFlashing = true;
+			_redLightRoutine = StartCoroutine(RedLight());
+		}
+	}
 
 	void SetAmbient(float amount) {
 		SetAmbient(amount, Color.white);
@@ -99,50 +110,21 @@ public class Lighting : MonoBehaviour {
 		}
 	}
 
-
-
-	public void RegisterOneMinPacing() {
-		try {
-			Type room = FindType("Room");
-			IList arr = (IList)room.GetField("PacingActions").GetValue(UnityEngine.Object.FindObjectsOfType(room));
-
-			Type action = FindType("Assets.Scripts.Pacing.PacingAction");
-			PropertyInfo eventField = action.GetProperty("EventType");
-			object field = FindType("Assets.Scripts.Pacing.PaceEvents").GetField("OneMinuteLeft").GetValue(null);
-
-			bool removed = false;
-			foreach (object o in arr) {
-				if (eventField.GetValue(o, null).Equals(field)) {
-					arr.Remove(o);
-					removed = true;
-					break;
-				}
-			}
-			if (removed) {
-				// A removed pacing event indicates that pacing events are enabled. Only add our event below if they indeed are enabled.
-				object pEventObj = Activator.CreateInstance(action, new object[] { "CustomOneMin", field });
-				action.GetField("Action").SetValue(pEventObj, new Action(OneMinuteEvent));
-				arr.Add(pEventObj);
-			}
-		}
-		catch (Exception e) {
-			Debug.Log(e.ToString());
-		}
-	}
-
-
 	public void OneMinuteEvent() {
 		StartCoroutine(RedLight());
 	}
 
 	public IEnumerator RedLight() {
-		while (true) {
+		while (BombInfo.GetTime() < 60.0f) {
 			RoomLight.color = new Color(1f, .2f, .2f);
 			Sound.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.EmergencyAlarm, RoomLight.transform);
 			yield return new WaitForSeconds(1);
-			RoomLight.color = new Color(.5f, .5f, .5f);
+			RoomLight.color = _lightColor;
 			yield return new WaitForSeconds(1.25f);
 		}
+		RoomLight.color = _lightColor;
+		_redLightFlashing = false;
+		_redLightRoutine = null;
 	}
 
 }

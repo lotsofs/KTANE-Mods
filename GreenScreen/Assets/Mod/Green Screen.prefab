@@ -249,8 +249,9 @@ GameObject:
   - component: {fileID: 114067827229638892}
   - component: {fileID: 114726172954381798}
   - component: {fileID: 114197538382073234}
+  - component: {fileID: 114444281223553962}
   m_Layer: 0
-  m_Name: ExampleGameplayRoom
+  m_Name: Green Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,6 +1173,7 @@ MonoBehaviour:
   - {fileID: 2388238}
   - {fileID: 2329248}
   - {fileID: 2347532}
+  Room: {fileID: 11482686}
 --- !u!114 &114148295258793562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1210,6 +1212,17 @@ MonoBehaviour:
   Settings: '{"red": 0, "green": 255, "blue": 0, "redDark": 0, "greenDark": 0, "blueDark":
     0}'
   SettingsPath: 
+--- !u!114 &114444281223553962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2144496390, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114560781284095336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1237,6 +1250,7 @@ MonoBehaviour:
   RoomLight: {fileID: 10864570}
   Room: {fileID: 11482686}
   Sound: {fileID: 114197538382073234}
+  BombInfo: {fileID: 114444281223553962}
 --- !u!114 &114975513360443452
 MonoBehaviour:
   m_ObjectHideFlags: 1
