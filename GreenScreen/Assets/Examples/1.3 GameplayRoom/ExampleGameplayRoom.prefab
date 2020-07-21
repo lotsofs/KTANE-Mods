@@ -245,9 +245,10 @@ GameObject:
   m_Component:
   - component: {fileID: 495238}
   - component: {fileID: 11482686}
-  - component: {fileID: 11486200}
   - component: {fileID: 114198511184960508}
   - component: {fileID: 114067827229638892}
+  - component: {fileID: 114726172954381798}
+  - component: {fileID: 114197538382073234}
   m_Layer: 0
   m_Name: ExampleGameplayRoom
   m_TagString: Untagged
@@ -945,18 +946,6 @@ MonoBehaviour:
   AlarmClockSpawnNonVR: {fileID: 466954}
   AlarmClockSpawn: {fileID: 466954}
   BombPrefabOverride: {fileID: 0}
---- !u!114 &11486200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44fb267e79b16ac4ebb76243f134ca14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomLight: {fileID: 10864570}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -1176,7 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modSettings: {fileID: 114198511184960508}
-  renderers:
+  wallRenderers:
   - {fileID: 2389872}
   - {fileID: 2374518}
   - {fileID: 2303414}
@@ -1196,6 +1185,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectableIndexX: 4
   SelectableIndexY: 0
+--- !u!114 &114197538382073234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1675560866, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114198511184960508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1223,6 +1223,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectableIndexX: 3
   SelectableIndexY: 0
+--- !u!114 &114726172954381798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf257ffa2f98daa4a9c62fea54d084c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomLight: {fileID: 10864570}
+  Room: {fileID: 11482686}
+  Sound: {fileID: 114197538382073234}
 --- !u!114 &114975513360443452
 MonoBehaviour:
   m_ObjectHideFlags: 1
