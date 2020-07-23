@@ -142,6 +142,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - ThirdBase
+      - SimonScreamsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
