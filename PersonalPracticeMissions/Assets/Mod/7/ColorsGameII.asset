@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: ColorsGameII
+  m_EditorClassIdentifier: 
+  DisplayName: Colors Game II
+  Description: Disarming this bomb most definitely is a game. A deadly one. And it
+    involves colors.
+  GeneratorSetting:
+    TimeLimit: 720
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 60
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheBulbModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WirePlacementModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - colormath
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - complicatedButtonsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BigButtonTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - NumberPad
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ChessModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MazeV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - YahtzeeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - monsplodeFight
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizTetris
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - RockPaperScissorsLizardSpockModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PianoKeys
+      - WordSearchModule
+  PacingEventsEnabled: 1

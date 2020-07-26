@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: BigBombVII
+  m_EditorClassIdentifier: 
+  DisplayName: Big Bomb VII
+  Description: Big Bomb Seven is behind that door. Go kick its butt!
+  GeneratorSetting:
+    TimeLimit: 1800
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 60
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BigButtonTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PasswordsTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - symbolicPasswordModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MorseCodeTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WhosOnFirstTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - complicatedButtonsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ModuleAgainstHumanity
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000a000000
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
+      - BattleshipModule
+      - BlindAlleyModule
+      - ColourFlash
+      - FollowTheLeaderModule
+      - HexamazeModule
+      - LEDEnc
+      - SkewedSlotsModule
+      - TurnTheKey
+      - TurnTheKeyAdvanced
+      - YahtzeeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0d0000000e0000000f000000
+      SpecialComponentType: 0
+      ModTypes:
+      - NeedyVentV2
+      - NeedyKnobV2
+      - Filibuster
+      - Needy Math
+      - spwizTetris
+      - monsplodeWho
+      - VentGasTranslated
+      - http
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WirePlacementModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - combinationLock
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheBulbModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - iceCreamModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TicTacToeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Semaphore
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - webDesign
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - booleanVennModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SouvenirModule
+      - MemoryV2
+      - MazeV2
+      - WordScrambleModule
+      - AnagramsModule
+      - PasswordV2
+      - SillySlots
+      - SimonV2
+      - ButtonV2
+      - KeypadV2
+      - MorseV2
+      - Listening
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PianoKeys
+      - TwoBits
+      - ForeignExchangeRates
+      - spwizAdventureGame
+      - ChessModule
+      - murder
+      - ThirdBase
+      - Laundry
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - colormath
+    - Count: 3
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - DoubleOhModule
+      - neutralization
+      - WordSearchModule
+      - BrokenButtonsModule
+      - CryptModule
+      - BitmapsModule
+      - CaesarCipherModule
+      - Logic
+    - Count: 7
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - monsplodeFight
+      - MouseInTheMaze
+      - NumberPad
+      - Emoji Math
+      - SeaShells
+      - RockPaperScissorsLizardSpockModule
+      - RubiksCubeModule
+      - TheGamepadModule
+      - CoordinatesModule
+      - BinaryLeds
+  PacingEventsEnabled: 1
