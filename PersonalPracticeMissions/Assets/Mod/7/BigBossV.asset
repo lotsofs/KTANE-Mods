@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Name: BigBossV
   m_EditorClassIdentifier: 
   DisplayName: Big Boss V
-  Description: 'We''re making good progress. The top of the hierachy is in view. '
+  Description: This is the last big boss. But don't expect opposition to dwindle down
+    after this. On the contrary; These bosses, they were but mere pawns. But let's
+    not get ahead of ourselves.
   GeneratorSetting:
     TimeLimit: 1800
     NumStrikes: 3
@@ -227,7 +229,7 @@ MonoBehaviour:
       - MorseV2
       - KeypadV2
       - spwiz3DMaze
-      - Hexamaze
+      - HexamazeModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 02000000040000000700000008000000
