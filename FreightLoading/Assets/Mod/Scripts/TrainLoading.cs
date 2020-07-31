@@ -238,12 +238,22 @@ public class TrainLoading : MonoBehaviour {
             StartStage(_currentStage);
         }
         else {
-            _bombModule.HandlePass();
+            StartCoroutine(DelayedPass(17f));
             _bottomScreen.TurnOnDelay(false, 8f);
             _topScreen.ChangeDisplay(true, 1f, 1.5f, 18f);
             _trainCycler.VictoryLap(2.5f, 1f);
         }
+    }
 
+    IEnumerator DelayedPass(float delay) {
+        while (delay > 0) {
+            yield return null;
+            delay -= Time.deltaTime;
+            if (_bombInfo.GetTime() < 2f) {
+                delay = 0;
+            }
+        }
+        _bombModule.HandlePass();
     }
 
     #endregion
