@@ -222,10 +222,10 @@ public class Note : MonoBehaviour {
                     else {
                         backupNote += string.Format("{0} {1}\n", _backupList[i].Count, _backupList[i].DisplayName);
                     }
-                    // semi-random spaces
-                    if (i == 0 || i == 2 || i == 3) {
-                        backupNote += " ";
-                    }
+                }
+                // semi-random spaces
+                if (i == 0 || i == 2 || i == 3) {
+                    backupNote += " ";
                 }
             }
             _backupText.text = backupNote;
