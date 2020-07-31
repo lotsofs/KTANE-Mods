@@ -8,7 +8,7 @@ using System.IO;
 using UnityEditorInternal;
 
 public class TrainLoading : MonoBehaviour {
-    const int schnabelOdds = 100;
+    const int schnabelOdds = 80;
     const int minBatteriesForNRPV = 5;
 
     [SerializeField] KMBombInfo _bombInfo;
@@ -614,7 +614,7 @@ public class TrainLoading : MonoBehaviour {
         while (UnityEngine.Random.Range(0, 5) >= 2);
 
         // Generate Schnabel Car food, maybe
-        if (_currentStage <= 12 && UnityEngine.Random.Range(0, schnabelOdds) < 2) {
+        if (_currentStage <= 12 && UnityEngine.Random.Range(0, schnabelOdds) < 1) {
             Resource res = FindResource(Resource.Types.Oversized);
             res.Count = 1;
             if (_nuclear) {
