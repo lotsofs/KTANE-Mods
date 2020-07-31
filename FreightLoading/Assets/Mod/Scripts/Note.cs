@@ -199,10 +199,10 @@ public class Note : MonoBehaviour {
                 else {
                     note += string.Format("{0} {1}\n", _list[i].Count, _list[i].DisplayName);
                 }
-                // Add some semi-random spaces to make the note look more handwritten and not as computerizedly spaced
-                if (i == 2 || i == 4 || i == 5) {
-                    note += " ";
-                }
+            }
+            // Add some semi-random spaces to make the note look more handwritten and not as computerizedly spaced
+            if (i == 2 || i == 4 || i == 5) {
+                note += " ";
             }
         }
         _text.text = note;
