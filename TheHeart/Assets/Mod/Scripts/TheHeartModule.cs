@@ -31,6 +31,7 @@ public class TheHeartModule : MonoBehaviour {
 	bool _solving = false;
 	bool _solved = false;
 	bool _justStruck = false;
+	bool tpCorrect = false;
 
 	[SerializeField] float _aedChargeTime = 5f;
 	[SerializeField] float _aedPlaySoundAt = 4f;
@@ -106,6 +107,7 @@ public class TheHeartModule : MonoBehaviour {
 		if (!_solved) {
 			_resets++;
 			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Solved modules: {2}", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
+			tpCorrect = true;
 			StartHeart();
 		}
 		else {
@@ -314,6 +316,11 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		if (split.Count == 1) {
 			_theHeartSelectable.OnInteract();
+			if (tpCorrect)
+			{
+				yield return "awardpoints 1";
+				tpCorrect = false;
+			}
 			yield return null;
 		}
 		else {
@@ -337,6 +344,11 @@ public class TheHeartModule : MonoBehaviour {
 				int seconds = (int)_bombInfo.GetTime() % 60;
 				if (seconds == time) {
 					_theHeartSelectable.OnInteract();
+					if (tpCorrect)
+					{
+						yield return "awardpoints 1";
+						tpCorrect = false;
+					}
 					done = true;
 					yield return "end waiting music";
 				}
