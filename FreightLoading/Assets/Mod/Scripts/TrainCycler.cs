@@ -128,6 +128,10 @@ public class TrainCycler : MonoBehaviour {
         StartCoroutine(VictoryLapCoroutine(delay, delay2));
     }
 
+    public void ResetTrain(float delay, float delay2) {
+        StartCoroutine(ResetCoroutine(delay, delay2));
+    }
+
     /// <summary>
     /// Assemble all cars into a neat row, as trains are just rows of cars
     /// </summary>
@@ -151,6 +155,79 @@ public class TrainCycler : MonoBehaviour {
             _carSprites[i].gameObject.SetActive(false);
             _carSprites[i].transform.localRotation = Quaternion.Euler(90, 0, 0);    // flip the train around, we're going right to left.
         }
+    }
+
+    void AssembleWipTrain() {
+        // todo: This entire script is hardcoded. Look at all of it.
+        bool wideOffset = false;
+        float x = 0;
+        for (int i = 0; i < _stage; i++) {
+            x -= 0.0545f;
+            // previous car was wide, add some more distance between it and this
+            if (wideOffset) {
+                x -= 0.0128f;
+                wideOffset = false;
+            }
+            // current car is wide, add some more distance between this and previous car
+            if (_carSprites[i].sprite.texture.width > 300) {
+                x -= 0.0128f;
+                wideOffset = true;
+            }
+            _carSprites[i].transform.localPosition = new Vector3(x, 0.0164f, 0.015f);
+            _carSprites[i].gameObject.SetActive(false);
+            //_carSprites[i].transform.localRotation = Quaternion.Euler(90, 0, 0);    // flip the train around, we're going right to left.
+        }
+        _carSprites[_stage].transform.position += Vector3.right * 0.1f;
+    }
+
+    IEnumerator ResetCoroutine(float delay, float delay2) {
+        while (delay > 0) {
+            delay -= Time.deltaTime;
+            yield return null;
+        }
+
+        StopTrain();
+        AssembleWipTrain();
+
+        while (delay2 > 0) {
+            delay2 -= Time.deltaTime;
+            yield return null;
+        }
+
+        float speed = 0.06f;
+        int carsPassed = 0;
+        while (carsPassed < 15) {
+            foreach (SpriteRenderer car in _carSprites) {
+                Vector3 pos = car.transform.localPosition;
+                pos -= (Vector3.left * Time.deltaTime * speed);
+                car.transform.localPosition = pos;
+                if (!car.gameObject.activeInHierarchy && car.transform.localPosition.x < 0.0678f && car.transform.localPosition.x > -0.1141f) {
+                    car.gameObject.SetActive(true);
+                }
+                else if (car.gameObject.activeInHierarchy && car.transform.localPosition.x > 0.0678f) {
+                    car.gameObject.SetActive(false);
+                    carsPassed++;
+                }
+            }
+            yield return null;
+        }
+
+        foreach (SpriteRenderer sprR in _carSprites) {
+            sprR.gameObject.SetActive(true);
+        }
+        for (int i = _stage; i < _carSprites.Length; i++) {
+            _carSprites[i].transform.localPosition = _base.Position;
+            _carSprites[i].transform.localRotation = _base.Rotation;
+            _carSprites[i].gameObject.SetActive(true);
+        }
+        if (_carSprites[_stage - 1].sprite.texture.width > 300) {
+            _carSprites[_stage - 1].transform.localPosition = _previousParkingWide.Position;
+        }
+        else {
+            _carSprites[_stage - 1].transform.localPosition = _previousParking.Position;
+        }
+        _carSprites[_stage - 1].gameObject.SetActive(true);
+        DisplayTrain();
     }
 
     /// <summary>

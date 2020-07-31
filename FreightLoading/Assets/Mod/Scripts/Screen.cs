@@ -39,9 +39,8 @@ public class Screen : MonoBehaviour {
     /// </summary>
     /// <param name="delay"></param>
     /// <param name="duration"></param>
-    public void TemporaryShutOff(float delay, float duration) {
-        if (_coroutine != null)
-        {
+    public void TemporaryShutOff(float delay, float duration, bool again = false) {
+        if (!again && _coroutine != null) {
             StopCoroutine(_coroutine);
         }
         _coroutine = StartCoroutine(TemporaryShutOffCoroutine(delay, duration));

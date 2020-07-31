@@ -717,6 +717,10 @@ public class TrainLoading : MonoBehaviour {
             _wrongCars.Add(car);
             _trainCycler.DerailTrain(sprite);
             _topScreen.TemporaryShutOff(2f, 2f);
+            if (_currentStage > 2) {
+                _trainCycler.ResetTrain(2.5f, 1.5f);
+                _topScreen.TemporaryShutOff(4f + _currentStage * 0.9f, 1.5f, true);
+            }
             //ResetModule();
             //AdvanceStage();
         }
