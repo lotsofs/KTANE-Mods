@@ -12,9 +12,23 @@ public class SchnabelCar : TrainCar {
     /// <summary>
     /// Schnabel cars set a resource to 0, and they can have multiple appearances beyond just empty and full
     /// </summary>
-    public override Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
+    public override void FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
         if (Resource != null && Resource.Count > 0) {
             Resource.Count = 0;
+            if (Resource.DisplayName == "Electrical Transformer") {
+                return;
+            }
+            else {
+                return;
+            }
+        }
+        else {
+            return;
+        }
+    }
+
+    public override Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule) {
+        if (Resource != null && Resource.Count > 0) {
             if (Resource.DisplayName == "Electrical Transformer") {
                 return AppearanceElectrical;
             }

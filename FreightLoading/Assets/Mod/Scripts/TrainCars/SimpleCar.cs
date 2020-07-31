@@ -12,14 +12,17 @@ public class SimpleCar : TrainCar {
     /// <summary>
     /// Simple cars just remove some from one resource
     /// </summary>
-    public override Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
+    public override void FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
         if (Resource == null) {
-            return Appearance;
+            return;
         }
         Resource.Count -= Count;
-        if (!correct && Resource.Count < 0) {
+        if (!correct && Resource.Count < 0 && Resource.Count > -9999) {
             Resource.Count = 0;
         }
+    }
+
+    public override Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule) {
         return Appearance;
     }
 }

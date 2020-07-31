@@ -5,6 +5,7 @@ using KModkit;
 using System.Linq;
 using System;
 using System.IO;
+using UnityEditorInternal;
 
 public class TrainLoading : MonoBehaviour {
     const int schnabelOdds = 100;
@@ -144,14 +145,8 @@ public class TrainLoading : MonoBehaviour {
     /// </summary>
     void StartModule() {
         _electricalWiring = _bombInfo.IsIndicatorPresent("TRN");
-        if (_bombHelper.ModuleId == 1) {
-            _longHaul = _bombHelper.IsSerialDigitEven(3) && _bombHelper.IsSerialDigitEven(6);
-            _nuclear = _bombInfo.GetBatteryCount() > minBatteriesForNRPV;
-        }
-        else {
-            _longHaul = UnityEngine.Random.Range(0f, 1f) < 0.25f;
-            _nuclear = false;
-        }
+        _longHaul = UnityEngine.Random.Range(0f, 1f) < 0.25f;
+        _nuclear = false;
 
         AddInitialResources();
     }
@@ -619,7 +614,7 @@ public class TrainLoading : MonoBehaviour {
         while (UnityEngine.Random.Range(0, 5) >= 2);
 
         // Generate Schnabel Car food, maybe
-        if (_currentStage <= 12 && UnityEngine.Random.Range(0, schnabelOdds) < 1) {
+        if (_currentStage <= 12 && UnityEngine.Random.Range(0, schnabelOdds) < 2) {
             Resource res = FindResource(Resource.Types.Oversized);
             res.Count = 1;
             if (_nuclear) {
@@ -678,6 +673,8 @@ public class TrainLoading : MonoBehaviour {
         _train[_currentStage - 1] = _correctCar;
     }
 
+    List<TrainCar> _wrongCars = new List<TrainCar>();
+
     /// <summary>
     /// Handles the car selected by the player, eg. evaluates it against the correct car.
     /// </summary>
@@ -690,19 +687,90 @@ public class TrainLoading : MonoBehaviour {
         TrainCar car = _selectableCars[index];
 
         bool success = EvaluateCar(car);
-        Sprite sprite = car.FillCar(success, _currentStage, _correctRule);
 
         if (success) {
+            Sprite sprite = car.AttachCar(success, _currentStage, _correctRule);
+            foreach (TrainCar wrongCar in _wrongCars) {
+                wrongCar.FillCar(false, _currentStage, _correctRule);
+            }
+            car.FillCar(true, _currentStage, _correctRule);
+            _wrongCars.Clear();
             _trainCycler.MoveTrain(sprite);
             AdvanceStage();
         }
         else {
+            if (_currentStage >= 12) {
+                HideResourcesCarTwelve(car);
+                _note.UpdateText();
+            }
+            Sprite sprite = car.AttachCar(false, _currentStage, _correctRule);
+            _wrongCars.Add(car);
             _trainCycler.DerailTrain(sprite);
             _topScreen.TemporaryShutOff(2f, 2f);
             //ResetModule();
             //AdvanceStage();
         }
 
+    }
+
+    void HideResourcesCarTwelve(TrainCar car) {
+        if (_currentStage < 12) {
+            // wrong stage
+            return;
+        }
+
+        if (car.Type == TrainCar.Types.BoxCar) {
+            // car is box car. Either the player thought there was a super large object, or the player mistook a not previously applied rule as already applied.
+            // Assume the latter, just remove every resource of which there is enough but has already been applied. 
+
+            foreach (FreightTableRule tableRule in _freightTable) {
+                if (tableRule.MetAtStage < _currentStage && tableRule.ReEvaluate()) {
+                    tableRule.Resource.Remove();
+                }
+            }
+            return;
+        }
+
+        bool horriblyWrong = true;
+        foreach (FreightTableRule tableRule in _freightTable) {
+            if (tableRule.Car == car.Type) {
+                horriblyWrong = false;
+                break;
+            }
+        }
+        if (horriblyWrong) {
+            // the player connected some car that isn't even part of the freight table. Do nothing. 
+            return;  
+        }
+
+        // player connected some car from the freight table.
+        bool falseNegative = false;
+        bool falsePositive = false;
+        foreach (FreightTableRule tableRule in _freightTable) {
+            if (!(tableRule.MetAtStage < _currentStage) && tableRule.Car != car.Type && !falseNegative && tableRule.ReEvaluate()) {
+                // the player assumed a rule was previously met when it wasn't.
+                falsePositive = true;
+            }
+            else if (tableRule.MetAtStage < _currentStage && tableRule.Car == car.Type) {
+                // the player assumed a rule wasn't met when it was. 
+                if (tableRule.ReEvaluate()) {
+                    tableRule.Resource.Remove();
+                }
+                falseNegative = true;   // anything after this we don't need to check for anymore, as the player didn't either.
+            }
+        }
+        if (falseNegative) {
+            return;
+        }
+        if (falsePositive) {
+            // the player thought a rule applied when it didnt. I dont know what to do, so for now Ill just remove all the incorrect rules.
+            // TODO: Think of something.
+            foreach (FreightTableRule tableRule in _freightTable) {
+                if (tableRule.MetAtStage < _currentStage && tableRule.ReEvaluate()) {
+                    tableRule.Resource.Remove();
+                }
+            }
+        }
     }
 
     /// <summary>

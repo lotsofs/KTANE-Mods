@@ -29,20 +29,20 @@ public class TankCar : TrainCar {
     /// <param name="correct"></param>
     /// <param name="currentStage"></param>
     /// <param name="usedRule"></param>
-    public override Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
+    public override void FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
         if (correct) {
             for (int i = 0; i < Rules.Length; i++) {
                 if (Rules[i] == usedRule) {
                     Resources[i].Count -= Counts[i];
-                    return Appearance;
+                    return;
                 }
             }
-            Debug.LogWarningFormat("[Rail Cargo Loading #{0}] Tank car expected to be filled with something valid, received invalid resource {1}", _bombHelper.ModuleId, usedRule);
-            return Appearance;
+            Debug.LogWarningFormat("[Railway Cargo Loading #{0}] Tank car expected to be filled with something valid, received invalid resource {1}", _bombHelper.ModuleId, usedRule);
+            return;
         }
         else if (NoResources()) {
             // do not fill it up if there's nothing
-            return Appearance;
+            return;
         }
         else {
             Resource comp = Resources[0];
@@ -52,10 +52,13 @@ public class TankCar : TrainCar {
                 }
             }
             comp.Count -= comp.Multiplier;
-            if (comp.Count < 0) {
+            if (comp.Count < 0 && comp.Count > -9999) {
                 comp.Count = 0;
             }
         }
+    }
+
+    public override Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule) {
         return Appearance;
     }
 }

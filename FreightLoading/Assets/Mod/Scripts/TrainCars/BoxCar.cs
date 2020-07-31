@@ -13,7 +13,7 @@ public class BoxCar : TrainCar {
     /// <param name="correct"></param>
     /// <param name="currentStage"></param>
     /// <param name="usedRule"></param>
-    public override Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
+    public override void FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
         // get a list of the resources and remove any resources that are 0
         List<Resource> list = new List<Resource>(Resources);
         for (int i = list.Count - 1; i >= 0; i--) {
@@ -23,7 +23,7 @@ public class BoxCar : TrainCar {
         }
         // if the list is empty, there's no resources, so we're done
         if (list.Count == 0) {
-            return Appearance;
+            return;
         }
         // randomly remove a resource to place in the box car, while performing the above check
         for (int i = 0; i < Capacity; i++) {
@@ -33,9 +33,12 @@ public class BoxCar : TrainCar {
                 list.RemoveAt(j);
             }
             if (list.Count == 0) {
-                return Appearance;
+                return;
             }
         }
+    }
+
+    public override Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule) {
         return Appearance;
     }
 }

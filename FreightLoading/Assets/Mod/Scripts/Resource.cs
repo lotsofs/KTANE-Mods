@@ -46,6 +46,13 @@ public class Resource : MonoBehaviour {
     }
 
     /// <summary>
+    /// Removes the resource from the module entirely.
+    /// </summary>
+    public void Remove() {
+        Count = -999999;
+    }
+
+    /// <summary>
     /// Start
     /// </summary>
     public void Awake() {

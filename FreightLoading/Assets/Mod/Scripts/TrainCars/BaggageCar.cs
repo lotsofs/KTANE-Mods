@@ -11,9 +11,18 @@ public class BaggageCar : TrainCar {
     /// <summary>
     /// Baggage Car removes one resource and adds it to another
     /// </summary>
-    public override Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
-        Remove.Count -= Count;
-        Add.Count += Count;
+    public override void FillCar(bool correct, int currentStage, FreightTableRule usedRule) {
+        if (correct) {
+            Remove.Count -= Count;
+            Add.Count += Count;
+        }
+        else {
+            Add.Count += Remove.Count;
+            Remove.Count -= Remove.Count;
+        }
+    }
+
+    public override Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule) {
         return Appearance;
     }
 }

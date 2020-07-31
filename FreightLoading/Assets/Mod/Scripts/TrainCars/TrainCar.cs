@@ -48,5 +48,7 @@ public abstract class TrainCar : MonoBehaviour {
     /// <param name="currentStage"></param>
     /// <param name="usedRule"></param>
     /// <returns></returns>
-    public abstract Sprite FillCar(bool correct, int currentStage, FreightTableRule usedRule);
+    public abstract void FillCar(bool correct, int currentStage, FreightTableRule usedRule);
+
+    public abstract Sprite AttachCar(bool correct, int currentStage, FreightTableRule usedRule);
 }
