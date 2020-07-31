@@ -41,18 +41,18 @@
 						<li>The module will be disarmed when 15 railroad cars have been coupled.</li>
 					</ol>
 					<ul>
-						<li>Coupling the wrong car to the train at any point will cause the car to derail and the bomb to record a strike.</li>
+						<li>Coupling the wrong car to the train at any point will cause the car to derail and the bomb to record a strike. The entire train up to this point will be shown driving past before another car can submitted.</li>
 						<li>Use the railroad car reference chart to help identify railroad cars.</li>
 					</ul>
 					<h4>First car:</h4>
-					<ul>
-						<li>If there is a TRN indicator (lit or unlit) on the bomb, add an electric locomotive.</li>
-						<li>Otherwise, if there is more than 200 liquid fuel available, add an internal combustion locomotive.</li>
-						<li>Otherwise, if there is more than 250 coal available, add a steam locomotive.</li>
-						<li>Otherwise, if there is more liquid fuel than coal available, add an internal combustion locomotive.</li>
-						<li>Otherwise, add a steam locomotive.</li>
+					<ul style="margin-top: 0.3em">
+						<li>If there is a TRN indicator on the bomb, add an <em>electric locomotive</em>.</li>
+						<li>Otherwise, if there is more than 200 liquid fuel available, add an <em>internal combustion locomotive</em>.</li>
+						<li>Otherwise, if there is more than 250 coal available, add a <em>steam locomotive</em>.</li>
+						<li>Otherwise, if there is more liquid fuel than coal available, add an <em>internal combustion locomotive</em>.</li>
+						<li>Otherwise, add a <em>steam locomotive</em>.</li>
 					</ul>
-					<p class="appendix-reference">See Appendix A for indicator identification reference.</p>					
+					<p class="appendix-reference" style="margin-bottom: 0;">See Appendix A for indicator identification reference.</p>					
                 </div>
                 <div class="page-footer relative-footer">Page 1 of 8</div>
             </div>
@@ -65,38 +65,39 @@
                 </div>
                 <div class="page-content">
 					<h4>Second car:</h4>
-					<ul>
-						<li>If the first car is a steam locomotive, add a hopper car.</li>
-						<li>Otherwise, if the total passenger count is greater than 450, add a baggage car.</li>
+					<ul style="margin-top: 0.3em">
+						<li>If the first car is a steam locomotive, add a <em>hopper car</em>.</li>
+						<li>Otherwise, if the total passenger count is greater than 450, add a <em>baggage car</em>.</li>
 						<li>Otherwise, treat this car as if it were the third car.</li>
 					</ul>
 					<h4>Third car:</h4>
-					<ul>
-						<li>If the destination is long-haul, and a crew car is not already present, add a crew car.</li>
+					<ul style="margin-top: 0.3em">
+						<li>If the destination is long-haul, and a crew car is not already present, add a <em>crew car</em>.</li>
 						<li>Otherwise, treat this car as if it were the fourth car.</li>
 					</ul>
 					<h4>Fourth car:</h4>
-					<ul>
-						<li>If the total passenger count is greater than 300 and a baggage car is not already present, add a baggage car.</li>
+					<ul style="margin-top: 0.3em">
+						<li>If the total passenger count is greater than 300 and a baggage car is not already present, add a <em>baggage car</em>.</li>
 						<li>Otherwise, refer to the lookup table for passenger cars.
 						<ul><li>If none of the conditions in the passenger car table are met, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
 					<h4>Fifth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
 						<ul><li>If none of the conditions in the passenger car table are met, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
 					<h4>Sixth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
 						<ul><li>If none of the conditions in the passenger car table are met, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
+
                 </div>
                 <div class="page-footer relative-footer">Page 2 of 8</div>
             </div>
@@ -109,34 +110,42 @@
                 </div>
                 <div class="page-content">
 					<h4>Seventh car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
 						<ul><li>If none of the conditions in the passenger car table are met, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
 					<h4>Eighth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
-						<ul><li>If none of the conditions in the passenger car table are met, add a dining car.</li></ul>
+						<ul><li>If none of the conditions in the passenger car table are met, add a <em>dining car</em>.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
 					<h4>Ninth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
-						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a dining car.</li>
+						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a <em>dining car</em>.</li>
 						<li>Otherwise, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
 					<h4>Tenth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
-						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a dining car.</li>
+						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a <em>dining car</em>.</li>
 						<li>Otherwise, refer to the lookup table for freight cars.</li></ul>
 						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
+					</ul>
+					<h4>Eleventh car:</h4>
+					<ul style="margin-top: 0.3em">
+						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
+						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a <em>dining car</em>.</li>
+						<li>Otherwise, refer to the lookup table for freight cars.</li></ul>
+						</li>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li>
 					</ul>
                 </div>
                 <div class="page-footer relative-footer">Page 3 of 8</div>
@@ -148,31 +157,35 @@
                     <span class="page-header-section-title">Railway Cargo Loading</span>
                 </div>
                 <div class="page-content">
-					<h4>Eleventh car:</h4>
-					<ul>
-						<li>If the previous car is a passenger car, refer to the lookup table for passenger cars. Otherwise, refer to the lookup table for freight cars.
-						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a dining car.</li>
-						<li>Otherwise, refer to the lookup table for freight cars.</li></ul>
-						</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li>
-					</ul>
+
 					<h4>Twelfth car:</h4>
-					<ul>
+					<ul style="margin-top: 0.3em">
 						<li>If the previous car is not a passenger car, refer to the lookup table for freight cars and use the first condition met that has not been met by another car already.
-						<ul><li>If none of the conditions in the freight car table are met, add a box car.</li></ul>
+						<ul><li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li></ul>
 						</li>
 						<li>Otherwise, refer to the lookup table for passenger cars.
-						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a dining car.</li>
+						<ul><li>If none of the conditions in the passenger car table are met and a dining car is not already present, add a <em>dining car</em>.</li>
 						<li>Otherwise, refer to the lookup table for freight cars and use the first condition met that has not been met by another car already.</li>
-						<li>If none of the conditions in the freight car table are met, add a box car.</li></ul>
+						<li>If none of the conditions in the freight car table are met, add a <em>box car</em>.</li></ul>
 						</li>
 					</ul>
 					<h4>Thirteenth car:</h4>
-					<ul>
-					<li>If the previous car is a passenger car, and the total amount of passengers is greater than 250, add the same car as the eighth car.</li>
-					<li>Otherwise, if the previous car is a passenger car, and a dining car is not already present, add a dining car.</li>
-					<li>Otherwise, if there is an electrical transformer or a nuclear reactor pressure vessel available, add a box car.</li>
+					<ul style="margin-top: 0.3em">
+					<li>If the previous car is a passenger car, and the total amount of passengers is greater than 250, add the same car as the <i>eighth</i> car.</li>
+					<li>Otherwise, if the previous car is a passenger car, and a dining car is not already present, add a <em>dining car</em>.</li>
+					<li>Otherwise, if there is an electrical transformer or a nuclear reactor pressure vessel available, add a <em>box car</em>.</li>
 					<li>Otherwise, treat this car as if it were the twelfth car.</li>
+					</ul>
+					<h4>Fourteenth car:</h4>
+					<ul style="margin-top: 0.3em">
+					<li>If the previous car is a passenger car, and a dining car is not already present, add a <em>dining car</em>.</li>
+					<li>Otherwise, if the previous car is a passenger car, and the total amount of passengers is greater than 250, add the same car as the <i>fourth</i> car.</li>
+					<li>Otherwise, if there is an electrical transformer or a nuclear reactor pressure vessel available, add a <em>schnabel car</em>.</li>
+					<li>Otherwise, treat this car as if it were the thirteenth car.</li>
+					</ul>
+					<h4>Fifteenth car:</h4>
+					<ul style="margin-top: 0.3em">
+					<li>Every train ends with a <em>caboose</em>.</li>
 					</ul>
                 </div>
                 <div class="page-footer relative-footer">Page 4 of 8</div>
@@ -184,32 +197,25 @@
                     <span class="page-header-section-title">Railway Cargo Loading</span>
                 </div>
                 <div class="page-content">
-					<h4>Fourteenth car:</h4>
-					<ul>
-					<li>If the previous car is a passenger car, and a dining car is not already present, add a dining car.</li>
-					<li>Otherwise, if the previous car is a passenger car, and the total amount of passengers is greater than 250, add the same car as the fourth car.</li>
-					<li>Otherwise, if there is an electrical transformer or a nuclear reactor pressure vessel available, add a schnabel car.</li>
-					<li>Otherwise, treat this car as if it were the thirteenth car.</li>
-					</ul>
-					<h4>Fifteenth car:</h4>
-					<ul>
-					<li>Every train ends with a caboose.</li>
-					</ul>
+
+
 					<h3>Cargo Notes</h3>
 					<ul>
-					<li>Liquid fuel includes kerosene, gasoline, and diesel, but not crude oil.</li>
-					<li>Food includes fruit, vegetables, and meat. It does not include beverages such as water or milk, or unprocessed ingredients like grain.</li>
-					<li>Large objects include farming equipment, military hardware, and wind turbine parts such as wings. It does not include automobiles or oversized load such as electrical transformers or nuclear reactor pressure vessels.</li>
-					<li>Industrial gases include helium, argon, nitrogen, and acetylene.</li>
-					<li>Loose bulk commodities include cement, clay, coal, grain, ores and sand.</li>
-					<li>The passenger count listed on the module is the total, and includes potential listed subcategories such as middle-class (MC) and rich passengers. The total passenger count may be lower than that of a subcategory. This is due to predictive planning and requires no special attention.</li>
+						<li>Liquid fuel includes kerosene, gasoline, and diesel, but not crude oil.</li>
+						<li>Food includes fruit, vegetables, and meat. It does not include beverages such as water or milk, or unprocessed ingredients like grain.</li>
+						<li>Large objects include farming equipment, military hardware, and wind turbine parts such as wings. It does not include automobiles or oversized load such as electrical transformers or nuclear reactor pressure vessels.</li>
+						<li>Industrial gases include helium, argon, nitrogen, and acetylene.</li>
+						<li>Loose bulk commodities include cement, clay, coal, grain, ores and sand.</li>
+						<li>The passenger count listed on the module is the total, and includes potential listed subcategories such as middle-class (MC) and rich passengers. The total passenger count may be lower than that of a subcategory. This is due to predictive planning and requires no special attention.</li>
 					</ul>				
 					<h3>Freight Car Lookup Table</h3>
 					<ul>					
-					<li>Find the column corresponding to the current car number to be attached to the train, then find the row containing the first letter of the alphabet within that column. Read the requirement for this row.</li>
-					<li>If the requirement is met, add the car for this row, listed under the train car column.</li>
-					<li>Otherwise, move on to the next letter and evaluate its requirement, until there are either no letters left in the column, or a requirement is met.</li>
-					<li>When finished using the table, return to the instructions for assembling the train to determine the next car.</li>
+						<li>Find the column corresponding to the current car number to be attached to the train, then find the row containing the first letter of the alphabet within that column. Read the requirement for this row.</li>
+						<li>If the requirement is met, add the car for this row, listed under the train car column.</li>
+						<li>Otherwise, move on to the next letter and evaluate its requirement, until there are either no letters left in the column, or a requirement is met.</li>
+						<li>When finished using the table, return to the instructions for assembling the train to determine the next car.</li>
+						<li>Make note of which requirements have been met on earlier train cars. Later cars may instruct skipping previously met requirements. If this is the case but a car corresponding to such a rule is attempted to be coupled anyway, the module will strike as normal but remove the relevant resource or resources from the note. Inversely, if a requirement not yet met previously is ignored, all resources related to a previously met requirement will be cleared from the note. This only applies to resources of which there are enough to satisfy the requirements.</li>
+						<li>Refer to the cargo notes section for extra information regarding certain cargo types.</li>
 					</ul>
 					
                 </div>
@@ -223,9 +229,6 @@
                     <span class="page-header-section-title">Railway Cargo Loading</span>
                 </div>
                 <div class="page-content">
-					<ul>	
-						<li>Refer to the cargo notes section for extra information regarding certain cargo types.</li>
-					</ul>
 					<table>
 						<tr>
 							<th rowspan="2">Requirement</th>
@@ -440,10 +443,11 @@
 					<h3>Passenger Car Lookup Table</h3>
 					<ul>					
 					<li>Find the row corresponding to the current car to be attached to the train</li>
-					<li>Each cell specifies an amount of a passenger (pax) type. Use the first cell within that row for which the module has more. If there are none, use none.</li>
+					<li>Each cell specifies an amount of a passenger (pax) type. Use the first cell within that row for which the module has <em>more</em>. If there are none, use none.</li>
 					<li>Add the car listed in the cell (in bold) to the train.</li>
 					<li><b>Note:</b> Ignore cells with sleeper cars if the train is not long-haul.</li>
 					<li>When finished using the table, return to the instructions for assembling the train to determine the next car.</li>
+					<li>Take note of what cars are being connected. Some instructions refer back to previously coupled cars.</li>
 					<li>Refer to the cargo notes section for extra information on passenger counts.</li>
 					</ul>
 					<table>
