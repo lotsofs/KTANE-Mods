@@ -809,9 +809,12 @@ public class TrainLoading : MonoBehaviour {
     #region twitch plays
 
     #pragma warning disable 414
-    public readonly string TwitchHelpMessage = "Couple the correct train with !{0} couple [train name]. Eg. !{0} couple baggage car. " +
-        "Flip the note by using !{0} magnet";
-#pragma warning restore 414
+    public readonly string TwitchHelpMessage = "Couple a railroad car with '!{0} couple [car name]'. Eg. '!{0} couple baggage car'. " +
+        "Flip the note with !{0} magnet. " +
+        "Alternative controls: '!{0} down', '!{0} up' & '!{0} select' to press those buttons. '!{0} cycle' to cycle through all the cars.";
+    #pragma warning restore 414
+
+    int _twitchSelectionindex = 0;
 
     public IEnumerator ProcessTwitchCommand(string command) {
 
@@ -821,11 +824,38 @@ public class TrainLoading : MonoBehaviour {
         if (_trainCycler.Transitioning) {
             yield return "sendtochat Please wait for the train assembly crew to finish before attaching another train car.";
         }
+        else if (command == "down") {
+            _downButton.OnInteract();
+            _twitchSelectionindex -= 1;
+            _twitchSelectionindex %= _selectableCars.Count;
+            yield return null;
+        }
+        else if (command == "up") {
+            _upButton.OnInteract();
+            _twitchSelectionindex += 1;
+            _twitchSelectionindex %= _selectableCars.Count;
+            yield return null;
+        }
+        else if (command == "select" || command == "submit") {
+            _okButton.OnInteract();
+            _twitchSelectionindex = 0;
+            yield return null;
+        }
         else if (command == "magnet") {
             if (_note.MagnetPressable.gameObject.activeInHierarchy) {
                 _note.MagnetPressable.OnInteract();
+                yield return null;
             }
             yield return "sendtochat No notes to flip";
+        }
+        else if (command == "cycle") {
+            for (int i = 0; i < _selectableCars.Count + 1; i++) {
+                _upButton.OnInteract();
+                _twitchSelectionindex += 1;
+                _twitchSelectionindex %= _selectableCars.Count;
+                yield return "trycancel";
+                yield return new WaitForSeconds(0.5f);
+            }
         }
         else {
             List<string> split = command.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -943,24 +973,20 @@ public class TrainLoading : MonoBehaviour {
 
             int submittedIndex;
             submittedIndex = _selectableCars.FindIndex(car => car == submittedCar);
-            if (submittedIndex == -1) {
-                for (int i = 0; i < Mathf.Min(submittedIndex, _selectableCars.Count + 1); i++) {
-                    _upButton.OnInteract();
-                    yield return new WaitForSeconds(0.2f);
-                }
-            }
-
-            for (int i = 0; i < _selectableCars.Count; i++) {
-                if (i == submittedIndex) {
+            for (int i = 0; i < _selectableCars.Count + 1; i++) {
+                if (_twitchSelectionindex == submittedIndex) {
                     _okButton.OnInteract();
+                    _twitchSelectionindex = 0;
                     yield return null;
                     break;
                 }
                 _upButton.OnInteract();
-                yield return new WaitForSeconds(0.2f);
+                _twitchSelectionindex += 1;
+                _twitchSelectionindex %= _selectableCars.Count;
+                yield return new WaitForSeconds(0.15f);
             }
             if (submittedIndex == -1) {
-                yield return "unsubmittablepenalty";
+                yield return "sendtochat That railroad car is unavailable for coupling.";
             }
         }
     }
@@ -968,31 +994,33 @@ public class TrainLoading : MonoBehaviour {
     IEnumerator TwitchHandleForcedSolve() {
         int correctIndex;
         while (_currentStage < 16) {
+            while (_trainCycler.Transitioning) {
+                yield return true;
+                yield return new WaitForSeconds(0.1f);
+            }
             if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
                 _note.MagnetPressable.OnInteract();
                 yield return new WaitForSeconds(0.3f);
             }
             correctIndex = _selectableCars.FindIndex(car => car == _correctCar);
             for (int i = 0; i < _selectableCars.Count; i++) {
-                if (i == correctIndex) {
+                if (_twitchSelectionindex == correctIndex) {
                     _okButton.OnInteract();
+                    _twitchSelectionindex = 0;
                     if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
                         _note.MagnetPressable.OnInteract();
-                    }
-                    while (_trainCycler.Transitioning) {
-                        yield return true;
-                        yield return new WaitForSeconds(0.1f);
                     }
                     break;
                 }
                 _upButton.OnInteract();
+                _twitchSelectionindex += 1;
+                _twitchSelectionindex %= _selectableCars.Count;
                 yield return new WaitForSeconds(0.1f);
             }
         }
-    }
-
-    public void TwitchHandleForcedSolvae() {
-        StartCoroutine(TwitchHandleForcedSolve());
+        if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
+            _note.MagnetPressable.OnInteract();
+        }
     }
 
     #endregion
