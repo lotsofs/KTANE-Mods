@@ -181,6 +181,7 @@ public class TrainCycler : MonoBehaviour {
     }
 
     IEnumerator ResetCoroutine(float delay, float delay2) {
+        _index = 0;
         while (delay > 0) {
             delay -= Time.deltaTime;
             yield return null;

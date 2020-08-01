@@ -5,11 +5,9 @@ using KModkit;
 using System.Linq;
 using System;
 using System.IO;
-using UnityEditorInternal;
 
 public class TrainLoading : MonoBehaviour {
     const int schnabelOdds = 80;
-    const int minBatteriesForNRPV = 5;
 
     [SerializeField] KMBombInfo _bombInfo;
     [SerializeField] KMBombModule _bombModule;
@@ -253,6 +251,7 @@ public class TrainLoading : MonoBehaviour {
                 delay = 0;
             }
         }
+        _currentStage = 17;
         _bombModule.HandlePass();
     }
 
@@ -849,7 +848,7 @@ public class TrainLoading : MonoBehaviour {
             yield return "sendtochat No notes to flip";
         }
         else if (command == "cycle") {
-            for (int i = 0; i < _selectableCars.Count + 1; i++) {
+            for (int i = 0; i < _selectableCars.Count; i++) {
                 _upButton.OnInteract();
                 _twitchSelectionindex += 1;
                 _twitchSelectionindex %= _selectableCars.Count;
@@ -973,7 +972,7 @@ public class TrainLoading : MonoBehaviour {
 
             int submittedIndex;
             submittedIndex = _selectableCars.FindIndex(car => car == submittedCar);
-            for (int i = 0; i < _selectableCars.Count + 1; i++) {
+            for (int i = 0; i < _selectableCars.Count; i++) {
                 if (_twitchSelectionindex == submittedIndex) {
                     _okButton.OnInteract();
                     _twitchSelectionindex = 0;
@@ -1020,6 +1019,9 @@ public class TrainLoading : MonoBehaviour {
         }
         if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
             _note.MagnetPressable.OnInteract();
+        }
+        while (_currentStage < 17) {
+            yield return true;
         }
     }
 
