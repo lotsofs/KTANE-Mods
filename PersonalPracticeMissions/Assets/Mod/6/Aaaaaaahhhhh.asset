@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Aaaaaaahhhhh
   Description: Aaaahhh! It's a bomb! Help!!!
   GeneratorSetting:
-    TimeLimit: 480
+    TimeLimit: 660
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
     FrontFaceOnly: 0

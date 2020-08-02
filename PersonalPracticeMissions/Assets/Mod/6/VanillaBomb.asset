@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb will bring you back to your early days as a bomb defuser.
     Enjoy your trip of nostalgia.
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 1800
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
     FrontFaceOnly: 0

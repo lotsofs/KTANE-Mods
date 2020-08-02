@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Implying there exist humane bombs. Regardless, this certainly isn't
     one.
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 900
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
     FrontFaceOnly: 0
