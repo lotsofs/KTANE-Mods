@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Do you remember the first time you saw this bomb? Did you think you
     would have made it this far back then?
   GeneratorSetting:
-    TimeLimit: 605
+    TimeLimit: 607
     NumStrikes: 3
     TimeBeforeNeedyActivation: 60
     FrontFaceOnly: 0

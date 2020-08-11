@@ -16,7 +16,7 @@ MonoBehaviour:
     how this goes, I''m only writing this here because otherwise the higher-ups will
     complain. '
   GeneratorSetting:
-    TimeLimit: 605
+    TimeLimit: 606
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
     FrontFaceOnly: 0
