@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Name: ModConfig
   m_EditorClassIdentifier: 
   id: KimsGame
-  title: "Kim\u2019s Game"
+  title: Kim's Game
   author: S.
-  description: Temp
+  description: "Look on them as long as thou wilt, stranger. Count and, if need be,
+    handle. One look is enough for me. When thou hast counted and handled and art
+    sure that thou canst remember them all, I cover them with this paper, and thou
+    must tell over the tally to the bomb. I will do the same.\r\n\r\nRemember the
+    icons placed on the belt.\r\n\r\n------\r\nIncludes support for mods:\r\nTwitch
+    Plays, w/ Autosolve\r\n\r\n------\r\nUpdate log:\r\n2020-08-??:\r\n* Initial Release\r\n\r\n------\r\nFound
+    an issue? You can find me at discord.gg/lotsofs , but I am also pingable in the
+    official KTANE discord server, or the KTANE modding discord server. Or just post
+    a comment below."
   version: 0
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: e9f2bed032bec2f4880542b6cf1a9a7c, type: 3}

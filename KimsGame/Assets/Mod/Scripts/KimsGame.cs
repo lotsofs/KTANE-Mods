@@ -5,16 +5,9 @@ using UnityEngine;
 
 public class KimsGame : MonoBehaviour {
 
-	// todo:
-	// * Make the knob turn upon selection
-	// * Disable the knob when it shouldn't be pressed
-	// * Textures (particularly of the belt holder)
-	// * Sounds
-	// * Disable the buttons in stage 1
-	// * Reset(?) upon strike.
-
 	[SerializeField] BombHelper _bombHelper;
 	[SerializeField] KMBombModule _bombModule;
+	[SerializeField] Grids _grid;
 
 	[Space]
 
@@ -23,6 +16,7 @@ public class KimsGame : MonoBehaviour {
 	[SerializeField] KMSelectable[] _spriteSelectables;
 	[SerializeField] Renderer _beltRenderer;
 	[SerializeField] KMSelectable _bigKnob;
+	[SerializeField] MovableObject _bigKnobMovable;
 
 	[Space]
 
@@ -38,14 +32,17 @@ public class KimsGame : MonoBehaviour {
 	float _beltGoesUpTimer;
 	Vector2 _beltTexturePosition;
 	int _requiredPresses;
+	bool _knobEnabled;
+	bool _answerPhase;
+	bool _struck;
 
+	const float TOPZ = 0.0701f;
+	const float BOTTOMZ = -0.0687f;
 	const float MINX = -0.0679f;
 	const float MAXX = 0.01529f;
 	const float MINZ = -0.05345f;
 	const float MAXZ = 0.0543f;
-	const float TOPZ = 0.0701f;
-	const float BOTTOMZ = -0.0687f;
-	const float Y = 0.0208f;
+	const float Y = 0.0208f;			// Todo: if any of these numbers are changed, change them in Grids.cs too. Maybe make grids.cs less fragile.
 	const float MINDISTANCE = 0.000288f;
 
 
@@ -58,8 +55,10 @@ public class KimsGame : MonoBehaviour {
 	}
 
 	void Start () {
+		_knobEnabled = false;
+		_answerPhase = false;
 		PickSprites();
-		CalculateSpritePositions(false);
+		CalculateSpritePositions();
 		PlaceSpritesOnTop(false);
 		AssignButtonPresses();
 		_bombModule.OnActivate += OnActivate;
@@ -73,6 +72,18 @@ public class KimsGame : MonoBehaviour {
 		StartCoroutine(ScrollSpritesIntoView(false));
 	}
 
+	void Reset() {
+		_knobEnabled = false;
+		_answerPhase = false;
+		PickSprites();
+		CalculateSpritePositions();
+		PlaceSpritesOnTop(false);
+		StartCoroutine(ScrollSpritesIntoView(false));
+		_pressedButtons.Clear();
+		_correctPresses = 0;
+		_struck = false;
+	}
+
 	/// <summary>
 	/// Selects sprites to be remembered.
 	/// </summary>
@@ -81,7 +92,7 @@ public class KimsGame : MonoBehaviour {
 		for (int i = 0; i < _displayedSprites.Length; i++) {
 			int index = UnityEngine.Random.Range(0, spriteList.Count);
 			_displayedSprites[i].sprite = spriteList[index];
-			Debug.LogFormat("[Kim’s Game #{0}] Selected {1} as a {2} answer.", _bombHelper.ModuleId, spriteList[index].name, (_displayedSprites.Length - i <= _numberOfWrongAnswers) ? "DECOY" : "correct");
+			Debug.LogFormat("[Kim's Game #{0}] Selected {1} as a {2} answer.", _bombHelper.ModuleId, spriteList[index].name, (_displayedSprites.Length - i <= _numberOfWrongAnswers) ? "DECOY" : "correct");
 			spriteList.RemoveAt(index);
 		}
 	}
@@ -90,24 +101,19 @@ public class KimsGame : MonoBehaviour {
 	/// Finds a position for every sprite on the conveyor belt.
 	/// </summary>
 	/// <param name="answerMode">Whether it also needs to calculate positions for incorrect sprites.</param>
-	void CalculateSpritePositions(bool answerMode) {
-		int dudAnswers = answerMode ? 0 : _numberOfWrongAnswers;
-		for (int i = 0; i < _spriteSelectables.Length - dudAnswers; i++) {
-			Restart:
-			float x = UnityEngine.Random.Range(MINX, MAXX);
-			float z = UnityEngine.Random.Range(MINZ, MAXZ);
+	void CalculateSpritePositions() {
 
-			for (int j = 0; j < i; j++) {
-				float diffX = Mathf.Abs(_coordinates[j, 0] - x);
-				float diffZ = Mathf.Abs(_coordinates[j, 1] - z);
-				float pythagoras = diffX * diffX + diffZ * diffZ;
-				if (pythagoras < MINDISTANCE) {
-					// our sprite collides with another sprite. Reposition.
-					goto Restart;
-				}
-			}
-			_coordinates[i, 0] = x;
-			_coordinates[i, 1] = z;
+		int randomGridIndex = Random.Range(0, _grid.IconGrids.Length);
+		Debug.LogFormat("[Kim's Game #{0}] Using Grid Layout {1}.", _bombHelper.ModuleId, randomGridIndex);
+		IconGrid grid = _grid.IconGrids[randomGridIndex];
+		List<int> randomSpots = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+
+		for (int i = 0; i < _spriteSelectables.Length; i++) {
+			int randomSpotIndex = Random.Range(0, randomSpots.Count);
+			int randomSpot = randomSpots[randomSpotIndex];
+			_coordinates[i, 0] = grid.Coordinates[randomSpot].x;
+			_coordinates[i, 1] = grid.Coordinates[randomSpot].z;
+			randomSpots.RemoveAt(randomSpotIndex);
 		}
 	}
 
@@ -130,43 +136,79 @@ public class KimsGame : MonoBehaviour {
 		for (int i = 0; i < _spriteSelectables.Length; i++) {
 			KMSelectable button = _spriteSelectables[i];
 			if (i >= _spriteSelectables.Length - _numberOfWrongAnswers) {
-				button.OnInteract += delegate { _bombHelper.GenericButtonPress(button, true, 0.1f); WrongButtonPress(button);  return false; };
+				button.OnInteract += delegate { 
+					_bombHelper.GenericButtonPress(button, false, 0.1f); 
+					WrongButtonPress(button); 
+					_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.ButtonRelease, button.transform); 
+					return false; 
+				};
 			}
 			else {
-				button.OnInteract += delegate { _bombHelper.GenericButtonPress(button, true, 0.1f); CorrectButtonPress(button); return false; };
+				button.OnInteract += delegate { 
+					_bombHelper.GenericButtonPress(button, false, 0.1f); 
+					CorrectButtonPress(button); 
+					_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.ButtonRelease, button.transform); 
+					return false; 
+				};
 			}
 		}
 	}
 
 	void BigKnobTurned() {
+		if (!_knobEnabled) {
+			return;
+		}
+		_knobEnabled = false;
 		// turning the big knob.
-		Debug.LogFormat("[Kim’s Game #{0}] -- Turned the big knob. --", _bombHelper.ModuleId);
-		StartCoroutine(ScrollSpritesOutOfView(false));
+		_bigKnobMovable.MoveToggleLoop();
+		if (_answerPhase) {
+			// reset module
+			Debug.LogFormat("[Kim's Game #{0}] -- Turned the big knob again. Resetting module. {1} --", _bombHelper.ModuleId, _struck ? "A strike has already been given. We will not strike you again." : "STRIKE!!!!" );
+			StartCoroutine(ScrollSpritesOutOfView(true));
+			if (!_struck) {
+				Debug.LogFormat("[Kim's Game #{0}] -- STRIKE --", _bombHelper.ModuleId);
+				_bombModule.HandleStrike();
+			}
+		}
+		else {
+			Debug.LogFormat("[Kim's Game #{0}] -- Turned the big knob. --", _bombHelper.ModuleId);
+			StartCoroutine(ScrollSpritesOutOfView(false));
+		}
 	}
 
 	void CorrectButtonPress(KMSelectable button) {
+		if (!_answerPhase) {
+			return;
+		}
 		if (_correctPresses >= _requiredPresses) {
 			return;
 		}
 		if (_pressedButtons.Contains(button)) {
-			Debug.LogFormat("[Kim’s Game #{0}] Pressed {1} again.", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name);
+			Debug.LogFormat("[Kim's Game #{0}] Pressed {1} again.", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name);
 			return;
 		}
 		_pressedButtons.Add(button);
 		_correctPresses++;
-		Debug.LogFormat("[Kim’s Game #{0}] Pressed {1} ({2}/{3}).", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name, _correctPresses, _requiredPresses);
+		Debug.LogFormat("[Kim's Game #{0}] Pressed {1} ({2}/{3}).", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name, _correctPresses, _requiredPresses);
 		if (_correctPresses >= _requiredPresses) {
-			Debug.LogFormat("[Kim’s Game #{0}] Solved.", _bombHelper.ModuleId);
+			Debug.LogFormat("[Kim's Game #{0}] Solved.", _bombHelper.ModuleId);
 			_bombModule.HandlePass();
+			_knobEnabled = false;
+			//StartCoroutine(ScrollSpritesOutOfView(true));
+			_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.CorrectChime, this.transform);
 		}
 	}
 
 	void WrongButtonPress(KMSelectable button) {
+		if (!_answerPhase) {
+			return;
+		}
 		if (_correctPresses >= _requiredPresses) {
 			return;
 		}
-		Debug.LogFormat("[Kim’s Game #{0}] STRIKE: Pressed decoy {1}.", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name);
+		Debug.LogFormat("[Kim's Game #{0}] STRIKE: Pressed decoy {1}.", _bombHelper.ModuleId, button.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.name);
 		_bombModule.HandleStrike();
+		_struck = true;
 	}
 
 	/// <summary>
@@ -181,6 +223,10 @@ public class KimsGame : MonoBehaviour {
 		float elapsedTime = largestTravelTime;
 		Vector3 position;
 		Vector2 beltTexturePosition = _beltRenderer.material.GetTextureOffset("_MainTex");
+
+		_bombHelper.StopCustomSound();
+		_bombHelper.PlayCustomSoundWithRef("Belt_Down", _beltRenderer.transform);
+
 		while (true) {
 			float moveDistance = Time.deltaTime * _scrollSpeed;
 			// scroll icons down
@@ -202,6 +248,9 @@ public class KimsGame : MonoBehaviour {
 			}
 			yield return null;
 		}
+		_bombHelper.StopCustomSound();
+		_bombHelper.PlayCustomSound("Belt_Stop", _beltRenderer.transform);
+		_knobEnabled = true;
 	}
 
 	/// <summary>
@@ -216,6 +265,9 @@ public class KimsGame : MonoBehaviour {
 		float elapsedTime = largestTravelTime;
 		Vector3 position;
 		Vector2 beltTexturePosition = _beltRenderer.material.GetTextureOffset("_MainTex");
+		
+		_bombHelper.PlayCustomSoundWithRef("Belt_Down", _beltRenderer.transform);
+
 		while (true) {
 			float moveDistance = Time.deltaTime * _scrollSpeed;
 			// scroll icons down
@@ -237,7 +289,16 @@ public class KimsGame : MonoBehaviour {
 			}
 			yield return null;
 		}
-		StartCoroutine(InBetweenStages());
+		if (_correctPresses >= _requiredPresses) {
+			_bombHelper.StopCustomSound();
+			_bombHelper.PlayCustomSound("Belt_Stop", _beltRenderer.transform);
+		}
+		else if (answerMode) {
+			Reset();
+		}
+		else {
+			StartCoroutine(InBetweenStages());
+		}
 	}
 
 
@@ -255,51 +316,33 @@ public class KimsGame : MonoBehaviour {
 			float rand = Random.Range(0f, 1f);
 			if (rand < 0.4f) {
 				_beltGoesUp = true;
-				_beltGoesUpTimer = .5f;
+				_beltGoesUpTimer = UnityEngine.Random.Range(.4f, .6f);
+				_bombHelper.StopCustomSound();
+				_bombHelper.PlayCustomSoundWithRef("Belt_Up", _beltRenderer.transform);
 			}
 			else {
-				_beltGoesUpTimer = .5f;
+				_beltGoesUpTimer = UnityEngine.Random.Range(.4f, .6f);
+				_bombHelper.StopCustomSound();
+				_bombHelper.PlayCustomSoundWithRef("Belt_Down", _beltRenderer.transform);
 			}
 		}
 
 	}
 
 	IEnumerator InBetweenStages() {
+		_beltGoesUpTimer = 1f;
 		_beltTexturePosition = _beltRenderer.material.GetTextureOffset("_MainTex");
 		yield return null;
 		MoveBelt();
 		float elapsedTime = 0;
-		for (int i = 0; i < _spriteSelectables.Length; i++) {
-		Restart:
-			yield return null;
-			MoveBelt();
-			elapsedTime += Time.deltaTime;
-			float x = UnityEngine.Random.Range(MINX, MAXX);
-			float z = UnityEngine.Random.Range(MINZ, MAXZ);
-			for (int j = 0; j < i; j++) {
-				float diffX = Mathf.Abs(_coordinates[j, 0] - x);
-				float diffZ = Mathf.Abs(_coordinates[j, 1] - z);
-				float pythagoras = diffX * diffX + diffZ * diffZ;
-				if (elapsedTime > _delayBetweenStages) {
-					Debug.LogWarningFormat("[Kim’s Game #{0}] WARNING!!!!!! Took too long to generate board without overlaps between stages.", _bombHelper.ModuleId);
-				}
-				if (pythagoras < MINDISTANCE || elapsedTime > _delayBetweenStages) {
-					// our sprite collides with another sprite. Reposition.
-					goto Restart;
-				}
-				yield return null;
-				MoveBelt();
-				elapsedTime += Time.deltaTime;
-			}
-			_coordinates[i, 0] = x;
-			_coordinates[i, 1] = z;
-		}
+		
 		while (elapsedTime < _delayBetweenStages) {
 			MoveBelt();
 			yield return null;
 			elapsedTime += Time.deltaTime;
 		}
-
+		_answerPhase = true;
+		CalculateSpritePositions();
 		PlaceSpritesOnTop(true);
 		StartCoroutine(ScrollSpritesIntoView(true));
 	}

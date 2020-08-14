@@ -12,6 +12,8 @@ public class BombHelper : MonoBehaviour {
     [NonSerialized] public int ModuleId;
     static int _moduleIdCounter = 1;
 
+    KMAudio.KMAudioRef _customSound;
+
     /// <summary>
     /// Increment Module ID
     /// </summary>
@@ -53,6 +55,34 @@ public class BombHelper : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public void PlayGameSound(KMSoundOverride.SoundEffect sound, Transform origin) {
+        _bombAudio.PlayGameSoundAtTransform(sound, origin.transform);
+    }
+
+    public void PlayCustomSound(string name, Transform origin) {
+        _bombAudio.PlaySoundAtTransform(name, origin);
+    }
+    
+    public void PlayCustomSoundWithRef(string name, Transform origin) {
+        try {
+            if (_customSound != null) {
+                return;
+            }
+            _customSound = _bombAudio.PlaySoundAtTransformWithRef(name, origin);
+        }
+        catch (Exception) {
+            // i dont know what could cause this
+        }
+    }
+
+
+    public void StopCustomSound() {
+        if (_customSound != null) {
+            _customSound.StopSound();
+            _customSound = null;
+        }
     }
 
 }
