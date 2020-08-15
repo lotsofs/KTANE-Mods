@@ -35,6 +35,7 @@ public class KimsGame : MonoBehaviour {
 	bool _knobEnabled;
 	bool _answerPhase;
 	bool _struck;
+	int _randomGridIndex;
 
 	const float TOPZ = 0.0701f;
 	const float BOTTOMZ = -0.0687f;
@@ -103,9 +104,9 @@ public class KimsGame : MonoBehaviour {
 	/// <param name="answerMode">Whether it also needs to calculate positions for incorrect sprites.</param>
 	void CalculateSpritePositions() {
 
-		int randomGridIndex = Random.Range(0, _grid.IconGrids.Length);
-		Debug.LogFormat("[Kim's Game #{0}] Using Grid Layout {1}.", _bombHelper.ModuleId, randomGridIndex);
-		IconGrid grid = _grid.IconGrids[randomGridIndex];
+		_randomGridIndex = Random.Range(0, _grid.IconGrids.Length);
+		Debug.LogFormat("[Kim's Game #{0}] Using Grid Layout {1}.", _bombHelper.ModuleId, _randomGridIndex);
+		IconGrid grid = _grid.IconGrids[_randomGridIndex];
 		List<int> randomSpots = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
 
 		for (int i = 0; i < _spriteSelectables.Length; i++) {
@@ -117,6 +118,9 @@ public class KimsGame : MonoBehaviour {
 		}
 	}
 
+
+	
+	
 	/// <summary>
 	/// Places every sprite at the top of the conveyor belt.
 	/// </summary>
@@ -250,6 +254,9 @@ public class KimsGame : MonoBehaviour {
 		}
 		_bombHelper.StopCustomSound();
 		_bombHelper.PlayCustomSound("Belt_Stop", _beltRenderer.transform);
+		for (int i = 0; i < _spriteSelectables.Length - dudAnswers; i++) {
+			_spriteSelectables[i].transform.localPosition = new Vector3(_coordinates[i, 0], Y, _coordinates[i, 1]);
+		}
 		_knobEnabled = true;
 	}
 
@@ -346,4 +353,107 @@ public class KimsGame : MonoBehaviour {
 		PlaceSpritesOnTop(true);
 		StartCoroutine(ScrollSpritesIntoView(true));
 	}
+
+	#region TwitchPlays
+
+	#pragma warning disable 414
+	public readonly string TwitchHelpMessage = "Turn the knob with '!{0} knob'. " +
+		"Use '!{0} press 2 5 8' to press the 2nd, 5th, and 8th button from the bottom. Use '!{0} highlight 2 5 8' to highlight buttons to make sure you've got the ones you intend. "
+		+ "Bottom most button is 1, top most button is 20.";
+	#pragma warning restore 414
+
+	int _currentGrid;
+	List<KMSelectable> _selectablesSorted;
+	Coroutine _twitchDehighlightRoutine;
+
+	[Space]
+	[SerializeField] float _tpHighlightTime;
+
+	void SortGridForTP() {
+		_currentGrid = _randomGridIndex;
+		_selectablesSorted = _spriteSelectables.OrderBy(coord => coord.transform.position.z).ToList<KMSelectable>();
+	}
+
+	IEnumerator RemoveHighlights() {
+		yield return new WaitForSeconds(_tpHighlightTime);
+		foreach (KMSelectable selectable in _spriteSelectables) {
+			selectable.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+		}
+		_twitchDehighlightRoutine = null;
+	}
+
+	public IEnumerator ProcessTwitchCommand(string command) {
+		command = command.ToLowerInvariant().Trim();
+
+		if (command == "knob") {
+			_bigKnob.OnInteract();
+			yield return null;
+		}
+		else {
+			List<string> split = command.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries).ToList();
+			if (split[0] != "press" && split[0] != "highlight") {
+				yield break;
+			}
+			if (split.Count <= 1) {
+				yield break;
+			}
+			if (!_answerPhase) {
+				yield return "sendtochat Not in answer phase.";
+			}
+			else {
+				List<int> buttonsToPress = new List<int>();
+				for (int i = 1; i < split.Count; i++) {
+					int button;
+					bool success = int.TryParse(split[i], out button);
+					if (!success || button > _spriteSelectables.Length) {
+						yield break;
+					}
+					buttonsToPress.Add(button);
+				}
+				if (_currentGrid != _randomGridIndex || _selectablesSorted == null) {
+					SortGridForTP();
+				}
+				if (split[0] == "press") {
+					foreach (int button in buttonsToPress) {
+						yield return new WaitForSeconds(0.1f);
+						_selectablesSorted[button - 1].OnInteract();
+					}
+				}
+				else if (split[0] == "highlight") {
+					foreach (int button in buttonsToPress) {
+						_selectablesSorted[button - 1].transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+					}
+					yield return null;
+					if (_twitchDehighlightRoutine != null) {
+						StopCoroutine(_twitchDehighlightRoutine);
+					}
+					_twitchDehighlightRoutine = StartCoroutine(RemoveHighlights());
+				}
+			}
+		}
+	}
+
+	IEnumerator TwitchHandleForcedSolve() {
+		while (true) {
+			if (_answerPhase) {
+				break;
+			}
+			else if (!_answerPhase && _knobEnabled) {
+				_bigKnob.OnInteract();
+			}
+			yield return true;
+		}
+		for (int i = 0; i < _requiredPresses; i++) {
+			yield return new WaitForSeconds(0.1f);
+			while (_spriteSelectables[i].transform.localPosition.z > MAXZ) {
+				yield return true;
+			}
+			_spriteSelectables[i].OnInteract();
+		}
+	}
+
+
+
+	#endregion
+
 }
