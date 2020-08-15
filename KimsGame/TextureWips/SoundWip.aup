@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="SoundWip_data" version="1.3.0" audacityversion="2.3.3" sel0="0.0000000000" sel1="2.7578750000" vpos="0" h="0.0000000000" zoom="336.4923792516" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="188821__peridactyloptrix__servo-noises" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="1" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="3852640">
+				<waveblock start="0">
+					<simpleblockfile filename="e08088a0.au" len="262144" min="-0.126621" max="0.124493" rms="0.006134"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e080877a.au" len="262144" min="-0.102192" max="0.104363" rms="0.008032"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0808235.au" len="262144" min="-0.216165" max="0.18127" rms="0.017007"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e0808e0e.au" len="262144" min="-0.125221" max="0.104987" rms="0.010847"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e08088cd.au" len="262144" min="-0.081081" max="0.08437" rms="0.006392"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e0808e80.au" len="262144" min="-0.035797" max="0.033579" rms="0.003928"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<simpleblockfile filename="e080812c.au" len="262144" min="-0.022256" max="0.037408" rms="0.003752"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e0808518.au" len="262144" min="-0.090728" max="0.072538" rms="0.005268"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e08087ca.au" len="262144" min="-0.024344" max="0.020132" rms="0.002435"/>
+				</waveblock>
+				<waveblock start="2359296">
+					<simpleblockfile filename="e080857e.au" len="262144" min="-0.097714" max="0.082501" rms="0.007334"/>
+				</waveblock>
+				<waveblock start="2621440">
+					<simpleblockfile filename="e0808f78.au" len="262144" min="-0.077694" max="0.083157" rms="0.007125"/>
+				</waveblock>
+				<waveblock start="2883584">
+					<simpleblockfile filename="e08082e6.au" len="262144" min="-0.111663" max="0.113018" rms="0.00689"/>
+				</waveblock>
+				<waveblock start="3145728">
+					<simpleblockfile filename="e0808cac.au" len="262144" min="-0.084697" max="0.090045" rms="0.004941"/>
+				</waveblock>
+				<waveblock start="3407872">
+					<simpleblockfile filename="e08082b1.au" len="262144" min="-0.073399" max="0.070238" rms="0.006446"/>
+				</waveblock>
+				<waveblock start="3670016">
+					<simpleblockfile filename="e0808ff6.au" len="182624" min="-0.046563" max="0.054024" rms="0.004723"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="188821__peridactyloptrix__servo-noises" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="1" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="225954">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808172.au" len="225954" min="-0.086827" max="0.08437" rms="0.007615"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="188821__peridactyloptrix__servo-noises" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="1" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="209977">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808a8a.au" len="209977" min="-0.098976" max="0.08502" rms="0.00838"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="188821__peridactyloptrix__servo-noises" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="1" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66189">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808226.au" len="66189" min="-0.025891" max="0.024907" rms="0.006757"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="1.37893750" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66189">
+				<waveblock start="0">
+					<simpleblockfile filename="e08083af.au" len="66189" min="-0.025891" max="0.024907" rms="0.006757"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="188821__peridactyloptrix__servo-noises" isSelected="1" height="150" minimized="0" channel="2" linked="0" mute="0" solo="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66189">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808964.au" len="66189" min="-0.024816" max="0.021916" rms="0.006525"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="1.37893750" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66188">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808585.au" len="66188" min="-0.026703" max="0.023933" rms="0.006498"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
