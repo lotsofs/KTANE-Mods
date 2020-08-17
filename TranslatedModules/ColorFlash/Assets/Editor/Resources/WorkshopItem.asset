@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf2299c8864afe4ab42466f546ae20d, type: 3}
+  m_Name: WorkshopItem
+  m_EditorClassIdentifier: 
+  WorkshopPublishedFileID: 720338853
+  Title: Color Flash Module
+  Description: "[b][i]It's easy to identify colors. Red, Blue, Green, etc. Turns out
+    it's a bit harder when you display a word color in a different color though...[/i][/b]\r\n\r\n[h1]About[/h1]\r\nColor
+    Flash exploits the psychological effect known as the Stroop effect by prompting
+    the defuser with a sequence of color words, but not necessarily in the color that
+    the word indicates.\r\n\r\n[h1]Manual Page[/h1]\r\nThe manual PDF is included
+    in the download. However, you can also [url=https://ashbash1987.github.io/ktanemod-colourflash/Manual/]click
+    here[/url] to view it online.\r\n\r\n[h1]Mission Makers[/h1]\r\nFor those making
+    custom missions, the type name for this module is [b]ColourFlash[/b] [i](note
+    the 'u' in Colour, sorry, I'm from the UK!)[/i]"
+  PreviewImage: {fileID: 2800000, guid: 996177f3c3a7c9440959c4afbf13bd85, type: 3}
+  Tags:
+  - Module
+  - Regular Module
