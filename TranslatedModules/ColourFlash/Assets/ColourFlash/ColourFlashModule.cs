@@ -91,6 +91,7 @@ public class ColourFlashModule : MonoBehaviour
     public ColourFlashButton ButtonYes;
     public ColourFlashButton ButtonNo;
     public TextMesh Indicator;
+    public TranslatedModule Translation;
     #endregion
 
     #region Extra Preset Data
@@ -129,11 +130,17 @@ public class ColourFlashModule : MonoBehaviour
 
     void Start()
     {
+        Translation.SelectLanguage();
+        ButtonYes.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().text = Translation.Language.Yes;
+        ButtonNo.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().text = Translation.Language.No;
+
         StringBuilder logString = new StringBuilder();
 
-        logString.Append("Module generated with the following word-color sequence:\n");
-        logString.Append("# | Word    | Color   | Valid Response\n");
-        logString.Append("--+---------+---------+----------------\n");
+
+        logString.Append(Translation.Language.LogFileSequenceHeader);
+        logString.Append("\n");
+        logString.AppendFormat("# | {0,-12} | {1,-12} | {2}", Translation.Language.LogFileWord, Translation.Language.LogFileColor, Translation.Language.LogFileValidResponse);
+        logString.Append("\n--+--------------+--------------+----------------\n");
 
         string blockTitle = "";
         string condition = "";
@@ -148,11 +155,13 @@ public class ColourFlashModule : MonoBehaviour
         {
             _currentColourSequenceIndex = colourSequenceIndex;
             ColourPair pair = _colourSequence[_currentColourSequenceIndex];
-            string response = ruleHandler(true) ? "[YES]" : (ruleHandler(false) ? "[NO]" : "---");
+            string response = ruleHandler(true) ? string.Format("[{0}]", Translation.Language.Yes) : (ruleHandler(false) ? string.Format("[{0}]", Translation.Language.No) : "---");
 
-            logString.AppendFormat("{0} | {1,-7} | {2,-7} | {3}\n", colourSequenceIndex + 1, pair.ColourText.ToString(), pair.ColourValue.ToString(), response);
+            logString.AppendFormat("{0} | {1,-12} | {2,-12} | {3}\n", colourSequenceIndex + 1, Translation.Language.GetFromEnglishName(pair.ColourText.ToString()), Translation.Language.GetFromEnglishName(pair.ColourValue.ToString()), response);
         }
-        logString.Append("\nThe sequence matched the following block title and condition statement:\n");
+        logString.Append("\n");
+        logString.Append(Translation.Language.LogFileRuleHeader);
+        logString.Append("\n");
         logString.AppendFormat("\"{0}\"\n-> \"{1}\"\n", blockTitle, condition);
 
         BombModule.Log(logString.ToString());
@@ -220,6 +229,20 @@ public class ColourFlashModule : MonoBehaviour
     }
     #endregion
 
+    float GetTextMeshWidth(TextMesh mesh, int fontSize) 
+        {
+        float width = 0;
+        foreach (char symbol in mesh.text) 
+        {
+            CharacterInfo info;
+            if (mesh.font.GetCharacterInfo(symbol, out info, fontSize, mesh.fontStyle)) 
+            {
+                width += info.advance;
+            }
+        }
+        return width * mesh.characterSize * 0.1f; ;
+    }
+
     #region Module Updates
     IEnumerator ColourCycleCoroutine()
     {
@@ -228,8 +251,25 @@ public class ColourFlashModule : MonoBehaviour
             for (int colourSequenceIndex = 0; colourSequenceIndex < _colourSequence.Length; ++colourSequenceIndex)
             {
                 _currentColourSequenceIndex = colourSequenceIndex;
-                Indicator.text = _colourSequence[colourSequenceIndex].Text;
+                Indicator.text = Translation.Language.GetFromEnglishName(_colourSequence[colourSequenceIndex].Text).ToUpper();
                 Indicator.color = _colourSequence[colourSequenceIndex].DisplayColour;
+                float width = GetTextMeshWidth(Indicator, 60);
+                Debug.Log(width);
+                if (width > 35) {
+                    Indicator.fontSize = 29;
+                }
+                else if (width > 30) {
+                    Indicator.fontSize = 34;
+                }
+                else if (width > 25) {
+                    Indicator.fontSize = 40;
+                }
+                else if (width > 19) {
+                    Indicator.fontSize = 49;
+                }
+                else {
+                    Indicator.fontSize = 60;
+                }
                 yield return new WaitForSeconds(TimePerCycleTick);
             }
 
@@ -246,7 +286,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         CheckForClashingColours();
 
-        blockTitle = string.Format("The color of the last word in the sequence is {0}.", _colourSequence[_colourSequence.Length - 1].ColourValue.ToString());
+        blockTitle = string.Format(Translation.Language.LogFileLastColor, _colourSequence[_colourSequence.Length - 1].ColourValue.ToString());
 
         switch (_colourSequence[_colourSequence.Length - 1].ColourValue)
         {
@@ -292,7 +332,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         if (_colourSequence.Count((x) => x.ColourText == Colours.Green) >= 3)
         {
-            condition = "1. If Green is used as the word at least three times in the sequence, press Yes on the third time Green is used as either the word or the color of the word in the sequence.";
+            condition = Translation.Language.RuleRed1;
             return delegate (bool yesPress)
             {
                 if (!yesPress)
@@ -319,7 +359,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Count((x) => x.ColourValue == Colours.Blue) == 1)
         {
-            condition = "2. (Otherwise,) if Blue is used as the color of the word exactly once, press No when the word Magenta is shown.";
+            condition = Translation.Language.RuleRed2;
 
             if (!_colourSequence.Any((x) => x.ColourText == Colours.Magenta))
             {
@@ -335,7 +375,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) press Yes the last time White is either the word or the color of the word in the sequence.";
+        condition = Translation.Language.RuleRed3;
 
         if (!_colourSequence.Any((x) => x.HasColour(Colours.White)))
         {
@@ -362,7 +402,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         if (_colourSequence.Any((x) => x.ColourText == Colours.Blue && x.ColourValue == Colours.Green))
         {
-            condition = "1. If the word Blue is shown in Green color, press Yes on the first time Green is used as the color of the word.";
+            condition = Translation.Language.RuleYellow1;
 
             return delegate (bool yesPress)
             {
@@ -372,7 +412,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Any((x) => x.ColourText == Colours.White && (x.ColourValue == Colours.White || x.ColourValue == Colours.Red)))
         {
-            condition = "2. (Otherwise,) if the word White is shown in either White or Red color, press Yes on the second time in the sequence where the color of the word does not match the word itself.";
+            condition = Translation.Language.RuleYellow2;
 
             bool modified = false;
             while (_colourSequence.Count((x) => x.ColourText != x.ColourValue) < 2)
@@ -412,7 +452,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) count the number of times Magenta is used as either the word or the color of the word in the sequence (the word Magenta in Magenta color only counts as one), and press No on the color in the total's position (e.g. a total of 4 means the fourth color in sequence).";
+        condition = Translation.Language.RuleYellow3;
 
         //Otherwise, count the number of times Magenta is used as either the word or the colour of the word in the sequence, and press No on the colour in the total's position (i.e. a total of 4 means the fourth colour in sequence)
         if (!_colourSequence.Any((x) => x.HasColour(Colours.Magenta)))
@@ -440,7 +480,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         for (int colourSequenceIndex = 0; colourSequenceIndex < _colourSequence.Length - 1; ++colourSequenceIndex)
         {
-            condition = "1. If a word occurs consecutively with different colors, press No on the fifth entry in the sequence.";
+            condition = Translation.Language.RuleGreen1;
 
             if (_colourSequence[colourSequenceIndex + 1].ColourText == _colourSequence[colourSequenceIndex].ColourText)
             {
@@ -453,7 +493,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Count((x) => x.ColourText == Colours.Magenta) >= 3)
         {
-            condition = "2. (Otherwise,) if Magenta is used as the word as least three times in the sequence, press No on the first time Yellow is used as either the word or the color of the word in the sequence.";
+            condition = Translation.Language.RuleGreen2;
 
             if (!_colourSequence.Any((x) => x.HasColour(Colours.Yellow)))
             {
@@ -476,7 +516,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) press Yes on any color where the color of the word matches the word itself.";
+        condition = Translation.Language.RuleGreen3;
 
         if (!_colourSequence.Any((x) => x.ColourText == x.ColourValue))
         {
@@ -497,7 +537,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         if (_colourSequence.Count((x) => x.ColourText != x.ColourValue) >= 3)
         {
-            condition = "1. If the color of the word does not match the word itself three times or more in the sequence, press Yes on the first time in the sequence where the color of the word does not match the word itself.";
+            condition = Translation.Language.RuleBlue1;
 
             return delegate (bool yesPress)
             {
@@ -507,7 +547,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Any((x) => (x.ColourText == Colours.Red && x.ColourValue == Colours.Yellow) || (x.ColourText == Colours.Yellow && x.ColourValue == Colours.White)))
         {
-            condition = "2. (Otherwise,) if the word Red is shown in Yellow color, or the word Yellow is shown in White color, press No when the word White is shown in Red color.";
+            condition = Translation.Language.RuleBlue2;
 
             if (!_colourSequence.Any((x) => x.ColourText == Colours.White && x.ColourValue == Colours.Red))
             {
@@ -525,7 +565,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) press Yes the last time Green is either the word or the color of the word in the sequence.";
+        condition = Translation.Language.RuleBlue3;
 
         if (!_colourSequence.Any((x) => x.HasColour(Colours.Green)))
         {
@@ -552,7 +592,7 @@ public class ColourFlashModule : MonoBehaviour
     {
         for (int colourSequenceIndex = 0; colourSequenceIndex < _colourSequence.Length - 1; ++colourSequenceIndex)
         {
-            condition = "1. If a color occurs consecutively with different words, press Yes on the third entry in the sequence.";
+            condition = Translation.Language.RuleMagenta1;
 
             if (_colourSequence[colourSequenceIndex + 1].ColourValue == _colourSequence[colourSequenceIndex].ColourValue)
             {
@@ -565,7 +605,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Count((x) => x.ColourText == Colours.Yellow) > _colourSequence.Count((x) => x.ColourValue == Colours.Blue))
         {
-            condition = "2. (Otherwise,) if the number of times the word Yellow appears is greater than the number of times that the color of the word is Blue, press No the last time the word Yellow is in the sequence.";
+            condition = Translation.Language.RuleMagenta2;
 
             return delegate (bool yesPress)
             {
@@ -573,7 +613,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) press No on the first time in the sequence where the color of the word matches the word of the seventh entry in the sequence.";
+        condition = Translation.Language.RuleMagenta3;
 
         Colours colourToMatch = _colourSequence[6].ColourText;
         if (!_colourSequence.Any((x) => x.ColourValue == colourToMatch))
@@ -595,7 +635,7 @@ public class ColourFlashModule : MonoBehaviour
         Colours colourToMatch = _colourSequence[2].ColourValue;
         if (_colourSequence[3].ColourText == colourToMatch || _colourSequence[4].ColourText == colourToMatch)
         {
-            condition = "1. If the color of the third word matches the word of the fourth word or fifth word, press No the first time that Blue is used as the word or the color of the word in the sequence.";
+            condition = Translation.Language.RuleWhite1;
 
             if (!_colourSequence.Any((x) => x.HasColour(Colours.Blue)))
             {
@@ -620,7 +660,7 @@ public class ColourFlashModule : MonoBehaviour
 
         if (_colourSequence.Any((x) => x.ColourText == Colours.Yellow && x.ColourValue == Colours.Red))
         {
-            condition = "2. (Otherwise,) if the word Yellow is shown in Red color, press Yes on the last time Blue is used as the color of the word.";
+            condition = Translation.Language.RuleWhite2;
 
             if (!_colourSequence.Any((x) => x.ColourValue == Colours.Blue))
             {
@@ -636,7 +676,7 @@ public class ColourFlashModule : MonoBehaviour
             };
         }
 
-        condition = "3. (Otherwise,) press No.";
+        condition = Translation.Language.RuleWhite3;
 
         return delegate (bool yesPress)
         {
@@ -653,23 +693,23 @@ public class ColourFlashModule : MonoBehaviour
     {
         if (_currentColourSequenceIndex < 0)
         {
-            BombModule.LogFormat("[{0}] button was pressed at an unknown time!", yesButton ? "YES" : "NO");
+            BombModule.LogFormat(Translation.Language.LogFileUnknownTime, yesButton ? Translation.Language.Yes : Translation.Language.No);
         }
         else
         {
             ColourPair pair = _colourSequence[_currentColourSequenceIndex];
-            BombModule.LogFormat("[{0}] button was pressed on entry #{1} ('{2}' word in '{3}' color)", yesButton ? "YES" : "NO", _currentColourSequenceIndex + 1, pair.ColourText.ToString(), pair.ColourValue.ToString());
+            BombModule.LogFormat(Translation.Language.LogFileButtonPressed, yesButton ? Translation.Language.Yes : Translation.Language.No, _currentColourSequenceIndex + 1, pair.ColourText.ToString(), pair.ColourValue.ToString());
         }
 
         if (_ruleButtonPressHandler != null && _ruleButtonPressHandler(yesButton))
         {
-            BombModule.Log("Valid answer! Module defused!");
+            BombModule.Log(Translation.Language.LogFileCorrect);
             BombModule.HandlePass();
             FinishModule();
         }
         else
         {
-            BombModule.Log("Invalid answer! Module triggered a strike!");
+            BombModule.Log(Translation.Language.LogFileWrong);
             BombModule.HandleStrike();
         }
     }
