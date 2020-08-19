@@ -11592,7 +11592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc050b4ea8ff094a9b6723e32abea3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FriendlyName: Double-Decker
+  FriendlyName: Double-decker
   Appearance: {fileID: 21300000, guid: 2b0cf2c3bcbfc014d8fadfec2d66e56f, type: 3}
   Type: 8
   Promptable: 1

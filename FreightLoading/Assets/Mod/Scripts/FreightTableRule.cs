@@ -17,7 +17,7 @@ public class FreightTableRule : MonoBehaviour {
     /// Resets the rule's met condition
     /// </summary>
     public void Reset() {
-        _metAtStage =99;
+        _metAtStage = 99;
     }
 
     /// <summary>
