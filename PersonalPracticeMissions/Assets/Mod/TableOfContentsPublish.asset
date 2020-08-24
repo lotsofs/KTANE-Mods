@@ -85,3 +85,51 @@ MonoBehaviour:
     - Laundromat
     - BigBombIII
     - BigBoss
+  - Title: Meeting Halfway
+    MissionIDs:
+    - BeepBeep
+    - Chemistry
+    - WordyBomb
+    - WordyBombII
+    - WordyBombIII
+    - Silence
+    - WordyBombIV
+    - WordyBombV
+    - IsItOver
+    - SouvenirSurprise
+    - Lambdic
+    - PrettyPictures
+    - SoManyButtons
+    - LowCommunicativeModules
+    - AMinuteAModuleIV
+    - OldTimeyBomb
+    - TenMinutesIV
+    - TrueRandom
+    - ScroogesBomb
+    - DoubleModsIV
+    - BigBombIV
+    - BigBossII
+  - Title: Great Progress Is Made
+    MissionIDs:
+    - FightForYourLife
+    - Labyrinth
+    - AccessDenied
+    - BombOfManyFaces
+    - DfeuseThisBobm
+    - AnimalShelter
+    - NumbersGameIII
+    - ColorsGame
+    - DeskJob
+    - Locator
+    - BombGoBlinky
+    - FullGamer
+    - TimedReading_1
+    - TakeYourTime
+    - VacationsOver
+    - NoInvitation
+    - AMinuteAModuleV
+    - TenMinutesV
+    - TrueRandomII
+    - DoubleModsV
+    - BigBombV
+    - BigBossIII

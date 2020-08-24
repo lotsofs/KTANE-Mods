@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: TimedReading
+  m_Name: TimedReading_1
   m_EditorClassIdentifier: 
   DisplayName: Timed Reading
   Description: If only you could take your time reading all this information, but
     the bomb doesn't wait.
   GeneratorSetting:
-    TimeLimit: 540
+    TimeLimit: 300
     NumStrikes: 3
     TimeBeforeNeedyActivation: 40
     FrontFaceOnly: 0
