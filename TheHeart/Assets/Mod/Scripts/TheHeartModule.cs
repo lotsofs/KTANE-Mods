@@ -31,7 +31,7 @@ public class TheHeartModule : MonoBehaviour {
 	bool _solving = false;
 	bool _solved = false;
 	bool _justStruck = false;
-	bool tpCorrect = false;
+	bool _tpCorrect = false;
 
 	[SerializeField] float _aedChargeTime = 5f;
 	[SerializeField] float _aedPlaySoundAt = 4f;
@@ -107,7 +107,7 @@ public class TheHeartModule : MonoBehaviour {
 		if (!_solved) {
 			_resets++;
 			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Solved modules: {2}", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
-			tpCorrect = true;
+			_tpCorrect = true;
 			StartHeart();
 		}
 		else {
@@ -257,19 +257,20 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		// check for large upward jumps in the timer (time mode) while in solving state
 		else if (_solving && _bombTick - timeRemaining <= -2 && timeRemaining - _activationTime >= 60) {
-			Debug.LogFormat("[The Heart #{0}] EDGE CASE: The timer made a large upward jump. It now differs by a minute or more from when the heart last started. The heart is in a solving state. New reference time: {1}", _bombHelper.ModuleId, timeRemaining);
+			Debug.LogFormat("[The Heart #{0}] EDGE CASE: The timer made a large upward jump. It now differs by a minute or more from when the heart last started, which was at {1} seconds. The heart is in a solving state. New reference time: {2} seconds.", _bombHelper.ModuleId, _activationTime, timeRemaining);
+			_activationTime = timeRemaining;
 		}
 		// check for < 1 second remaining
 		else if (timeRemaining == 0 && !_zeroSecondsHit) {
 			_zeroSecondsHit = true;
-			StopHeart("the bomb's timer reached below 1 second remaining.");
+			StopHeart("the bomb's timer reached below 1 second remaining. Scary! ");
 		}
 		else if (_zeroSecondsHit && timeRemaining >= 1f) {
 			_zeroSecondsHit = false;
 		}
 		// check if it's been a minute since the last defib
 		else if ((Mathf.Abs(_activationTime - timeRemaining)) >= 60) {
-			StopHeart("the timer differs by a minute or more from when the heart last started.");
+			StopHeart(string.Format("the timer differs by a minute or more from when the heart last started, which was at {0} seconds.", _activationTime));
 		}
 		_bombTick = timeRemaining;
 	}
@@ -316,10 +317,10 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		if (split.Count == 1) {
 			_theHeartSelectable.OnInteract();
-			if (tpCorrect)
+			if (_tpCorrect)
 			{
 				yield return "awardpoints 1";
-				tpCorrect = false;
+				_tpCorrect = false;
 			}
 			yield return null;
 		}
@@ -344,10 +345,10 @@ public class TheHeartModule : MonoBehaviour {
 				int seconds = (int)_bombInfo.GetTime() % 60;
 				if (seconds == time) {
 					_theHeartSelectable.OnInteract();
-					if (tpCorrect)
+					if (_tpCorrect)
 					{
 						yield return "awardpoints 1";
-						tpCorrect = false;
+						_tpCorrect = false;
 					}
 					done = true;
 					yield return "end waiting music";
