@@ -9,12 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BeachParty - Copy (14)
+  m_Name: Dependance
   m_EditorClassIdentifier: 
-  DisplayName: Beach Party
-  Description: 'Keep on your sunglasses, because we''re going to the beach. '
+  DisplayName: Dependance
+  Description: Besides bombs blowing up, the only other thing you can safely depend
+    on is that every now and then, the evil bombers throw you a bomb that helpfully
+    recaps every module that depends on other modules. How nice of them.
   GeneratorSetting:
-    TimeLimit: 960
+    TimeLimit: 720
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
@@ -25,31 +27,31 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - Probing
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordsTranslated
+      - fastMath
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
+      - CrazyTalk
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CoordinatesModule
+      - ColoredSquaresModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SeaShells
+      - Laundry
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -61,32 +63,31 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ForeignExchangeRates
+      - MemoryV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheBulbModule
+      - TurnTheKeyAdvanced
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - http
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - Listening
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - YahtzeeModule
       - TwoBits
-      - DoubleOhModule
-      - BrokenButtonsModule
+      - ColourFlash
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BattleshipModule
+      - CryptModule
   PacingEventsEnabled: 1

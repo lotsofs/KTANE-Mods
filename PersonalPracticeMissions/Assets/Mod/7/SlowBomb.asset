@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Slow Bomb
   Description: A slow bomb. But don't worry, there's plenty to keep you occupied.
   GeneratorSetting:
-    TimeLimit: 1350
+    TimeLimit: 1470
     NumStrikes: 3
     TimeBeforeNeedyActivation: 60
     FrontFaceOnly: 0

@@ -14,8 +14,8 @@ MonoBehaviour:
   id: PersonalPracticeMissions
   title: Road To Centurion (Beta Test)
   author: S.
-  description: "Beta test workshop entry for the Road To Centurion. \nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2098407568\nSee
-    its page for more information.\n\r\n\n* Section 1: Color Flash, Turn The Key,
+  description: "Beta test workshop entry for the Road To Centurion.\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2098407568\r\nSee
+    its page for more information.\r\n\r\n\r\n* Section 1: Color Flash, Turn The Key,
     Turn The Keys, 3D Maze, Skewed Slots, Follow The Leader, Blind Alley, Hexamaze,
     Battleship, LED Encryption, Yahtzee\r\n* Section 2: Word Scramble, Anagrams, The
     Square Button, Simon States, Round Keypad, Listening, Morsematics, Forget Me Not,
@@ -27,8 +27,8 @@ MonoBehaviour:
     SeaShells, RockPaperScissorsLizardSpockModule, CoordinatesModule, RubiksCubeModule,
     BinaryLeds, Needy Math, spwizTetris\r\n* Section 6: WhosOnFirstTranslated, SimonScreamsModule,
     ModuleAgainstHumanity, complicatedButtonsModule, symbolicPasswordModule, BigButtonTranslated,
-    MorseCodeTranslated, PasswordsTranslated, monsplodeWho, VentGasTranslated\n* Section
-    7: Semaphore, combinationLock, TicTacToeModule, TheBulbModule, WirePlacementModule,
+    MorseCodeTranslated, PasswordsTranslated, monsplodeWho, VentGasTranslated\r\n*
+    Section 7: Semaphore, combinationLock, TicTacToeModule, TheBulbModule, WirePlacementModule,
     colormath, webDesign, booleanVennModule, iceCreamModule, http"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and

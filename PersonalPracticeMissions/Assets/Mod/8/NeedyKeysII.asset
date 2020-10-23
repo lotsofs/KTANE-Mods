@@ -9,45 +9,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Enough
+  m_Name: NeedyKeysII
   m_EditorClassIdentifier: 
-  DisplayName: Enough
-  Description: I've had it with foreign languages already. I'm gonna call HQ and request
-    a bomb in plain old English.
+  DisplayName: Needy Keys II
+  Description: It's bigger and needier than ever!
   GeneratorSetting:
-    TimeLimit: 300
+    TimeLimit: 960
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 50
-    FrontFaceOnly: 1
+    TimeBeforeNeedyActivation: 70
+    FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
+    - Count: 5
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKey
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - symbolicPasswordModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ButtonV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 04000000
-      SpecialComponentType: 0
-      ModTypes:
-      - ButtonV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 04000000
-      SpecialComponentType: 0
-      ModTypes: []
+      - http
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - NeedyKnobV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MotionSense
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Filibuster
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKeyAdvanced
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
   PacingEventsEnabled: 1

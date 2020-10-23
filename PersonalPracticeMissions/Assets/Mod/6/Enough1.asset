@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Familiarity
+  m_Name: Enough1
   m_EditorClassIdentifier: 
-  DisplayName: Familiarity
-  Description: It can be stressful to learn something new every bomb. So here's a
-    bomb you know!
+  DisplayName: Enough
+  Description: I've had it with foreign languages already. I'm gonna call HQ and request
+    a bomb in plain old English.
   GeneratorSetting:
-    TimeLimit: 660
+    TimeLimit: 210
     NumStrikes: 3
     TimeBeforeNeedyActivation: 50
-    FrontFaceOnly: 0
+    FrontFaceOnly: 1
     OptionalWidgetCount: 5
     ComponentPools:
     - Count: 1
@@ -26,39 +26,28 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - VentGasTranslated
+      - symbolicPasswordModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RubiksCubeModule
+      - ButtonV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 04000000
+      SpecialComponentType: 0
+      ModTypes:
+      - ButtonV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 04000000
+      SpecialComponentType: 0
+      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NumberPad
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - neutralization
-      - MorseV2
-      - SillySlots
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BrokenButtonsModule
-      - WordSearchModule
-      - TwoBits
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Laundry
+      - NeedyKnobV2
   PacingEventsEnabled: 1

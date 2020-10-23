@@ -9,12 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BeachParty - Copy (11)
+  m_Name: NightClub
   m_EditorClassIdentifier: 
-  DisplayName: Beach Party
-  Description: 'Keep on your sunglasses, because we''re going to the beach. '
+  DisplayName: Night Club
+  Description: You're here defusing A Bomb, while the kids are going to rock shows.
+    Your duty is keeping them safe!
   GeneratorSetting:
-    TimeLimit: 960
+    TimeLimit: 810
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
@@ -25,7 +26,13 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - TicTacToeModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Semaphore
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -37,56 +44,48 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
+      - BigButtonTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Probing
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - resistors
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - fizzBuzzModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PointOfOrderModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - CoordinatesModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SeaShells
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ForeignExchangeRates
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TheBulbModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Listening
-    - Count: 1
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - YahtzeeModule
-      - TwoBits
-      - DoubleOhModule
-      - BrokenButtonsModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
       - BattleshipModule
+      - spwiz3DMaze
+      - PasswordV2
+      - MouseInTheMaze
+      - BrokenButtonsModule
+      - MazeV2
+      - TurnTheKey
   PacingEventsEnabled: 1

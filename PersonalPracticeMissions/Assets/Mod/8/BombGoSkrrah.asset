@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BeachParty - Copy (10)
+  m_Name: BombGoSkrrah
   m_EditorClassIdentifier: 
-  DisplayName: Beach Party
-  Description: 'Keep on your sunglasses, because we''re going to the beach. '
+  DisplayName: Bomb Go Skrrah
+  Description: Skidibee bop bop, and a boo poo bbdbrdbdrb boom, quick maths!!
   GeneratorSetting:
-    TimeLimit: 960
+    TimeLimit: 720
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
@@ -25,68 +25,62 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - ColoredSquaresModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordsTranslated
+      - fizzBuzzModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
+      - fastMath
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CoordinatesModule
+      - CrazyTalk
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - booleanVennModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Needy Math
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CrazyTalk
+      - fastMath
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - combinationLock
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - SeaShells
+      - WhosOnFirstTranslated
+      - ThirdBase
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ForeignExchangeRates
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TheBulbModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Listening
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - YahtzeeModule
-      - TwoBits
       - DoubleOhModule
-      - BrokenButtonsModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BattleshipModule
   PacingEventsEnabled: 1

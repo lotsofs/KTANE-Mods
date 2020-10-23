@@ -9,84 +9,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BeachParty - Copy (13)
+  m_Name: NoisyBombII
   m_EditorClassIdentifier: 
-  DisplayName: Beach Party
-  Description: 'Keep on your sunglasses, because we''re going to the beach. '
+  DisplayName: Noisy Bomb II
+  Description: It's bigger and louder than ever!
   GeneratorSetting:
-    TimeLimit: 960
+    TimeLimit: 475
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 70
+    TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - iceCreamModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PasswordsTranslated
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - WhosOnFirstTranslated
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - CoordinatesModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SeaShells
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ForeignExchangeRates
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TheBulbModule
-    - Count: 1
-      AllowedSources: 3
+    - Count: 5
+      AllowedSources: 1
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - Listening
+    - Count: 12
+      AllowedSources: 3
+      ComponentTypes: 05000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
-      - TwoBits
-      - DoubleOhModule
-      - BrokenButtonsModule
+      - SillySlots
+    - Count: 7
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PianoKeys
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BattleshipModule
+      - ColoredSquaresModule
+    - Count: 2
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - monsplodeWho
   PacingEventsEnabled: 1
