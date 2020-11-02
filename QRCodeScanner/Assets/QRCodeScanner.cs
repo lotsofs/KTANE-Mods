@@ -16,7 +16,16 @@ public class QRCodeScanner : MonoBehaviour {
 	void Start () {
         GetQRCodeModules();
         StartCoroutine(Scan());
-	}
+        LogMissionID();
+    }
+
+    void LogMissionID() {
+        Component gameplayState = GameObject.Find("GameplayState(Clone)").GetComponent("GameplayState");
+        Type type = gameplayState.GetType();
+        FieldInfo fieldMission = type.GetField("MissionToLoad", BindingFlags.Public | BindingFlags.Static);
+        string currentMission = fieldMission.GetValue(gameplayState).ToString();
+        Debug.LogFormat("Current mission is: {0}", currentMission);
+    }
 
     void GetQRCodeModules() {
         KMNeedyModule[] needies = FindObjectsOfType<KMNeedyModule>();
