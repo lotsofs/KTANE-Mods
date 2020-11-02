@@ -9,84 +9,70 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: MathClass
+  m_Name: DoubleModsVIII
   m_EditorClassIdentifier: 
-  DisplayName: Math Class
-  Description: Or maybe you call it math instead of maths. Language can be strange
-    sometimes.
+  DisplayName: Double Mods VIII
+  Description: "Two of each module you learnt. One for tomorrow, and one for today.
+    \n\nJust kidding, you don't get to procrastinate bombs."
   GeneratorSetting:
-    TimeLimit: 960
+    TimeLimit: 1020
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fizzBuzzModule
-    - Count: 1
+      - FriendshipModule
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastMath
-    - Count: 1
+      - ZooModule
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - CrazyTalk
-    - Count: 1
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Semaphore
-    - Count: 1
+      - fastMath
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MorseCodeTranslated
-    - Count: 1
+      - Probing
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
-    - Count: 1
+      - resistors
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WirePlacementModule
-    - Count: 1
+      - PointOfOrderModule
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheGamepadModule
-    - Count: 1
+      - ColoredSquaresModule
+    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NumberPad
-      - MorseV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - CaesarCipherModule
-      - CryptModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - VentGasTranslated
+      - fizzBuzzModule
   PacingEventsEnabled: 1

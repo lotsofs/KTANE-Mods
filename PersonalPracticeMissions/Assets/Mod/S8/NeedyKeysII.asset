@@ -61,5 +61,5 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonScreamsModule
+      - combinationLock
   PacingEventsEnabled: 1

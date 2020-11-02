@@ -182,4 +182,26 @@ MonoBehaviour:
     - BigBombVII
     - BigBossV
   - Title: A Dot On The Horizon
-    MissionIDs: []
+    MissionIDs:
+    - HappyBomb
+    - HorseRacing
+    - GoingNuts
+    - KeepItSteady
+    - MathsClass
+    - MathClass
+    - ColorsGameIII
+    - QuickThinking
+    - DontFightIt
+    - ElectrocutionHazard
+    - NightClub
+    - Dependance
+    - BombGoSkrrah
+    - AMinuteAModuleVIII
+    - NeedyKeysII
+    - TenMinutesVIII
+    - NoisyBombII
+    - TrueRandomIII
+    - TortoiseAndTheHare
+    - BigBombVIII
+    - DoubleModsVIII
+    - Eldoraigne

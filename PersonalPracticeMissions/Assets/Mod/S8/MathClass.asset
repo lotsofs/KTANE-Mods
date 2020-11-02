@@ -9,43 +9,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: TortoiseAndTheHare
+  m_Name: MathClass
   m_EditorClassIdentifier: 
-  DisplayName: Tortoise And The Hare
-  Description: The fast and the slow. But like the hare, do not bask in foolish overconfidence;
-    it could cost you dearly when defusing bombs.
+  DisplayName: Math Class
+  Description: Maybe you call it math instead of maths. Language can be strange sometimes.
   GeneratorSetting:
-    TimeLimit: 900
+    TimeLimit: 960
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 3
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TwoBits
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeFight
+      - fizzBuzzModule
     - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - FriendshipModule
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ZooModule
-    - Count: 2
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
@@ -56,32 +37,55 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PointOfOrderModule
+      - CrazyTalk
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - resistors
+      - Semaphore
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - webDesign
-    - Count: 2
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - neutralization
-      - BitmapsModule
-      - RubiksCubeModule
-      - HexamazeModule
+      - MorseCodeTranslated
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MotionSense
+      - WhosOnFirstTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WirePlacementModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheGamepadModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - NumberPad
+      - MorseV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CaesarCipherModule
+      - CryptModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - VentGasTranslated
   PacingEventsEnabled: 1
