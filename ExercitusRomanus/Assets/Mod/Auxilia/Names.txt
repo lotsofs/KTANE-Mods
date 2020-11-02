@@ -1,0 +1,252 @@
+RENATA f Italian, Portuguese, Spanish, German, Polish, Czech, Croatian, Slovene, Late Roman
+AMATUS m Late Roman
+VIVIANA f Italian, Spanish, Late Roman
+IOSEPHUS m Late Roman
+URSULA f English, Swedish, Norwegian, Danish, German, Dutch, Finnish, Late Roman
+SERAPHINUS m Late Roman
+PATRICIA f English, Spanish, German, Late Roman
+FELICIA f English, Italian, Spanish, Romanian, Dutch, Swedish, Late Roman
+BEATUS m Late Roman
+MONICA f English, Italian, Romanian, Late Roman
+LAURA f English, Spanish, Italian, Portuguese, Romanian, Catalan, Finnish, Estonian, Hungarian, Polish, Slovene, Croatian, Czech, Slovak, Swedish, Norwegian, Danish, German, Dutch, Lithuanian, Latvian, Late Roman
+DOMNINUS m Late Roman
+IGNATIA f Late Roman
+PRIMITIVA f Spanish, Late Roman
+PERPETUA f Spanish (Rare), Late Roman
+HONORINUS m Late Roman
+FRANCISCA f Spanish, Portuguese, Late Roman
+ILLUMINATA f Late Roman
+PATRICIUS m Late Roman
+FIDELIS m Late Roman
+MODESTUS m Late Roman
+IUSTINA f Late Roman
+LEONIA f Late Roman
+BEATA f Polish, German, Swedish, Danish, Late Roman
+SIXTUS m Late Roman
+DELPHINUS m Late Roman
+BONIFATIUS m Late Roman
+FLORENTIUS m Late Roman
+FELINA f Late Roman
+CONSTANTINUS m Late Roman
+CALLISTUS m Late Roman
+VIRGILIUS m Late Roman
+PETRONILLA f Italian, Late Roman
+GEREON m German, Late Roman
+VERONICA f English, Italian, Romanian, Late Roman
+ELIGIA f Spanish, Polish (Rare), Late Roman
+EMYGDIUS m Late Roman
+CAIETANUS m Late Roman
+EUSTACHIUS m Late Roman
+CLEMENS m German, Dutch, Swedish, Norwegian, Danish, Late Roman
+MARGARITA f Spanish, Russian, Bulgarian, Lithuanian, Latvian, Greek, Late Roman
+LEO m German, Dutch, Swedish, Norwegian, Danish, Finnish, English, Croatian, Late Roman
+FORTUNATA f Italian, Spanish, Portuguese, Late Roman
+CONSTANTINA f Late Roman
+ISAURA f Portuguese, Spanish, Late Roman
+DIONYSIA f Late Roman
+LAURUS m Late Roman
+DOMNUS m Late Roman
+QUIRINUS m Roman Mythology, Late Roman
+FERRUTIUS m Late Roman
+IGNATIUS m Late Roman
+ELIGIUS m Late Roman
+SERAPHINA f English (Rare), German (Rare), Late Roman
+LIBERIA f Late Roman
+SPERANTIA f Late Roman
+NARCISSUS m Greek Mythology (Latinized), Late Roman, Biblical
+VIATOR m Late Roman
+LEONTINA f Italian, Late Roman
+CRESCENTIA f German, Late Roman
+CANDIDUS m Late Roman
+PRIMUS m Late Roman
+DOMNA f Late Roman, Greek
+LEOCADIUS m Late Roman
+CLEMENTIUS m Late Roman
+VERENA f German, Late Roman
+AMADEUS m Late Roman
+IUSTINUS m Late Roman
+KATERINA f Macedonian, Russian, Bulgarian, Greek, Late Roman
+PRUDENTIA f Late Roman
+CLEMENTIA f Late Roman
+JUSTINA f English, Spanish, Slovene, Lithuanian, Late Roman
+JOHANNA f German, Swedish, Norwegian, Danish, Dutch, Hungarian, Finnish, Estonian, English, Late Roman
+CONSTANTIA f Late Roman
+VICTORIA f English, Spanish, Romanian, German, Swedish, Norwegian, Danish, Late Roman, Roman Mythology
+JUSTUS m German, Dutch, Finnish, Late Roman
+SOLLEMNIA f Late Roman
+CARINA (1) f English, Portuguese, Spanish, German, Late Roman
+SEBASTIANUS m Late Roman
+SERVATIUS m Late Roman
+FLORINUS m Late Roman
+ADEODATUS m Late Roman
+BENEDICTA f Late Roman
+ZEPHYRINUS m Late Roman
+SCHOLASTICA f Late Roman
+CLIMACUS m Late Roman
+NAZARIUS m Late Roman
+SILVESTER m Dutch, English, Slovene, Slovak, German, Late Roman
+DOMNINA f Late Roman
+CHRISTOPHORUS m Late Roman
+CYRIACA f Late Roman
+VIOLANTE f Late Roman, Italian
+CALLIXTUS m Late Roman
+REGINA f English, German, Italian, Spanish, Portuguese, Lithuanian, Polish, Czech, Hungarian, Swedish, Norwegian, Danish, Late Roman
+BIBIANA f Spanish, Italian, Late Roman
+CRESCENS m Late Roman, Biblical Latin
+SILVIA f Italian, Spanish, Portuguese, Romanian, Slovak, English, German, Late Roman, Roman Mythology
+BARBARA f English, Italian, French, German, Polish, Hungarian, Slovene, Croatian, Swedish, Danish, Norwegian, Late Roman
+CLARUS m Late Roman
+CONSTANTIUS m Late Roman
+IUCUNDA f Late Roman
+SERENA f English, Italian, Late Roman
+ANATOLIA f Late Roman
+OLIVA f Late Roman
+CORBINIANUS m Late Roman
+FORTUNATUS m Late Roman
+EPHESIUS m Late Roman
+VINCENTIUS m Late Roman
+DONATUS m Late Roman
+SALVATRIX f Late Roman
+QUIRINA f Late Roman
+CANDIDA f Late Roman, English
+PEREGRINUS m Late Roman
+DEUSDEDIT m Late Roman
+BONITUS m Late Roman
+FELINUS m Late Roman
+AMANDUS m Late Roman
+BEATRIX f German, Hungarian, Dutch, English, Late Roman
+URSUS m Late Roman
+SALVATOR m Late Roman
+ISAURUS m Late Roman
+ROMANUS m Late Roman
+CORONA f Late Roman, Italian, Spanish
+DOMINICUS m Late Roman, Dutch
+GABINUS m Late Roman
+FELICITAS f German, Late Roman, Roman Mythology
+AUREA f Late Roman
+FLORINA f Romanian, Spanish, Dutch, Late Roman
+GERONTIUS m Late Roman
+BENEDICTUS m Late Roman, Dutch
+HONORIUS m Late Roman
+RENATUS m Late Roman
+SIBYLLA f Greek, German, Swedish, Late Roman, Late Greek
+FRANCISCUS m Late Roman, Dutch
+LEOCADIA f Spanish, Late Roman
+PIUS m Late Roman
+CAESARIUS m Late Roman
+NAZARENUS m Late Roman
+CAELESTIS m Late Roman
+DESIDERATUS m Late Roman
+FACUNDUS m Late Roman
+REMIGIUS m Late Roman
+PASCHALIS m Late Roman, Greek
+DESIDERIA f Italian (Rare), Spanish (Rare), Late Roman
+JACOBUS m Dutch, Late Roman
+IERONIMUS m Late Roman
+NATALIA f Polish, Italian, Spanish, Romanian, English, German, Dutch, Norwegian, Danish, Swedish, Greek, Georgian, Russian, Ukrainian, Bulgarian, Late Roman
+VERISSIMUS m Late Roman
+SYBILLA f Polish, Late Roman
+PLACIDUS m Late Roman
+CHRISTIANA f English, Late Roman
+FELICIANA f Spanish, Italian, Late Roman
+DONATIANUS m Late Roman
+DOMINICA f English (Rare), Late Roman
+VICTORIUS m Late Roman
+MAGNUS m Swedish, Norwegian, Danish, Late Roman
+PASTOR m Spanish, Late Roman
+SABELLIUS m Late Roman
+URBANUS m Late Roman, Biblical Latin
+ONUPHRIUS m Egyptian Mythology (Latinized), Late Roman
+MELANIA f Italian, Spanish, Polish, Late Roman
+FRIGIDIANUS m Late Roman
+ANGELUS m Late Roman
+FIRMINUS m Late Roman
+MODESTA f Spanish, Late Roman
+PRUDENTIUS m Late Roman
+TURIBIUS m Late Roman
+FLORENTIA f Late Roman
+DEODATUS m Late Roman
+AMOR m & f Roman Mythology, Late Roman, Spanish, Portuguese
+HONORIA f Late Roman
+SIDONIUS m Late Roman
+IACOMUS m Late Roman
+AFRA (1) f Late Roman
+MAURITIUS m Late Roman
+CALOGERUS m Late Roman
+ROMANA f Italian, Polish, Slovene, Croatian, Czech, Slovak, Late Roman
+AMANDA f English, Spanish, Portuguese, Italian, Dutch, Swedish, Norwegian, Danish, Late Roman
+CAELESTINUS m Late Roman
+VICTORIANUS m Late Roman
+FULGENTIUS m Late Roman
+COLUMBA m & f Late Roman
+PROSPERUS m Late Roman
+FLORENTINUS m Late Roman
+DESIDERATA f Late Roman
+IUSTINIANUS m Late Roman
+VIATRIX f Late Roman
+NARCISSA f Late Roman
+AMATOR m Late Roman
+ISIDORUS m Late Roman
+BAPTISTA m Late Roman
+JUSTA f Late Roman, Spanish
+INNOCENTIUS m Late Roman
+LEONIUS m Late Roman
+AEGIDIUS m Late Roman
+IUSTA f Late Roman
+ROSALIA f Italian, Late Roman
+PIA f Italian, Swedish, Norwegian, Danish, German, Slovene, Late Roman
+BENIGNA f Spanish, Italian, Portuguese, Late Roman
+VITALIS m Late Roman
+MATRONA f Russian, Late Roman
+CYRIACUS m Late Roman
+CHRISTIANUS m Late Roman
+CRESCENTIUS m Late Roman
+HONORINA f Late Roman
+CONSTANS m Late Roman
+URSA f Late Roman
+REGULA f German (Swiss), Late Roman
+VICTOR m English, French, Portuguese, Romanian, Dutch, Swedish, Late Roman
+ANDEOLUS m Late Roman
+DOROTHEUS m Late Roman
+AMATA f Late Roman
+ROMAEUS m Late Roman
+NATALIUS m Late Roman
+MAURA (1) f Italian, Spanish, Late Roman
+COLUMBANUS m Late Roman
+URSINUS m Late Roman
+AMABILIS m Late Roman
+PLACIDA f Late Roman, Italian
+MAURUS m Late Roman
+FLORENTINA f Spanish, Late Roman
+DOMNIUS m Late Roman
+CLARA f German, Spanish, Portuguese, Italian, French, Catalan, Romanian, English, Swedish, Danish, Late Roman
+LUPUS m Late Roman
+BENIGNUS m Late Roman
+SIDONIA f Late Roman, Georgian
+DONATA f Italian, Polish, Lithuanian, Late Roman
+DELPHINA f Late Roman
+CALIXTUS m Late Roman
+SILVIUS m Late Roman, Roman Mythology
+VIVIANUS m Late Roman
+IUSTUS m Late Roman
+AMANTIUS m Late Roman
+EMERENTIUS m Late Roman
+SANCTIUS m Late Roman
+AMABILIA f Late Roman
+HONORATUS m Late Roman
+HONORATA f Late Roman, Polish
+VICTORINA f Late Roman
+THERASIA f Late Roman
+JOHANNES m German, Dutch, Swedish, Norwegian, Danish, Finnish, Estonian, Late Roman
+JOANNES m Late Roman
+LAETITIA f Late Roman, French
+LIBORIUS m Late Roman
+FELICIUS m Late Roman
+PRIMITIVUS m Late Roman
+FELICIANUS m Late Roman
+VICTORINUS m Late Roman
+CLARITIA f Late Roman
+DURANS m Late Roman
+ANGELA f English, Italian, German, Dutch, Romanian, Slovene, Slovak, Russian, Macedonian, Late Roman
+DESIDERIUS m Late Roman
+LIBERIUS m Late Roman

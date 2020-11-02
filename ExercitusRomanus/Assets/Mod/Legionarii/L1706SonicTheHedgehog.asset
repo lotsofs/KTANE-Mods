@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0301Rhythms
+  m_Name: L1706SonicTheHedgehog
   m_EditorClassIdentifier: 
-  DisplayName: January 7 - March 5 (August 16 2016)
-  Description: Who's On First Translated was released as Who's On First German, and
-    later updated to include other languages with the release of the other three translated
-    modules.
+  DisplayName: 'Lucia: Oct 31 - Jan 14 (May 15)'
+  Description: 'October 31 - January 14
+
+    Needy: May 15'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -27,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WirePlacementModule
+      - BrailleModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - DoubleOhModule
+      - MafiaModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CheapCheckoutModule
+      - FestivePianoKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CoordinatesModule
+      - FlagsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LightCycleModule
+      - timezone
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BigButtonTranslated
+      - PolyhedralMazeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MorseCodeTranslated
+      - symbolicCoordinates
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordsTranslated
+      - Poker
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - colormath
+      - poetry
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MusicRhythms
+      - sonic
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NeedyKnobV2
+      - EdgeworkModule
   PacingEventsEnabled: 1

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0201TwoBits
+  m_Name: C1601TwoBits
   m_EditorClassIdentifier: 
-  DisplayName: July 16 2015 - July 26 2016
-  Description: Since the vanilla needy modules appear later in the manual and there
-    was no more room on the previous bomb, they've been placed on this one.
+  DisplayName: Cardea
+  Description: July 16 2015 - July 26 2016
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

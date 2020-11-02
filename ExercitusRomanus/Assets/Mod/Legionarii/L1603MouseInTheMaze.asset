@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0207TextField
+  m_Name: L1603MouseInTheMaze
   m_EditorClassIdentifier: 
-  DisplayName: November 30 - January 6 (August 13 2016)
-  Description: 7 modules from 2016, 3 from 2017. Happy new year!
+  DisplayName: Spurius
+  Description: 'August 19 - August 26
+
+    Needy: July 22'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
+      - MysticSquareModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SouvenirModule
+      - CrazyTalk
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WordSearchModule
+      - spwizAdventureGame
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BrokenButtonsModule
+      - TurnTheKey
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonScreamsModule
+      - MazeV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ModuleAgainstHumanity
+      - PasswordV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - complicatedButtonsModule
+      - CryptModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BattleshipModule
+      - TurnTheKeyAdvanced
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - symbolicPasswordModule
+      - spwiz3DMaze
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TextField
+      - MouseInTheMaze
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NeedyVentV2
+      - Needy Math
   PacingEventsEnabled: 1

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0207ComplicatedButtons
+  m_Name: L1604SkewedSlots
   m_EditorClassIdentifier: 
-  DisplayName: November 23 - December 31
-  Description: The last 11 modules of the year. See you in the next year.
+  DisplayName: Quintinus
+  Description: 'August 27 - September 16
+
+    Needy: July 22'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitmapsModule
+      - ChessModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColoredSquaresModule
+      - SillySlots
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - AdjacentLettersModule
+      - NumberPad
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ThirdBase
+      - SimonV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WhosOnFirstTranslated
+      - Laundry
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SouvenirModule
+      - Probing
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WordSearchModule
+      - alphabet
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BrokenButtonsModule
+      - CaesarCipherModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonScreamsModule
+      - resistors
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ModuleAgainstHumanity
+      - SkewedSlotsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - complicatedButtonsModule
+      - LightsOut
   PacingEventsEnabled: 1

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0206AdjacentLetters
+  m_Name: L00Template
   m_EditorClassIdentifier: 
-  DisplayName: October 29 - November 28 (August 12)
-  Description: 
+  DisplayName: Template
+  Description: '
+
+    Needy: '
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheBulbModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BlindAlleyModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - EnglishTest
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SeaShells
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RockPaperScissorsLizardSpockModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitmapsModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColoredSquaresModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - AdjacentLettersModule
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ThirdBase
+      - 
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MotionSense
+      - Needy
   PacingEventsEnabled: 1

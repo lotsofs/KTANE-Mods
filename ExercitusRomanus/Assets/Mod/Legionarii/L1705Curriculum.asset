@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0201CombinationLock
+  m_Name: L1705Curriculum
   m_EditorClassIdentifier: 
-  DisplayName: July 16 2015 - August 4 2016
-  Description: Since the previous bomb only had room for 10 of the 11 vanilla modules,
-    passwords, being the last to appear in the manual, has been placed on this bomb
-    instead.
+  DisplayName: Marcellus
+  Description: 'September 15 - October 30
+
+    Needy: January 25'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -24,66 +24,68 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0c000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - GameOfLifeSimple
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColourFlash
+      - GameOfLifeCruel
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PianoKeys
+      - NonogramModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Semaphore
+      - SetModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Emoji Math
+      - Color Generator
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - switchModule
+      - Painting
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TwoBits
+      - SymbolCycleModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - AnagramsModule
+      - hunting
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WordScrambleModule
+      - ExtendedPassword
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - combinationLock
+      - curriculum
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0e000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - VentGasTranslated
   PacingEventsEnabled: 1

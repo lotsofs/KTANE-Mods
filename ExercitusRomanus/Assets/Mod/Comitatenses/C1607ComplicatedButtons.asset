@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0206Hexamaze
+  m_Name: C1607ComplicatedButtons
   m_EditorClassIdentifier: 
-  DisplayName: October 8 - November 21
-  Description: 
+  DisplayName: Mercurius
+  Description: November 23 - December 31
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +25,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeFight
+      - BitmapsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeWho
+      - ColoredSquaresModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - shapeshift
+      - AdjacentLettersModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
+      - ThirdBase
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FriendshipModule
+      - WhosOnFirstTranslated
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheBulbModule
+      - SouvenirModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BlindAlleyModule
+      - WordSearchModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - EnglishTest
+      - BrokenButtonsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SeaShells
+      - SimonScreamsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RockPaperScissorsLizardSpockModule
+      - ModuleAgainstHumanity
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - HexamazeModule
+      - complicatedButtonsModule
   PacingEventsEnabled: 1

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0101Password
+  m_Name: L1601CombinationLock
   m_EditorClassIdentifier: 
-  DisplayName: July 16
-  Description: "The comitatenses each contain 11 modules, ordered by release date
-    with no regard whether these modules are needy or solvable. \n\nThe first modules
-    ever released were the vanilla ones."
+  DisplayName: Iuvenalis
+  Description: 'July 16 2015 - August 4 2016
+
+    Needy: July 16 2015'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -24,57 +24,66 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 02000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 03000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 04000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 05000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 06000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 07000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 08000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 09000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 0a000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 0b000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 2
       ComponentTypes: 0c000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ColourFlash
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PianoKeys
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Semaphore
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Emoji Math
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - switchModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TwoBits
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - AnagramsModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WordScrambleModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - combinationLock
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 0e000000
       SpecialComponentType: 0
       ModTypes: []
   PacingEventsEnabled: 1

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0303Yahtzee
+  m_Name: L1702BitwiseOperations
   m_EditorClassIdentifier: 
-  DisplayName: May 25 - July 14 (October 8 2016)
-  Description: 
+  DisplayName: Quintus
+  Description: 'March 18 - May 14
+
+    Needy: August 23 2016'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastMath
+      - OnlyConnectModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MinesweeperModule
+      - neutralization
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ZooModule
+      - webDesign
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BinaryLeds
+      - ChordQualities
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - booleanVennModule
+      - CreationModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PointOfOrderModule
+      - RubiksCubeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - fizzBuzzModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - screw
+      - TheClockModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - LEDEnc
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - XRayModule
+      - BitOps
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeWho
+      - spwizTetris
   PacingEventsEnabled: 1

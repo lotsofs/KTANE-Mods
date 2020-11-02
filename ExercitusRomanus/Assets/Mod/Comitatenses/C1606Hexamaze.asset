@@ -9,15 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0101Maze
+  m_Name: C1606Hexamaze
   m_EditorClassIdentifier: 
-  DisplayName: July 16
-  Description: 'The legionarii each contain 10 solvable modules, ordered by release
-    date. The 11th module will be a needy, also ordered by release date. Needies may
-    lag behind or get ahead due to their separate release date schedule.
-
-
-    The first modules ever released were the vanilla ones. '
+  DisplayName: Pomona
+  Description: October 9 - November 21
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -27,57 +22,68 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 02000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - monsplodeWho
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 03000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - shapeshift
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 04000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - FollowTheLeaderModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 05000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - FriendshipModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 06000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - TheBulbModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 07000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - BlindAlleyModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 08000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - EnglishTest
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 09000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - SeaShells
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - RockPaperScissorsLizardSpockModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0b000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - ButtonV2
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0d000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - HexamazeModule
   PacingEventsEnabled: 1

@@ -15,19 +15,15 @@ MonoBehaviour:
   Sections:
   - Title: 2015
     MissionIDs:
-    - C0101Password
+    - C1501Password
   - Title: 2016
     MissionIDs:
-    - C0201TwoBits
-    - C0202Listening
-    - C0203AdventureGame
-    - C0204NumberPad
-    - C0205TicTacToe
-    - C0206Hexamaze
-    - C0207ComplicatedButtons
+    - C1601TwoBits
+    - C1602OrientationCube
+    - C1603Plumbing
+    - C1604Laundry
+    - C1605MonsplodeFight
+    - C1606Hexamaze
+    - C1607ComplicatedButtons
   - Title: 2017
-    MissionIDs:
-    - C0301TranslatedMorseCode
-    - C0302FizzBuzz
-    - C0303IceCream
-    - C0304MorseAMaze
+    MissionIDs: []

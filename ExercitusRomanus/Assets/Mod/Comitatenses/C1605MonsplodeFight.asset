@@ -9,13 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0202LetterKeys
+  m_Name: C1605MonsplodeFight
   m_EditorClassIdentifier: 
-  DisplayName: August 13 - August 16 (July 16 2015)
-  Description: 'With the last vanilla needy, released on the date in parentheses.
-
-
-    Note: The dates are based off of a European timezone. '
+  DisplayName: Amor
+  Description: September 2 - October 11
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -28,64 +25,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - KeypadV2
+      - Probing
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonV2
+      - alphabet
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ButtonV2
+      - CaesarCipherModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ForeignExchangeRates
+      - resistors
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Listening
+      - SkewedSlotsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MorseV2
+      - Microcontroller
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - OrientationCube
+      - spwizPerspectivePegs
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - graphModule
+      - murder
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MemoryV2
+      - TheGamepadModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LetterKeys
+      - TicTacToeModule
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0f000000
+      ComponentTypes: 
       SpecialComponentType: 0
-      ModTypes: []
+      ModTypes:
+      - monsplodeFight
   PacingEventsEnabled: 1

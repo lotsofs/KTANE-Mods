@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L0203Chess
+  m_Name: L1607WirePlacement
   m_EditorClassIdentifier: 
-  DisplayName: August 16 - August 24 (July 22)
-  Description: Unless there's something noteworthy, these descriptions will be empty.
+  DisplayName: Herminius
+  Description: 'November 30 - January 7
+
+    Needy: August 14'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
+      - WhosOnFirstTranslated
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Logic
+      - SouvenirModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MysticSquareModule
+      - WordSearchModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CrazyTalk
+      - BrokenButtonsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAdventureGame
+      - SimonScreamsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TurnTheKey
+      - ModuleAgainstHumanity
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MazeV2
+      - complicatedButtonsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordV2
+      - symbolicPasswordModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CryptModule
+      - TextField
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ChessModule
+      - WirePlacementModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Needy Math
+      - MotionSense
   PacingEventsEnabled: 1

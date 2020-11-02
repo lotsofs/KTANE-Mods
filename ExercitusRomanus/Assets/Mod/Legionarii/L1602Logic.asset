@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0205TicTacToe
+  m_Name: L1602Logic
   m_EditorClassIdentifier: 
-  DisplayName: August 31 - October 8
-  Description: 
+  DisplayName: Paula
+  Description: 'August 13 - August 17
+
+    Needy: July 16 2015'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,65 +27,64 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Laundry
+      - KeypadV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Probing
+      - ForeignExchangeRates
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - alphabet
+      - Listening
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - resistors
+      - MorseV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SkewedSlotsModule
+      - OrientationCube
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CaesarCipherModule
+      - graphModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Microcontroller
+      - MemoryV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizPerspectivePegs
+      - LetterKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - murder
+      - spwizAstrology
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheGamepadModule
+      - Logic
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 
+      ComponentTypes: 0f000000
       SpecialComponentType: 0
-      ModTypes:
-      - TicTacToeModule
+      ModTypes: []
   PacingEventsEnabled: 1
