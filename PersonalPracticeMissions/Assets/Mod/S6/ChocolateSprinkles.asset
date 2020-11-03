@@ -15,11 +15,11 @@ MonoBehaviour:
   Description: You know this bomb. It has ALL of your good old vanilla modules, plus
     the ones based on them. This should be easy.
   GeneratorSetting:
-    TimeLimit: 2013
+    TimeLimit: 1800
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 300
+    TimeBeforeNeedyActivation: 600
     FrontFaceOnly: 0
-    OptionalWidgetCount: 5
+    OptionalWidgetCount: 3
     ComponentPools:
     - Count: 1
       AllowedSources: 3
