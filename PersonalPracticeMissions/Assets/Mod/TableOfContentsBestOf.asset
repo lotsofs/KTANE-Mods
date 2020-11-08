@@ -23,6 +23,12 @@ MonoBehaviour:
     - VacationsOver
     - NoInvitation
     - ChocolateSprinkles
+  - Title: Large Bombs (49 modules)
+    MissionIDs:
+    - Eldoraigne
+    - Irene
+    - Doringkloof
+    - Olievenhoutbosch
   - Title: Double Mods
     MissionIDs:
     - DoubleMods
@@ -36,9 +42,3 @@ MonoBehaviour:
     - DoubleModsIX
     - DoubleModsX
     - DoubleModsXI
-  - Title: Large Bombs
-    MissionIDs:
-    - Eldoraigne
-    - Irene
-    - Doringkloof
-    - Olievenhoutbosch
