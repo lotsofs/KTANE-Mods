@@ -133,3 +133,27 @@ MonoBehaviour:
     - DoubleModsV
     - BigBombV
     - BigBossIII
+  - Title: Back To The Roots
+    MissionIDs:
+    - PreviousKnowledgeApplied
+    - Aaaaaaahhhhh
+    - Familiarity
+    - Fooled
+    - LostInTranslation
+    - Enough1
+    - DoubleTranslation
+    - WhatsOnSecond
+    - TooComplicated
+    - InhumaneBomb
+    - HusOnFirst
+    - KnowThyModules
+    - OoohLookImAShinyBomb
+    - AMinuteAModuleVI
+    - TheRightfielder
+    - Shortstop
+    - TenMinutesVI
+    - VanillaBomb
+    - BigBombVI
+    - ChocolateSprinkles
+    - DoubleModsVI
+    - BigBossIV
