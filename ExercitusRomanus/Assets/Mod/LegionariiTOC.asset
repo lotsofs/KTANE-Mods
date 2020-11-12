@@ -19,10 +19,10 @@ MonoBehaviour:
   - Title: 2016
     MissionIDs:
     - L1601CombinationLock
-    - L1602LetterKeys
-    - L1603Chess
+    - L1602Logic
+    - L1603MouseInTheMaze
     - L1604SkewedSlots
-    - L1605Friendship
+    - L1605TheBulb
     - L1606ThirdBase
     - L1607WirePlacement
   - Title: 2017
@@ -30,6 +30,6 @@ MonoBehaviour:
     - L1701Rhythms
     - L1702BitwiseOperations
     - L1703Yahtzee
-    - L1704TBC
+    - L1704MonsplodeTradingCards
     - L1705Curriculum
     - L1706SonicTheHedgehog

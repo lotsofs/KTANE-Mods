@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0301TranslatedMorseCode
+  m_Name: A1605Hexamaze
   m_EditorClassIdentifier: 
-  DisplayName: January 3 - January 25
-  Description: Translated Who's On First was already released earlier when the other
-    translated modules came out, but it only featured the German language. An update
-    to it brought the other languages and other modules.
+  DisplayName: Seraphinus
+  Description: 'October 11 - November 21
+
+    Modules 56 - 66'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -27,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BattleshipModule
+      - shapeshift
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - symbolicPasswordModule
+      - TicTacToeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TextField
+      - FollowTheLeaderModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WirePlacementModule
+      - FriendshipModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - DoubleOhModule
+      - TheBulbModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CheapCheckoutModule
+      - BlindAlleyModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CoordinatesModule
+      - EnglishTest
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LightCycleModule
+      - SeaShells
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - http
+      - RockPaperScissorsLizardSpockModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BigButtonTranslated
+      - ButtonV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MorseCodeTranslated
+      - HexamazeModule
   PacingEventsEnabled: 1

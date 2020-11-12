@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Name: L1607WirePlacement
   m_EditorClassIdentifier: 
   DisplayName: Herminius
-  Description: 'November 30 - January 7
+  Description: 'November 30 - January 7*
 
-    Needy: August 14'
+    Modules 71 - 80
+
+    Needy 8: August 14
+
+    * 7 from 2017, 3 from 2017'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

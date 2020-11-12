@@ -15,18 +15,20 @@ MonoBehaviour:
   Sections:
   - Title: 2015
     MissionIDs:
-    - A0101Password
+    - A1501Password
   - Title: 2016
     MissionIDs:
-    - A0201SimonStates
-    - A0202MysticSquare
-    - A0203SillySlots
-    - A0204TheGamepad
-    - A0205Hexamaze
-    - A0206ComplicatedButtonsModule
+    - A1601ForeignExchangeRates
+    - A1602AdventureGame
+    - A1603SimonStates
+    - A1604MonsplodeFight
+    - A1605Hexamaze
+    - A1606ComplicatedButtons
   - Title: 2017
     MissionIDs:
-    - A0301TranslatedPasswords
-    - A0302LedEncryption
-    - A0303XRay
-    - A0304GameOfLife
+    - A1701TranslatedPasswords
+    - A1702LedEncryption
+    - A1703XRay
+    - A1704GameOfLifeSimple
+    - A1705Mafia
+    - A1706VisualImpairment

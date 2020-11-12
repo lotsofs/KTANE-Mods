@@ -9,11 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0303IceCream
+  m_Name: A1601ForeignExchangeRates
   m_EditorClassIdentifier: 
-  DisplayName: May 12 - June 26
-  Description: 'Milestone: Three solves on this bomb, and you''ll have reached 100
-    solved modules.'
+  DisplayName: Amatus
+  Description: 'July 8 - August 13
+
+    Modules 12 - 22'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -26,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TheClockModule
+      - ColourFlash
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LEDEnc
+      - PianoKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitOps
+      - Semaphore
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - EdgeworkModule
+      - Emoji Math
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastMath
+      - switchModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MinesweeperModule
+      - TwoBits
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ZooModule
+      - AnagramsModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BinaryLeds
+      - WordScrambleModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - booleanVennModule
+      - combinationLock
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PointOfOrderModule
+      - KeypadV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - ForeignExchangeRates
   PacingEventsEnabled: 1

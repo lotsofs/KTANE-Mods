@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0302FizzBuzz
+  m_Name: A1602AdventureGame
   m_EditorClassIdentifier: 
-  DisplayName: January 25 - May 11
-  Description: Translated Vent Gas and Passwords were placed on this bomb, due to
-    the later appearance of their vanilla equivalent in the manual, and there not
-    being enough room for them on the previous bomb.
+  DisplayName: Viviana
+  Description: 'August 14 - August 20
+
+    Modules 23 - 33'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -27,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PasswordsTranslated
+      - Listening
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - VentGasTranslated
+      - MorseV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - colormath
+      - OrientationCube
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MusicRhythms
+      - graphModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - OnlyConnectModule
+      - MemoryV2
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - neutralization
+      - LetterKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - webDesign
+      - spwizAstrology
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ChordQualities
+      - Logic
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CreationModule
+      - MysticSquareModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RubiksCubeModule
+      - CrazyTalk
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fizzBuzzModule
+      - spwizAdventureGame
   PacingEventsEnabled: 1

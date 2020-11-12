@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: C1604Laundry
   m_EditorClassIdentifier: 
   DisplayName: Diana
-  Description: August 22 - August 31
+  Description: 'August 22 - August 31
+
+    Solvables: 36 - 45
+
+    Needies: 10'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

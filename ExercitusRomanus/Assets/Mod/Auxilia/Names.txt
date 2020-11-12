@@ -11,6 +11,7 @@ MONICA f English, Italian, Romanian, Late Roman
 LAURA f English, Spanish, Italian, Portuguese, Romanian, Catalan, Finnish, Estonian, Hungarian, Polish, Slovene, Croatian, Czech, Slovak, Swedish, Norwegian, Danish, German, Dutch, Lithuanian, Latvian, Late Roman
 DOMNINUS m Late Roman
 IGNATIA f Late Roman
+
 PRIMITIVA f Spanish, Late Roman
 PERPETUA f Spanish (Rare), Late Roman
 HONORINUS m Late Roman

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: C1602OrientationCube
   m_EditorClassIdentifier: 
   DisplayName: Bellona
-  Description: July 29 - August 14
+  Description: 'July 29 - August 14
+
+    Solvables: 18 - 25
+
+    Needies: 6 - 8'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

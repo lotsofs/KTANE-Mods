@@ -9,11 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: A0201SimonStates
+  m_Name: C1703IceCream
   m_EditorClassIdentifier: 
-  DisplayName: July 8 - August 13
-  Description: Most of these descriptions will be empty, unless there's something
-    to be noted. Happy defusing!
+  DisplayName: Jupiter
+  Description: 'May 12 - June 27
+
+    Solvables: 98 - 107
+
+    Needies: 14'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -26,65 +29,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColourFlash
+      - TheClockModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PianoKeys
+      - LEDEnc
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Semaphore
+      - BitOps
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Emoji Math
+      - EdgeworkModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - switchModule
+      - fastMath
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TwoBits
+      - MinesweeperModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - AnagramsModule
+      - ZooModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WordScrambleModule
+      - BinaryLeds
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - combinationLock
+      - booleanVennModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - KeypadV2
+      - PointOfOrderModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonV2
+      - iceCreamModule
   PacingEventsEnabled: 1

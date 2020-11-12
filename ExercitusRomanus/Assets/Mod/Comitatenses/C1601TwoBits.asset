@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: C1601TwoBits
   m_EditorClassIdentifier: 
   DisplayName: Cardea
-  Description: July 16 2015 - July 26 2016
+  Description: 'July 16 2015 - July 26 2016
+
+    Solvables: 12 - 17
+
+    Needies: 1 - 5'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

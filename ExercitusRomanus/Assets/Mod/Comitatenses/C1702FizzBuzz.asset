@@ -9,13 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: C0304MorseAMaze
+  m_Name: C1702FizzBuzz
   m_EditorClassIdentifier: 
-  DisplayName: June 30 - TBD (WIP)
-  Description: 'TODO: Verify release dates
+  DisplayName: Maia
+  Description: 'February 1 - May 11
 
+    Solvables: 88 - 97
 
-    Also, next bomb will have Cruel Piano Keys. Put the blurb.'
+    Needies: 13'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -28,65 +29,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - EternitySDec
+      - PasswordsTranslated
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - screw
+      - VentGasTranslated
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - colormath
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - XRayModule
+      - MusicRhythms
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - QRCode
+      - OnlyConnectModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - buttonMasherNeedy
+      - neutralization
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - rng
+      - webDesign
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ColorMorseModule
+      - ChordQualities
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Mastermind Simple
+      - CreationModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Mastermind Cruel
+      - RubiksCubeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - GridlockModule
+      - fizzBuzzModule
   PacingEventsEnabled: 1

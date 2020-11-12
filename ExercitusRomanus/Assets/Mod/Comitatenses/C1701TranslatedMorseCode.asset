@@ -9,11 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: A0303XRay
+  m_Name: C1701TranslatedMorseCode
   m_EditorClassIdentifier: 
-  DisplayName: May 14 - July 14
-  Description: 'Milestone: You''ve defused 99 modules so far. The first module on
-    this bomb will be your 100th!'
+  DisplayName: Proserpina
+  Description: 'January 5 - February 1
+
+    Solvables: 78 - 87
+
+    Needies: 12'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -26,65 +29,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitOps
+      - BattleshipModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastMath
+      - symbolicPasswordModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MinesweeperModule
+      - TextField
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ZooModule
+      - WirePlacementModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BinaryLeds
+      - DoubleOhModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - booleanVennModule
+      - CheapCheckoutModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - PointOfOrderModule
+      - CoordinatesModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - LightCycleModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - screw
+      - http
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - YahtzeeModule
+      - BigButtonTranslated
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - XRayModule
+      - MorseCodeTranslated
   PacingEventsEnabled: 1

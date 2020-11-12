@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: A0206ComplicatedButtonsModule
+  m_Name: A1606ComplicatedButtons
   m_EditorClassIdentifier: 
-  DisplayName: November 23 - December 31
-  Description: This concludes the year. Happy new year!
+  DisplayName: Patricia
+  Description: 'November 23 - December 31
+
+    Modules 67 - 77'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

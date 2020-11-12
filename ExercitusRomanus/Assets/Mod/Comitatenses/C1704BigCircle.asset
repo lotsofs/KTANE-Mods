@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: A0202MysticSquare
+  m_Name: C1704BigCircle
   m_EditorClassIdentifier: 
-  DisplayName: August 13 - August 19
-  Description: One such note is when multiple modules were released at the same time,
-    but they get split up due to the limited space on a bomb. In that case, modules
-    have a secondary sorting by the order in which they get mentioned in the workshop
-    description. Therefore, Square Button is on this bomb, and Round Keypad & Simon
-    States on the previous.
+  DisplayName: Netuno
+  Description: 'June 30 - August 15
+
+    Solvables: 108 - 115
+
+    Needies: 15 - 17'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -29,65 +29,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ButtonV2
+      - EternitySDec
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ForeignExchangeRates
+      - screw
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Listening
+      - YahtzeeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MorseV2
+      - XRayModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - OrientationCube
+      - QRCode
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - graphModule
+      - buttonMasherNeedy
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MemoryV2
+      - Mastermind Simple
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LetterKeys
+      - Mastermind Cruel
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
+      - CruelPianoKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Logic
+      - GridlockModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MysticSquareModule
+      - BigCircle
   PacingEventsEnabled: 1

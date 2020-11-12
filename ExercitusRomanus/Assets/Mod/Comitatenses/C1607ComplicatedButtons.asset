@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Name: C1607ComplicatedButtons
   m_EditorClassIdentifier: 
   DisplayName: Mercurius
-  Description: November 23 - December 31
+  Description: 'November 23 - December 31
+
+    Solvables: 67 - 77'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

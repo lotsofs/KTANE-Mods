@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Name: C1606Hexamaze
   m_EditorClassIdentifier: 
   DisplayName: Pomona
-  Description: October 9 - November 21
+  Description: 'October 9 - November 21
+
+    Solvables: 56 - 66'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -25,13 +27,13 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeWho
+      - shapeshift
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - shapeshift
+      - TicTacToeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 

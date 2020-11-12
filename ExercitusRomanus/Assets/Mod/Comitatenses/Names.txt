@@ -6,7 +6,6 @@ DIANA f English, Spanish, Italian, Portuguese, Romanian, Catalan, German, Dutch,
 AMOR m & f Roman Mythology, Late Roman, Spanish, Portuguese
 POMONA f Roman Mythology
 MERCURIUS m Roman Mythology
-
 PROSERPINA f Roman Mythology
 MAIA (2) f Roman Mythology
 JUPITER m Roman Mythology (Anglicized)
@@ -14,6 +13,7 @@ NETUNO m Roman Mythology (Portuguese)
 PLUTO m Greek Mythology (Latinized), Roman Mythology
 SILVIA f Italian, Spanish, Portuguese, Romanian, Slovak, English, German, Late Roman, Roman Mythology
 NONA (1) f Roman Mythology
+
 NISUS m Roman Mythology
 NAENIA f Roman Mythology
 MARTE (2) m Roman Mythology (Italian, Spanish, Portuguese)

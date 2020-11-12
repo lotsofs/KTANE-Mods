@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: C1603Plumbing
   m_EditorClassIdentifier: 
   DisplayName: Latona
-  Description: August 14 - August 21
+  Description: 'August 14 - August 21
+
+    Solvables: 26 - 35
+
+    Needies: 9'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3

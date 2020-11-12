@@ -22,8 +22,15 @@ MonoBehaviour:
     - C1602OrientationCube
     - C1603Plumbing
     - C1604Laundry
-    - C1605MonsplodeFight
+    - C1605WhosThatMonsplode
     - C1606Hexamaze
     - C1607ComplicatedButtons
   - Title: 2017
-    MissionIDs: []
+    MissionIDs:
+    - C1701TranslatedMorseCode
+    - C1702FizzBuzz
+    - C1703IceCream
+    - C1704BigCircle
+    - C1705SET
+    - C1706Flags
+    - C1707IdentityParade

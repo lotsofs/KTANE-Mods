@@ -9,14 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: L1604SkewedSlots
+  m_Name: A1702LedEncryption
   m_EditorClassIdentifier: 
-  DisplayName: Quintinus
-  Description: 'August 27 - September 16
+  DisplayName: Beatus
+  Description: 'March 6 - May 12
 
-    Modules 41 - 50
-
-    Needy 5: July 22'
+    Modules 89 - 99'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
@@ -29,65 +27,65 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ChessModule
+      - colormath
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SillySlots
+      - MusicRhythms
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NumberPad
+      - OnlyConnectModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonV2
+      - neutralization
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Laundry
+      - webDesign
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Probing
+      - ChordQualities
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - alphabet
+      - CreationModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CaesarCipherModule
+      - RubiksCubeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - resistors
+      - fizzBuzzModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SkewedSlotsModule
+      - TheClockModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LightsOut
+      - LEDEnc
   PacingEventsEnabled: 1

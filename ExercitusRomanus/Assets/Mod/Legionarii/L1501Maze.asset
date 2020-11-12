@@ -14,7 +14,11 @@ MonoBehaviour:
   DisplayName: Pompilius
   Description: 'July 16
 
-    Needy: July 16'
+    Modules 1 - 10
+
+    Needy 1: July 16
+
+'
   GeneratorSetting:
     TimeLimit: 1200
     NumStrikes: 3
