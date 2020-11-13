@@ -14,8 +14,28 @@ MonoBehaviour:
   id: ExercitusRomanus
   title: Exercitus Romanus
   author: S.
-  description: Enjoy a journey back in time with the Roman Army of bombs.
+  description: "Enjoy a journey back in time with the Roman Army of Bombs. \n\nThis
+    is a mission pack that will take you on a journey through the history of modded
+    KTANE by giving you small bombs, each with 11 modules in release order. \n\nThis
+    mission pack is a 4-in-1, each with their own table of contents:\n* The Legionarii:
+    These are the classic 10 solvable + 1 needy bombs. Needies may lag behind or get
+    ahead of the solvables due to their separate release schedule however. These bombs
+    are most suited for those who want to learn about the mod history of KTANE while
+    also enjoying the classic KTANE challenge.\n* The Auxilia: No needies, just 11
+    solvable modules. Perfect for those time travel tourists who don't care about
+    needies. \n* The Comitatenses: 11 modules, but the ratio solvable to needy is
+    entirely determined by when a module was released. These bombs represent the most
+    accurate chronology of all the modded modules the KTANE community has to offer.\n*
+    The Operarii Fabrica: Offers factory mode variants of all of the above, for those
+    who want a continuous challenge without being interupted, or saved for that matter,
+    by the office room.\n\nSince these are not meant to be difficult (with the exception
+    of the Operarii Fabrica), each Decanus has a 20 minute timer and allows 3 strikes.
+    Please contact the Senate (me) if you think one should have these increased. For
+    optional additional difficulty: How fast can you speedrun the history of KTANE?\n\nHistorians
+    have currently only uncovered the KTANE history up to and including the year 2770
+    ab urbe condita (2017). The following years will be added as the present continues
+    to become history. \n"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 2800000, guid: 442b6e92c229691458e6144793f4e52a, type: 3}
+  previewImage: {fileID: 2800000, guid: 27b2c7624d33365418dcf1e5e4fc07e6, type: 3}
