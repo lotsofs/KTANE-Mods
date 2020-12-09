@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: The Operarii Fabrica
   Sections:
-  - Title: 2015/2016
+  - Title: 2015-2016
     MissionIDs:
     - OFLegionarii1516
     - OFAuxilia1516
@@ -23,8 +23,11 @@ MonoBehaviour:
     - OFLegionarii17
     - OFAuxilia17
     - OFComitatenses17
-  - Title: 'Modus Officinas Magna: 2015-2017'
+  - Title: 2015-2017
     MissionIDs:
     - OFLegionarii151617
     - OFAuxilia151617
     - OFComitatenses151617
+  - Title: 2015-2018
+    MissionIDs:
+    - OFAuxilia15161718

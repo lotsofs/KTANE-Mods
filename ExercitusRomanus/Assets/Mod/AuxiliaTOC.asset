@@ -32,3 +32,20 @@ MonoBehaviour:
     - A1704GameOfLifeSimple
     - A1705Mafia
     - A1706VisualImpairment
+  - Title: 2018
+    MissionIDs:
+    - A1801LedGrid
+    - A1802RubiksClock
+    - A1803TheSun
+    - A1804DigitalRoot
+    - A1805ComplexKeypad
+    - A1806BlackHole
+    - A1807Equations
+    - A1808TheSwitch
+    - A1809BooleanMaze
+    - A1810Accumulation
+    - A1811CruelCountdown
+    - A1812TheRadio
+    - A1813TenButtonColorCode
+    - A1814BrokenGuitarChords
+    - A1815Alchemy
