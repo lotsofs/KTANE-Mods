@@ -15,21 +15,7 @@ MonoBehaviour:
   title: Road To Centurion (Beta Test)
   author: S.
   description: "Beta test workshop entry for the Road To Centurion.\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2098407568\r\nSee
-    its page for more information.\r\n\r\n\r\n* Section 1: Color Flash, Turn The Key,
-    Turn The Keys, 3D Maze, Skewed Slots, Follow The Leader, Blind Alley, Hexamaze,
-    Battleship, LED Encryption, Yahtzee\r\n* Section 2: Word Scramble, Anagrams, The
-    Square Button, Simon States, Round Keypad, Listening, Morsematics, Forget Me Not,
-    Plumbing, Safety Safe, Silly Slots, Souvenir\r\n* Section 3: Piano Keys, Two Bits,
-    Foreign Exchange Rates, Adventure Game, Chess, Murder, Third Base, Laundry. Needies:
-    Answering Questions, Rotary Phone\r\n* Section 4: Logic, CryptModule, CaesarCipherModule,
-    BitmapsModule, WordSearchModule, BrokenButtonsModule, DoubleOhModule, neutralization,
-    Filibuster\r\n* Section 5: MouseInTheMaze, NumberPad, TheGamepadModule, monsplodeFight,
-    SeaShells, RockPaperScissorsLizardSpockModule, CoordinatesModule, RubiksCubeModule,
-    BinaryLeds, Needy Math, spwizTetris\r\n* Section 6: WhosOnFirstTranslated, SimonScreamsModule,
-    ModuleAgainstHumanity, complicatedButtonsModule, symbolicPasswordModule, BigButtonTranslated,
-    MorseCodeTranslated, PasswordsTranslated, monsplodeWho, VentGasTranslated\r\n*
-    Section 7: Semaphore, combinationLock, TicTacToeModule, TheBulbModule, WirePlacementModule,
-    colormath, webDesign, booleanVennModule, iceCreamModule, http"
+    its page for more information.\r"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
