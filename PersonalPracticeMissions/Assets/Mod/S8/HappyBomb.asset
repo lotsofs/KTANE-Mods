@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: This bomb will undoubtedly bring a smile to your face, before it wipes
     your face altogether.
   GeneratorSetting:
-    TimeLimit: 600
+    TimeLimit: 690
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0

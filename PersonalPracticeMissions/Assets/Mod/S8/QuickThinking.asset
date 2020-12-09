@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Quick Thinking
   Description: Some bombs require quick thinking. This is one of them.
   GeneratorSetting:
-    TimeLimit: 420
+    TimeLimit: 540
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0

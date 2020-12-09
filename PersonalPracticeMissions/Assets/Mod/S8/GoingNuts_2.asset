@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: GoingNuts
+  m_Name: GoingNuts_2
   m_EditorClassIdentifier: 
   DisplayName: Going Nuts
   Description: Losing your mind is never good, but if ever there was a worst time
     to go crazy, it's when handling a dangerous bomb.
   GeneratorSetting:
-    TimeLimit: 660
+    TimeLimit: 540
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Electrocution Hazard
   Description: Well, electrocution is only part of your worries.
   GeneratorSetting:
-    TimeLimit: 690
+    TimeLimit: 990
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Noisy Bomb II
   Description: It's bigger and louder than ever!
   GeneratorSetting:
-    TimeLimit: 599
+    TimeLimit: 899
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0

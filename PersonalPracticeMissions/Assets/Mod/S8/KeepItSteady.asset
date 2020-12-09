@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Keep It Steady
   Description: Concentrate. Take deep breaths. Count to ten. Boom! Hahahaha!
   GeneratorSetting:
-    TimeLimit: 840
+    TimeLimit: 900
     NumStrikes: 3
     TimeBeforeNeedyActivation: 70
     FrontFaceOnly: 0
