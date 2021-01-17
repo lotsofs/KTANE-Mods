@@ -14,9 +14,12 @@ MonoBehaviour:
   id: GreenScreen
   title: Green Screen
   author: S.
-  description: A Green Screen for your bomb. Bring the cameras, bring the lights,
+  description: "A Green Screen for your bomb. Bring the cameras, bring the lights,
     and give your bomb its Twitch career it has always dreamt of. Also suitable for
-    Instagram shots.
+    Instagram shots.\r\n\r\nFeatures:\r\n* Turns the gameplay room into a solid green,
+    which you can then key out in your editing software of choice.\r\n* Don't like
+    the color? Config file lets you change it to any color you want.\r\n* Set a different
+    color for when the lights are out (default: black)"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
