@@ -157,3 +157,27 @@ MonoBehaviour:
     - ChocolateSprinkles
     - DoubleModsVI
     - BigBossIV
+  - Title: Ramping It Up
+    MissionIDs:
+    - Tangled
+    - TurnBackNow
+    - BrightBomb
+    - BeachParty
+    - GamesInTheSand
+    - LostAtSea
+    - SandAllOver
+    - SlowBomb
+    - CriticalThinking
+    - BombPlusYouIs
+    - TimeFlies
+    - ColorsGameII
+    - InternetNut
+    - WordyBombVI
+    - AMinuteAModuleVII
+    - ChocolateSprinklesII
+    - TenMinutesVII
+    - TrueRandomIII
+    - ToughenUp
+    - DoubleModsVII
+    - BigBombVII
+    - BigBossV

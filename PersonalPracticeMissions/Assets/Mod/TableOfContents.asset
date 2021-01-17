@@ -205,3 +205,31 @@ MonoBehaviour:
     - BigBombVIII
     - DoubleModsVIII
     - Eldoraigne
+  - Title: Getting There
+    MissionIDs:
+    - CreateYourOwnBomb
+    - SwitchAndFlip
+    - LostInSpace
+    - LostInTime
+    - LostInTimeAndSpace
+    - IdentityCrisis
+    - SelfEvaluation
+    - Distress
+    - DailyLife
+    - NoLightWithoutDark
+    - WildRide
+    - Relapse
+    - RelapsePt2
+    - RelapsePt3
+    - NoneOfTheAbove
+    - WordyBombVII
+    - AMinuteAModuleIX
+    - TrueRandomV
+    - TenMinutesIX
+    - DoubleModsIX
+    - BigBombIX
+    - Irene
+  - Title: Passing The 100
+    MissionIDs: []
+  - Title: Finale
+    MissionIDs: []
