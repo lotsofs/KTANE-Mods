@@ -107,7 +107,7 @@ public class TheHeartModule : MonoBehaviour {
 		if (!_solved) {
 			_resets++;
 			Debug.LogFormat("[The Heart #{0}] DEFIBRILATED at {4} seconds for the {1}th time. Solved modules: {2}", _bombHelper.ModuleId, _resets, _modulesRemaining, _solvedHearts, (int)_bombInfo.GetTime());
-			_tpCorrect = true;
+			//_tpCorrect = true;
 			StartHeart();
 		}
 		else {
@@ -347,7 +347,7 @@ public class TheHeartModule : MonoBehaviour {
 					_theHeartSelectable.OnInteract();
 					if (_tpCorrect)
 					{
-						yield return "awardpoints 1";
+						//yield return "awardpoints 1";		// TP scoring changed, no longer needed. TODO: Clean up all the code dealing with this.
 						_tpCorrect = false;
 					}
 					done = true;
