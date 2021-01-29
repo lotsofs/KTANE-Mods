@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: TurningThingsAround
+  m_EditorClassIdentifier: 
+  DisplayName: Turning Things Around
+  Description: You've disarmed too many bombs, but no longer! It's time to turn this
+    around. This bomb will be your last.
+  GeneratorSetting:
+    TimeLimit: 540
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 90
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheClockModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - OrientationCube
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PointOfOrderModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TurnTheKeyAdvanced
+    - Count: 3
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - combinationLock
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ColourFlash
+      - Listening
+      - MazeV2
+      - KeypadV2
+      - TwoBits
+      - Semaphore
+      - CrazyTalk
+      - switchModule
+      - spwizAstrology
+      - CryptModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PasswordV2
+  PacingEventsEnabled: 1

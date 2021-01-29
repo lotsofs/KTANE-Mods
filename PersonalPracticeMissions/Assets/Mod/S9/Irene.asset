@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: Irene
   m_EditorClassIdentifier: 
   DisplayName: Irene
-  Description: Pronounced with three syllables, there will be peace after this bomb
-    one way or another.
+  Description: There will be peace after this bomb one way or another.
   GeneratorSetting:
     TimeLimit: 3000
     NumStrikes: 5
@@ -80,7 +79,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastmath
+      - fastMath
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 

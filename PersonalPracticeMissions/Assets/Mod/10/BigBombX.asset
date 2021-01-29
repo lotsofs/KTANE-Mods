@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: BigBombX
+  m_EditorClassIdentifier: 
+  DisplayName: Big Bomb X
+  Description: What's big can look so small next to something even bigger. You have
+    grown, but these big bombs have stayed the same. Still, some extra practice won't
+    hurt.
+  GeneratorSetting:
+    TimeLimit: 1800
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 80
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheClockModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizPerspectivePegs
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MysticSquareModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - AdjacentLettersModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TextField
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Microcontroller
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - OnlyConnectModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MusicRhythms
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000a000000
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
+      - BattleshipModule
+      - BlindAlleyModule
+      - ColourFlash
+      - FollowTheLeaderModule
+      - HexamazeModule
+      - LEDEnc
+      - SkewedSlotsModule
+      - TurnTheKey
+      - TurnTheKeyAdvanced
+      - YahtzeeModule
+      - SouvenirModule
+      - MemoryV2
+      - MazeV2
+      - WordScrambleModule
+      - AnagramsModule
+      - PasswordV2
+      - SillySlots
+      - SimonV2
+      - ButtonV2
+      - KeypadV2
+      - MorseV2
+      - Listening
+      - PianoKeys
+      - TwoBits
+      - ForeignExchangeRates
+      - spwizAdventureGame
+      - ChessModule
+      - murder
+      - ThirdBase
+      - Laundry
+      - DoubleOhModule
+      - neutralization
+      - WordSearchModule
+      - BrokenButtonsModule
+      - CryptModule
+      - BitmapsModule
+      - CaesarCipherModule
+      - Logic
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0d0000000e0000000f000000
+      SpecialComponentType: 0
+      ModTypes:
+      - NeedyVentV2
+      - NeedyKnobV2
+      - Filibuster
+      - Needy Math
+      - spwizTetris
+      - monsplodeWho
+      - VentGasTranslated
+      - http
+      - MotionSense
+      - EdgeworkModule
+      - LightsOut
+      - EternitySDec
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CreationModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - switchModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - OrientationCube
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - LightCycleModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwizAstrology
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - shapeshift
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - EnglishTest
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - CheapCheckoutModule
+    - Count: 3
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WirePlacementModule
+      - combinationLock
+      - TheBulbModule
+      - iceCreamModule
+      - TicTacToeModule
+      - Semaphore
+      - webDesign
+      - booleanVennModule
+      - colormath
+    - Count: 6
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - FriendshipModule
+      - ZooModule
+      - CrazyTalk
+      - fastMath
+      - fizzBuzzModule
+      - ColoredSquaresModule
+      - PointOfOrderModule
+      - resistors
+      - Probing
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - monsplodeFight
+      - MouseInTheMaze
+      - NumberPad
+      - Emoji Math
+      - SeaShells
+      - RockPaperScissorsLizardSpockModule
+      - RubiksCubeModule
+      - TheGamepadModule
+      - CoordinatesModule
+      - BinaryLeds
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - graphModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
+      - BigButtonTranslated
+      - PasswordsTranslated
+      - symbolicPasswordModule
+      - MorseCodeTranslated
+      - WhosOnFirstTranslated
+      - complicatedButtonsModule
+      - ModuleAgainstHumanity
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BitOps
+  PacingEventsEnabled: 1

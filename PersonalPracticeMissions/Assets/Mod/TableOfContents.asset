@@ -230,6 +230,28 @@ MonoBehaviour:
     - BigBombIX
     - Irene
   - Title: Passing The 100
-    MissionIDs: []
+    MissionIDs:
+    - TurningThingsAround
+    - ANewPointOfView
+    - PuzzlingBomb
+    - LetteredBomb
+    - CBBomb
+    - TuringComplete
+    - LinguisticalBomb
+    - MusicalBomb
+    - ConnectedBomb
+    - BooleanBomb
+    - BullyingBomb
+    - TurningComplete
+    - AMinuteAModuleX
+    - BusyBomb
+    - CuriousBomb
+    - BombBomb
+    - TenMinutesX
+    - TrueRandomVI
+    - QuizBomb
+    - BigBombX
+    - DoubleModsX
+    - Doringkloof
   - Title: Finale
     MissionIDs: []

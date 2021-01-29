@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: NoneOfTheAbove
   m_EditorClassIdentifier: 
   DisplayName: None Of The Above
-  Description: '...No, I don''t think I am either. I guess there is no point asking,
-    I will never get the answers I need.'
+  Description: '...No, I don''t think I am either of those things. I guess there is
+    no point asking, I will never get the answers I need.'
   GeneratorSetting:
     TimeLimit: 720
     NumStrikes: 3
