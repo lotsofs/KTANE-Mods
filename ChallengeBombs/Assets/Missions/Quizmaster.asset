@@ -39,7 +39,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - NotKeypad
+      - ColoredSwitchesModule
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
@@ -62,7 +62,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - DecoloredSquaresModule
+      - UncoloredSquaresModule
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
@@ -75,7 +75,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - MouseInTheMaze
-    - Count: 2
+    - Count: 1
       AllowedSources: 0
       ComponentTypes: 
       SpecialComponentType: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - turtleRobot
+      - shapeshift
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
@@ -147,13 +147,13 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - ColoredSquaresModule
-      - DecoloredSquaresModule
+      - UncoloredSquaresModule
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - DoubleOhModule
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
@@ -225,7 +225,7 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - ChessModule
-    - Count: 2
+    - Count: 1
       AllowedSources: 0
       ComponentTypes: 
       SpecialComponentType: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - sphere
+      - PolyhedralMazeModule
     - Count: 1
       AllowedSources: 0
       ComponentTypes: 
@@ -326,8 +326,8 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizPerspectivePegs
-    - Count: 2
+      - GuessWho
+    - Count: 1
       AllowedSources: 0
       ComponentTypes: 
       SpecialComponentType: 0
@@ -345,4 +345,22 @@ MonoBehaviour:
       SpecialComponentType: 0
       ModTypes:
       - FlagsModule
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheBulbModule
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - groceryStore
+    - Count: 1
+      AllowedSources: 0
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KimsGame
   PacingEventsEnabled: 1
