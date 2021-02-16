@@ -34,3 +34,20 @@ MonoBehaviour:
     - C1705SET
     - C1706Flags
     - C1707IdentityParade
+  - Title: 2018
+    MissionIDs:
+    - C1801TheIPhone
+    - C1802TheStopwatch
+    - C1803PlayfairCipher
+    - C1804GraffitiNumbers
+    - C1805SimonShrieks
+    - C1806SimonsStar
+    - C1807NeedyDeterminants
+    - C1808TheSwitch
+    - C1809CommandPrompt
+    - C1810PartyTime
+    - C1811Countdown
+    - C1812Kudosudoku
+    - C1813Hieroglyphics
+    - C1814ColorMatch
+    - C1815FlipTheCoin

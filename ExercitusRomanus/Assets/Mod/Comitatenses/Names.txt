@@ -13,7 +13,6 @@ NETUNO m Roman Mythology (Portuguese)
 PLUTO m Greek Mythology (Latinized), Roman Mythology
 SILVIA f Italian, Spanish, Portuguese, Romanian, Slovak, English, German, Late Roman, Roman Mythology
 NONA (1) f Roman Mythology
-
 NISUS m Roman Mythology
 NAENIA f Roman Mythology
 MARTE (2) m Roman Mythology (Italian, Spanish, Portuguese)
@@ -29,6 +28,7 @@ LIBITINA f Roman Mythology
 IUNO f Roman Mythology
 NEPTUNUS m Roman Mythology
 AURORA f Italian, Spanish, Portuguese, English, German, Romanian, Finnish, Roman Mythology
+
 CUPIDO m Roman Mythology
 PROSERPINE f Roman Mythology
 ASCANIUS m Roman Mythology
