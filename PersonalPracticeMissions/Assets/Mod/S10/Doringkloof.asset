@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: zIrene
+  m_Name: Doringkloof
   m_EditorClassIdentifier: 
-  DisplayName: Irene
-  Description: Pronounced with three syllables, there will be peace after this bomb
-    one way or another.
+  DisplayName: Doringkloof
+  Description: Finally, a large bomb that doesn't terrorize you with that everpresent
+    needy module. But at what cost?
   GeneratorSetting:
     TimeLimit: 3000
     NumStrikes: 5
@@ -26,73 +26,115 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CheapCheckoutModule
+      - TurnTheKeyAdvanced
+      - TurnTheKey
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+      SpecialComponentType: 0
+      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - EnglishTest
+      - monsplodeFight
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - shapeshift
+      - MouseInTheMaze
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
+      - NumberPad
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - LightCycleModule
+      - Emoji Math
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - OrientationCube
+      - SeaShells
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - switchModule
+      - RockPaperScissorsLizardSpockModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CreationModule
+      - RubiksCubeModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Probing
+      - TheGamepadModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - fastMath
+      - CoordinatesModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - iceCreamModule
+      - BinaryLeds
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - combinationLock
+      - SimonScreamsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BigButtonTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PasswordsTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - symbolicPasswordModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MorseCodeTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WhosOnFirstTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - complicatedButtonsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -104,25 +146,67 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Logic
+      - TheClockModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CaesarCipherModule
+      - spwizPerspectivePegs
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BitmapsModule
+      - MysticSquareModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - CryptModule
+      - AdjacentLettersModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TextField
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Microcontroller
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - OnlyConnectModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MusicRhythms
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - graphModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BitOps
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -134,79 +218,13 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - WordSearchModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
+      - fizzBuzzModule
+      - CheapCheckoutModule
+      - LightCycleModule
+      - BitmapsModule
       - neutralization
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - DoubleOhModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ForeignExchangeRates
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ChessModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - murder
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TwoBits
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - spwizAdventureGame
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ThirdBase
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PianoKeys
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - Laundry
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ButtonV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MemoryV2
+      - MorseV2
+      - SkewedSlotsModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -218,83 +236,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKeyAdvanced
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 020000000300000006000000080000000c0000000b000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0a00000009000000040000000500000007000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0d0000000e0000000f000000
-      SpecialComponentType: 0
-      ModTypes:
-      - NeedyVentV2
-      - NeedyKnobV2
-      - Filibuster
-      - Needy Math
-      - spwizTetris
-      - monsplodeWho
-      - VentGasTranslated
-      - http
-      - MotionSense
-      - EdgeworkModule
-      - LightsOut
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - resistors
-      - NumberPad
-      - MorseV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
-      - KeypadV2
-      - CrazyTalk
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BigButtonTranslated
-      - PasswordsTranslated
-      - MorseCodeTranslated
-      - WhosOnFirstTranslated
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-      - WordScrambleModule
-      - AnagramsModule
-      - Listening
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - YahtzeeModule
-      - BattleshipModule
-      - SkewedSlotsModule
-      - MazeV2
-      - PasswordV2
+      - MemoryV2
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -302,62 +244,119 @@ MonoBehaviour:
       ModTypes:
       - LEDEnc
       - SillySlots
+      - iceCreamModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - FollowTheLeaderModule
-      - HexamazeModule
-      - spwiz3DMaze
-      - WirePlacementModule
+      - WordScrambleModule
+      - AnagramsModule
+      - ForeignExchangeRates
+      - CaesarCipherModule
+      - EnglishTest
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - SimonV2
-      - SimonScreamsModule
       - TicTacToeModule
+      - ThirdBase
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - monsplodeFight
-      - TheGamepadModule
-      - BinaryLeds
-      - symbolicPasswordModule
-      - complicatedButtonsModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RubiksCubeModule
-      - SeaShells
-      - CoordinatesModule
-      - webDesign
-      - fizzBuzzModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MouseInTheMaze
-      - Emoji Math
-      - RockPaperScissorsLizardSpockModule
-      - TheBulbModule
+      - BattleshipModule
+      - MazeV2
       - Semaphore
-      - booleanVennModule
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - colormath
+      - WirePlacementModule
+      - FollowTheLeaderModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheBulbModule
+      - booleanVennModule
+      - CrazyTalk
+      - switchModule
+      - OrientationCube
+      - spwizAstrology
+      - shapeshift
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
       - FriendshipModule
-      - PointOfOrderModule
+      - CreationModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Laundry
+      - Logic
+      - webDesign
+      - colormath
+      - resistors
+      - Probing
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
       - ColoredSquaresModule
+      - DoubleOhModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - HexamazeModule
+      - BlindAlleyModule
+      - ButtonV2
+      - KeypadV2
+      - spwizAdventureGame
+      - murder
+      - ChessModule
+      - CryptModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - PointOfOrderModule
+      - fastMath
       - ZooModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ColourFlash
+      - Listening
+      - combinationLock
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - YahtzeeModule
+      - PasswordV2
+      - SimonV2
+      - TwoBits
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WordSearchModule
+      - PianoKeys
   PacingEventsEnabled: 1

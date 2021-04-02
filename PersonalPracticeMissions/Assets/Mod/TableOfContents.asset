@@ -217,7 +217,7 @@ MonoBehaviour:
     - Distress
     - DailyLife
     - NoLightWithoutDark
-    - WildRide
+    - WildRide_2
     - Relapse
     - RelapsePt2
     - RelapsePt3
@@ -254,4 +254,26 @@ MonoBehaviour:
     - DoubleModsX
     - Doringkloof
   - Title: Finale
-    MissionIDs: []
+    MissionIDs:
+    - MusicalBombII
+    - Minigamer
+    - LettersGameII
+    - LettersGameIII
+    - ScrewThis
+    - BombsOnABomb
+    - HammerItIn
+    - Knowledge
+    - RosesAreRed
+    - Multimemory
+    - WordyBombVIII
+    - KeysWithLetters
+    - AMinuteAModuleXI
+    - ParkingLot
+    - TenMinutesXI
+    - ReceptionDesk
+    - DoubleModsXI
+    - Elevator
+    - TrueRandomVII
+    - Hallway
+    - BigBombXI
+    - Olievenhoutbosch

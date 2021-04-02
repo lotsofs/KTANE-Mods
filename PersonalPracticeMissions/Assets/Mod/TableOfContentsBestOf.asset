@@ -23,6 +23,12 @@ MonoBehaviour:
     - VacationsOver
     - NoInvitation
     - ChocolateSprinkles
+    - NeedyKeysII
+    - NoisyBombII
+    - ChocolateSprinkles
+    - BullyingBomb
+    - QuizBomb
+    - Multimemory
   - Title: Large Bombs (49 modules)
     MissionIDs:
     - Eldoraigne
@@ -42,3 +48,9 @@ MonoBehaviour:
     - DoubleModsIX
     - DoubleModsX
     - DoubleModsXI
+  - Title: Random Bombs As Originally Envisioned
+    MissionIDs:
+    - AMinuteAModuleXI
+    - TenMinutesXI
+    - TrueRandomVII
+    - BigBombXI

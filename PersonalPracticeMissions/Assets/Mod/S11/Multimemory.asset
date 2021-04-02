@@ -9,50 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: BigBoss_Template
+  m_Name: Multimemory
   m_EditorClassIdentifier: 
-  DisplayName: Big Boss Template
-  Description: "Large Impact Modules:\r\n1 Needy\r\n2 TTK\r\n3 TTKs\r\n4 Souvenir\r\n5
-    FMN\r\n\r\nMedium Impacts Modules:\r\n6: Square Button -> 7 minute rule\r\n7:
-    Laundry -> solves rule\r\n\r\nDefuser Time Consumers:\r\n8: 3D Maze\r\n9: Battleship\r\n10:
-    Yahtzee\r\n11: Safety Safe\r\n12: Plumbing\r\n\r\nTTKs Food:\r\n13: Color Flash,
-    Keypad Round, Listening\r\n14: Vanillae\r\n\r\nSouvenir Food:\r\n15: LEDEnc, Hexamaze,
-    Skewed Slots\r\n16: SillySlots, Morsematics, Simon States\r\n\r\nRemaining:\r\n17:
-    Blind Alley, Follow The Leader\r\n18: Word Scramble, Anagrams\r\n\r\nRecently
-    Learnt:\r\n19-28: Whatever\r\n\r\nRest:\r\n29-31: Whatever"
+  DisplayName: Multimemory
+  Description: You've learnt over 100 modules. That's a lot of modules! Let's celebrate
+    by giving you a Forget Me Not stage for each of them.
   GeneratorSetting:
     TimeLimit: 1800
     NumStrikes: 3
-    TimeBeforeNeedyActivation: 30
+    TimeBeforeNeedyActivation: 100
     FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 0d0000000e0000000f000000
-      SpecialComponentType: 0
-      ModTypes:
-      - NeedyKnobV2
-      - NeedyVentV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - TurnTheKeyAdvanced
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
+    - Count: 5
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
@@ -63,13 +32,54 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - ButtonV2
+      - ChordQualities
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - Laundry
+      - MinesweeperModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - LetterKeys
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - alphabet
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - screw
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonScreamsModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonV2
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 05000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MouseInTheMaze
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
@@ -81,71 +91,57 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - BattleshipModule
+      - EnglishTest
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - switchModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - Probing
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - booleanVennModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - combinationLock
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BigButtonTranslated
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - WordScrambleModule
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 07000000
+      SpecialComponentType: 0
+      ModTypes: []
+    - Count: 1
+      AllowedSources: 3
+      ComponentTypes: 0c000000
+      SpecialComponentType: 0
+      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - YahtzeeModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - PasswordV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MazeV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - ColourFlash
-      - KeypadV2
-      - Listening
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 02000000030000000400000005000000060000000700000008000000090000000b0000000a0000000c000000
-      SpecialComponentType: 0
-      ModTypes: []
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - LEDEnc
-      - HexamazeModule
-      - SkewedSlotsModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SillySlots
-      - MorseV2
-      - SimonV2
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - BlindAlleyModule
-      - FollowTheLeaderModule
-    - Count: 1
-      AllowedSources: 3
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - AnagramsModule
-      - WordScrambleModule
-    - Count: 13
-      AllowedSources: 3
-      ComponentTypes: 02000000
-      SpecialComponentType: 0
-      ModTypes: []
   PacingEventsEnabled: 1

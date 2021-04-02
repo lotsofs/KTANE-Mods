@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Ten Minutes X
   Description: Ten Minutes Ten. A remarkable milestone.
   GeneratorSetting:
-    TimeLimit: 660
+    TimeLimit: 610
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
