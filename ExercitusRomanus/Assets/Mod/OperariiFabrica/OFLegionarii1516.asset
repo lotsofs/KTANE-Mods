@@ -16,7 +16,7 @@ MonoBehaviour:
 
     Pompilius, Iuvenalis, Paula, Spurius, Quintinus, Tiberius, Tertia, Herminius'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

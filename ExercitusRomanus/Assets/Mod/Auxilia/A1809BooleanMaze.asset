@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1809BooleanMaze
   m_EditorClassIdentifier: 
   DisplayName: Iustina
-  Description: 'December 7 - January 21*
+  Description: 'August 23 - September 17
 
-    Modules 133 - 143
+    Modules 232 - 242
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

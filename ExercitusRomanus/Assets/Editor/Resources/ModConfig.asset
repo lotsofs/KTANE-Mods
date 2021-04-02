@@ -14,27 +14,37 @@ MonoBehaviour:
   id: ExercitusRomanus
   title: Exercitus Romanus
   author: S.
-  description: "Enjoy a journey back in time with the Roman Army of Bombs. \n\nThis
-    is a mission pack that will take you on a journey through the history of modded
-    KTANE by giving you small bombs, each with 11 modules in release order. \n\nThis
-    mission pack is a 4-in-1, each with their own table of contents:\n* The Legionarii:
+  description: "Enjoy a journey back in time with the Roman Army of Bombs. \r\n\r\nThis
+    is a mission pack that will take you on a journey through the history of KTANE
+    and its mods by giving you small bite-sized bombs, each with 11 modules determined
+    by release order. \r\n\r\n[h1]A wide range of choices[/h1]\r\nThis mission pack
+    is a 3-in-1, each with their own table of contents:\r\n[h3]The Legionarii[/h3]
     These are the classic 10 solvable + 1 needy bombs. Needies may lag behind or get
-    ahead of the solvables due to their separate release schedule however. These bombs
-    are most suited for those who want to learn about the mod history of KTANE while
-    also enjoying the classic KTANE challenge.\n* The Auxilia: No needies, just 11
-    solvable modules. Perfect for those time travel tourists who don't care about
-    needies. \n* The Comitatenses: 11 modules, but the ratio solvable to needy is
-    entirely determined by when a module was released. These bombs represent the most
-    accurate chronology of all the modded modules the KTANE community has to offer.\n*
-    The Operarii Fabrica: Offers factory mode variants of all of the above, for those
-    who want a continuous challenge without being interupted, or saved for that matter,
-    by the office room.\n\nSince these are not meant to be difficult (with the exception
-    of the Operarii Fabrica), each Decanus has a 20 minute timer and allows 3 strikes.
-    Please contact the Senate (me) if you think one should have these increased. For
-    optional additional difficulty: How fast can you speedrun the history of KTANE?\n\nHistorians
-    have currently only uncovered the KTANE history up to and including the year 2771
-    ab urbe condita (2018). The following years will be added as the present continues
-    to become history. \n"
+    ahead of the solvables due to their separate release schedule. These bombs are
+    most suited for those who want to learn about the mod history of KTANE while also
+    enjoying the classic KTANE challenge and everything the community had to offer.\r\n[h3]The
+    Auxilia[/h3] No needies, just 11 solvable modules. Perfect for those time travel
+    tourists who don't care about needies. \r\n[h3]The Comitatenses[/h3] 11 modules,
+    but the ratio solvable to needy is entirely determined by when a module was released.
+    These bombs represent the most accurate chronology of all the modded modules that
+    the KTANE community has to offer, but beware; you may get bombs with 5 needies
+    at once, or not see a needy for 5 bombs in a row.\r\n\r\nThe time limit for all
+    these bombs has been set to 60 minutes, as holidays are not supposed to be stressful.
+    This leaves you plenty of time to be a tourist in time. There will still be only
+    3 strikes though, so behave. We don't want Rome to fall into civil war again.\r\n\r\n[h1]Something
+    for everyone[/h1]\r\nHowever, the Roman Army of Bombs' tourist board realizes
+    that a relaxation holiday is not for everyone, so they have come up with alternative
+    holiday ideas for those who prefer a different style of holiday:\r\n* For the
+    adrenaline junkies who want additional difficulty: How fast can you [b][u]speedrun[/u][/b]
+    the history of KTANE?\r\n* For those who prefer to have their holidays be educative
+    instead, or who are only just starting to embark on their journey throughout all
+    of KTANE: Use the relaxed timer to [b][u]learn[/u][/b] new modules on your journey
+    through time.\r\n* Or simply lay back, grab a drink, enjoy the modules, and [b][u]have
+    fun[/u][/b] with your friends.\r\nExercitus Romanus pro omnis est! Everyone is
+    welcome here!\r\n\r\n[i](Historians have currently only uncovered the KTANE history
+    up to and including the year 2771 ab urbe condita (or MMXVIII to you time-foreigners).
+    The following years will be added as the present continues to become history.)[/i]\r\n\r\nPlease
+    contact the Senate (me) for any inquiries you may have."
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods

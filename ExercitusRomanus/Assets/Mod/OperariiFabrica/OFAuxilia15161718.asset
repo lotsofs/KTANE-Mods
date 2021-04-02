@@ -19,7 +19,7 @@ MonoBehaviour:
     Patricius, Fidelis, Modestus, Iustina, Leonia, Beata, Sixtus, Delphinus, Bonifatius,
     Florentius'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

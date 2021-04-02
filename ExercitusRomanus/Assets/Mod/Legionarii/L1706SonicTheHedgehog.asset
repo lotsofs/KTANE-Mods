@@ -16,11 +16,11 @@ MonoBehaviour:
 
     Modules 131 - 140
 
-    Needy 14: May 15
+    Needy 14: May 16
 
     * 5 from 2017, 5 from 2018'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

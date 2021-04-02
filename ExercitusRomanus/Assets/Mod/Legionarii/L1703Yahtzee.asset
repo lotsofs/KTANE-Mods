@@ -16,9 +16,9 @@ MonoBehaviour:
 
     Modules 101 - 110
 
-    Needy 11: October 8 2016'
+    Needy 11: October 9 2016'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

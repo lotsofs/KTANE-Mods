@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: L1702BitwiseOperations
   m_EditorClassIdentifier: 
   DisplayName: Quintus
-  Description: 'March 18 - May 14
+  Description: 'March 20 - May 14
 
     Modules 91 - 100
 
     Needy 10: August 23 2016'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

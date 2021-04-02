@@ -17,7 +17,7 @@ MonoBehaviour:
     Elissa, Cardea, Bellona, Latona, Diana, Amor, Pomona, Mercurius, Proserpina, Maia,
     Jupiter, Netuno, Pluto, Silvia, Nona'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

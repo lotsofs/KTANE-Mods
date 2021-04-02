@@ -16,9 +16,9 @@ MonoBehaviour:
 
     Modules 121 - 130
 
-    Needy 13: January 25'
+    Needy 13: February 1'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

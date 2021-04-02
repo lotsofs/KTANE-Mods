@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1815Alchemy
   m_EditorClassIdentifier: 
   DisplayName: Florentius
-  Description: 'December 7 - January 21*
+  Description: 'December 29 - January 3*
 
-    Modules 133 - 143
+    Modules 298 - 308
 
-    * 3 from 2017, 8 from 2018'
+    * 5 from 2018, 6 from 2019'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

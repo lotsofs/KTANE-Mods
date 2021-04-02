@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: L1601CombinationLock
   m_EditorClassIdentifier: 
   DisplayName: Iuvenalis
-  Description: 'July 16 2015 - August 4 2016
+  Description: 'July 16 2015 - August 5 2016
 
     Modules 11 - 20
 
     Needy 2: July 16 2015'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

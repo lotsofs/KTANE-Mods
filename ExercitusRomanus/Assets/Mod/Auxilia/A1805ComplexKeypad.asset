@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1805ComplexKeypad
   m_EditorClassIdentifier: 
   DisplayName: Illuminata
-  Description: 'December 7 - January 21*
+  Description: 'May 4 - May 31
 
-    Modules 133 - 143
+    Modules 188 - 198
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

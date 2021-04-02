@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1804DigitalRoot
   m_EditorClassIdentifier: 
   DisplayName: Francisca
-  Description: 'December 7 - January 21*
+  Description: 'April 10 - May 3
 
-    Modules 133 - 143
+    Modules 177 - 187
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

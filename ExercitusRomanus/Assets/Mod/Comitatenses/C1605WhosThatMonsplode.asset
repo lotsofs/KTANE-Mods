@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: C1605WhosThatMonsplode
   m_EditorClassIdentifier: 
   DisplayName: Amor
-  Description: 'September 2 - October 11
+  Description: 'September 2 - October 9
 
     Solvables: 46 - 55
 
     Needies: 11'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

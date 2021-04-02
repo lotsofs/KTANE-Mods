@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1803TheSun
   m_EditorClassIdentifier: 
   DisplayName: Honorinus
-  Description: 'December 7 - January 21*
+  Description: 'March 19 - April 9
 
-    Modules 133 - 143
+    Modules 166 - 167
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

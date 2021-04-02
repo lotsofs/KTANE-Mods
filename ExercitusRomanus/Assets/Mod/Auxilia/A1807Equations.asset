@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1807Equations
   m_EditorClassIdentifier: 
   DisplayName: Fidelis
-  Description: 'December 7 - January 21*
+  Description: 'June 26 - July 10
 
-    Modules 133 - 143
+    Modules 210 - 220
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

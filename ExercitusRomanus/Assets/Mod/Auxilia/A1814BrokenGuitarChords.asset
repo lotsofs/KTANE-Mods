@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: A1814BrokenGuitarChords
   m_EditorClassIdentifier: 
   DisplayName: Bonifatius
-  Description: 'December 7 - January 21*
+  Description: 'December 10 - December 28
 
-    Modules 133 - 143
+    Modules 287 - 297
 
-    * 3 from 2017, 8 from 2018'
+'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

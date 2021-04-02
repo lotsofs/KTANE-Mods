@@ -16,7 +16,7 @@ MonoBehaviour:
 
     Felicia, Beatus, Monica, Laura, Domninus, Ignatia'
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 3600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0

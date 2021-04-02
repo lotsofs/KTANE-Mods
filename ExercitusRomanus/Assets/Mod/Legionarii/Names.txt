@@ -12,7 +12,6 @@ DIOCLETIANUS m Ancient Roman
 LIVIUS m Ancient Roman
 MARCELLUS m Ancient Roman, German, Dutch
 LUCIA f Italian, German, English, Swedish, Norwegian, Danish, Romanian, Slovak, Ancient Roman
-
 TITIANUS m Ancient Roman
 RUFINA f Russian, Spanish, Ancient Roman
 FLAVIUS m Ancient Roman
@@ -30,6 +29,7 @@ SABINUS m Ancient Roman
 POMPEIUS m Ancient Roman
 FAUSTINUS m Ancient Roman
 GALLUS m Ancient Roman
+
 AQUILINA f Ancient Roman
 VARINIA f Ancient Roman, Spanish (Rare)
 MARINA f Italian, Spanish, Portuguese, Catalan, German, Swedish, Norwegian, Danish, Dutch, English, Greek, Finnish, Estonian, Russian, Ukrainian, Romanian, Czech, Bulgarian, Croatian, Serbian, Slovene, Macedonian, Latvian, Georgian, Ancient Roman
