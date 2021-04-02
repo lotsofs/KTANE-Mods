@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: WildRide
+  m_Name: WildRide_2
   m_EditorClassIdentifier: 
   DisplayName: Wild Ride
   Description: The keys have been with you for so long. The first modded module introduced.
     And now you've finally finished learning all its friends. It's been one hell of
     a wild ride. Now go and show those keys who they're dealing with!
   GeneratorSetting:
-    TimeLimit: 1800
+    TimeLimit: 1320
     NumStrikes: 3
     TimeBeforeNeedyActivation: 80
     FrontFaceOnly: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Relapse, Pt. 2
   Description: Am I on first?
   GeneratorSetting:
-    TimeLimit: 660
+    TimeLimit: 720
     NumStrikes: 3
     TimeBeforeNeedyActivation: 80
     FrontFaceOnly: 0
