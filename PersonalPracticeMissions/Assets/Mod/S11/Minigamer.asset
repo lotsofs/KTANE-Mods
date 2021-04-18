@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Minigamer
   Description: Who designs these bombs with minigames on them? What happened to plain
-    old cutting wire cutting or pressing the OFF button? Yet here we are...
+    old wire cutting or pressing the OFF button? Yet here we are...
   GeneratorSetting:
     TimeLimit: 780
     NumStrikes: 3

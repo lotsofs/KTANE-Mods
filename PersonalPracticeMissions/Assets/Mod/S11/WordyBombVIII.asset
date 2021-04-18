@@ -71,10 +71,9 @@ MonoBehaviour:
       - ColourFlash
     - Count: 1
       AllowedSources: 3
-      ComponentTypes: 
+      ComponentTypes: 08000000
       SpecialComponentType: 0
-      ModTypes:
-      - Morse
+      ModTypes: []
     - Count: 1
       AllowedSources: 3
       ComponentTypes: 
