@@ -17,5 +17,5 @@ MonoBehaviour:
   description: "QRCODESCANNER\tQRCODESCANNER\t\t"
   version: QRCODESCANNER
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
-    Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 0}
+    Nobody Explodes\mods
+  previewImage: {fileID: 2800000, guid: 4cb1530793af2f24fb2eb77e256db58b, type: 3}
