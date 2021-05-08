@@ -29,6 +29,10 @@ public class BombHelper : MonoBehaviour {
         IncrementID();
     }
 
+    void Start() {
+        _bombInfo.OnBombExploded += StopCustomSound;
+	}
+
     /// <summary>
     /// Generic button press click sound & bomb oomph
     /// </summary>
