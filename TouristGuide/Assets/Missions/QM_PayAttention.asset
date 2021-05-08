@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: QM_PayAttention
+  m_EditorClassIdentifier: 
+  DisplayName: Pay Attention
+  Description: Pay attention to your bomb. Always.
+  GeneratorSetting:
+    TimeLimit: 720
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 90
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 0a00000005000000
+      SpecialComponentType: 0
+      ModTypes:
+      - spwiz3DMaze
+      - BattleshipModule
+      - BrokenButtonsModule
+      - TheBulbModule
+      - ChessModule
+      - ColoredSquaresModule
+      - ColourFlash
+      - CreationModule
+      - DoubleOhModule
+      - fastMath
+      - HexamazeModule
+      - LEDEnc
+      - Listening
+      - MinesweeperModule
+      - MouseInTheMaze
+      - murder
+      - MysticSquareModule
+      - neutralization
+      - OnlyConnectModule
+      - MazeV2
+      - SeaShells
+      - shapeshift
+      - SimonScreamsModule
+      - SouvenirModule
+      - ThirdBase
+      - TwoBits
+      - YahtzeeModule
+      - BigCircle
+      - BrailleModule
+      - buttonSequencesModule
+      - ColoredSwitchesModule
+      - FlagsModule
+      - HumanResourcesModule
+      - PolyhedralMazeModule
+      - theSwan
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - VCRCS
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - GuessWho
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - AppreciateArt
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - theSwan
+    - Count: 2
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - DACH
+      - USA
+      - UncoloredSquaresModule
+      - simonSimons
+      - NotButton
+      - maze3
+      - blockbusters
+      - challengeAndContact
+      - kyudoku
+      - loopover
+      - qSchlagDenBomb
+      - SplittingTheLootModule
+  PacingEventsEnabled: 1
