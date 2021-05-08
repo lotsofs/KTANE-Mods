@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: ANewPointOfView
   m_EditorClassIdentifier: 
   DisplayName: A New Point Of View
-  Description: It's easy to get tunnel vision when defusing bombs, but sometimes you
-    just need to look at things from a different angle.
+  Description: It's easy to get tunnel vision when defusing bombs; sometimes you just
+    need to look at things from a different angle.
   GeneratorSetting:
     TimeLimit: 660
     NumStrikes: 3
