@@ -14,7 +14,7 @@ MonoBehaviour:
   DisplayName: Quick Play II
   Description: All your new and old friends on one bomb!
   GeneratorSetting:
-    TimeLimit: 900
+    TimeLimit: 1200
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
