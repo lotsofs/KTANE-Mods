@@ -26,3 +26,10 @@ MonoBehaviour:
     - QM_SouvenirRecapIII
     - QM_QuickPlayI
     - QM_QuickPlayII
+  - Title: Swan Hell
+    MissionIDs:
+    - SH_TimeBasedModules
+    - SH_TrickyReads
+    - SH_SouvenirRecap
+    - SH_QuickPlayI
+    - SH_QuickPlayII

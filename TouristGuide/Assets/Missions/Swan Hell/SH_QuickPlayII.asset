@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: SH_QuickPlayII
+  m_EditorClassIdentifier: 
+  DisplayName: Quick Play II
+  Description: All your new and old friends on one bomb!
+  GeneratorSetting:
+    TimeLimit: 1200
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 90
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 11
+      AllowedSources: 2
+      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      SpecialComponentType: 0
+      ModTypes:
+      - burglarAlarm
+      - timeKeeper
+      - MarbleTumbleModule
+      - tapCode
+      - SimonSendsModule
+      - RegularCrazyTalkModule
+      - challengeAndContact
+      - spwizAstrology
+      - BlindAlleyModule
+      - BrokenButtonsModule
+      - ColoredSquaresModule
+      - CrazyTalk
+      - EnglishTest
+      - fastMath
+      - FaultyBackgrounds
+      - MemoryV2
+      - MorseV2
+      - SeaShells
+      - SimonV2
+      - skyrim
+      - SouvenirModule
+      - theSwan
+      - TurnTheKey
+  PacingEventsEnabled: 1
