@@ -9,12 +9,15 @@ public class BombHelper : MonoBehaviour {
     KMBombInfo _bombInfo;
     KMAudio _bombAudio;
     KMBombModule _bombModule;
+    KMColorblindMode _bombColorBlind;
 
     [NonSerialized] public int ModuleId;
-    static string _logTag;
+    string _logTag;
     static int _moduleIdCounter = 1;
 
     KMAudio.KMAudioRef _customSound;
+
+    public static bool ColorBlindModeActive = false;
 
     /// <summary>
     /// Increment Module ID
@@ -34,16 +37,19 @@ public class BombHelper : MonoBehaviour {
         _bombAudio = GetComponent<KMAudio>();
         _bombInfo.OnBombExploded += StopCustomSound;
         _logTag = string.Format("[{0} #{1}] ", _bombModule.ModuleDisplayName, ModuleId);
+        if (_bombColorBlind.ColorblindModeActive) {
+            ColorBlindModeActive = true;
+        }
 	}
 
-    public static void Log(string msg) {
+    public void Log(string msg) {
         string message = _logTag + msg;
-        Debug.LogFormat(msg);
+        Debug.LogFormat(message);
 	}
 
-    public static void LogWarning(string msg) {
+    public void LogWarning(string msg) {
         string message = _logTag + msg;
-        Debug.LogWarningFormat(msg);
+        Debug.LogWarningFormat(message);
     }
 
     /// <summary>

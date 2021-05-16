@@ -6,4 +6,5 @@ public class Button : MonoBehaviour {
 
 	public KMSelectable Selectable;
 	public TextMesh TextMesh;
+	public int BaseValue;
 }
