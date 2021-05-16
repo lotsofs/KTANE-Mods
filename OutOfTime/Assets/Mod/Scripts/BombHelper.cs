@@ -8,8 +8,10 @@ public class BombHelper : MonoBehaviour {
 
     KMBombInfo _bombInfo;
     KMAudio _bombAudio;
+    KMBombModule _bombModule;
 
     [NonSerialized] public int ModuleId;
+    static string _logTag;
     static int _moduleIdCounter = 1;
 
     KMAudio.KMAudioRef _customSound;
@@ -28,9 +30,21 @@ public class BombHelper : MonoBehaviour {
 
     void Start() {
         _bombInfo = GetComponent<KMBombInfo>();
+        _bombModule = GetComponent<KMBombModule>();
         _bombAudio = GetComponent<KMAudio>();
         _bombInfo.OnBombExploded += StopCustomSound;
+        _logTag = string.Format("[{0} #{1}] ", _bombModule.ModuleDisplayName, ModuleId);
 	}
+
+    public static void Log(string msg) {
+        string message = _logTag + msg;
+        Debug.LogFormat(msg);
+	}
+
+    public static void LogWarning(string msg) {
+        string message = _logTag + msg;
+        Debug.LogWarningFormat(msg);
+    }
 
     /// <summary>
     /// Generic button press click sound & bomb oomph

@@ -45,6 +45,25 @@ public class MovableObject : MonoBehaviour {
         }
     }
 
+    public void SetPosition(string id) {
+        int index = _positionIds.IndexOf(id);
+        if (index == -1) {
+            BombHelper.LogWarning(string.Format("Tried to move {0} to unknown position '{1}'", this.gameObject.name, id));
+		}
+        
+        if (index >= 0 && index < _locations.Count) {
+            _index = index;
+            transform.localPosition = _locations[index];
+            transform.localRotation = _rotations[index];
+        }
+        else {
+            // TODO: throw a warning or error
+            _index = 0;
+            transform.localPosition = _locations[0];
+            transform.localRotation = _rotations[0];
+        }
+    }
+
     /// <summary>
     /// Move object to next position in position array
     /// </summary>
