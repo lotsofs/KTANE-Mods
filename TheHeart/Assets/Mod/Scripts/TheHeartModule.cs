@@ -31,7 +31,6 @@ public class TheHeartModule : MonoBehaviour {
 	bool _solving = false;
 	bool _solved = false;
 	bool _justStruck = false;
-	bool _tpCorrect = false;
 
 	[SerializeField] float _aedChargeTime = 5f;
 	[SerializeField] float _aedPlaySoundAt = 4f;
@@ -317,12 +316,7 @@ public class TheHeartModule : MonoBehaviour {
 		}
 		if (split.Count == 1) {
 			_theHeartSelectable.OnInteract();
-			if (_tpCorrect)
-			{
-				yield return "awardpoints 1";
-				_tpCorrect = false;
-			}
-			yield return null;
+			yield return "solve";
 		}
 		else {
 			for (int i = 0; i < split[1].Length; i++) {
@@ -345,13 +339,9 @@ public class TheHeartModule : MonoBehaviour {
 				int seconds = (int)_bombInfo.GetTime() % 60;
 				if (seconds == time) {
 					_theHeartSelectable.OnInteract();
-					if (_tpCorrect)
-					{
-						//yield return "awardpoints 1";		// TP scoring changed, no longer needed. TODO: Clean up all the code dealing with this.
-						_tpCorrect = false;
-					}
 					done = true;
 					yield return "end waiting music";
+					yield return "solve";
 				}
 			}
 		}
