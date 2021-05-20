@@ -35,6 +35,7 @@ public class BombHelper : MonoBehaviour {
         _bombInfo = GetComponent<KMBombInfo>();
         _bombModule = GetComponent<KMBombModule>();
         _bombAudio = GetComponent<KMAudio>();
+        _bombColorBlind = GetComponent<KMColorblindMode>();
         _bombInfo.OnBombExploded += StopCustomSound;
         _logTag = string.Format("[{0} #{1}] ", _bombModule.ModuleDisplayName, ModuleId);
         if (_bombColorBlind.ColorblindModeActive) {

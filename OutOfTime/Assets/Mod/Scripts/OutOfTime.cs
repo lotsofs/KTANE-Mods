@@ -8,6 +8,8 @@ public class OutOfTime : MonoBehaviour {
 	KMBombModule _bombModule;
 	KMSelectable _bombSelectable;
 	BombHelper _bombHelper;
+	Multiplier _multiplier;
+	Emotion _emotion;
 
 	[SerializeField] Button[] _keypadButtons;
 	[SerializeField] KMSelectable _displayButton;
@@ -18,6 +20,7 @@ public class OutOfTime : MonoBehaviour {
 
 	int _currentIndex;
 	int _score = 0;
+	bool _started = false;
 	bool _solved = false;
 
 	string _pressed;
@@ -26,17 +29,30 @@ public class OutOfTime : MonoBehaviour {
 	List<char> _buttonLabels;
 	Dictionary<int, char> _transitionQueue = new Dictionary<int, char>();
 
+	#region setup
+
 	// Use this for initialization
 	void Awake () {
 		_bombHelper = GetComponent<BombHelper>();
 		_bombInfo = GetComponent<KMBombInfo>();
 		_bombModule = GetComponent<KMBombModule>();
 		_bombSelectable = GetComponent<KMSelectable>();
+		_multiplier = GetComponent<Multiplier>();
+		_emotion = GetComponent<Emotion>();
+		_bombModule.OnActivate += Activate;
+	}
+
+	void OnDestroy() {
+		LogDump();
 	}
 
 	void Start() {
 		ConfigureSelectables();
+	}
+
+	void Activate() {
 		ChooseStartingPoint();
+		_started = true;
 	}
 	
 	void ChooseStartingPoint() {
@@ -48,7 +64,7 @@ public class OutOfTime : MonoBehaviour {
 		// Figure out what letters came before it
 		string initialSequence = "";
 		for (int i = _currentIndex - 5; i < _currentIndex; i++) {
-			initialSequence += GridSequence.Sequence[i + max % max];	// add first because modulo with negative numbers is weird
+			initialSequence += GridSequence.Sequence[(i + max) % max];	// add first because modulo with negative numbers is weird
 		}
 		_bombHelper.Log(string.Format("Starting Sequence: {0}.", initialSequence));
 		_bombHelper.Log(string.Format("Expecting {0} for the first button press.", GridSequence.Sequence[_currentIndex]));
@@ -56,10 +72,15 @@ public class OutOfTime : MonoBehaviour {
 		_logged = initialSequence.Length;
 
 		// Figure out what letters to display on the buttons
+
 		_buttonLabels = new List<char>();
 		int futureIndex = _currentIndex;
 		while (_buttonLabels.Count < 9) {
 			char letter = GridSequence.Sequence[futureIndex % max];
+			if (_buttonLabels.Contains(GridSequence.Previous[letter])) {
+				futureIndex++;
+				continue;
+			}
 			if (!_buttonLabels.Contains(letter)) {
 				_buttonLabels.Add(letter);
 			}
@@ -68,10 +89,13 @@ public class OutOfTime : MonoBehaviour {
 		_buttonLabels = _buttonLabels.Shuffle();
 
 		// Update displays
+		string logKeypad = "Keypad buttons are, in order 1-9: ";
 		for (int i = 0; i < _keypadButtons.Length; i++) {
 			_keypadButtons[i].TextMesh.text = _buttonLabels[i].ToString();
+			logKeypad += _keypadButtons[i].TextMesh.text;
 		}
 		_screen.UpdateCounter(_score);
+		_bombHelper.Log(logKeypad);
 	}
 
 	void ConfigureSelectables() {
@@ -89,15 +113,16 @@ public class OutOfTime : MonoBehaviour {
 		}
 		_displayButton.OnInteract += () => {
 			_bombHelper.GenericButtonPress(_displayButton, false, 0.1f);
-			_screen.ShowPresses(_pressed);
+			if (_started) _screen.ShowPresses(_pressed);
 			return false;
 		};
 		_displayButton.OnInteractEnded += () => {
 			_bombHelper.GenericButtonPress(_displayButton, false, 0.1f);
-			_screen.UpdateCounter(_score);
+			if (_started) _screen.UpdateCounter(_score);
 		};
 	}
 
+	#endregion
 
 	void LogDump() {
 		if (_pressed.Length > _logged) {
@@ -110,7 +135,7 @@ public class OutOfTime : MonoBehaviour {
 	}
 
 	void ButtonPress(Button button) {
-		if (_solved) {
+		if (_solved || !_started) {
 			return;
 		}
 		char letter = button.TextMesh.text[0];
@@ -136,7 +161,8 @@ public class OutOfTime : MonoBehaviour {
 	}
 
 	void AddValue(Button button) {
-		int value = button.BaseValue;
+		int value = _multiplier.Multiply(button.BaseValue);
+		
 		_score += value;
 		_screen.UpdateCounter(_score);
 	}
@@ -145,9 +171,22 @@ public class OutOfTime : MonoBehaviour {
 		if (_score > _bombInfo.GetTime()) {
 			_bombModule.HandlePass();
 			LogDump();
-			_bombHelper.Log("Solved");
+			_bombHelper.Log("Next press not needed. Module got solved.");
 			_solved = true;
 		}
+	}
+
+	void ChangeLetter(char letter) {
+		int index = _buttonLabels.IndexOf(letter);
+		_buttonLabels[index] = GridSequence.Next[letter];
+		_keypadButtons[index].TextMesh.text = _buttonLabels[index].ToString();
+		LogDump();
+		_bombHelper.Log(string.Format("Changed letter {0} to {1} on the keypad (button with value {2}).", letter, _keypadButtons[index].TextMesh.text, index + 1));
+		string logKeypad = "Keypad buttons are now, in order 1-9: ";
+		for (int i = 0; i < 9; i++) {
+			logKeypad += _keypadButtons[i].TextMesh.text;
+		}
+		_bombHelper.Log(logKeypad);
 	}
 
 	/// <summary>
@@ -161,14 +200,18 @@ public class OutOfTime : MonoBehaviour {
 			int deadline = GridSequence.Firsts[letterNew];
 			// get the distance to the next letter
 			if (deadline - _currentIndex < _deadlineOffset) {
-				int index = _buttonLabels.IndexOf(letter);
-				_buttonLabels[index] = letterNew;
-				_keypadButtons[index].TextMesh.text = _buttonLabels[index].ToString();
+				ChangeLetter(letter);
 			}
 			else {
 				// queue up the transition
 				int random = UnityEngine.Random.Range(_currentIndex, deadline - _deadlineOffset);
-				_transitionQueue.Add(random, letter) ;
+				if (!_transitionQueue.ContainsKey(random)) {
+					_transitionQueue.Add(random, letter);
+				}
+				else {
+					// if we happen to pick a random number that already has something queued, just change it now.
+					ChangeLetter(letter);
+				}
 			}
 		}
 	}
@@ -179,10 +222,7 @@ public class OutOfTime : MonoBehaviour {
 	void CheckTransitionQueue() {
 		if (_transitionQueue.ContainsKey(_currentIndex)) {
 			char letter = _transitionQueue[_currentIndex];
-			char newLetter = GridSequence.Next[letter];
-			int index = _buttonLabels.IndexOf(letter);
-			_buttonLabels[index] = newLetter;
-			_keypadButtons[index].TextMesh.text = _buttonLabels[index].ToString();
+			ChangeLetter(letter);
 			_transitionQueue.Remove(_currentIndex);
 		}
 	}

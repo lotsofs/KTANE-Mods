@@ -7,22 +7,74 @@ public class LightsHandler : MonoBehaviour {
 	[SerializeField] GameObject _lightContainer;
 	[SerializeField] Light[] _lightSources;
 	[SerializeField] TextMesh _display;
+	//[Space]
+	//[SerializeField] GameObject _redBackdrop;
+	//[SerializeField] GameObject _yellowBackdrop;
+	//[SerializeField] GameObject _greenBackdrop;
+	//[SerializeField] GameObject _cyanBackdrop;
+	//[SerializeField] GameObject _blueBackdrop;
+	//[SerializeField] GameObject _magentaBackdrop;
+	//[SerializeField] GameObject _whiteBackdrop;
 	[Space]
-	[SerializeField] GameObject _redBackdrop;
-	[SerializeField] GameObject _yellowBackdrop;
-	[SerializeField] GameObject _greenBackdrop;
-	[SerializeField] GameObject _cyanBackdrop;
-	[SerializeField] GameObject _blueBackdrop;
-	[SerializeField] GameObject _magentaBackdrop;
-	[SerializeField] GameObject _whiteBackdrop;
+	[SerializeField] Material[] _backdrops;
+	[SerializeField] Material[] _backPlanes;
+	[SerializeField] Color[] _colors;
+	[Space]
+	[SerializeField] MovableObject _platformMover;
+	[SerializeField] TextMesh _displayText;
+	[Space]
+	[SerializeField] Renderer _backdropModel;
+	[SerializeField] Renderer _backdropPlane;
+	Color _currentCol;
 
-	// Use this for initialization
-	void Start () {
-		
+	public enum Colors {
+		Red,
+		Yellow,
+		Green,
+		Cyan,
+		Blue,
+		Magenta,
+		White
+	}
+
+	void Awake() {
+	}
+
+	public void TurnOn(bool yes) {
+		float scalar = transform.lossyScale.x;
+		foreach (Light light in _lightSources) {
+			light.range *= scalar;
+		}
+		_lightContainer.SetActive(yes);
+		_backdropModel.gameObject.SetActive(yes);
+		_backdropPlane.gameObject.SetActive(yes);
+		_displayText.color = yes ? _currentCol : Color.gray;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void SetColor(int index) {
+		index %= 7;
+		SetColor((Colors)index);
+	}
+
+	public void SetColor(Colors color) {
+		bool active = _backdropModel.gameObject.activeInHierarchy;
+
+		_backdropModel.material = _backdrops[(int)color];
+		_backdropPlane.material = _backPlanes[(int)color];
+		_currentCol = _colors[(int)color];
+
+		foreach (Light light in _lightSources) {
+			light.color = _currentCol;
+		}
+
+		if (active) {
+			_display.color = _currentCol;
+		}
+	}
+
+	public void Update() {
+		foreach (Light light in _lightSources) {
+			light.intensity = _platformMover.ExtendedRate; // * 0.5f;
+		}
 	}
 }
