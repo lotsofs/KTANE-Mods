@@ -16,55 +16,7 @@ MonoBehaviour:
   author: S.
   description: "If you thought bombs on trains were bad, now we have trains on bombs.\r\n\r\nCouple
     the correct railroad cars to the train to disarm the module.\r\n\r\n------\r\nIncludes
-    support for mods:\r\nTwitch Plays, w/ Autosolve\r\nSouvenir\r\n\r\n------\r\nUpdate
-    log:\r\n2020-08-20:\r\n* Prepped the module for Souvenir support by fixing a typographical
-    error in the module's internals that doesn't show up on the module itself, but
-    would show up in Souvenir.\r\n\r\n2020-08-01:\r\n* Toggled a setting that should
-    hopefully now make the module VR compatible.\r\n* Resources are removed from the
-    list if the player strikes due to misremembering whether their freight table rule
-    has been applied on cars 12 and beyond.\r\n* Upon a strike, the train will now
-    drive into position. This allows you to take a look at it in case you forgot what
-    an earlier car was but it needs to be remembered.\r\n* Fixed a cosmetic bug where
-    the note would not indent lines preceded by an empty line.\r\n* Incorrectly attached
-    baggage cars now no longer store future passengers' baggage.\r\n* Removed legacy
-    code that involved edgework on whether the train was long-haul and whether the
-    list generates a nuclear reactor pressure vessel instead of an electrical generator.
-    This should have no noticeable effect.\r\n* Increased the chance of electrical
-    generators/nuclear reactor pressure vessels appearing by a bit (from 1/100 to
-    1/80)\r\n* The solve of the module now happens during the ending cinematic, after
-    the bottom screen turns off, but before the top screen does. This fits better
-    within the module's asynchronous style of shutting off, and also allows twitch
-    plays camera wall players to enjoy the cinematic.\r\n* Twitch Plays:\r\n- * Removed
-    the unsubmittable penalty.\r\n- * Added alternative controls: !up !down !select
-    !cycle\r\n- * Fixed some incorrect terminology in the help message\r\n* Manual:\r\n-
-    * Using my newly learned CSS abilities, I moved some of the main car instructions
-    closer together so it fits more on one page.\r\n- * This leaves room on page 5
-    to mention some of the above changes where needed, as well as the last instruction
-    which was previously awkwardly placed on page 6.\r\n- * Fixed a minor spelling
-    mistake.\r\n- * Added some additional underlining and bolding to emphasize some
-    things, most notably to help distinguish the eighth car's instructions from the
-    seventh's.\r\nNo manual reprint is required, as the gameplay rules haven't changed.
-    However, it is strongly recommended, as all but the last page have been changed
-    significantly.\r\n\r\n2020-06-07:\r\n* Manual: Added a bullet point to each of
-    the car tables' instructions referring to the cargo notes section. A reprint is
-    recommended for pages 6 and 7, but not strictly needed, as no rules have been
-    changed.\r\n* Twitch Plays: Block any commands coming in during a stage transition.
-    This should avoid issues with accidental double-sending of commands, as well as
-    overenthusiastic caboose connectors.\r\n\r\n2020-02-06:\r\n* Fixed a bug that
-    would cause the module to immediately skip to car 13's rules on car 14, without
-    evaluating its own rules first.\r\n\r\n2020-02-04:\r\n* TPP support changes:\r\n-
-    * Sequential autosolving\r\n\r\n2020-01-27:\r\n* Rewritten a few lines in the
-    manual for clarification. This does not affect any gameplay rules.\r\n* TPP support
-    changes:\r\n- * Moved some note positions slightly as the TPP indicator covered
-    up part of the note sometimes.\r\n- * Fixed an error that would occur if the player
-    tried to couple null.\r\n- * Added chat feedback for players trying to flip non-existant
-    notes.\r\n- * Added administrator autosolve support.\r\nWhile the manual has changed,
-    the old manual is still applicable. Should you desire to keep your manuals up
-    to date, only page 5 needs to be reprinted.\r\n\r\n2020-01-26:\r\n* The entire
-    train now no longer gets reset when striking.\r\nWhile the manual has changed
-    a little due to this, an entire reprint is not strictly required. Just cross out
-    the sentence that says a new train must be built from the start on page 1, or
-    reprint just that page.\r\n\r\n2020-01-23:\r\n* Initial Release\r\n\r\n------\r\nFound
+    support for mods:\r\nTwitch Plays, w/ Autosolve\r\nSouvenir\r\n\r\n------\r\nFound
     an issue? You can find me at discord.gg/lotsofs , but I am also pingable in the
     official KTANE discord server, or the KTANE modding discord server. Or just post
     a comment below."

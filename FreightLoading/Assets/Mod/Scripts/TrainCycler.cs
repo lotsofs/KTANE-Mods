@@ -199,37 +199,43 @@ public class TrainCycler : MonoBehaviour {
         int carsPassed = 0;
         while (carsPassed < 15) {
             foreach (SpriteRenderer car in _carSprites) {
+                if (car.transform.localPosition.x > 0.0678f) {
+                    if (!car.gameObject.activeInHierarchy) {
+                        continue;
+                    }
+                    else {
+                        car.gameObject.SetActive(false);
+                        carsPassed++;
+                    }
+                }
                 Vector3 pos = car.transform.localPosition;
                 pos -= (Vector3.left * Time.deltaTime * speed);
                 car.transform.localPosition = pos;
                 if (!car.gameObject.activeInHierarchy && car.transform.localPosition.x < 0.0678f && car.transform.localPosition.x > -0.1141f) {
                     car.gameObject.SetActive(true);
                 }
-                else if (car.gameObject.activeInHierarchy && car.transform.localPosition.x > 0.0678f) {
-                    car.gameObject.SetActive(false);
-                    carsPassed++;
-                }
             }
             yield return null;
         }
 
-        foreach (SpriteRenderer sprR in _carSprites) {
-            sprR.gameObject.SetActive(true);
-        }
-        for (int i = _stage; i < _carSprites.Length; i++) {
-            _carSprites[i].transform.localPosition = _base.Position;
-            _carSprites[i].transform.localRotation = _base.Rotation;
-            _carSprites[i].gameObject.SetActive(true);
-        }
-        if (_carSprites[_stage - 1].sprite.texture.width > 300) {
-            _carSprites[_stage - 1].transform.localPosition = _previousParkingWide.Position;
-        }
-        else {
-            _carSprites[_stage - 1].transform.localPosition = _previousParking.Position;
-        }
-        _carSprites[_stage - 1].gameObject.SetActive(true);
-        DisplayTrain();
-    }
+		foreach (SpriteRenderer sprR in _carSprites) {
+			sprR.gameObject.SetActive(false);
+		}
+		if (_carSprites[_stage - 1].sprite.texture.width > 300) {
+			_carSprites[_stage - 1].transform.localPosition = _previousParkingWide.Position;
+		}
+		else {
+			_carSprites[_stage - 1].transform.localPosition = _previousParking.Position;
+		}
+		for (int i = _stage; i < _carSprites.Length; i++) {
+			_carSprites[i].transform.localPosition = _base.Position;
+			_carSprites[i].transform.localRotation = _base.Rotation;
+			_carSprites[i].gameObject.SetActive(true);
+		}
+		_carSprites[_stage - 1].gameObject.SetActive(true);
+		_carSprites[_stage].gameObject.SetActive(true);
+		DisplayTrain();
+	}
 
     /// <summary>
     /// Moves the entire train past the display
