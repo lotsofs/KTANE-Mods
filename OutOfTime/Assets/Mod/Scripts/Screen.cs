@@ -5,24 +5,60 @@ using UnityEngine;
 public class Screen : MonoBehaviour {
 
 	[SerializeField] TextMesh _screenText;
-	bool _showSmiley;
+	float _showSmiley = 0;
+	int _score;
+
+	public void UpdateCounter() {
+		UpdateCounter(_score);
+	}
 
 	public void UpdateCounter(int score) {
+		_score = score;
 		// :)000
-		if (_showSmiley) {
-			string smiley = ":)";
+		if (_showSmiley > 0) {
 			if (score > 999) {
 				int s = score % 100;
-				_screenText.text = smiley + "…" + s.ToString("00");
+				_screenText.text = ":)…" + s.ToString("00");
 			}
 			else {
-				_screenText.text = smiley + score.ToString("000");
+				_screenText.text = ":)" + score.ToString("000");
 			}
 			return;
 		}
 		// C0000
+		char colChar = 'K';
 		if (BombHelper.ColorBlindModeActive) {
-			// TODO: Figure out what color is being shown
+			// Because there apparently is no way to just dump a color to an int for some reason and Im fed up with trying to get this to work in a more elegant way
+			Color col = _screenText.color;
+			if (col.r == 1) {
+				if (col.g == 1) {
+					if (col.b == 1) {
+						colChar = 'W';
+					}
+					else {
+						colChar = 'Y';
+					}
+				}
+				else if (col.b == 1) {
+					colChar = 'M';
+				}
+				else {
+					colChar = 'R';
+				}
+			}
+			else if (col.g == 1) {
+				if (col.b == 1) {
+					colChar = 'C';
+				}
+				else {
+					colChar = 'G';
+				}
+			}
+			else if (col.b == 1) {
+				colChar = 'B';
+			}
+		}
+		if (colChar != 'K') {
 			char color = 'K';
 			if (score > 9999) {
 				int s = score % 1000;
@@ -45,8 +81,22 @@ public class Screen : MonoBehaviour {
 		}
 	}
 
+	public void ShowSmiley() {
+		_showSmiley += 3f;
+		UpdateCounter();
+	}
+
 	public void ShowPresses(string presses) {
 		// AAAAA
 		_screenText.text = presses.Substring(presses.Length - 5);
+	}
+
+	void Update() {
+		if (_showSmiley > 0) {
+			_showSmiley -= Time.deltaTime;
+			if (_showSmiley <= 0) {
+				UpdateCounter();
+			}
+		}
 	}
 }

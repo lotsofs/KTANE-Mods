@@ -40,6 +40,8 @@ public class OutOfTime : MonoBehaviour {
 		_multiplier = GetComponent<Multiplier>();
 		_emotion = GetComponent<Emotion>();
 		_bombModule.OnActivate += Activate;
+		_emotion.OnLogDumpRequested += LogDump;
+		_multiplier.OnLogDumpRequested += LogDump;
 	}
 
 	void OnDestroy() {
@@ -130,6 +132,7 @@ public class OutOfTime : MonoBehaviour {
 			_bombHelper.Log(_pressed.Substring(_logged));
 			_logged = _pressed.Length;
 			_bombHelper.Log("Now at index " + _currentIndex);
+			_bombHelper.Log("Current score: " + _score);
 			_bombHelper.Log("Expected next press: " + GridSequence.Sequence[_currentIndex]);
 		}
 	}
@@ -162,9 +165,11 @@ public class OutOfTime : MonoBehaviour {
 
 	void AddValue(Button button) {
 		int value = _multiplier.Multiply(button.BaseValue);
-		
+
 		_score += value;
 		_screen.UpdateCounter(_score);
+		_multiplier.CalculateSequenceEnd(value);
+		_emotion.Satisfy(value);
 	}
 
 	void CheckSolveCondition() {

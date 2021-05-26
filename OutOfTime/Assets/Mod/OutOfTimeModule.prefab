@@ -5022,6 +5022,7 @@ MonoBehaviour:
   - {fileID: 108464786761027708}
   - {fileID: 108520092383892180}
   _display: {fileID: 102326928552057808}
+  _screen: {fileID: 114150992355668840}
   _backdrops:
   - {fileID: 2100000, guid: 0e33f55009db4604d991ab3f548bbc57, type: 2}
   - {fileID: 2100000, guid: 4eae3985c0bc3844994e41182ce6200c, type: 2}
@@ -6048,12 +6049,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b283d8e90ebee49b7943cfb6fb8f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialNeediness: 90
+  _initialSatisfaction: 90
   _needinessPerMinute: 5
   _needinessPerModule: 15
+  _satisfiedNeedinessPerPress: 3
+  _requiredSatisfactionToSatisfy: 33
   _platformMover: {fileID: 114005819460858386}
   _displayMover: {fileID: 114959042178129292}
   _multiplier: {fileID: 114532020046870014}
+  _screen: {fileID: 114150992355668840}
 --- !u!114 &114985519661613040
 MonoBehaviour:
   m_ObjectHideFlags: 1

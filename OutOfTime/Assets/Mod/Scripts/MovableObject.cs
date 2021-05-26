@@ -68,9 +68,9 @@ public class MovableObject : MonoBehaviour {
         }
     }
 
-    [ContextMenu("Move To Middle")]
+    [ContextMenu("Test Move")]
     public void MoveToInbetween() {
-        StartCoroutine(MoveToInbetweenCoroutine(0.5f, 0, 1));
+        StartCoroutine(MoveToInbetweenCoroutine(1f, 0, 1, speed: 0.01f));
     }
 
     public void MoveToInbetween(float ratio) {

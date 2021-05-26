@@ -7,6 +7,7 @@ public class LightsHandler : MonoBehaviour {
 	[SerializeField] GameObject _lightContainer;
 	[SerializeField] Light[] _lightSources;
 	[SerializeField] TextMesh _display;
+	[SerializeField] Screen _screen;
 	//[Space]
 	//[SerializeField] GameObject _redBackdrop;
 	//[SerializeField] GameObject _yellowBackdrop;
@@ -49,6 +50,7 @@ public class LightsHandler : MonoBehaviour {
 		_backdropModel.gameObject.SetActive(yes);
 		_backdropPlane.gameObject.SetActive(yes);
 		_displayText.color = yes ? _currentCol : Color.gray;
+		_screen.UpdateCounter();
 	}
 	
 	public void SetColor(int index) {
