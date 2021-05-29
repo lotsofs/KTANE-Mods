@@ -4066,7 +4066,7 @@ BoxCollider:
   m_GameObject: {fileID: 1886083395457240}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4078,7 +4078,7 @@ BoxCollider:
   m_GameObject: {fileID: 1124308177055680}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4090,7 +4090,7 @@ BoxCollider:
   m_GameObject: {fileID: 1459151822785578}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4114,7 +4114,7 @@ BoxCollider:
   m_GameObject: {fileID: 1987247687902174}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4126,7 +4126,7 @@ BoxCollider:
   m_GameObject: {fileID: 1207486176957062}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4138,7 +4138,7 @@ BoxCollider:
   m_GameObject: {fileID: 1515579930957832}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4162,7 +4162,7 @@ BoxCollider:
   m_GameObject: {fileID: 1229081757783438}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4174,7 +4174,7 @@ BoxCollider:
   m_GameObject: {fileID: 1237729660360602}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4186,7 +4186,7 @@ BoxCollider:
   m_GameObject: {fileID: 1246205248923068}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4198,7 +4198,7 @@ BoxCollider:
   m_GameObject: {fileID: 1171599722083784}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5881,6 +5881,8 @@ MonoBehaviour:
   _screen: {fileID: 114150992355668840}
   _screenText: {fileID: 102326928552057808}
   _deadlineOffset: 5
+  _buttonPressColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  _buttonUnpressColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
 --- !u!114 &114853668506065134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6049,11 +6051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b283d8e90ebee49b7943cfb6fb8f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSatisfaction: 90
-  _needinessPerMinute: 5
-  _needinessPerModule: 15
-  _satisfiedNeedinessPerPress: 3
-  _requiredSatisfactionToSatisfy: 33
   _platformMover: {fileID: 114005819460858386}
   _displayMover: {fileID: 114959042178129292}
   _multiplier: {fileID: 114532020046870014}

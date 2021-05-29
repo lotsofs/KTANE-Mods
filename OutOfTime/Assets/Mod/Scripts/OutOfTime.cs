@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class OutOfTime : MonoBehaviour {
@@ -17,6 +18,9 @@ public class OutOfTime : MonoBehaviour {
 
 	[SerializeField] TextMesh _screenText;
 	[SerializeField] int _deadlineOffset = 5;
+
+	[SerializeField] Color _buttonPressColor;
+	[SerializeField] Color _buttonUnpressColor;
 
 	int _currentIndex;
 	int _score = 0;
@@ -106,11 +110,13 @@ public class OutOfTime : MonoBehaviour {
 			sel.OnInteract += () => {
 				_bombHelper.GenericButtonPress(sel, true, 0.05f);
 				button.GetComponent<MovableObject>().SetPosition(1);
+				button.TextMesh.color = _buttonPressColor;
 				ButtonPress(button);
 				return false;
 			};
 			sel.OnInteractEnded += () => {
 				button.GetComponent<MovableObject>().SetPosition(0);
+				button.TextMesh.color = _buttonUnpressColor;
 			};
 		}
 		_displayButton.OnInteract += () => {
@@ -128,12 +134,18 @@ public class OutOfTime : MonoBehaviour {
 
 	void LogDump() {
 		if (_pressed.Length > _logged) {
-			_bombHelper.Log("Pressed correctly:");
-			_bombHelper.Log(_pressed.Substring(_logged));
+			_bombHelper.Log("============================================================");
+			_bombHelper.Log("Pressed correctly: " + _pressed.Substring(_logged));
 			_logged = _pressed.Length;
 			_bombHelper.Log("Now at index " + _currentIndex);
 			_bombHelper.Log("Current score: " + _score);
 			_bombHelper.Log("Expected next press: " + GridSequence.Sequence[_currentIndex]);
+			string logKeypad = "Keypad buttons are, in order 1-9: ";
+			for (int i = 0; i < 9; i++) {
+				logKeypad += _keypadButtons[i].TextMesh.text;
+			}
+			_bombHelper.Log(logKeypad);
+			_bombHelper.Log("------------------------------------------------------------");
 		}
 	}
 
@@ -169,15 +181,16 @@ public class OutOfTime : MonoBehaviour {
 		_score += value;
 		_screen.UpdateCounter(_score);
 		_multiplier.CalculateSequenceEnd(value);
-		_emotion.Satisfy(value);
+		_emotion.Satisfy(button.BaseValue);
 	}
 
 	void CheckSolveCondition() {
 		if (_score > _bombInfo.GetTime()) {
-			_bombModule.HandlePass();
 			LogDump();
-			_bombHelper.Log("Next press not needed. Module got solved.");
+			_bombHelper.Log("MODULE SOLVED!");
 			_solved = true;
+			_emotion.SolveModule();
+			_bombModule.HandlePass();
 		}
 	}
 
@@ -185,13 +198,13 @@ public class OutOfTime : MonoBehaviour {
 		int index = _buttonLabels.IndexOf(letter);
 		_buttonLabels[index] = GridSequence.Next[letter];
 		_keypadButtons[index].TextMesh.text = _buttonLabels[index].ToString();
-		LogDump();
-		_bombHelper.Log(string.Format("Changed letter {0} to {1} on the keypad (button with value {2}).", letter, _keypadButtons[index].TextMesh.text, index + 1));
-		string logKeypad = "Keypad buttons are now, in order 1-9: ";
-		for (int i = 0; i < 9; i++) {
-			logKeypad += _keypadButtons[i].TextMesh.text;
-		}
-		_bombHelper.Log(logKeypad);
+		//LogDump();
+		//_bombHelper.Log(string.Format("Changed letter {0} to {1} on the keypad (button with value {2}).", letter, _keypadButtons[index].TextMesh.text, index + 1));
+		////string logKeypad = "Keypad buttons are now, in order 1-9: ";
+		//for (int i = 0; i < 9; i++) {
+		//	logKeypad += _keypadButtons[i].TextMesh.text;
+		//}
+		//_bombHelper.Log(logKeypad);
 	}
 
 	/// <summary>
@@ -231,5 +244,66 @@ public class OutOfTime : MonoBehaviour {
 			_transitionQueue.Remove(_currentIndex);
 		}
 	}
+
+	#region twitch plays
+
+	public readonly string TwitchHelpMessage = "'!{0} Press ABCDFEDC' to press those letters in order. " +
+		"'!{0} Display 2' to press on the display for 2 seconds (duration optional, default = 2).";
+
+	public IEnumerator ProcessTwitchCommand(string command) {
+		command = command.ToUpperInvariant().Trim();
+		List<string> split = command.Split(new char[] { ' ','	' }, System.StringSplitOptions.RemoveEmptyEntries).ToList();
+		if (split[0] == "SCREEN" || split[0] == "DISPLAY") {
+			int duration = 2;
+			if (split.Count > 1) {
+				if (!int.TryParse(split[1], out duration)) {
+					yield break;
+				}
+			}
+			_displayButton.OnInteract();
+			float time = duration;
+			while (time > 0) {
+				time -= Time.deltaTime;
+				yield return "trycancel";
+			}
+			_displayButton.OnInteractEnded();
+		}
+		else if (split[0] == "PRESS") {
+			if (split.Count == 1) {
+				yield break;
+			}
+			split.RemoveAt(0);
+			string buttons = string.Join("", split.ToArray());
+			foreach (char button in buttons) {
+				int index = _buttonLabels.IndexOf(button);
+				if (index == -1) {
+					yield return "sendtochat I can not find that letter on the Out of Time keypad.";
+					yield break;
+				}
+				_keypadButtons[index].Selectable.OnInteract();
+				yield return new WaitForSeconds(0.1f);
+				_keypadButtons[index].Selectable.OnInteractEnded();
+				yield return "trycancel";
+			}
+		}
+	}
+
+
+	IEnumerator TwitchHandleForcedSolve() {
+		while (!_solved) {
+			char button = GridSequence.Sequence[_currentIndex % 1000];
+			int index = _buttonLabels.IndexOf(button);
+			_keypadButtons[index].Selectable.OnInteract();
+			yield return new WaitForSeconds(0.1f);
+			_keypadButtons[index].Selectable.OnInteractEnded();
+			yield return "trycancel";
+			if (_currentIndex % 100 == 0) {
+				// Pause to see if any other modules need anything
+				yield return true;
+			}
+		}
+	}
+
+	#endregion
 
 }

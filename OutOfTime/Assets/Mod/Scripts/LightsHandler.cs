@@ -44,7 +44,8 @@ public class LightsHandler : MonoBehaviour {
 	public void TurnOn(bool yes) {
 		float scalar = transform.lossyScale.x;
 		foreach (Light light in _lightSources) {
-			light.range *= scalar;
+			//light.range *= scalar;
+			light.range = 1;	// this doesn't do jack since a range of over 1 doesn't seem to do anything.
 		}
 		_lightContainer.SetActive(yes);
 		_backdropModel.gameObject.SetActive(yes);

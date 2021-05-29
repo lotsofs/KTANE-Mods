@@ -5,6 +5,7 @@ using UnityEngine;
 public class Screen : MonoBehaviour {
 
 	[SerializeField] TextMesh _screenText;
+	float _smileyDuration = 0.5f;
 	float _showSmiley = 0;
 	int _score;
 
@@ -59,13 +60,12 @@ public class Screen : MonoBehaviour {
 			}
 		}
 		if (colChar != 'K') {
-			char color = 'K';
 			if (score > 9999) {
 				int s = score % 1000;
-				_screenText.text = color + "…" + s.ToString("000");
+				_screenText.text = colChar + "…" + s.ToString("000");
 			}
 			else {
-				_screenText.text = color + score.ToString("0000");
+				_screenText.text = colChar + score.ToString("0000");
 			}
 			return;
 		}
@@ -82,7 +82,7 @@ public class Screen : MonoBehaviour {
 	}
 
 	public void ShowSmiley() {
-		_showSmiley += 3f;
+		_showSmiley = _smileyDuration;
 		UpdateCounter();
 	}
 

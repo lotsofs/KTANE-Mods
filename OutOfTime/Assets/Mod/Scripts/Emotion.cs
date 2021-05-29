@@ -29,15 +29,16 @@ public class Emotion : MonoBehaviour {
 
 	int _satisfaction = 0;
 	int _finalSatisfaction = 0;
+	int _trueFinalSatisfaction = 0;
 	int _requiredSatisfaction = 0;
 
 	public event Action OnLogDumpRequested;
 
-	[SerializeField] int _initialSatisfaction = 10;
-	[SerializeField] int _needinessPerMinute = 5;
-	[SerializeField] int _needinessPerModule = 15;
-	[SerializeField] int _satisfiedNeedinessPerPress = 3;
-	[SerializeField] int _requiredSatisfactionToSatisfy = 33;
+	int _initialNeediness = 70;
+	int _needinessPerMinute = 4;
+	int _needinessPerModule = 20;
+	int _satisfiedNeedinessPerPress = 8;
+	int _requiredSatisfactionToSatisfy = 11;
 
 	[Space]
 
@@ -48,27 +49,55 @@ public class Emotion : MonoBehaviour {
 
 	Coroutine _coroutine;
 
+	bool _endState = false;
+	bool _moduleSolved = false;
+
 	int _updateNeedinessTime = 60;
 	int _activateRewardMomentTime = 60;
 
-	void Update () {
+	#region module solved
 
-		// TODO: When there are no other modules left, go into boss mode.
+	public void SolveModule() {
+		_moduleSolved = true;
+		_multiplier.StartRandomEffect();
+	}
+
+	IEnumerator SolvedBombAnimation() {
+		_platformMover.MoveToInbetween(1, duration: 2f);
+		_displayMover.MoveToInbetween(1, duration: 2f);
+		yield return new WaitForSeconds(2.5f);
+		_platformMover.MoveToInbetween(0, speed: 0.01f);
+		_displayMover.MoveToInbetween(0, speed: 0.01f);
+	}
+
+	#endregion
+
+	void Update () {
+		if (_endState || _moduleSolved) {
+			if (_coroutine == null) {
+				_coroutine = StartCoroutine(SolvedBombAnimation());
+			}
+		}
 
 		int time = (int)_bombInfo.GetTime();
 		if (_previousTime == time) {
 			return;
 		}
 		_previousTime = time;
+
+		// Neediness increases with every solved module
+		int solves = _bombInfo.GetSolvedModuleIDs().Count;
+		_neediness += (solves - _solvedModules) * _needinessPerModule;
+		_accumulatedNeediness += (solves - _solvedModules) * _needinessPerModule;
+		_solvedModules = solves;
+
 		if (time % 60 == 1) {
-			// Neediness increases with every solved module
-			int solves = _bombInfo.GetSolvedModuleIDs().Count;
-			_neediness += (solves - _solvedModules) * _needinessPerModule;
-			_accumulatedNeediness += (solves - _solvedModules) * _needinessPerModule;
-			_solvedModules = solves;
 			// Neediness increases with every minute
 			_neediness += _needinessPerMinute;
 			_accumulatedNeediness += _needinessPerMinute;
+
+			// Slowly trickle satisfaction to encourage more lightups even without interaction
+			_satisfaction += 6;
 
 			// Use the neediness meter to trigger special events
 			_updateNeedinessTime = UnityEngine.Random.Range(0, 60);
@@ -77,6 +106,28 @@ public class Emotion : MonoBehaviour {
 		if (_coroutine != null) {
 			return;
 		}
+
+		float solveRatio = (float)_unignoredModules != 0 ? (float)_solvedModules / (float)_unignoredModules : 1f;
+		if (_initialNeedyMomentDone && solveRatio >= 0.95f) {
+
+			int requiredSatisfaction = _accumulatedNeediness / (_satisfiedNeedinessPerPress * _requiredSatisfactionToSatisfy);
+			
+			float ratioSatisfied;
+			if (requiredSatisfaction == 0) { ratioSatisfied = (float)_trueFinalSatisfaction / 10f; }
+			else { ratioSatisfied = (float)_trueFinalSatisfaction / (float)requiredSatisfaction; }
+			int percentageSatisfied = (int)(ratioSatisfied * 100f);
+			OnLogDumpRequested.Invoke();
+			_bombHelper.Log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			_bombHelper.Log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			_bombHelper.Log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			_bombHelper.Log(string.Format("The bomb is nearing the end. Over the course of the bomb, this module accumulated {0} cravings. {1} of these were satisfied ({2}%). Now going into end of bomb state.", requiredSatisfaction, _trueFinalSatisfaction, percentageSatisfied));
+			// Go into final state.
+			StartCoroutine(EndOfBomb(percentageSatisfied));
+			_coroutine = StartCoroutine(EndOfBombPanelMovements());
+			_endState = true;
+			return;
+		}
+
 		if (time % 60 == _updateNeedinessTime) {
 			if (!_initialNeedyMomentDone) {
 				InitialNeedyMoment();
@@ -101,25 +152,106 @@ public class Emotion : MonoBehaviour {
 				if (_satisfaction < 0) _satisfaction = 0;
 				int t = Mathf.Min(_satisfaction/10, 100);
 				OnLogDumpRequested.Invoke();
-				_bombHelper.Log("Activating lights.");
+				_bombHelper.Log(string.Format("Activating lights with a Chance over Satisfaction value of {0}/{1} (New satisfaction {2})", chance, chance + _satisfaction, _satisfaction));
 				_multiplier.StartWeightedEffect(200, 100 + t, 100 + t, 100 + t, 50 + t, 0 + t, 100 + t);
 				_activateRewardMomentTime = 60;
 			}
 		}
 	}
 
+	#region end of the bomb
+
+	IEnumerator EndOfBomb(int percentage) {
+		int bonus = Mathf.Max(0, percentage - 100);
+		while (!_moduleSolved) {
+			int random = UnityEngine.Random.Range(0, 100) + 15;
+			if (random < percentage) {
+				int r = 200 + (bonus / 4);
+				int y = 150 + (bonus / 2);
+				int g = 150 + (bonus / 2);
+				int c = 150 + (bonus / 2);
+				int b = 100 + bonus;
+				int m = 50 + bonus;
+				int w = 150 + bonus;
+				int t = r + y + g + c + b + m + w;
+				int rand = UnityEngine.Random.Range(0, t);
+				float duration;
+				if (rand < r) {
+					// double
+					duration = 15f;
+					_multiplier.StartSpecific(0, int.MaxValue, duration);
+				}
+				else if (rand < r + y) {
+					// multiply by prev
+					duration = 10f;
+					_multiplier.StartSpecific(1, int.MaxValue, duration);
+				}
+				else if (rand < r + y + g) {
+					// difference with prev
+					duration = 15f;
+					_multiplier.StartSpecific(2, int.MaxValue, duration);
+				}
+				else if (rand < r + y + g + c) {
+					// fixed 10
+					duration = 15f;
+					_multiplier.StartSpecific(3, int.MaxValue, duration);
+				}
+				else if (rand < r + y + g + c + b) {
+					// squared
+					duration = 8f;
+					_multiplier.StartSpecific(4, int.MaxValue, duration);
+				}
+				else if (rand < r + y + g + c + b + m) {
+					// minutes
+					duration = 2f;
+					_multiplier.StartSpecific(5, int.MaxValue, duration);
+				}
+				else {
+					// one more than previous
+					duration = 20f;
+					_multiplier.StartSpecific(6, int.MaxValue, duration);
+				}
+				yield return new WaitForSeconds(duration);
+			}
+			float waitingTime = 21;
+			waitingTime -= (bonus / 5);
+			waitingTime = Mathf.Max(1, waitingTime);
+			yield return new WaitForSeconds(waitingTime);
+		}
+	}
+
+	IEnumerator EndOfBombPanelMovements() {
+		while (!_moduleSolved) {
+			float ratio = UnityEngine.Random.Range(0.1f,1f);
+			_platformMover.MoveToInbetween(ratio, speed: 0.01f);
+			_displayMover.MoveToInbetween(ratio, speed: 0.01f);
+			for (int i = 0; i < 17; i++) {
+				if (_moduleSolved) {
+					_coroutine = null;
+					yield break;
+				}
+				yield return new WaitForSeconds(1f);
+			}
+		}
+		_coroutine = null;
+	}
+
+	#endregion
+
 	#region satisfy neediness
 
 	public void Satisfy(int value) {
-		_satisfaction += value;
+		if (_endState) return;
+		_satisfaction += 1;
+		_finalSatisfaction++;
 		_neediness -= _satisfiedNeedinessPerPress;
-		if (_satisfaction % _requiredSatisfactionToSatisfy == 0) {
-			if (_coroutine == null) {
+		if (_finalSatisfaction % _requiredSatisfactionToSatisfy == 0) {
+			if (_coroutine == null && _neediness < 100 && _neediness > 10) {
 				_coroutine = StartCoroutine(SatisfactionCoroutine());
 			}
-			_finalSatisfaction++;
-			OnLogDumpRequested.Invoke();
-			_bombHelper.Log("Cravings satisfied :)");
+			_trueFinalSatisfaction++;
+			//OnLogDumpRequested.Invoke();
+			_bombHelper.Log("Craving satisfied :)");
 			_screen.ShowSmiley();
 		}
 	}
@@ -163,7 +295,7 @@ public class Emotion : MonoBehaviour {
 		if (!_started) return;
 		if (_coroutine == null) {
 			if (UnityEngine.Random.Range(0f,1f) > 0.25f) {
-				_satisfaction += _initialSatisfaction;
+				_neediness += _initialNeediness;
 				_coroutine = StartCoroutine(InitialNeedyMomentCoroutine());
 				_initialNeedyMomentDone = true;
 			}
@@ -203,6 +335,9 @@ public class Emotion : MonoBehaviour {
 
 	void Activate() {
 		string[] ignoredModules = _bombBoss.GetIgnoredModules(_bombModule);
+		if (ignoredModules.Length == 0) {
+			ignoredModules = new string[]{ "Out of Time" };
+		}
 		// dont really care what the modules are, just how many there are.
 		List<string> presentModules = _bombInfo.GetSolvableModuleNames();
 		_totalModules = presentModules.Count;
@@ -213,6 +348,8 @@ public class Emotion : MonoBehaviour {
 		}
 		_unignoredModules = _totalModules - _ignoredModules;
 		float percentageIgnored = _ignoredModules / _totalModules;
+
+		_bombHelper.Log(string.Format("Ignoring {0} modules.", _ignoredModules));
 
 		// leave some time in for boss solves, so don't eat all the time.
 		// TODO: A more complicated calculation to deal with longer boss modules.
@@ -252,7 +389,7 @@ public class Emotion : MonoBehaviour {
 	void AfraidOfTheDark(bool lightsOn) {
 		if (lightsOn == false) {
 			if (_coroutine == null) {
-				_multiplier.StartRandomEffect();
+				//_multiplier.StartRandomEffect();
 				OnLogDumpRequested.Invoke();
 				_bombHelper.Log("The dark is scary. Turning on my lights.");
 				_coroutine = StartCoroutine(AfraidOfTheDarkCoroutine());

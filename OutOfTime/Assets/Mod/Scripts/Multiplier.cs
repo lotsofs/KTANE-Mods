@@ -23,7 +23,7 @@ public class Multiplier : MonoBehaviour {
 	float _timer = 0;
 	float _maxTime = 0;
 
-	string[] _effectNames = { "Double", "Multiply By Previous", "Difference With Previous", "Fixed Ten", "Square", "Minutes", "Plus One" };
+	string[] _effectNames = { "'Doubled Values'", "'Values Multiplied By Previous'", "'Add Difference With Previous Value'", "'Every Button Adds Ten'", "Squared Values'", "'Minutes Not Seconds'", "'One More Than Previous'" };
 	string[] _colorNames = { "Red", "Yellow", "Green", "Cyan", "Blue", "Magenta", "White" };
 
 	void Start() {
@@ -66,25 +66,29 @@ public class Multiplier : MonoBehaviour {
 	}
 
 	public void StartWeightedEffect(int r, int y, int g, int c, int b, int m, int w) {
+		_earnedDuringLighting = 0;
+		_timer = 0; 
 		int t = r + y + g + c + b + m + w;
 		int rand = UnityEngine.Random.Range(0, t);
 		rand -= r; // double
-		if (rand < 0) { StartSpecific(0, int.MaxValue, 60f); return; }
+		if (rand < 0) { StartSpecific(0, int.MaxValue, 30f); return; }
 		rand -= y;	// multiply by prev
-		if (rand < 0) { StartSpecific(1, 600, 30f); return; }
+		if (rand < 0) { StartSpecific(1, 600, 15); return; }
 		rand -= g;	// difference with prev
-		if (rand < 0) { StartSpecific(2, int.MaxValue, 60f); return; }
+		if (rand < 0) { StartSpecific(2, int.MaxValue, 30f); return; }
 		rand -= c;	// fixed 10
-		if (rand < 0) { StartSpecific(3, int.MaxValue, 60f); return; }
+		if (rand < 0) { StartSpecific(3, int.MaxValue, 30f); return; }
 		rand -= b;	// squared
-		if (rand < 0) { StartSpecific(4, 600, 60f); return; }
+		if (rand < 0) { StartSpecific(4, 600, 30f); return; }
 		rand -= m;	// minutes
-		if (rand < 0) { StartSpecific(5, 300, 30f); return; }
+		if (rand < 0) { StartSpecific(5, 300, 15f); return; }
 		rand -= w;	// one more than previous
-		if (rand < 0) { StartSpecific(6, 600, 60f); return; }
+		if (rand < 0) { StartSpecific(6, 600, 30f); return; }
 	}
 
-	void StartSpecific(int effect, int maxPoints, float duration) {
+	public void StartSpecific(int effect, int maxPoints, float duration) {
+		_earnedDuringLighting = 0;
+		_timer = 0; 
 		int strikes = _bombInfo.GetStrikes();
 		strikes %= 7;
 		int colorToLightUp = (effect + 7 - strikes) % 7;
@@ -142,7 +146,7 @@ public class Multiplier : MonoBehaviour {
 				returnVal = _previousBigValue + 1;
 				break;
 		}
-		_bombHelper.Log(string.Format("Pressed button {0} in mode {1}, which turns it into {2}", value, _effectNames[actualMode % 7] , returnVal));
+		//_bombHelper.Log(string.Format("Pressed button {0} in mode {1}, which turns it into {2}", value, _effectNames[actualMode % 7] , returnVal));
 		_previousValue = value;
 		_previousBigValue = returnVal;
 		return returnVal;
