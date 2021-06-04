@@ -144,7 +144,7 @@ public class TrainLoading : MonoBehaviour {
     void StartModule() {
         _electricalWiring = _bombInfo.IsIndicatorPresent("TRN");
         _longHaul = UnityEngine.Random.Range(0f, 1f) < 0.25f;
-        _nuclear = false;
+        _nuclear = UnityEngine.Random.Range(0f, 1f) < 0.1f;
 
         AddInitialResources();
     }
