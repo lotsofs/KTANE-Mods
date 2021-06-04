@@ -9,60 +9,95 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_TimeBasedModules
+  m_Name: Nico_Mazes
   m_EditorClassIdentifier: 
-  DisplayName: Time Based Modules
-  Description: Some modules that require you to look at the timer.
+  DisplayName: Mazes
+  Description: Learn some mazes with this bomb
   GeneratorSetting:
-    TimeLimit: 840
+    TimeLimit: 1300
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
-    FrontFaceOnly: 1
+    FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
+      - AdjacentLettersModule
+      - algebra
+      - AnagramsModule
       - spwizAstrology
-      - BlindAlleyModule
+      - Backgrounds
+      - BigCircle
+      - BlindMaze
+      - booleanVennModule
       - BrokenButtonsModule
       - ColoredSquaresModule
-      - CrazyTalk
+      - ColoredSwitchesModule
+      - CoordinatesModule
+      - DoubleOhModule
       - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
-      - MemoryV2
+      - FlagsModule
+      - Laundry
+      - ledGrid
+      - mashematics
+      - ModuleAgainstHumanity
       - MorseV2
+      - mortalKombat
+      - neutralization
+      - NumberPad
+      - spwizPerspectivePegs
+      - PointOfOrderModule
+      - Poker
+      - RockPaperScissorsLizardSpockModule
       - SeaShells
+      - SetModule
       - SimonV2
-      - skyrim
       - SouvenirModule
       - theSwan
-      - TurnTheKey
+      - symbolicCoordinates
+      - TextField
+      - timezone
+      - wastemanagement
+      - webDesign
+      - WordSearchModule
+      - YahtzeeModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - timeKeeper
+      - USA
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MarbleTumbleModule
+      - maze3
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RegularCrazyTalkModule
+      - BlindMaze
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - challengeAndContact
+      - treasurehunt
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ModuleMaze
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - GreenArrowsModule
   PacingEventsEnabled: 1

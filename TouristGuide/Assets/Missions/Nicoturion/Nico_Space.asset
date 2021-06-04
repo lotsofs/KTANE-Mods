@@ -9,60 +9,89 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_TimeBasedModules
+  m_Name: Nico_Space
   m_EditorClassIdentifier: 
-  DisplayName: Time Based Modules
-  Description: Some modules that require you to look at the timer.
+  DisplayName: Space
+  Description: A bomb with all things space
   GeneratorSetting:
-    TimeLimit: 840
+    TimeLimit: 1180
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
-    FrontFaceOnly: 1
+    FrontFaceOnly: 0
     OptionalWidgetCount: 5
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - AdjacentLettersModule
+      - algebra
+      - AnagramsModule
+      - spwizAstrology
+      - Backgrounds
+      - BigCircle
+      - BlindMaze
+      - booleanVennModule
+      - BrokenButtonsModule
+      - ColoredSquaresModule
+      - ColoredSwitchesModule
+      - CoordinatesModule
+      - DoubleOhModule
+      - EnglishTest
+      - FlagsModule
+      - Laundry
+      - ledGrid
+      - mashematics
+      - ModuleAgainstHumanity
+      - MorseV2
+      - mortalKombat
+      - neutralization
+      - NumberPad
+      - spwizPerspectivePegs
+      - PointOfOrderModule
+      - Poker
+      - RockPaperScissorsLizardSpockModule
+      - SeaShells
+      - SetModule
+      - SimonV2
+      - SouvenirModule
+      - theSwan
+      - symbolicCoordinates
+      - TextField
+      - timezone
+      - wastemanagement
+      - webDesign
+      - WordSearchModule
+      - YahtzeeModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - sun
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - moon
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - daylightDirections
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - calendar
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - spwizAstrology
-      - BlindAlleyModule
-      - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
-      - MemoryV2
-      - MorseV2
-      - SeaShells
-      - SimonV2
-      - skyrim
-      - SouvenirModule
-      - theSwan
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - timeKeeper
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MarbleTumbleModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RegularCrazyTalkModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - challengeAndContact
   PacingEventsEnabled: 1

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_TimeBasedModules
+  m_Name: As47_TellTheDifference
   m_EditorClassIdentifier: 
-  DisplayName: Time Based Modules
-  Description: Some modules that require you to look at the timer.
+  DisplayName: Tell The Difference?
+  Description: How does one tell the difference between these?
   GeneratorSetting:
-    TimeLimit: 840
+    TimeLimit: 600
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 1
@@ -22,47 +22,68 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
-      - BlindAlleyModule
+      - spwiz3DMaze
+      - AdjacentLettersModule
+      - spwizAdventureGame
+      - BattleshipModule
+      - BigCircle
+      - BitmapsModule
       - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
+      - TheBulbModule
+      - buttonSequencesModule
+      - ChessModule
+      - ColoredSwitchesModule
+      - ColorMorseModule
+      - ColourFlash
+      - graphModule
+      - CruelPianoKeys
+      - DoubleOhModule
       - MemoryV2
-      - MorseV2
+      - HexamazeModule
+      - Laundry
+      - MafiaModule
+      - modernCipher
+      - MorseAMaze
+      - murder
+      - NonogramModule
+      - NumberPad
+      - MazeV2
+      - PolyhedralMazeModule
+      - MusicRhythms
+      - RubiksCubeModule
+      - PasswordV2
       - SeaShells
+      - shapeshift
+      - SimonScreamsModule
       - SimonV2
-      - skyrim
       - SouvenirModule
-      - theSwan
-      - TurnTheKey
+      - TwoBits
+      - ZooModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - timeKeeper
+      - UncoloredSquaresModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - MarbleTumbleModule
+      - DecoloredSquaresModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RegularCrazyTalkModule
+      - orderedKeys
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - challengeAndContact
+      - synonyms
   PacingEventsEnabled: 1

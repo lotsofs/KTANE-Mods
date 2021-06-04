@@ -14,10 +14,10 @@ MonoBehaviour:
   DisplayName: Tricky Reads
   Description: Some modules that are a bit tricky to read
   GeneratorSetting:
-    TimeLimit: 720
+    TimeLimit: 780
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
-    FrontFaceOnly: 0
+    FrontFaceOnly: 1
     OptionalWidgetCount: 5
     ComponentPools:
     - Count: 1

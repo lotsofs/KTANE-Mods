@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: Nico_SouvenirRecapIII
+  m_EditorClassIdentifier: 
+  DisplayName: Souvenir Recap III
+  Description: Those calculation vanillas you've just learnt, with a Souvenir
+  GeneratorSetting:
+    TimeLimit: 2000
+    NumStrikes: 3
+    TimeBeforeNeedyActivation: 90
+    FrontFaceOnly: 0
+    OptionalWidgetCount: 5
+    ComponentPools:
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - AdjacentLettersModule
+      - algebra
+      - AnagramsModule
+      - spwizAstrology
+      - Backgrounds
+      - BigCircle
+      - BlindMaze
+      - booleanVennModule
+      - BrokenButtonsModule
+      - ColoredSquaresModule
+      - ColoredSwitchesModule
+      - CoordinatesModule
+      - DoubleOhModule
+      - EnglishTest
+      - FlagsModule
+      - Laundry
+      - ledGrid
+      - mashematics
+      - ModuleAgainstHumanity
+      - MorseV2
+      - mortalKombat
+      - neutralization
+      - NumberPad
+      - spwizPerspectivePegs
+      - PointOfOrderModule
+      - Poker
+      - RockPaperScissorsLizardSpockModule
+      - SeaShells
+      - SetModule
+      - SimonV2
+      - SouvenirModule
+      - theSwan
+      - symbolicCoordinates
+      - TextField
+      - timezone
+      - wastemanagement
+      - webDesign
+      - WordSearchModule
+      - YahtzeeModule
+      - USA
+      - treasureHunt
+      - sun
+      - moon
+      - ModuleMaze
+      - maze3
+      - greenArrowsModule
+      - daylightDirections
+      - calendar
+      - cheepCheckout
+      - burglarAlarm
+      - streetFighter
+      - tapCode
+      - jackOLantern
+      - UncoloredSquaresModule
+      - DecoloredSquaresModule
+      - DividedSquaresModule
+      - flowerPatch
+      - triangle
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - matchematics
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - lgndLEDMath
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - brushStrokes
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - bases
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - faultyDigitalRootModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - equations
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - simonSimons
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonSingsModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SouvenirModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - plungerButton
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - horribleMemory
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BooleanKeypad
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - characterCodes
+  PacingEventsEnabled: 1

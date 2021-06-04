@@ -33,3 +33,27 @@ MonoBehaviour:
     - SH_SouvenirRecap
     - SH_QuickPlayI
     - SH_QuickPlayII
+  - Title: Asmir's 47
+    MissionIDs:
+    - As47_TellTheDifference
+    - As47_OneBlackHole
+    - As47_TheRest
+    - As47_TwoBlackHolesAndSouvenir
+    - As47_QuickPlayI
+    - As47_QuickPlayII
+  - Title: Nicoturion
+    MissionIDs:
+    - Nico_Space
+    - Nico_Mazes
+    - Nico_SouvenirRecapI
+    - Nico_GeometricShapes
+    - Nico_Violence
+    - Nico_SouvenirRecapII
+    - Nico_Calculations
+    - Nico_SomewhatVanilla
+    - Nico_SouvenirRecapIII
+    - Nico_WordPlay
+    - Nico_MissedKnowledge
+    - Nico_SouvenirRecapIV
+    - Nico_QuickPlayI
+    - Nico_QuickPlayII
