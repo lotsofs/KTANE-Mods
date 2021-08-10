@@ -87,7 +87,7 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - treasurehunt
+      - treasureHunt
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
@@ -99,5 +99,5 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - GreenArrowsModule
+      - greenArrowsModule
   PacingEventsEnabled: 1

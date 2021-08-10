@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_SouvenirRecap
+  m_Name: As47m2_SouvenirRecapIII
   m_EditorClassIdentifier: 
-  DisplayName: Souvenir Recap
-  Description: Those modules you just learnt with a Souvenir.
+  DisplayName: Souvenir Recap III
+  Description: Souvie
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 1800
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -22,49 +22,49 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
-      - BlindAlleyModule
-      - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
+      - Backgrounds
+      - ChessModule
+      - ChordQualities
+      - CruelPianoKeys
+      - GameOfLifeCruel
+      - HexamazeModule
+      - Laundry
       - MemoryV2
-      - MorseV2
-      - SeaShells
-      - SimonV2
+      - Poker
+      - SetModule
       - skyrim
       - SouvenirModule
+      - spwiz3DMaze
+      - spwizAstrology
+      - TextField
       - theSwan
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - burglarAlarm
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MarbleTumbleModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SimonSendsModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - tapCode
+      - WirePlacementModule
+      - ZooModule
+      - BlackHoleModule
+      - challengeAndContact
+      - KudosudokuModule
+      - ModuleMaze
+      - SimonSingsModule
+      - USA
+      - valves
+      - theDuck
+      - simonSelectsModule
+      - passportControl
+      - numberNimbleness
+      - moduleListening
+      - KritRadio
+      - KanjiModule
+      - iconic
+      - jewelVault
+      - KritHomework
+      - londonUnderground
+      - MaritimeFlagsModule
+      - megaMan2
+      - TheHypercubeModule
+      - arithmelogic
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
@@ -76,17 +76,35 @@ MonoBehaviour:
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - timeKeeper
+      - deckOfManyThings
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - RegularCrazyTalkModule
+      - unfairCipher
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - challengeAndContact
+      - ColorfulInsanity
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - constellations
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - crystalMaze
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - BartendingModule
   PacingEventsEnabled: 1

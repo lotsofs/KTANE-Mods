@@ -57,3 +57,15 @@ MonoBehaviour:
     - Nico_SouvenirRecapIV
     - Nico_QuickPlayI
     - Nico_QuickPlayII
+  - Title: Asmir's 47 Mark II
+    MissionIDs:
+    - As47m2_Recap
+    - As47m2_NewStuffA
+    - As47m2_NewStuffB
+    - As47m2_SouvenirRecapI
+    - As47m2_NewStuffC
+    - As47m2_NewStuffD
+    - As47m2_SouvenirRecapII
+    - As47m2_NewStuffE
+    - As47m2_NewStuffF
+    - As47m2_SouvenirRecapIII

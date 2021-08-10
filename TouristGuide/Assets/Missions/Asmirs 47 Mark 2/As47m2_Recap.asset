@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_SouvenirRecap
+  m_Name: As47m2_Recap
   m_EditorClassIdentifier: 
-  DisplayName: Souvenir Recap
-  Description: Those modules you just learnt with a Souvenir.
+  DisplayName: Recap
+  Description: A recap from modules learnt in previous sections in this pack
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 1440
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -22,71 +22,61 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
-      - BlindAlleyModule
-      - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
+      - Backgrounds
+      - ChessModule
+      - ChordQualities
+      - CruelPianoKeys
+      - GameOfLifeCruel
+      - HexamazeModule
+      - Laundry
       - MemoryV2
-      - MorseV2
-      - SeaShells
-      - SimonV2
+      - Poker
+      - SetModule
       - skyrim
       - SouvenirModule
+      - spwiz3DMaze
+      - spwizAstrology
+      - TextField
       - theSwan
-      - TurnTheKey
+      - WirePlacementModule
+      - ZooModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - burglarAlarm
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MarbleTumbleModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SimonSendsModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - tapCode
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - timeKeeper
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RegularCrazyTalkModule
+      - BlackHoleModule
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
       - challengeAndContact
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KudosudokuModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - ModuleMaze
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - SimonSingsModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - USA
   PacingEventsEnabled: 1

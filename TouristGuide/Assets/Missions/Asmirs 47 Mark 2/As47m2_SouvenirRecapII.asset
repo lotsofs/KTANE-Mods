@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_SouvenirRecap
+  m_Name: As47m2_SouvenirRecapII
   m_EditorClassIdentifier: 
-  DisplayName: Souvenir Recap
-  Description: Those modules you just learnt with a Souvenir.
+  DisplayName: Souvenir Recap II
+  Description: Do you know these?
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 1560
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -22,71 +22,56 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
-      - BlindAlleyModule
-      - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
-      - MemoryV2
-      - MorseV2
-      - SeaShells
-      - SimonV2
-      - skyrim
+      - iconic
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - jewelVault
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KritHomework
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - londonUnderground
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - MaritimeFlagsModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - megaMan2
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - TheHypercubeModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - arithmelogic
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
       - SouvenirModule
-      - theSwan
-      - TurnTheKey
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - burglarAlarm
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MarbleTumbleModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SimonSendsModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - tapCode
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - timeKeeper
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RegularCrazyTalkModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - challengeAndContact
   PacingEventsEnabled: 1

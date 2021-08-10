@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: SH_SouvenirRecap
+  m_Name: As47m2_SouvenirRecapI
   m_EditorClassIdentifier: 
-  DisplayName: Souvenir Recap
-  Description: Those modules you just learnt with a Souvenir.
+  DisplayName: Souvenir Recap I
+  Description: Do you know these?
   GeneratorSetting:
-    TimeLimit: 1200
+    TimeLimit: 2640
     NumStrikes: 3
     TimeBeforeNeedyActivation: 90
     FrontFaceOnly: 0
@@ -22,71 +22,67 @@ MonoBehaviour:
     ComponentPools:
     - Count: 1
       AllowedSources: 2
-      ComponentTypes: 0a0000000c0000000b0000000900000008000000070000000500000006000000040000000300000002000000
+      ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - spwizAstrology
-      - BlindAlleyModule
-      - BrokenButtonsModule
-      - ColoredSquaresModule
-      - CrazyTalk
-      - EnglishTest
-      - fastMath
-      - FaultyBackgrounds
-      - MemoryV2
-      - MorseV2
-      - SeaShells
-      - SimonV2
-      - skyrim
+      - valves
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - theDuck
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - simonSelectsModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - passportControl
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - numberNimbleness
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - moduleListening
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KritRadio
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
+      - KanjiModule
+    - Count: 1
+      AllowedSources: 2
+      ComponentTypes: 
+      SpecialComponentType: 0
+      ModTypes:
       - SouvenirModule
-      - theSwan
-      - TurnTheKey
     - Count: 1
       AllowedSources: 2
       ComponentTypes: 
       SpecialComponentType: 0
       ModTypes:
-      - burglarAlarm
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - MarbleTumbleModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SimonSendsModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - tapCode
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - SouvenirModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - timeKeeper
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
-      - RegularCrazyTalkModule
-    - Count: 1
-      AllowedSources: 2
-      ComponentTypes: 
-      SpecialComponentType: 0
-      ModTypes:
+      - BlackHoleModule
       - challengeAndContact
+      - KudosudokuModule
+      - ModuleMaze
+      - SimonSingsModule
+      - USA
   PacingEventsEnabled: 1
