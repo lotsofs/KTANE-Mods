@@ -36,8 +36,43 @@ public class uinplModule : MonoBehaviour {
 		_serialUinIndex = Random.Range(0, 19);
 		_serialBuilt = Random.Range(0f, 1f) < 0.5f;
 
+		selectable.Children[0].OnInteract += () => {
+			selectable.Children[0].AddInteractionPunch(0.5f);
+			if (_halted) {
+				// resume
+				for (int i = 0; i < 24; i++) {
+					if (Random.Range(0f, 1f) < 0.2f) {
+						bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+						int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+						char newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+						_buttonLabels[i].text = newChar.ToString();
+
+					}
+					_buttonLabels[i].gameObject.SetActive(false);
+				}
+			}
+			else {
+				// stop
+			}
+			_halted = !_halted;
+			return false;
+		};
 		for (int i = 0; i < 24; i++) {
-			_buttonLabels[i] = selectable.Children[i + 1].GetComponentInChildren<TextMesh>();
+			KMSelectable subSelectable = selectable.Children[i + 1];
+			_buttonLabels[i] = subSelectable.GetComponentInChildren<TextMesh>();
+			TextMesh label = _buttonLabels[i];
+
+			subSelectable.OnHighlight += () => { 
+				if (_halted) label.color = new Color (1f, 69f / 255f, 0f); 
+			};
+			subSelectable.OnHighlightEnded += () => { 
+				label.color = new Color(102f / 255f, 1f, 0f); 
+			};
+			subSelectable.OnInteract += () => {
+				subSelectable.AddInteractionPunch(0.1f); 
+				label.color = new Color (102f / 255f, 0.8f, 0f); 
+				return false; 
+			};
 			char newChar;
 			if (_serialBuilt && i >= _serialUinIndex && i < _serialUinIndex + 6) {
 				int serialIndex = i - _serialUinIndex;
@@ -53,20 +88,13 @@ public class uinplModule : MonoBehaviour {
 		}
 
 		_coroutine = StartCoroutine(Flash());
-		
-		//StopCoroutine(_coroutine);
-		//_coroutine = StartCoroutine(FlashSolved());
 	}
 	
-	void Update () {
-		// todo: upon pressing the continue button when it's already halted, change some numbers
-	}
-
 	IEnumerator Flash() {
 		while (!_solved) {
 			yield return new WaitForSeconds(onTime);
-			if (_halted) {
-				continue;
+			while (_halted) {
+				yield return null;
 			}
 			
 			int randomInt = Random.Range(0, 24);
