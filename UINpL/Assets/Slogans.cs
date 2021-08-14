@@ -7,6 +7,7 @@ public class Slogans : MonoBehaviour {
 	[SerializeField] [TextArea] string _textUninteracted;
 	[SerializeField] [TextArea] string _textContinued;
 	[SerializeField] [TextArea] string _textSolved;
+	[SerializeField] [TextArea] string _textStrike;
 
 	[SerializeField] string[] _cakes = {
 		"Angel food cake",
@@ -77,13 +78,16 @@ public class Slogans : MonoBehaviour {
 		_textMesh = GetComponent<TextMesh>();
 	}
 
-	void SetStage(int stage) {
+	public void SetStage(int stage) {
 		switch (stage) {
 			case 0:
 				_textMesh.text = _textUninteracted;
 				break;
 			case 1:
 				_textMesh.text = _textContinued;
+				break;
+			case 2:
+				_textMesh.text = _textStrike;
 				break;
 			default:
 				string[] cakesList = _cakes.Shuffle();

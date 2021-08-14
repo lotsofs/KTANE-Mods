@@ -5,12 +5,13 @@ using KModkit;
 
 public class uinplModule : MonoBehaviour {
 
-	static string Letters = "abcdefghijklmnopqrstuvwxyz";
-	static string Numbers = "0123456789";
 
 	public float onTime = 1f;
 	public float offTime = 0.3f;
 	public float letterPercentage = 0.3f;
+	public float resumeShuffleRatio = 0.2f;
+
+	[SerializeField] Slogans _textDisplay;
 
 	TextMesh[] _buttonLabels = new TextMesh[24];
 	Coroutine _coroutine;
@@ -21,13 +22,19 @@ public class uinplModule : MonoBehaviour {
 	private int _serialUinIndex;
 	private bool _serialBuilt = false;
 
-	private char _oldChar;
-	private char _newChar;
+	private char _oldChar = '-';
+	private char _newChar = '-';
 	private int _changedCharIndex;
+	private int _solution;
 
 	KMBombInfo _bombInfo;
 	KMBombModule _bombModule;
 	BombHelper _bombHelper;
+
+	static readonly string Letters = "abcdefghijklmnopqrstuvwxyz";
+	static readonly string Numbers = "0123456789";
+
+	static readonly string Conversions = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 	static readonly int[,] Solutions = new int[36, 36] {
 		{ 0,  3, 17, 12,  6,  2, 24, 22,  2, 15,  6, 15, 11, 15,  3, 23,  7,  5, 10,  2, 11, 21, 19, 18,  6,  4, 10, 16, 14, 13,  4,  2,  5, 24, 22,  8},
@@ -68,190 +75,289 @@ public class uinplModule : MonoBehaviour {
 		{ 2, 12,  7, 14, 20, 22, 13, 18, 23,  2, 23, 15,  7, 10,  5, 16, 16, 10,  1, 21, 10,  1,  3,  9,  3,  8,  4, 23,  6,  1, 20, 24, 20, 22,  8,  0},
 	};
 
+	void ResumeFlashing() {
+		for (int i = 0; i < 24; i++) {
+			if (Random.Range(0f, 1f) < resumeShuffleRatio) {
+				bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+				int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+				char newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+				_buttonLabels[i].text = newChar.ToString();
+			}
+			// blank the screen upon resuming
+			_buttonLabels[i].gameObject.SetActive(false);
+		}
+	}
+
+	void CalculateSolution() {
+		string twentyfour = "";
+		for (int i = 0; i < 24; i++) {
+			twentyfour += _buttonLabels[i].text;
+		}
+		_bombHelper.Log(string.Format("The current UIN(+L) is {0}", twentyfour));
+		_bombHelper.Log(string.Format("Last changed at position {0}: From {1} to {2}.", _changedCharIndex + 1, _oldChar, _newChar));
+
+		bool serialNumberPresent = twentyfour.Contains(_serialNumber);
+		int serIndex = twentyfour.IndexOf(_serialNumber);
+		_bombHelper.Log(serialNumberPresent ?
+			string.Format("Serial number is present on position {0}", serIndex + 1) :
+			"Serial number not present."
+		);
+		
+		// convert the chars to an index from the table
+		int newCharTableIndex = Conversions.IndexOf(_newChar);
+		int oldCharTableIndex = Conversions.IndexOf(_oldChar);
+
+		// get two positions from the table
+		int intermediateStepA = Solutions[newCharTableIndex, oldCharTableIndex] - 1;
+		int intermediateStepB = Solutions[oldCharTableIndex, newCharTableIndex] - 1;
+		if (intermediateStepA == intermediateStepB) {
+			// If both numbers acquired from the tables are the same, press the digit (or letter) in that position, 
+			// unless the bomb's serial number is present in your UIN(+L), in which case press the most recently changed digit (or letter) instead.
+			_solution = serialNumberPresent ? _changedCharIndex : intermediateStepB;
+			_bombHelper.Log(string.Format("Table results: {0} and {1}, which are the same.", intermediateStepA + 1, intermediateStepB + 1));
+			_bombHelper.Log(string.Format("Solution: position {0} which is a {1}", _solution + 1, twentyfour[_solution]));
+			return;
+		}
+
+		// get the chars in these positions
+		char intermediateCharA = twentyfour[intermediateStepA];
+		char intermediateCharB = twentyfour[intermediateStepB];
+		_bombHelper.Log(string.Format("Table results: {0} and {1} which are {2} and {3}.", intermediateStepA + 1, intermediateStepB + 1, intermediateCharA, intermediateCharB));
+
+		if (intermediateCharA == intermediateCharB) {
+			// If both these digits (or letters) are the same, press the digit (or letter) in the position denoted by the first number, 
+			// or the second number if the bomb's serial number is present in your UIN(+L).
+			_solution = serialNumberPresent ? intermediateStepB : intermediateStepA;
+			_bombHelper.Log(string.Format("These two characters are the same.", intermediateStepA + 1, intermediateStepB + 1));
+			_bombHelper.Log(string.Format("Solution: position {0} which is a {1}", _solution + 1, twentyfour[_solution]));
+			return;
+		}
+
+		// convert these chars back into table index
+		int intACharTableIndex = Conversions.IndexOf(intermediateCharA);
+		int intBCharTableIndex = Conversions.IndexOf(intermediateCharB);
+
+		// get the final solution from this table
+		_solution = serialNumberPresent ? 
+			Solutions[intACharTableIndex, intBCharTableIndex] - 1 :
+			Solutions[intBCharTableIndex, intACharTableIndex] - 1;
+		Debug.Log(_solution + 1);
+		Debug.Log(twentyfour.Length);
+		Debug.Log(twentyfour);
+		Debug.Log(twentyfour[_solution]);
+		_bombHelper.Log(string.Format("Solution: position {0} which is a {1}", _solution + 1, twentyfour[_solution]));
+	}
+
+	void HaltToggle() {
+		if (_oldChar == '-' || _solved) return;
+		if (_halted) {
+			_bombHelper.Log("Continue pressed again, resuming");
+			_bombHelper.Log("--------------------------------");
+			// resume
+			_textDisplay.SetStage(0);
+			ResumeFlashing();
+		}
+		else {
+			_bombHelper.Log("Continue pressed, halting");
+			_textDisplay.SetStage(1);
+			CalculateSolution();
+		}
+		_halted = !_halted;
+	}
+
+	void GenerateCharacter(int index) {
+		char newChar;
+		if (_serialBuilt && index >= _serialUinIndex && index < _serialUinIndex + 6) {
+			// if this character should be a serial number char
+			int serialIndex = index - _serialUinIndex;
+			newChar = _serialNumber[serialIndex];
+		}
+		else {
+			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+			int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+			newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+		}
+		_buttonLabels[index].text = newChar.ToString();
+	}
+
+	void CheckAnswer(int pressed) {
+		if (pressed == _solution) {
+			_bombHelper.Log(string.Format("Pressed position {0} ('{1}'), that is correct. Module solved!", pressed, _buttonLabels[pressed].text));
+			_solved = true;
+			_textDisplay.SetStage(3);
+			_bombModule.HandlePass();
+			StopCoroutine(_coroutine);
+			_coroutine = StartCoroutine(FlashSolved());
+		}
+		else {
+			_bombHelper.Log(pressed.ToString());
+			_bombHelper.Log(string.Format("STRIKE!: Pressed position {0} ('{1}')!", pressed, _buttonLabels[pressed].text));
+			_textDisplay.SetStage(2);
+			_bombModule.HandleStrike();
+		}
+	}
+
 	void Start () {
 		_bombInfo = GetComponent<KMBombInfo>();
 		_bombHelper = GetComponent<BombHelper>();
+		_bombModule = GetComponent<KMBombModule>();
 		_serialNumber = _bombInfo.GetSerialNumber().ToLower();
 
 		KMSelectable selectable = GetComponent<KMSelectable>();
 
-		_serialUinIndex = Random.Range(0, 19);
-		_serialBuilt = Random.Range(0f, 1f) < 0.5f;
+		_serialUinIndex = Random.Range(0, 19);	// Determine where in the uinpl the serial should go
+		_serialBuilt = Random.Range(0f, 1f) < 0.5f; // Determine whether we spawn the module with the serial already present
 
 		selectable.Children[0].OnInteract += () => {
+			// continue button
 			selectable.Children[0].AddInteractionPunch(0.5f);
-			if (_halted) {
-				_bombHelper.Log("Continue pressed again, resuming");
-				_bombHelper.Log("--------------------------------");
-				// resume
-				for (int i = 0; i < 24; i++) {
-					if (Random.Range(0f, 1f) < 0.2f) {
-						bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-						int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-						char newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-						_buttonLabels[i].text = newChar.ToString();
-
-					}
-					_buttonLabels[i].gameObject.SetActive(false);
-				}
-			}
-			else {
-				_bombHelper.Log("Continue pressed, halting");
-				string twentyfour = "";
-				for (int i = 0; i < 24; i++) {
-					twentyfour += _buttonLabels[i].text;
-				}
-				_bombHelper.Log(string.Format("The current UIN(+L) is {0}", twentyfour));
-				_bombHelper.Log(string.Format("Last changed at position {0}: From {1} to {2}.", _changedCharIndex, _oldChar, _newChar));
-				if (twentyfour.Contains(_serialNumber)) {
-					int serIndex = twentyfour.IndexOf(_serialNumber);
-					_bombHelper.Log(string.Format("Serial number is present on index {0}", serIndex));
-				}
-				else {
-					_bombHelper.Log("Serial number not present.");
-				}
-				
-				// todo: calc the actual solution
-
-			}
-			_halted = !_halted;
+			_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.ButtonPress, selectable.Children[0].transform);
+			HaltToggle();
 			return false;
 		};
 		for (int i = 0; i < 24; i++) {
+			// display buttons
 			KMSelectable subSelectable = selectable.Children[i + 1];
 			_buttonLabels[i] = subSelectable.GetComponentInChildren<TextMesh>();
 			TextMesh label = _buttonLabels[i];
+			label.gameObject.SetActive(false);
 
 			subSelectable.OnHighlight += () => { 
-				if (_halted) label.color = new Color (1f, 69f / 255f, 0f); 
+				// give an orange highlight on hover
+				if (_halted && !_solved) label.color = new Color (1f, 69f / 255f, 0f); 
 			};
 			subSelectable.OnHighlightEnded += () => { 
+				// remove orange highlight
 				label.color = new Color(102f / 255f, 1f, 0f); 
 			};
+			int i2 = i;
 			subSelectable.OnInteract += () => {
-				subSelectable.AddInteractionPunch(0.1f); 
+				subSelectable.AddInteractionPunch(0.1f);
+				// change the color slightly to simulate pressing on a screen and it leaving one of those weird LCD finger marks
 				label.color = new Color (102f / 255f, 0.8f, 0f); 
+				if (_halted && !_solved) CheckAnswer(i2);
 				return false; 
 			};
-			char newChar;
-			if (_serialBuilt && i >= _serialUinIndex && i < _serialUinIndex + 6) {
-				int serialIndex = i - _serialUinIndex;
-				newChar = _serialNumber[serialIndex];
-			}
-			else {
-				bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-				int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-				newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-			}
-			_buttonLabels[i].text = newChar.ToString();
-
+			GenerateCharacter(i);
 		}
 
-		_coroutine = StartCoroutine(Flash());
+		_bombModule.OnActivate += () => {
+			_coroutine = StartCoroutine(Flash());
+			_textDisplay.SetStage(0);
+		};
 	}
 	
+	bool ChangeCharacter(int index) {
+		char oldChar = _buttonLabels[index].text[0];
+		char newChar = oldChar;
+		int changedCharIndex = index;
+
+		// Check for serial number
+		int serialIndex = index - _serialUinIndex;
+		if (serialIndex >= 0 && serialIndex < 6) {
+			// If this is in the assigned serial number space
+			if (_serialBuilt) {
+				// we are currently removing the serial number
+				if (oldChar != _serialNumber[serialIndex]) {
+					// this current character is already not set. change a different one instead.
+					int incorrectSerialDigits = 0;
+					for (int j = 0; j < 6; j++) {
+						// loop through the serial until we find a character that matches
+						if (_buttonLabels[_serialUinIndex + j].text[0] == _serialNumber[j]) {
+							oldChar = _buttonLabels[_serialUinIndex + j].text[0];
+							newChar = oldChar;
+							while (newChar == oldChar) {
+								bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+								int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+								newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+							}
+							_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
+							changedCharIndex = _serialUinIndex + j;
+							break;
+						}
+						else {
+							incorrectSerialDigits++;
+						}
+					}
+					if (incorrectSerialDigits == 6) {
+						// all the digits are set. serial is entirely gone, mark it as such.
+						// choose a new spot for the serial, then let the random change take care of the char to change.
+						_serialBuilt = false;
+						_serialUinIndex = Random.Range(0, 19);
+					}
+				}
+				// else: the character is set to a serial character. Just leave it to change to random.
+			}
+			else {
+				// we are currently building the serial number
+				if (oldChar == _serialNumber[serialIndex]) {
+					// this current character is already set. change a different one instead.
+					int correctSerialDigits = 0;
+					for (int j = 0; j < 6; j++) {
+						// loop through the serial until we find a character that doesn't match
+						if (_buttonLabels[_serialUinIndex + j].text[0] != _serialNumber[j]) {
+							oldChar = _buttonLabels[_serialUinIndex + j].text[0];
+							newChar = _serialNumber[j];
+							_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
+							changedCharIndex = _serialUinIndex + j;
+							break;
+						}
+						else {
+							correctSerialDigits++;
+						}
+					}
+					if (correctSerialDigits == 6) {
+						// all the digits are set. serial is present, mark it as such.
+						_serialBuilt = true;
+						// we want to keep the serial number present in the number a bit longer, reroll the character to change.
+						return false;
+					}
+				}
+				else {
+					// this current character is not set. Set it.
+					newChar = _serialNumber[serialIndex];
+					_buttonLabels[index].text = newChar.ToString();
+				}
+			}
+		}
+		if (newChar != oldChar) {
+			// skip the random change if a serial change has already happened.
+			_changedCharIndex = changedCharIndex;
+			_oldChar = oldChar;
+			_newChar = newChar;
+			return true;
+		}
+
+		// Change to random
+		while (newChar == oldChar) {
+			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+			int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+			newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+		}
+
+		_buttonLabels[index].text = newChar.ToString();
+		_changedCharIndex = changedCharIndex;
+		_oldChar = oldChar;
+		_newChar = newChar;
+		return true;
+	}
+
 	IEnumerator Flash() {
 		while (!_solved) {
 			yield return new WaitForSeconds(onTime);
 			while (_halted) {
 				yield return null;
 			}
-			
-			int randomInt = Random.Range(0, 24);
-			for (int i = 0; i < 24; i++) {
-				_buttonLabels[i].gameObject.SetActive(false);
 
-				if (i == randomInt) {
-					char oldChar = _buttonLabels[i].text[0];
-					char newChar = oldChar;
-					int changedCharIndex = i;
-					
-					// Check for serial number
-					int serialIndex = i - _serialUinIndex;
-					if (serialIndex >= 0 && serialIndex < 6) {
-						// If this is in the assigned serial number space
-						if (_serialBuilt) {
-							// we are currently removing the serial number
-							if (oldChar != _serialNumber[serialIndex]) {
-								// this current character is already not set. change a different one instead.
-								int incorrectSerialDigits = 0;
-								for (int j = 0; j < 6; j++) {
-									// loop through the serial until we find a character that matches
-									if (_buttonLabels[_serialUinIndex + j].text[0] == _serialNumber[j]) {
-										oldChar = _buttonLabels[_serialUinIndex + j].text[0];
-										newChar = oldChar;
-										while (newChar == oldChar) {
-											bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-											int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-											newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-										}
-										_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
-										changedCharIndex = _serialUinIndex + j;
-										break;
-									}
-									else {
-										incorrectSerialDigits++;
-									}
-								}
-								if (incorrectSerialDigits == 6) {
-									// all the digits are set. serial is entirely gone, mark it as such.
-									// choose a new spot for the serial, then let the random change take care of the char to change.
-									_serialBuilt = false;
-									_serialUinIndex = Random.Range(0, 19);
-								}
-							}
-							// else: the character is set to a serial character. Just leave it to change to random.
-						}
-						else {
-							// we are currently building the serial number
-							if (oldChar == _serialNumber[serialIndex]) {
-								// this current character is already set. change a different one instead.
-								int correctSerialDigits = 0;
-								for (int j = 0; j < 6; j++) {
-									// loop through the serial until we find a character that doesn't match
-									if (_buttonLabels[_serialUinIndex + j].text[0] != _serialNumber[j]) {
-										oldChar = _buttonLabels[_serialUinIndex + j].text[0];
-										newChar = _serialNumber[j];
-										_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
-										changedCharIndex = _serialUinIndex + j;
-										break;
-									}
-									else {
-										correctSerialDigits++;
-									}
-								}
-								if (correctSerialDigits == 6) {
-									// all the digits are set. serial is present, mark it as such.
-									// do not do anything else and let the random change take care of it.
-									_serialBuilt = true;
-								}
-							}
-							else {
-								// this current character is not set. Set it.
-								newChar = _serialNumber[serialIndex];
-								_buttonLabels[i].text = newChar.ToString();
-							}
-						}
-					}
-					if (newChar != oldChar) {
-						// skip the random change if a serial change has already happened.
-						_changedCharIndex = changedCharIndex;
-						_oldChar = oldChar;
-						_newChar = newChar;
-						continue;
-					}
+			bool changed = false;
+			while (!changed) {
+				int randomInt = Random.Range(0, 24);
+				for (int i = 0; i < 24; i++) {
+					_buttonLabels[i].gameObject.SetActive(false);
 
-					// Change to random
-					while (newChar == oldChar) {
-						bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-						int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-						newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+					if (i == randomInt) {
+						changed = ChangeCharacter(i);
 					}
-
-					_buttonLabels[i].text = newChar.ToString();
-					_changedCharIndex = changedCharIndex;
-					_oldChar = oldChar;
-					_newChar = newChar;
 				}
 			}
 			yield return new WaitForSeconds(offTime);

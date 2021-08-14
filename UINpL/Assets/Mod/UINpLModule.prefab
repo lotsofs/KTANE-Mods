@@ -6188,17 +6188,8 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466017736804948}
-  m_Text: 'Pick your favorite type of cake.
-
-    01) {0}
-
-    02) {1}
-
-    03) {2}
-
-    04) {3}
-
-    05) {4}'
+  m_Text: "In case you forget your UIN(+L) and need to \nretrieve it later, please
+    list a crime that only \nyou would know that you have committed."
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 0.9
@@ -7984,6 +7975,8 @@ MonoBehaviour:
   onTime: 1
   offTime: 0.5
   letterPercentage: 0.3
+  resumeShuffleRatio: 0.2
+  _textDisplay: {fileID: 114753303222552700}
 --- !u!114 &114708701625180986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8103,6 +8096,8 @@ MonoBehaviour:
     04) {3}
 
     05) {4}'
+  _textStrike: "In case you forget your UIN(+L) and need to \nretrieve it later, please
+    list a crime that only \nyou would know that you have committed."
   _cakes:
   - Angel food cake
   - Apple cake
