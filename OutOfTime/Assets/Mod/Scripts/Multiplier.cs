@@ -30,6 +30,7 @@ public class Multiplier : MonoBehaviour {
 		_lighting = GetComponent<LightsHandler>();
 		_bombInfo = GetComponent<KMBombInfo>();
 		_bombHelper = GetComponent<BombHelper>();
+		Disable();
 	}
 
 	public void Disable() {

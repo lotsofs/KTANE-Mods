@@ -330,7 +330,6 @@ public class Emotion : MonoBehaviour {
 
 		_platformMover.SetPosition(0);
 		_displayMover.SetPosition(0);
-		_multiplier.Disable();
 	}
 
 	void Activate() {
