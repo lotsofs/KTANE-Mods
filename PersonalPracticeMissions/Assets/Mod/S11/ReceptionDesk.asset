@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: ReceptionDesk
   m_EditorClassIdentifier: 
-  DisplayName: ReceptionDesk
+  DisplayName: Reception Desk
   Description: '...You enter the building. Its interior is poorly lit. "Good evening,
     may I help you", you hear. The person at the reception desk smiles at you. You
     reply: "I''m here to see the Centurion."

@@ -25,10 +25,9 @@ MonoBehaviour:
     - ChocolateSprinkles
     - NeedyKeysII
     - NoisyBombII
-    - ChocolateSprinkles
     - BullyingBomb
     - QuizBomb
-    - Multimemory
+    - Multimemory_2
   - Title: Large Bombs (49 modules)
     MissionIDs:
     - Eldoraigne

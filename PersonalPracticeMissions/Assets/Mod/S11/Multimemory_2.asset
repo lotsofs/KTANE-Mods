@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -548183353, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: Multimemory
+  m_Name: Multimemory_2
   m_EditorClassIdentifier: 
   DisplayName: Multimemory
   Description: You've learnt over 100 modules. That's a lot of modules! Let's celebrate
     by giving you a Forget Me Not stage for each of them.
   GeneratorSetting:
-    TimeLimit: 1800
+    TimeLimit: 1320
     NumStrikes: 3
     TimeBeforeNeedyActivation: 100
     FrontFaceOnly: 0

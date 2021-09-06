@@ -12,11 +12,74 @@ MonoBehaviour:
   m_Name: ModConfig
   m_EditorClassIdentifier: 
   id: PersonalPracticeMissions
-  title: Road To Centurion (Beta Test)
+  title: Road To Centurion
   author: S.
-  description: "Beta test workshop entry for the Road To Centurion.\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2098407568\r\nSee
-    its page for more information.\r"
+  description: "Short info: A campaign that helps you learn and then practice modules
+    found on the Centurion, including the needies released before Yahtzee.\r\n\r\nLong
+    info: These are some missions I made for myself & my friends to work towards a
+    long term goal of defusing the Centurion, starting from never having played a
+    single modded module before. The objective at first was to practice modules we
+    learned in a more reliable way than to generate random bombs and hope we get what
+    we want. Later, I decided to turn these missions into something that might actually
+    help us learn and introduces us to the modules. For me and my friends, it's worked
+    pretty well. I'm not sure how well it will work for a stranger with different
+    preparation rituals than us, but I figured I'd release it anyway.\r\n\r\nThe campaign
+    is divided into several sections. Each section contains 22 bombs. The first part
+    of each section will introduce new modules, the middle part will recap what you've
+    learned and give some gimmicky bombs, and the last part contains some staple boss
+    bombs that really test your new abilities, and these don't mess about: If you
+    can do these bombs, you are definitely ready to take on the Centurion as far as
+    that section is concerned. Because of this, even if you're an experienced player,
+    you might find some interesting bombs in this campaign, particularly towards the
+    end of each section. \r\n\r\nFor experienced players' convenience, the toughest
+    bombs have been conglomerated into a separate table of contents called 'Best Of',
+    to make access for those players who would like a challenge easier.\r\n\r\nNote:
+    Since KTANE consists of so much more than only the Centurion. Your journey will
+    not end with the Centurion. Therefore, this campaign will also train you for situations
+    that you would never encounter on the Centurion itself, but that will undoubtably
+    occur in your future endeavours. Especially some of the gimmicky bombs might be
+    ridiculous, and serve more as an intermediate challenge rather than proper preparation
+    for the Centurion. There is no shame in skipping bombs. Getting stuck on bombs
+    doesn't prepare you.\r\n\r\nBombs have been playtested for 1 defuser and 2 experts.
+    An attempt was made to balance most bombs for 1 defuser & 1 expert, but this is
+    not tested. The bombs are possible for EFM, but some of the bombs might be very
+    difficult with only one expert, especially for a new player. Also note that these
+    missions go beyond just priming you for the Centurion. Scenarios are presented
+    that the Centurion never will, to ensure your journey to the Centurion will not
+    be clouded in tunnel vision.\r\n\r\nThanks to PowerSlaveAlfons and EthanH59 for
+    being my partners in defusal.\r\n\r\nResources:\r\nManuals can be found at the
+    repo at http://ktane.timwi.de , but I've also prepared custom manuals per section
+    to go with the campaigns, which can be found here:\r\nhttps://lotsofs.github.io/KTANE/#RoadToCenturion\r\n\r\nGet
+    the modules here:\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1930830340\r\nand
+    needies here:\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2264334540\r\n\r\nOther
+    mods required to play these missions:\r\nAny case that supports 49 modules, which
+    is included in here:\r\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1982096203\r\n\r\nThis
+    is a list of all sections and the modules they introduce:\r\n* Section 1: Color
+    Flash, Turn The Key, Turn The Keys, 3D Maze, Skewed Slots, Follow The Leader,
+    Blind Alley, Hexamaze, Battleship, LED Encryption, Yahtzee\r\n* Section 2: Word
+    Scramble, Anagrams, The Square Button, Simon States, Round Keypad, Listening,
+    Morsematics, Forget Me Not, Plumbing, Safety Safe, Silly Slots, Souvenir\r\n*
+    Section 3: Piano Keys, Two Bits, Foreign Exchange Rates, Adventure Game, Chess,
+    Murder, Third Base, Laundry. Needies: Answering Questions, Rotary Phone\r\n* Section
+    4: Logic, Cryptography, Caesar Cipher, Bitmaps, Word Search, Broken Buttons, Double-Oh,
+    Neutralization. Needies: Filibuster\r\n* Section 5: Emoji Math, Mouse In The Maze,
+    Number Pad, The Gamepad, Monsplode Fight!, Sea Shells, Rock Paper Scissors Lizard
+    Spock, Coordinates, Rubiks Cube, Binary LEDs. Needies: Math, Tetris.\r\n* Section
+    6: Translated Who's On First, Simon Screams, Modules Against Humanity, Complicated
+    Buttons, Symbolic Password, Translated The Button, Translated Morse Code, Translated
+    Password. Needies: Who's that Monsplode, Translated Vent Gas\r\n* Section 7: Semaphore,
+    Combination Lock, Tic Tac Toe, The Bulb, Wire Placement, Color Math, Web Design,
+    Boolean Venn Diagram, Ice Cream. Needies: HTTP Response\r\n* Section 8: Crazy
+    Talk, Probing, Resistors, Friendship, Colored Squares, FizzBuzz, Fast Math, Zoo,
+    Point of Order. Needies: Motion Sense\r\n* Section 9: Switches, Orientation Cube,
+    Astrology, Shape Shift, English Test, Cheap Checkout, Light Cycle, Creation. Needies:
+    Lights Out, Edgework\r\n* Section 10: The Clock, Perspective Pegs, Mystic Square,
+    Adjacent Letters, Text Field, Microcontroller, Only Connect, Rhythms, Connection
+    Check, Bitwise Operations. Needies: Hex To Decimal\r\n* Section 11: Chord Qualities,
+    Minesweeper, Letter Keys, Alphabet, The Screw\r\n\r\nFound an issue? You can find
+    me at discord.gg/lotsofs , but I am also pingable in the official KTANE discord
+    server. Or just post a comment below."
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 2800000, guid: 958c76c271d32394e81821b057ed289a, type: 3}
+  previewImage: {fileID: 2800000, guid: b353f6e98da23f141959ab21671e2d92, type: 3}
