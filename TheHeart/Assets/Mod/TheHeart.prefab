@@ -341,7 +341,7 @@ MeshCollider:
   m_GameObject: {fileID: 1206858346864570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -543,7 +543,8 @@ MonoBehaviour:
   IsPassThrough: 0
   ChildRowLength: 0
   Highlight: {fileID: 114996151963184546}
-  SelectableColliders: []
+  SelectableColliders:
+  - {fileID: 135732567476240694}
   DefaultSelectableIndex: 0
   AllowSelectionWrapX: 0
   AllowSelectionWrapY: 0
@@ -583,7 +584,7 @@ SphereCollider:
   m_GameObject: {fileID: 1206858346864570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0.001, z: 0}

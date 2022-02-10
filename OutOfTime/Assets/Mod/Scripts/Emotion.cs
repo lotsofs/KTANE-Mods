@@ -386,6 +386,7 @@ public class Emotion : MonoBehaviour {
 	}
 
 	void AfraidOfTheDark(bool lightsOn) {
+		if (!_started) return;
 		if (lightsOn == false) {
 			if (_coroutine == null) {
 				//_multiplier.StartRandomEffect();

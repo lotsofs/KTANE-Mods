@@ -845,7 +845,9 @@ public class TrainLoading : MonoBehaviour {
                 _note.MagnetPressable.OnInteract();
                 yield return null;
             }
-            yield return "sendtochat No notes to flip";
+            else {
+                yield return "sendtochat No notes to flip";
+            }
         }
         else if (command == "cycle") {
             for (int i = 0; i < _selectableCars.Count; i++) {
