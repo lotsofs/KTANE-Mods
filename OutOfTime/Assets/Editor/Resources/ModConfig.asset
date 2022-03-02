@@ -14,10 +14,10 @@ MonoBehaviour:
   id: OutOfTimeModule
   title: Out of Time
   author: S.
-  description: "Time remaining? Not on my watch!\n\nPress the letters to increase
+  description: "Time remaining? Not on my watch!\r\n\r\nPress the letters to increase
     a counter. Use multipliers gained from the module lighting up to increase the
-    counter faster.\n\n------\r\nIncludes support for mods:\r\n* Twitch Plays, w/
-    Autosolve\n* Color Blind Helper\n* Boss Module Manager"
+    counter faster.\r\n\r\n------\r\nIncludes support for mods:\r\n* Twitch Plays,
+    w/ Autosolve\r\n* Color Blind Helper\r\n* Boss Module Manager"
   version: 1
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes\mods

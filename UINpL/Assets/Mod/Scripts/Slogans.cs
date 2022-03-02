@@ -96,7 +96,9 @@ public class Slogans : MonoBehaviour {
 		}
 	}
 
-
+	public void SetColor(Color color) {
+		_textMesh.color = color;
+	}
 }
 
 

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using KModkit;
+using System.Linq;
 
 public class uinplModule : MonoBehaviour {
 
+	public UinplSettings settings;
 
 	public float onTime = 1f;
 	public float offTime = 0.3f;
@@ -26,6 +28,8 @@ public class uinplModule : MonoBehaviour {
 	private char _newChar = '-';
 	private int _changedCharIndex;
 	private int _solution;
+
+	private KMSelectable[] _buttons;
 
 	KMBombInfo _bombInfo;
 	KMBombModule _bombModule;
@@ -75,17 +79,64 @@ public class uinplModule : MonoBehaviour {
 		{ 2, 12,  7, 14, 20, 22, 13, 18, 23,  2, 23, 15,  7, 10,  5, 16, 16, 10,  1, 21, 10,  1,  3,  9,  3,  8,  4, 23,  6,  1, 20, 24, 20, 22,  8,  0},
 	};
 
-	void ResumeFlashing() {
-		for (int i = 0; i < 24; i++) {
-			if (Random.Range(0f, 1f) < resumeShuffleRatio) {
-				bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-				int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-				char newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-				_buttonLabels[i].text = newChar.ToString();
-			}
-			// blank the screen upon resuming
-			_buttonLabels[i].gameObject.SetActive(false);
+	void Start() {
+		_bombInfo = GetComponent<KMBombInfo>();
+		_bombHelper = GetComponent<BombHelper>();
+		_bombModule = GetComponent<KMBombModule>();
+		_serialNumber = _bombInfo.GetSerialNumber().ToLower();
+
+		KMSelectable selectable = GetComponent<KMSelectable>();
+		_buttons = selectable.Children;
+
+		_serialUinIndex = Random.Range(0, 19);  // Determine where in the uinpl the serial should go
+		_serialBuilt = Random.Range(0f, 1f) < 0.5f; // Determine whether we spawn the module with the serial already present
+
+		ModConfig<UinplSettings> config = new ModConfig<UinplSettings>("UinplSettings");
+		settings = config.Read();
+		if (settings.onTime != onTime || settings.offTime != offTime) {
+			_textDisplay.SetColor(new Color(255, 153, 0));
+			_bombHelper.Log(string.Format("Accessibility settings changed: On Time {0}, Off Time {1}. Turning the display orange.", settings.onTime, settings.offTime));
 		}
+		onTime = settings.onTime;
+		offTime = settings.offTime;
+
+		_buttons[0].OnInteract += () => {
+			// continue button
+			_buttons[0].AddInteractionPunch(0.5f);
+			_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.ButtonPress, _buttons[0].transform);
+			HaltToggle();
+			return false;
+		};
+		for (int i = 0; i < 24; i++) {
+			// display buttons
+			KMSelectable subSelectable = _buttons[i + 1];
+			_buttonLabels[i] = subSelectable.GetComponentInChildren<TextMesh>();
+			TextMesh label = _buttonLabels[i];
+			label.gameObject.SetActive(false);
+
+			subSelectable.OnHighlight += () => {
+				// give an orange highlight on hover
+				if (_halted && !_solved) label.color = new Color(1f, 69f / 255f, 0f);
+			};
+			subSelectable.OnHighlightEnded += () => {
+				// remove orange highlight
+				label.color = new Color(102f / 255f, 1f, 0f);
+			};
+			int i2 = i;
+			subSelectable.OnInteract += () => {
+				subSelectable.AddInteractionPunch(0.1f);
+				// change the color slightly to simulate pressing on a screen and it leaving one of those weird LCD finger marks
+				label.color = new Color(102f / 255f, 0.8f, 0f);
+				if (_halted && !_solved) CheckAnswer(i2);
+				return false;
+			};
+			GenerateCharacter(i);
+		}
+
+		_bombModule.OnActivate += () => {
+			_coroutine = StartCoroutine(Flash());
+			_textDisplay.SetStage(0);
+		};
 	}
 
 	void CalculateSolution() {
@@ -141,10 +192,6 @@ public class uinplModule : MonoBehaviour {
 		_solution = serialNumberPresent ? 
 			Solutions[intACharTableIndex, intBCharTableIndex] - 1 :
 			Solutions[intBCharTableIndex, intACharTableIndex] - 1;
-		Debug.Log(_solution + 1);
-		Debug.Log(twentyfour.Length);
-		Debug.Log(twentyfour);
-		Debug.Log(twentyfour[_solution]);
 		_bombHelper.Log(string.Format("Solution: position {0} which is a {1}", _solution + 1, twentyfour[_solution]));
 	}
 
@@ -165,88 +212,19 @@ public class uinplModule : MonoBehaviour {
 		_halted = !_halted;
 	}
 
-	void GenerateCharacter(int index) {
-		char newChar;
-		if (_serialBuilt && index >= _serialUinIndex && index < _serialUinIndex + 6) {
-			// if this character should be a serial number char
-			int serialIndex = index - _serialUinIndex;
-			newChar = _serialNumber[serialIndex];
-		}
-		else {
-			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-			int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-			newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-		}
-		_buttonLabels[index].text = newChar.ToString();
-	}
-
-	void CheckAnswer(int pressed) {
-		if (pressed == _solution) {
-			_bombHelper.Log(string.Format("Pressed position {0} ('{1}'), that is correct. Module solved!", pressed, _buttonLabels[pressed].text));
-			_solved = true;
-			_textDisplay.SetStage(3);
-			_bombModule.HandlePass();
-			StopCoroutine(_coroutine);
-			_coroutine = StartCoroutine(FlashSolved());
-		}
-		else {
-			_bombHelper.Log(pressed.ToString());
-			_bombHelper.Log(string.Format("STRIKE!: Pressed position {0} ('{1}')!", pressed, _buttonLabels[pressed].text));
-			_textDisplay.SetStage(2);
-			_bombModule.HandleStrike();
-		}
-	}
-
-	void Start () {
-		_bombInfo = GetComponent<KMBombInfo>();
-		_bombHelper = GetComponent<BombHelper>();
-		_bombModule = GetComponent<KMBombModule>();
-		_serialNumber = _bombInfo.GetSerialNumber().ToLower();
-
-		KMSelectable selectable = GetComponent<KMSelectable>();
-
-		_serialUinIndex = Random.Range(0, 19);	// Determine where in the uinpl the serial should go
-		_serialBuilt = Random.Range(0f, 1f) < 0.5f; // Determine whether we spawn the module with the serial already present
-
-		selectable.Children[0].OnInteract += () => {
-			// continue button
-			selectable.Children[0].AddInteractionPunch(0.5f);
-			_bombHelper.PlayGameSound(KMSoundOverride.SoundEffect.ButtonPress, selectable.Children[0].transform);
-			HaltToggle();
-			return false;
-		};
+	void ResumeFlashing() {
 		for (int i = 0; i < 24; i++) {
-			// display buttons
-			KMSelectable subSelectable = selectable.Children[i + 1];
-			_buttonLabels[i] = subSelectable.GetComponentInChildren<TextMesh>();
-			TextMesh label = _buttonLabels[i];
-			label.gameObject.SetActive(false);
-
-			subSelectable.OnHighlight += () => { 
-				// give an orange highlight on hover
-				if (_halted && !_solved) label.color = new Color (1f, 69f / 255f, 0f); 
-			};
-			subSelectable.OnHighlightEnded += () => { 
-				// remove orange highlight
-				label.color = new Color(102f / 255f, 1f, 0f); 
-			};
-			int i2 = i;
-			subSelectable.OnInteract += () => {
-				subSelectable.AddInteractionPunch(0.1f);
-				// change the color slightly to simulate pressing on a screen and it leaving one of those weird LCD finger marks
-				label.color = new Color (102f / 255f, 0.8f, 0f); 
-				if (_halted && !_solved) CheckAnswer(i2);
-				return false; 
-			};
-			GenerateCharacter(i);
+			if (Random.Range(0f, 1f) < resumeShuffleRatio) {
+				bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+				int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+				char newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+				_buttonLabels[i].text = newChar.ToString();
+			}
+			// blank the screen upon resuming
+			_buttonLabels[i].gameObject.SetActive(false);
 		}
-
-		_bombModule.OnActivate += () => {
-			_coroutine = StartCoroutine(Flash());
-			_textDisplay.SetStage(0);
-		};
 	}
-	
+
 	bool ChangeCharacter(int index) {
 		char oldChar = _buttonLabels[index].text[0];
 		char newChar = oldChar;
@@ -342,6 +320,38 @@ public class uinplModule : MonoBehaviour {
 		return true;
 	}
 
+	void GenerateCharacter(int index) {
+		char newChar;
+		if (_serialBuilt && index >= _serialUinIndex && index < _serialUinIndex + 6) {
+			// if this character should be a serial number char
+			int serialIndex = index - _serialUinIndex;
+			newChar = _serialNumber[serialIndex];
+		}
+		else {
+			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+			int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+			newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
+		}
+		_buttonLabels[index].text = newChar.ToString();
+	}
+
+	void CheckAnswer(int pressed) {
+		if (pressed == _solution) {
+			_bombHelper.Log(string.Format("Pressed position {0} ('{1}'), that is correct. Module solved!", pressed, _buttonLabels[pressed].text));
+			_solved = true;
+			_textDisplay.SetStage(3);
+			_bombModule.HandlePass();
+			StopCoroutine(_coroutine);
+			_coroutine = StartCoroutine(FlashSolved());
+		}
+		else {
+			_bombHelper.Log(pressed.ToString());
+			_bombHelper.Log(string.Format("STRIKE!: Pressed position {0} ('{1}')!", pressed, _buttonLabels[pressed].text));
+			_textDisplay.SetStage(2);
+			_bombModule.HandleStrike();
+		}
+	}
+
 	IEnumerator Flash() {
 		while (!_solved) {
 			yield return new WaitForSeconds(onTime);
@@ -390,6 +400,58 @@ public class uinplModule : MonoBehaviour {
 			_buttonLabels[17].gameObject.SetActive(false);
 			yield return new WaitForSeconds(offTime);
 			_buttonLabels[17].gameObject.SetActive(true);
+		}
+	}
+
+	public readonly string TwitchHelpMessage = "'!{0} Continue' to press the Continue button. '!{0} Press <1-24>' press button in reading order. '!{0} Streamdelay <seconds>' to make the module compensate for the specified stream delay in seconds (min/default = 0).";
+
+	public IEnumerator ProcessTwitchCommand(string command) {
+		command = command.ToUpperInvariant().Trim();
+		List<string> split = command.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries).ToList();
+		if (split[0] == "CONTINUE" || split[0] == "CONT" || split[0] == "C") {
+			_buttons[0].OnInteract();
+			yield return null;
+		}
+		else if (split[0] == "PRESS" || split[0] == "P") {
+			if (split.Count == 1) {
+				yield break;
+			}
+			int result;
+			if (!int.TryParse(split[1], out result)) {
+				yield break;
+			}
+			if (result < 1 || result > 24) {
+				yield break;
+			}
+			_buttons[result].OnInteract();
+			yield return null;
+		}
+		else if (split[0] == "STREAMDELAY" || split[0] == "DELAY" || split[0] == "SD" || split[0] == "D") {
+			if (split.Count == 1) {
+				yield break;
+			}
+			float result;
+			if (!float.TryParse(split[1], out result)) {
+				yield break;
+			}
+			if (result < 0) {
+				yield break;
+			}
+			onTime = settings.onTime + result;
+			StopCoroutine(_coroutine);
+			_coroutine = StartCoroutine(Flash());
+			yield return null;
+		}
+	}
+
+	IEnumerator TwitchHandleForcedSolve() {
+		while (!_solved) {
+			if (!_halted) {
+				_buttons[0].OnInteract();
+				yield return new WaitForSeconds(0.1f);
+			}
+			_buttons[_solution + 1].OnInteract();
+			yield return null;
 		}
 	}
 }

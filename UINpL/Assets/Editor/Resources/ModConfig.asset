@@ -14,8 +14,14 @@ MonoBehaviour:
   id: UINpLModule
   title: UIN(+L)
   author: S.
-  description: tbd
+  description: "The entered UIN(+L) does not match your assigned UIN(+L). Please REMAIN
+    AT YOUR WORKSTATION until a Computer-Aided-Enrichment Crisis Team arrives.\n\r\nDetect
+    the most recently changed digit (or letter) in a sequence of constantly changing
+    digits (plus letters).\n\r\nWarning: Contains flashing imagery. Accessibility
+    settings are available. However, if you use these when you don't need them, I
+    will be upset with you!\n\n------\r\nIncludes support for mods:\r\n* Twitch Plays,
+    w/ Autosolve\r"
   version: 
   outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
     Nobody Explodes - Mod Building\mods
-  previewImage: {fileID: 2800000, guid: 945b2adbb19de444bbfca14ae3b31dca, type: 3}
+  previewImage: {fileID: 2800000, guid: 1a62c97fb03e31044af746995ef16402, type: 3}
