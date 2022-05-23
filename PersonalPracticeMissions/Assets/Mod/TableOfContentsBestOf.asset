@@ -53,3 +53,9 @@ MonoBehaviour:
     - TenMinutesXI
     - TrueRandomVII
     - BigBombXI
+  - Title: Accessibility Options
+    MissionIDs:
+    - WordyBombIV_NoFilibuster
+    - WordyBombV_NoFilibuster
+    - LowCommunicativeModules_NoFilibuster
+    - NeedyKeysII_NoFilibuster
