@@ -98,29 +98,33 @@ public class Note : MonoBehaviour {
         int listSlot = FindResource(null);
         if ((listSlot == _list.Length - 1 || listSlot == -1) && _backupPaper.gameObject.activeInHierarchy == false) {
             // no room on first list and second list doesnt exist yet. Enable it.
+            Debug.LogFormat("[Railway Cargo Loading #{0}] There's no room for a new double-line item on the note (a). Adding another.", _bombHelper.ModuleId);
             AddBackupPaper();
             listSlot = FindResource(null, _list.Length);
         }
         while (!IsNextSlotNull(listSlot)) {
             // no room for double line item here, keep searching
             listSlot = FindResource(null, listSlot + 1);
-            // we've exhausted all our spots (this shouldn't happen)
             if (listSlot == -1 && _backupPaper.gameObject.activeInHierarchy == false) {
+                Debug.LogWarningFormat("[Railway Cargo Loading #{0}] There's no room for a new double-line item on the note (b). Adding another.", _bombHelper.ModuleId);
                 AddBackupPaper();
                 listSlot = FindResource(null, _list.Length);
             }
+            // we've exhausted all our spots (this shouldn't happen)
             if (listSlot == -1 || listSlot == _list.Length + _backupList.Length - 1) {
-                Debug.LogWarningFormat("[Railway Cargo Loading #{0}] There is no space on the notes for {1}, for some reason.", _bombHelper.ModuleId, resource.DisplayName);
+                Debug.LogFormat("[Railway Cargo Loading #{0}] There is no space on either note for {1}, for some reason.", _bombHelper.ModuleId, resource.DisplayName);
                 return;
             }
         }
         if (listSlot >= _list.Length) {
             // slots found on second list
+            Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a double-line item {1} at position {2}, which is on the second note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _backupList[listSlot - _list.Length] = resource;
             _backupList[listSlot - _list.Length + 1] = resource;
         }
         else {
             // slots found on first list
+            Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a double-line item {1} at position {2}, which is on the first note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _list[listSlot] = resource;
             _list[listSlot + 1] = resource;
         }
@@ -134,14 +138,17 @@ public class Note : MonoBehaviour {
         int listSlot = FindResource(null);
         if (listSlot == -1 && _backupPaper.gameObject.activeInHierarchy == false) {
             // There's no more room on the list, add a new list and search it for a free slot
+            Debug.LogFormat("[Railway Cargo Loading #{0}] There's no room for a new single-line item on the note. Adding another.", _bombHelper.ModuleId);
             AddBackupPaper();
             listSlot = FindResource(null, listSlot + 1);
         }
         if (listSlot >= _list.Length) {
             // slot found, it's on the second paper
+            Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a single-line item {1} at position {2}, which is on the second note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _backupList[listSlot - _list.Length] = resource;
         }
         else {
+            Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a single-line item {1} at position {2}, which is on the first note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _list[listSlot] = resource;
         }
 
@@ -206,6 +213,10 @@ public class Note : MonoBehaviour {
             }
         }
         _text.text = note;
+
+        Debug.LogFormat("[Railway Cargo Loading #{0}] The note now says: \"", _bombHelper.ModuleId);
+        Debug.LogFormat("[Railway Cargo Loading #{0}] {1}", _bombHelper.ModuleId, note.Replace("\n", string.Format("\n[Railway Cargo Loading #{0}] ", _bombHelper.ModuleId)));
+
         // And then do the backup paper
         if (_backupPaper.gameObject.activeInHierarchy == true) {
             string backupNote = string.Empty;
@@ -229,7 +240,11 @@ public class Note : MonoBehaviour {
                 }
             }
             _backupText.text = backupNote;
+            Debug.LogFormat("[Railway Cargo Loading #{0}] \"", _bombHelper.ModuleId);
+            Debug.LogFormat("[Railway Cargo Loading #{0}] The second note now says: \"", _bombHelper.ModuleId);
+            Debug.LogFormat("[Railway Cargo Loading #{0}] {1}", _bombHelper.ModuleId, backupNote.Replace("\n", string.Format("\n[Railway Cargo Loading #{0}] ", _bombHelper.ModuleId)));
         }
+        Debug.LogFormat("[Railway Cargo Loading #{0}] \"", _bombHelper.ModuleId);
     }
 
     /// <summary>
