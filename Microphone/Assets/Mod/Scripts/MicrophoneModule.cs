@@ -683,18 +683,18 @@ public class MicrophoneModule : MonoBehaviour {
 			return false;
 		}
 		if (_stepFourSubSubstep == 1 && _timerTicks < 1 && _currentKnobPosition != 5) {
-			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was set back to 1 too early. It was meant to be set to 5 for at least one tick of the bomb's timer.", _bombHelper.ModuleId);
+			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was left on 1 for too short. It was meant to be set to 5 for at least one tick of the bomb's timer.", _bombHelper.ModuleId);
 			StartStepThree();
 			Strike();
 			return false;
 		}
-		if (_stepFourSubSubstep == 1 && _timerTicks > 3 && _currentKnobPosition != 1) {
-			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was set back to 1 too late. It was meant to be set to 5 for at most three ticks of the bomb's timer.", _bombHelper.ModuleId);
+		if (_stepFourSubSubstep == 1 && _timerTicks > 3 && _currentKnobPosition == 5) {
+			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was left on 5 for too long. It was meant to be set to 5 for at most three ticks of the bomb's timer.", _bombHelper.ModuleId);
 			StartStepThree();
 			Strike();
 			return false;
 		}
-		if (_stepFourSubSubstep == 1 && _timerTicks >= 1 && _timerTicks <= 3 && _currentKnobPosition == 1) {
+		if (_currentKnobPosition == 1) {
 			Debug.LogFormat("[Microphone #{0}] Recording volume succesfully set back to 1 after one but before four ticks of the bomb's timer.", _bombHelper.ModuleId);
 			_stepFourSubSubstep = 0;
 			_timerTicks = 0;
