@@ -13,6 +13,7 @@ public class HeartBeat : MonoBehaviour {
 	[SerializeField] float _shrinkRate = 0.03f;
 	[SerializeField] float _firstBeatSize = 1.03f;
 	[SerializeField] float _secondBeatSize = 1.025f;
+	[SerializeField] bool _beatIndependently = false;
 
 	Vector3 _baseSize;
 	
@@ -46,8 +47,10 @@ public class HeartBeat : MonoBehaviour {
 		_baseSize = transform.localScale;
 		_defaultInterval = Interval;
 		TargetInterval = Interval;
+		if (_beatIndependently) { Beating = true; return; }
 
 		_renderer.material.color = new Color(0.8f, 0, 0);
+
 	}
 
 	// Update is called once per frame
