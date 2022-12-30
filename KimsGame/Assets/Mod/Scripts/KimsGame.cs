@@ -405,7 +405,7 @@ public class KimsGame : MonoBehaviour {
 				for (int i = 1; i < split.Count; i++) {
 					int button;
 					bool success = int.TryParse(split[i], out button);
-					if (!success || button > _spriteSelectables.Length) {
+					if (!success || button > _spriteSelectables.Length || button <= 0) {
 						yield break;
 					}
 					buttonsToPress.Add(button);

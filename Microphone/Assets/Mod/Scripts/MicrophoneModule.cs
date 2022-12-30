@@ -676,7 +676,7 @@ public class MicrophoneModule : MonoBehaviour {
 		if (!StepFourIsAlarmStillRunning()) {
 			return false;
 		}
-		if (_currentKnobPosition == 5 && _stepFourSubSubstep == 0) {
+		if (_stepFourSubSubstep == 0 && _currentKnobPosition == 5) {
 			Debug.LogFormat("[Microphone #{0}] Recording volume succesfully set to 5.", _bombHelper.ModuleId);
 			_stepFourSubSubstep = 1;
 			_timerTicks = 0;
@@ -694,9 +694,9 @@ public class MicrophoneModule : MonoBehaviour {
 			Strike();
 			return false;
 		}
-		if (_currentKnobPosition == 1) {
+		if (_stepFourSubSubstep == 1 && _currentKnobPosition == 1) {
 			Debug.LogFormat("[Microphone #{0}] Recording volume succesfully set back to 1 after one but before four ticks of the bomb's timer.", _bombHelper.ModuleId);
-			_stepFourSubSubstep = 0;
+			_stepFourSubSubstep = 2;
 			_timerTicks = 0;
 			_stepFourVolumeShouldEndAt = 1;
 			return true;
