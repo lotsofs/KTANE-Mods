@@ -212,6 +212,9 @@ public class NiftyModuleScript : MonoBehaviour {
 	public IEnumerator ProcessTwitchCommand(string command) {
 		command = command.ToUpperInvariant().Trim();
 		string[] splits = command.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries);
+		if (splits.Length != 2) {
+			yield break;
+		}
 		int dump;
 		if (splits[0].Length != 4 || splits[1].Length != 5) {
 			yield break;
