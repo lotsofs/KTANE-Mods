@@ -19,9 +19,8 @@ MonoBehaviour:
     the most recently changed digit (or letter) in a sequence of constantly changing
     digits (plus letters).\n\r\nWarning: Contains flashing imagery. Accessibility
     settings are available. However, if you use these when you don't need them, I
-    will be upset with you!\n\n------\r\nIncludes support for mods:\r\n* Twitch Plays,
-    w/ Autosolve\r"
+    will be upset with you!"
   version: 
-  outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
-    Nobody Explodes - Mod Building\mods
+  outputFolder: D:\Game Launchers\Steam\steamapps\common\Keep Talking and Nobody Explodes
+    - Modding\mods
   previewImage: {fileID: 2800000, guid: 1a62c97fb03e31044af746995ef16402, type: 3}
