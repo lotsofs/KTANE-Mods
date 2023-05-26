@@ -9,9 +9,10 @@ public class uinplModule : MonoBehaviour {
 	public UinplSettings settings;
 
 	public float onTime = 1f;
-	public float offTime = 0.3f;
+	public float offTime = 0.35f;
 	public float letterPercentage = 0.3f;
 	public float resumeShuffleRatio = 0.2f;
+	public int TimesToRerollBeforeRemovingSerial = 20;
 
 	[SerializeField] Slogans _textDisplay;
 
@@ -23,6 +24,7 @@ public class uinplModule : MonoBehaviour {
 	private bool _solved = false;
 	private int _serialUinIndex;
 	private bool _serialBuilt = false;
+	private int _serialRerolls = 0;
 
 	private char _oldChar = '-';
 	private char _newChar = '-';
@@ -225,99 +227,119 @@ public class uinplModule : MonoBehaviour {
 		}
 	}
 
-	bool ChangeCharacter(int index) {
-		char oldChar = _buttonLabels[index].text[0];
+	int PickIndexInSerial(bool disassembling)
+	{
+		for (int i = 0; i < 6; i++) { 
+			// disass = true: find a character in SN that matches. disass = false: find a character in SN that does not match.
+			if ((_buttonLabels[_serialUinIndex + i].text[0] == _serialNumber[i]) == disassembling) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	char PickNewNumberOrLetter(char oldChar)
+	{
 		char newChar = oldChar;
-		int changedCharIndex = index;
+		while (newChar == oldChar)
+		{
+			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
+			int newCharIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
+			newChar = changeToLetter ? Letters[newCharIndex] : Numbers[newCharIndex];
+		}
+		return newChar;
+	}
+
+	void ChangeCharacter() {
+		int indexToChange = Random.Range(0, 24);
+
+		while (_serialBuilt && _serialRerolls < TimesToRerollBeforeRemovingSerial && indexToChange >= _serialUinIndex && indexToChange < _serialUinIndex + 6)
+		{
+			// reroll the index if it's in the serial number's indices to ensure it stays for longer.
+			_serialRerolls++;
+			indexToChange = Random.Range(0, 24);
+		}
+
+		char oldChar = _buttonLabels[indexToChange].text[0];
+		char newChar = oldChar;
 
 		// Check for serial number
-		int serialIndex = index - _serialUinIndex;
-		if (serialIndex >= 0 && serialIndex < 6) {
-			// If this is in the assigned serial number space
-			if (_serialBuilt) {
-				// we are currently removing the serial number
-				if (oldChar != _serialNumber[serialIndex]) {
-					// this current character is already not set. change a different one instead.
-					int incorrectSerialDigits = 0;
-					for (int j = 0; j < 6; j++) {
-						// loop through the serial until we find a character that matches
-						if (_buttonLabels[_serialUinIndex + j].text[0] == _serialNumber[j]) {
-							oldChar = _buttonLabels[_serialUinIndex + j].text[0];
-							newChar = oldChar;
-							while (newChar == oldChar) {
-								bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-								int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-								newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-							}
-							_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
-							changedCharIndex = _serialUinIndex + j;
-							break;
-						}
-						else {
-							incorrectSerialDigits++;
-						}
-					}
-					if (incorrectSerialDigits == 6) {
-						// all the digits are set. serial is entirely gone, mark it as such.
-						// choose a new spot for the serial, then let the random change take care of the char to change.
-						_serialBuilt = false;
-						_serialUinIndex = Random.Range(0, 19);
-					}
+		int serialIndexOffset = indexToChange - _serialUinIndex;
+
+		if (serialIndexOffset < 0 || serialIndexOffset >= 6) {
+			// The changed index is not part of the serial. Change it and be done.
+			newChar = PickNewNumberOrLetter(oldChar);
+		}
+		else if (_serialBuilt) {
+			// The changed index is in our SN, and we're disassembling it.
+			if (oldChar != _serialNumber[serialIndexOffset])
+			{
+				// this current char is already disassembled, change a different one instead.
+				int newSerialIndexToChange = PickIndexInSerial(true);
+				if (newSerialIndexToChange == -1)
+				{
+					// The entire serial has been disassembled, so mark it done and treat this as generic
+					_serialBuilt = false;
+					newChar = PickNewNumberOrLetter(oldChar);
+					_serialUinIndex = Random.Range(0, 19);
 				}
-				// else: the character is set to a serial character. Just leave it to change to random.
-			}
-			else {
-				// we are currently building the serial number
-				if (oldChar == _serialNumber[serialIndex]) {
-					// this current character is already set. change a different one instead.
-					int correctSerialDigits = 0;
-					for (int j = 0; j < 6; j++) {
-						// loop through the serial until we find a character that doesn't match
-						if (_buttonLabels[_serialUinIndex + j].text[0] != _serialNumber[j]) {
-							oldChar = _buttonLabels[_serialUinIndex + j].text[0];
-							newChar = _serialNumber[j];
-							_buttonLabels[_serialUinIndex + j].text = newChar.ToString();
-							changedCharIndex = _serialUinIndex + j;
-							break;
-						}
-						else {
-							correctSerialDigits++;
-						}
-					}
-					if (correctSerialDigits == 6) {
-						// all the digits are set. serial is present, mark it as such.
-						_serialBuilt = true;
-						// we want to keep the serial number present in the number a bit longer, reroll the character to change.
-						return false;
-					}
-				}
-				else {
-					// this current character is not set. Set it.
-					newChar = _serialNumber[serialIndex];
-					_buttonLabels[index].text = newChar.ToString();
+				else
+				{
+					// update our values for the new chosen index
+					indexToChange = _serialUinIndex + newSerialIndexToChange;
+					oldChar = _buttonLabels[indexToChange].text[0];
+					newChar = PickNewNumberOrLetter(oldChar);
 				}
 			}
+			else
+			{
+				// this current char has not yet been disassembled. Cool, lets do that then.
+				newChar = PickNewNumberOrLetter(oldChar);
+			}
 		}
-		if (newChar != oldChar) {
-			// skip the random change if a serial change has already happened.
-			_changedCharIndex = changedCharIndex;
-			_oldChar = oldChar;
-			_newChar = newChar;
-			return true;
+		else
+		{
+			// The changed index is in our SN, and we're assembling it.
+			if (oldChar == _serialNumber[serialIndexOffset])
+			{
+				// this current char is already assembled, change a different one instead.
+				int newSerialIndexToChange = PickIndexInSerial(false);
+				if (newSerialIndexToChange == -1)
+				{
+					// The entire serial has already been assembled, so mark it done and roll an index that isn't in it
+					_serialBuilt = true;
+					_serialRerolls = 0;
+					int newRandomIndex = Random.Range(0, 24);
+					while (newRandomIndex >= _serialUinIndex && newRandomIndex < _serialUinIndex + 6)
+					{
+						// reroll
+						newRandomIndex = Random.Range(0, 24);
+					}
+					indexToChange = newRandomIndex;
+					oldChar = _buttonLabels[indexToChange].text[0];
+					newChar = PickNewNumberOrLetter(oldChar);
+				}
+				else
+				{
+					// change the thing to the SN
+					indexToChange = _serialUinIndex + newSerialIndexToChange;
+					oldChar = _buttonLabels[indexToChange].text[0];
+					newChar = _serialNumber[newSerialIndexToChange];
+				}
+			}
+			else
+			{
+				// It's not yet set. Do so.
+				newChar = _serialNumber[serialIndexOffset];
+			}
 		}
 
-		// Change to random
-		while (newChar == oldChar) {
-			bool changeToLetter = Random.Range(0f, 1f) < letterPercentage;
-			int newIndex = changeToLetter ? Random.Range(0, Letters.Length) : Random.Range(0, Numbers.Length);
-			newChar = changeToLetter ? Letters[newIndex] : Numbers[newIndex];
-		}
-
-		_buttonLabels[index].text = newChar.ToString();
-		_changedCharIndex = changedCharIndex;
+		// Finally, actually change the char
+		_buttonLabels[indexToChange].text = newChar.ToString();
+		_changedCharIndex = indexToChange;
 		_oldChar = oldChar;
 		_newChar = newChar;
-		return true;
+		return;
 	}
 
 	void GenerateCharacter(int index) {
@@ -359,17 +381,11 @@ public class uinplModule : MonoBehaviour {
 				yield return null;
 			}
 
-			bool changed = false;
-			while (!changed) {
-				int randomInt = Random.Range(0, 24);
-				for (int i = 0; i < 24; i++) {
-					_buttonLabels[i].gameObject.SetActive(false);
-
-					if (i == randomInt) {
-						changed = ChangeCharacter(i);
-					}
-				}
+			for (int i = 0; i < 24; i++) {
+				_buttonLabels[i].gameObject.SetActive(false);
 			}
+			ChangeCharacter();
+
 			yield return new WaitForSeconds(offTime);
 			for (int i = 0; i < 24; i++) {
 				_buttonLabels[i].gameObject.SetActive(true);
