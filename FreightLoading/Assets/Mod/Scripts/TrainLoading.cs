@@ -45,6 +45,7 @@ public class TrainLoading : MonoBehaviour {
     bool _longHaul = false;
     bool _nuclear = false;
 
+    bool _speedUpSolve = false;
     int _currentStage = 0;
     TrainCar _correctCar;
     FreightTableRule _correctRule;
@@ -246,6 +247,10 @@ public class TrainLoading : MonoBehaviour {
     IEnumerator DelayedPass(float delay) {
         while (delay > 0) {
             yield return null;
+            if (delay > 1.5f && _speedUpSolve == true) {
+                delay = 1.5f;
+            }
+
             delay -= Time.deltaTime;
             if (_bombInfo.GetTime() < 2f) {
                 delay = 0;
@@ -689,6 +694,12 @@ public class TrainLoading : MonoBehaviour {
     /// </summary>
     /// <param name="car"></param>
     void SelectCar() {
+        if (_currentStage >= 16)
+        {
+            Debug.Log("Hi");
+            _speedUpSolve = true;
+        }
+        
         int index = _trainCycler.SelectCurrent();
         if (index == -1) {
             return;
@@ -1021,6 +1032,10 @@ public class TrainLoading : MonoBehaviour {
         }
         if (_note.MagnetPressable.gameObject.activeInHierarchy == true) {
             _note.MagnetPressable.OnInteract();
+        }
+        if (_currentStage == 16)
+        {
+            _okButton.OnInteract();
         }
         while (_currentStage < 17) {
             yield return true;

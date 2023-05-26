@@ -122,6 +122,11 @@ public class Note : MonoBehaviour {
             _backupList[listSlot - _list.Length] = resource;
             _backupList[listSlot - _list.Length + 1] = resource;
         }
+        else if (listSlot == -1)
+        {
+			Debug.LogFormat("[Railway Cargo Loading #{0}] There is no space on the notes for {1}. Is this because the bomb exploded and the notes no longer exist?", _bombHelper.ModuleId, resource.DisplayName);
+			return;
+		}
         else {
             // slots found on first list
             Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a double-line item {1} at position {2}, which is on the first note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
@@ -147,7 +152,12 @@ public class Note : MonoBehaviour {
             Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a single-line item {1} at position {2}, which is on the second note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _backupList[listSlot - _list.Length] = resource;
         }
-        else {
+		else if (listSlot == -1)
+		{
+			Debug.LogFormat("[Railway Cargo Loading #{0}] There is no space on the notes for {1}. Is this because the bomb exploded and the notes no longer exist?", _bombHelper.ModuleId, resource.DisplayName);
+			return;
+		}
+		else {
             Debug.LogFormat("[Railway Cargo Loading #{0}] Adding to the notes a single-line item {1} at position {2}, which is on the first note.", _bombHelper.ModuleId, resource.DisplayName, listSlot);
             _list[listSlot] = resource;
         }

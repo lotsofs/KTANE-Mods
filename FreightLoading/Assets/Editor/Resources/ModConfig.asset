@@ -15,12 +15,8 @@ MonoBehaviour:
   title: Railway Cargo Loading
   author: S.
   description: "If you thought bombs on trains were bad, now we have trains on bombs.\r\n\r\nCouple
-    the correct railroad cars to the train to disarm the module.\r\n\r\n------\r\nIncludes
-    support for mods:\r\nTwitch Plays, w/ Autosolve\r\nSouvenir\r\n\r\n------\r\nFound
-    an issue? You can find me at discord.gg/lotsofs , but I am also pingable in the
-    official KTANE discord server, or the KTANE modding discord server. Or just post
-    a comment below."
+    the correct railroad cars to the train to disarm the module."
   version: 1.4
-  outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
-    Nobody Explodes - Mod Building\mods
+  outputFolder: D:\Game Launchers\Steam\steamapps\common\Keep Talking and Nobody Explodes
+    - Modding\mods
   previewImage: {fileID: 2800000, guid: f6f316cbef127bf4eb6ce309b1595d30, type: 3}
