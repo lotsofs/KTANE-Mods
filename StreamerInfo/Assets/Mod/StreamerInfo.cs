@@ -57,6 +57,7 @@ public class StreamerInfo : MonoBehaviour {
 		MakeFile("interactcount.txt", "");
 		MakeFile("solvecount.txt", "");
 		MakeFile("strikecount.txt", "");
+		MakeFile("lastevent.txt", "");
 	}
 
 	void MakeFile(string fileName, string items) {
@@ -124,6 +125,7 @@ public class StreamerInfo : MonoBehaviour {
 		MakeFile("interactcount.txt", string.Format("Interacted with: {0} out of {1}", 0, _allModules.Count));
 		MakeFile("solvecount.txt", string.Format("Solved: {0} out of {1}", 0, _allModules.Count));
 		MakeFile("strikecount.txt", "Strikes: 0");
+		MakeFile("lastevent.txt", "Bomb Started");
 	}
 
 	void Selected(KMBombModule mod) {
@@ -140,6 +142,7 @@ public class StreamerInfo : MonoBehaviour {
 	void Solved(string module) {
 		string line = string.Format("{0} - {1}", _bombInfo.GetFormattedTime(), module);
 		AppendFile("solved.txt", line);
+		MakeFile("lastevent.txt", "Module Solved");
 
 		_unsolvedModules.Remove(module);
 		MakeFile("unsolved.txt", _unsolvedModules, "; ");
@@ -170,6 +173,7 @@ public class StreamerInfo : MonoBehaviour {
 		string line = string.Format("{0} - {1}", _bombInfo.GetFormattedTime(), num);
 		AppendFile("strikes.txt", line);
 		MakeFile("strikecount.txt", "Strikes: " + num);
+		MakeFile("lastevent.txt", "Strike");
 	}
 
 	// Update is called once per frame
