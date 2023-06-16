@@ -11,10 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: 
-  title: 
-  author: 
-  description: 
-  version: 
-  outputFolder: build
-  previewImage: {fileID: 0}
+  id: Angles
+  title: Angles
+  author: LotsOfS
+  description: TBD
+  version: 1
+  outputFolder: D:\Game Launchers\Steam\steamapps\common\Keep Talking and Nobody Explodes
+    - Modding\mods
+  previewImage: {fileID: 2800000, guid: a2482bc40de8606488ece8250fa0c410, type: 3}

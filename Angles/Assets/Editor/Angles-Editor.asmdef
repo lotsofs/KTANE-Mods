@@ -1,0 +1,10 @@
+{
+  "name": "Angles-Editor",
+  "references": [
+    "Angles"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
