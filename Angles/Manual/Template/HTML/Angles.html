@@ -10,6 +10,21 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script src="js/ktane-utils.js"></script>
         <style>
+            @font-face {
+                font-family: 'NotoSansSymbols-Regular';
+                font-style: normal;
+                font-weight: 400;
+                src: url(../font/NotoSansSymbols-Regular.ttf);
+            }
+            .zodiac {
+                font-family: 'NotoSansSymbols-Regular';
+                font-size: 28pt;
+                padding: 0;
+                text-align: center;
+            }
+            .notanumber {
+                font-style: italic;
+            }
         </style>
     </head>
     <body>
@@ -36,7 +51,7 @@
 
                     <h3>Step 2 of 5</h3>
                     <p>
-                        For each of the 9 angles on the module, draw a line going from the center of the circle at that angle, and mark where these lines intersect with the circle's edge.
+                        For each of the 9 angles on the module, draw a line going from the center of the circle at that angle, and mark the points where these lines intersect with the circle's edge.
                     </p>
                     <p>
                         Use the notations table on the next page for help with decoding each of the various possible angular notation format.
@@ -71,7 +86,7 @@
                             <th>*</th>
                         </tr>
                         <tr>
-                            <td rowspan="2" style="font-style: italic">Words or groups of letters</td>
+                            <td rowspan="2" class="notanumber">Words or groups of letters</td>
                             <td>Relative Directions</td>
                             <td>N/A</td>
                             <td>N/A</td>
@@ -86,7 +101,7 @@
                             <td>*</td>
                         </tr>
                         <tr>
-                            <td style="font-style: italic">Arrow Symbols</td>
+                            <td class="notanumber">Arrow Symbols</td>
                             <td>Arrows</td>
                             <td>N/A</td>
                             <td>N/A</td>
@@ -157,7 +172,7 @@
                         </tr>
                         <tr>
                             <td>#%</td>
-                            <td rowspan="2">Grades</td>
+                            <td rowspan="2">Slopes</td>
                             <td>Right</td>
                             <td>&circlearrowleft;</td>
                             <td rowspan="2">N/A</td>
@@ -193,15 +208,18 @@
                             <td>*</td>
                         </tr>
                         <tr>
-                            <td>#.#</td>
-                            <td>Date</td>
-                            <td>Top</td>
-                            <td>&circlearrowright;</td>
-                            <td>365</td>
-                            <td>*</td>
+                            <td># #</td>
+                            <td rowspan="2">Date</td>
+                            <td rowspan="2">Top</td>
+                            <td rowspan="2">&circlearrowright;</td>
+                            <td rowspan="2">365</td>
+                            <td rowspan="2">*</td>
                         </tr>
                         <tr>
-                            <td style="font-style: italic">A zodiac symbol</td>
+                            <td class="notanumber">A date</td>
+                        </tr>
+                        <tr>
+                            <td class="notanumber">A zodiac symbol</td>
                             <td>Zodiac Signs</td>
                             <td>N/A</td>
                             <td>N/A</td>
@@ -209,7 +227,7 @@
                             <td>*</td>
                         </tr>
                         <tr>
-                            <td style="font-style: italic">A single letter</td>
+                            <td class="notanumber">A single letter</td>
                             <td>Flag Semaphore</td>
                             <td>N/A</td>
                             <td>N/A</td>
@@ -229,7 +247,7 @@
                 <div class="page-content">
                     <h4>Relative Directions</h4>
                     <p>
-                        The relative directions as determined by step 1 of the solving process. Two of these may be combined together to make diagonals. Synonyms may be used instead for each of the directions:
+                        The relative directions as determined by step 1 of the solving process. Two of these may be combined together to make perfect diagonals. Synonyms may be used instead for each of the directions:
                     </p>
                     <ul>
                         <li><strong>Top:</strong> Above, Over, Up, Upper, Zenith</li>
@@ -287,9 +305,9 @@
                         A circle is divided into 32 Akhnam, and each Akhnam can be divided into 7 Zam, for a total of 224 Zam.
                     </p>
 
-                    <h4>Grade</h4>
+                    <h4>Slope</h4>
                     <p>
-                        Grades are notated as a percentage of vertical rise over horizontal run. Rise is the change in height, and run is the horizontal distance travelled to the right. For every 1 unit travelled horizontally, the displayed percentage of 1 is gained in height. A grade of infinity means straight up.
+                        Slopes are notated as a percentage of vertical rise over horizontal run. Rise is the change in height, and run is the horizontal distance travelled to the right. For every 1 unit travelled horizontally, the displayed percentage of 1 is gained in height. A slope of infinity means straight up.
                     </p>
                     <p>
                         On the module, if the percentage sign is to the left of the number, the horizontal distance, and thus the angle, go left instead.
@@ -326,67 +344,67 @@
                             <th>Date</th>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Aries.svg"></img></td>
+                            <td class="zodiac">&#9800;&#xFE0E;</img></td>
                             <td>Aries</td>
                             <td>April 19</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Taurus.svg"></img></td>
+                            <td class="zodiac">&#9801;&#xFE0E;</td>
                             <td>Taurus</td>
                             <td>May 14</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Gemini.svg"></img></td>
+                            <td class="zodiac">&#9802;&#xFE0E;</td>
                             <td>Gemini</td>
                             <td>June 20</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Cancer.svg"></img></td>
+                            <td class="zodiac">&#9803;&#xFE0E;</td>
                             <td>Cancer</td>
                             <td>July 21</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Leo.svg"></img></td>
+                            <td class="zodiac">&#9804;&#xFE0E;</td>
                             <td>Leo</td>
                             <td>August 10</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Virgo.svg"></img></td>
+                            <td class="zodiac">&#9805;&#xFE0E;</td>
                             <td>Virgo</td>
                             <td>September 16</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Libra.svg"></img></td>
+                            <td class="zodiac">&#9806;&#xFE0E;</td>
                             <td>Libra</td>
                             <td>October 31</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Scorpius.svg"></img></td>
+                            <td class="zodiac">&#9807;&#xFE0E;</td>
                             <td>Scorpius</td>
                             <td>November 23</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Ophiuchus.svg"></img></td>
+                            <td class="zodiac">&#9934;&#xFE0E;</td>
                             <td>Ophiuchus</td>
                             <td>November 30</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Sagittarius.svg"></img></td>
+                            <td class="zodiac">&#9808;&#xFE0E;</td>
                             <td>Sagittarius</td>
                             <td>December 18</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Capricornus.svg"></img></td>
+                            <td class="zodiac">&#9809;&#xFE0E;</td>
                             <td>Capricornus</td>
                             <td>January 19</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Aquarius.svg"></img></td>
+                            <td class="zodiac">&#9810;&#xFE0E;</td>
                             <td>Aquarius</td>
                             <td>February 16</td>
                         </tr>
                         <tr>
-                            <td><img style="width: 3em;" src="./img/Angles/A_Pisces.svg"></img></td>
+                            <td class="zodiac">&#9811;&#xFE0E;</td>
                             <td>Pisces</td>
                             <td>March 12</td>
                         </tr>
@@ -522,7 +540,7 @@
                     <h3>Step 4 of 5</h3>
                     <p>Use the buttons outside the circle to point the needle at that angle.</p>
                     <p>Pressing each button moves the needle by a certain distance, the value of which depends on the currently selected angular notation. The specific values per button per notation are listed in the needle movement table on the next page.</p>
-                    <p>In case you lose track of the needle's exact current angle, a button can be held down to reset the needle to the nearest whole increment of the button's value for the currently s elected notation.</p>
+                    <p>In case you lose track of the needle's exact current angle, a button can be held down to reset the needle to the nearest whole increment of the button's value for the currently selected notation.</p>
                     <p>There is some grace space with the needle's accuracy. The size of this grace space depends on the correct angle's notation format. This is also listed in the table.</p>
 
                     <h3>Step 5 of 5</h3>
@@ -621,7 +639,7 @@
                             <td>None</td>
                         </tr>
                         <tr>
-                            <td>Grades</td>
+                            <td>Slopes</td>
                             <td>Flip left / right</td>
                             <td>Mult. / Div.<br>% by 10</td>
                             <td>&PlusMinus;1 percent point</td>
@@ -691,7 +709,7 @@
                     <ul>
                         <li><strong>16-Point Compass Rose</strong> image by <span style="font-style: italic;">Brosen~commonswiki</span>, from <span style="font-style: italic;">Wikimedia Commons</span>. Licensed under <span style="font-style: italic;">CC BY 2.5</span>. No changes were made to the material.</li>
                         <li><strong>Flag Semaphore</strong> images by <span style="font-style: italic;">Denelson83</span> assumed, from <span style="font-style: italic;">Wikimedia Commons</span>. Licensed under <span style="font-style: italic;">CC BY-SA 3.0</span>. No changes were made to the material.</li>
-                        <li><strong>Zodiac Symbol</strong> images by <span style="font-style: italic;">Denis Moskowitz</span>, from <span style="font-style: italic;">Wikimedia Commons</span>. Licensed under <span style="font-style: italic;">CC BY-SA 4.0</span>. No changes were made to the material.</li>
+                        <!-- <li><strong>Zodiac Symbol</strong> images by <span style="font-style: italic;">Denis Moskowitz</span>, from <span style="font-style: italic;">Wikimedia Commons</span>. Licensed under <span style="font-style: italic;">CC BY-SA 4.0</span>. No changes were made to the material.</li> -->
                     </ul>
 
                     <h3>Licenses</h3>
@@ -699,7 +717,7 @@
                     <ul>
                         <li><strong>CC BY 2.5</strong> (Creative Commons Attribution 2.5 Generic): <span style="text-decoration: underline">https://creativecommons.org/licenses/by/2.5/deed.en</span></li>
                         <li><strong>CC BY-SA 3.0</strong> (Creative Commons Attribution-Share Alike 3.0 Unported): <span style="text-decoration: underline">https://creativecommons.org/licenses/by-sa/3.0/deed.en</span></li>
-                        <li><strong>CC BY-SA 4.0</strong> (Creative Commons Attribution-Share Alike 4.0 International): <span style="text-decoration: underline">https://creativecommons.org/licenses/by-sa/4.0/deed.en</span></li>
+                        <!-- <li><strong>CC BY-SA 4.0</strong> (Creative Commons Attribution-Share Alike 4.0 International): <span style="text-decoration: underline">https://creativecommons.org/licenses/by-sa/4.0/deed.en</span></li> -->
                     </ul>
                 </div>
                 <div class="page-footer relative-footer">Page 1 of 1</div>
