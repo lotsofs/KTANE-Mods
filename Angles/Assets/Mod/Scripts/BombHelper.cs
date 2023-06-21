@@ -6,11 +6,17 @@ using UnityEngine;
 
 public class BombHelper : MonoBehaviour {
 
-	[NonSerialized] public KMBombInfo BombInfo;
-	[NonSerialized] public KMAudio Audio;
-	[NonSerialized] public KMBombModule Module;
-	[NonSerialized] public KMColorblindMode ColorblindMode;
-	[NonSerialized] public KMSelectable Selectable;
+	public KMBombInfo BombInfo { get { return _bombInfo == null ? GetComponent<KMBombInfo>() : _bombInfo; } set { _bombInfo = value; } }
+	public KMAudio Audio { get { return _audio == null ? GetComponent<KMAudio>() : _audio; } set { _audio = value; } }
+	public KMBombModule Module { get { return _module == null ? GetComponent<KMBombModule>() : _module; } set { _module = value; } }
+	public KMColorblindMode ColorblindMode { get { return _colorblindMode == null ? GetComponent<KMColorblindMode>() : _colorblindMode; } set { _colorblindMode = value; } }
+	public KMSelectable Selectable { get { return _selectable == null ? GetComponent<KMSelectable>() : _selectable; } set { _selectable = value; } }
+
+	[NonSerialized] KMBombInfo _bombInfo;
+	[NonSerialized] KMAudio _audio;
+	[NonSerialized] KMBombModule _module;
+	[NonSerialized] KMColorblindMode _colorblindMode;
+	[NonSerialized] KMSelectable _selectable;
 
 	[NonSerialized] public int ModuleId;
 	string _logTag;
@@ -21,6 +27,7 @@ public class BombHelper : MonoBehaviour {
 	public bool ColorBlindModeActive = false;
 
 	[SerializeField] float _defaultInteractionPunchIntensity = 0.1f;
+	Dictionary<KMSelectable, float> _interactionPunchIntensities = new Dictionary<KMSelectable, float>();
 
 	/// <summary>
 	/// Increment Module ID
@@ -63,16 +70,17 @@ public class BombHelper : MonoBehaviour {
 	public void AddGenericButtonPresses(List<float> buttonPressIntensities = null) {
 		for (int i = 0; i < Selectable.Children.Length; i++) {
 			KMSelectable button = Selectable.Children[i];
-			if (buttonPressIntensities != null && buttonPressIntensities.Count > i) {
+			if (buttonPressIntensities != null && i < buttonPressIntensities.Count) {
+				_interactionPunchIntensities.Add(button, buttonPressIntensities[i]);
 				button.OnInteract += () => {
-					ExecuteGenericButtonPress(button, true, buttonPressIntensities[i]);
-					return true;
+					ExecuteGenericButtonPress(button, true, _interactionPunchIntensities[button]);
+					return false;
 				};
 			}
 			else {
 				button.OnInteract += () => {
 					ExecuteGenericButtonPress(button, true, _defaultInteractionPunchIntensity);
-					return true;
+					return false;
 				};
 			}
 		}
@@ -91,13 +99,15 @@ public class BombHelper : MonoBehaviour {
 		}
 	}
 
+	#region
+
 	/// <summary>
 	/// Checks if a digit in the serial number is even (numbers only).
 	/// </summary>
 	/// <param name="digit"></param>
 	/// <returns></returns>
 	public bool IsSerialDigitEven(int digit) {
-		if (digit > 6 || digit < 1) {
+		if (digit > 5 || digit < 0) {
 			return false;
 		}
 		char ch = BombInfo.GetSerialNumber()[digit - 1];
@@ -106,6 +116,32 @@ public class BombHelper : MonoBehaviour {
 		}
 		return false;
 	}
+
+	/// <summary>
+	/// Find the first letter in a serial number
+	/// </summary>
+	/// <param name="fallback">The char to return if there are no letters</param>
+	/// <returns></returns>
+	public char GetSerialFirstLetter(char fallback = '-') {
+		foreach (char ch in BombInfo.GetSerialNumber()) {
+			if (char.IsLetter(ch)) { return ch; }
+		}
+		return fallback;
+	}
+
+	/// <summary>
+	/// Find the first digit in a serial number
+	/// </summary>
+	/// <param name="fallback">The char to return if there are no letters</param>
+	/// <returns></returns>
+	public char GetSerialFirstDigit(char fallback = '-') {
+		foreach (char ch in BombInfo.GetSerialNumber()) {
+			if (char.IsDigit(ch)) { return ch; }
+		}
+		return fallback;
+	}
+
+	#endregion
 
 	#region sound
 
