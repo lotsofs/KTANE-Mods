@@ -135,11 +135,11 @@ public class AnglesModule : MonoBehaviour {
 			_solved = true;
 			_b.Log("Module solved");
 			_b.Solve();
+			_needle.OnInteract = null;
 			_needleEjectCoroutine = StartCoroutine(EjectNeedle());
 			GeoGebraLog();
 		}
 		else {
-			_needle.OnInteract = null;
 			_b.Log("STRIKE!");
 			_b.Strike();
 		}
@@ -427,11 +427,13 @@ public class AnglesModule : MonoBehaviour {
 	void GeoGebraLog() {
 		string geoGebraInput = "Execute[{";
 		for (int i = 0; i < _selectableAngles.Length; i++) {
-			geoGebraInput += string.Format("\"{0}_{{{1}}} = ({2}, {3})\",", _selectableAngles[i].PointName, _selectableAngles[i].Name, _selectableAngles[i].Position.X, _selectableAngles[i].Position.Y);
+			geoGebraInput += string.Format("\"{0}_{{{1}}}=({2},{3})\",", _selectableAngles[i].PointName, _selectableAngles[i].Name, _selectableAngles[i].Position.X, _selectableAngles[i].Position.Y);
 		}
 		for (int i = 0; i < _submissions.Count; i++) {
-			string name = !_solved || (i < _submissions.Count - 1) ? "Submission_{Strike" + i + "}" : "Submission_{Correct}";
-			geoGebraInput += string.Format("\"{0} = ({1}, {2})\",", name, _submissions[i].X, _submissions[i].Y);
+			string name = !_solved || (i < _submissions.Count - 1) ? "Submission_{Strike " + i + 1 + "}" : "Submission_{Correct}";
+			string color = !_solved || (i < _submissions.Count - 1) ? "red" : "green";
+			geoGebraInput += string.Format("\"{0}=({1},{2})\",", name, _submissions[i].X, _submissions[i].Y);
+			geoGebraInput += string.Format("\"SetColor({0},{1})\",", name, color);
 		}
 
 		geoGebraInput += "\"x^2+y^2=1\"}]";
