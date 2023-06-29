@@ -20,6 +20,7 @@ public class BombHelper : MonoBehaviour {
 
 	[NonSerialized] public int ModuleId;
 	string _logTag;
+	string _logTagHidden;
 	static int _moduleIdCounter = 1;
 
 	KMAudio.KMAudioRef _customSound;
@@ -48,19 +49,52 @@ public class BombHelper : MonoBehaviour {
 		ColorblindMode = GetComponent<KMColorblindMode>();
 		Selectable = GetComponent<KMSelectable>();
 
-		BombInfo.OnBombExploded += StopCustomSound;
 		_logTag = string.Format("[{0} #{1}] ", Module.ModuleDisplayName, ModuleId);
+		_logTagHidden = string.Format("<{0} #{1}> ", Module.ModuleDisplayName, ModuleId);
 		ColorBlindModeActive = ColorblindMode != null && ColorblindMode.ColorblindModeActive;
+	}
+
+	void OnDestroy() {
+		StopCustomSound();
+	}
+
+	public void LogHidden(string msg) {
+		string message = _logTagHidden + msg;
+		Debug.LogFormat(message);
+	}
+
+	public void LogHiddenFormat(string msg, params object[] arguments) {
+		string message = _logTagHidden + string.Format(msg, arguments);
+		Debug.LogFormat(message);
 	}
 
 	public void Log(string msg) {
 		string message = _logTag + msg;
+		Debug.Log(message);
+	}
+
+	public void LogFormat(string msg, params object[] arguments) {
+		string message = _logTag + string.Format(msg, arguments);
 		Debug.LogFormat(message);
 	}
 
 	public void LogWarning(string msg) {
 		string message = _logTag + msg;
-		Debug.LogWarningFormat(message);
+		Debug.LogWarning(message);
+	}
+
+	/// <summary>
+	/// Solves the module
+	/// </summary>
+	public void Solve() {
+		_module.HandlePass();
+	}
+
+	/// <summary>
+	/// Strikes the module
+	/// </summary>
+	public void Strike() {
+		_module.HandleStrike();
 	}
 
 	/// <summary>
@@ -99,7 +133,7 @@ public class BombHelper : MonoBehaviour {
 		}
 	}
 
-	#region
+	#region serial number
 
 	/// <summary>
 	/// Checks if a digit in the serial number is even (numbers only).

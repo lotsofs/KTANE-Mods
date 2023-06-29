@@ -152,6 +152,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114582273662883120, guid: 8814ea52310d2614a9feda02ec355ae4,
+        type: 2}
+      propertyPath: serial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
+        type: 2}
+      propertyPath: EdgeworkConfiguration
+      value: 
+      objectReference: {fileID: 11400000, guid: 598086c65c2101e46be3d96a4cb922c0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
   m_IsPrefabParent: 0
@@ -344,21 +355,6 @@ Prefab:
       propertyPath: m_Name
       value: AnglesModule
       objectReference: {fileID: 0}
-    - target: {fileID: 102179953246658942, guid: aa4505318f5b341419f6f70f85060eb6,
-        type: 2}
-      propertyPath: m_Text
-      value: " '\u03C4' : '\u03C0';"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114564161975304570, guid: aa4505318f5b341419f6f70f85060eb6,
-        type: 2}
-      propertyPath: ChildRowLength
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 23292922541260852, guid: aa4505318f5b341419f6f70f85060eb6,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b6bdb189978333542b13d8463e45f343, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa4505318f5b341419f6f70f85060eb6, type: 2}
   m_IsPrefabParent: 0
