@@ -33,6 +33,10 @@ public class BombHelper : MonoBehaviour {
         _bombInfo.OnBombExploded += StopCustomSound;
 	}
 
+    void OnDestroy() {
+        StopCustomSound();
+    }
+
     /// <summary>
     /// Generic button press click sound & bomb oomph
     /// </summary>

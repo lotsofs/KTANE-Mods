@@ -18,9 +18,8 @@ MonoBehaviour:
     handle. One look is enough for me. When thou hast counted and handled and art
     sure that thou canst remember them all, I cover them with this paper, and thou
     must tell over the tally to the bomb. I will do the same.\r\n\r\nRemember the
-    icons placed on the belt.\r\n\r\n------\r\nIncludes support for mods:\r\n* Twitch
-    Plays, w/ Autosolve\r"
+    icons placed on the belt.\r"
   version: 0
-  outputFolder: D:\Programs\Game Launchers\Steam\steamapps\common\Keep Talking and
-    Nobody Explodes - Mod Building\mods
+  outputFolder: D:\Game Launchers\Steam\steamapps\common\Keep Talking and Nobody Explodes
+    - Modding\mods
   previewImage: {fileID: 2800000, guid: e9f2bed032bec2f4880542b6cf1a9a7c, type: 3}
