@@ -14,8 +14,12 @@ MonoBehaviour:
   id: Angles
   title: Angles
   author: LotsOfS
-  description: TBD
+  description: "It is rude to point, but when explosions are at stake, manners go
+    out the window.\r\n\r\nPoint the needle at the one correct angle out of the nine
+    listed on the module.\r\n\r\nIncludes TP support 2996852694\n\nThis is a public
+    beta test. Bug reports and manual inclarities can be sent to me on Discord (LotsOfS
+    in the KTANE server or most of its sisters)."
   version: 1
   outputFolder: D:\Game Launchers\Steam\steamapps\common\Keep Talking and Nobody Explodes
     - Modding\mods
-  previewImage: {fileID: 2800000, guid: a2482bc40de8606488ece8250fa0c410, type: 3}
+  previewImage: {fileID: 2800000, guid: 7385cf45d7360204ca7c7b7813e027a2, type: 3}

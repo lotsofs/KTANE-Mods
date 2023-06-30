@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 114888060285375480}
   - component: {fileID: 114198692296665770}
   m_Layer: 0
-  m_Name: Blank Module
+  m_Name: AnglesModule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1165,7 +1165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146929983168424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.98, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4059905866430422}
@@ -2923,7 +2923,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 355441208dc0ad542950e1f8b8079fcf, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4279744242
+    rgba: 4282636016
 --- !u!114 &114010989358381448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3506,7 +3506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - GUI/KT 3D Text Diffuse
+  - GUI/KT 3D Text
 --- !u!114 &114653450786305912
 MonoBehaviour:
   m_ObjectHideFlags: 1
