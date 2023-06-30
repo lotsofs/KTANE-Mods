@@ -25,7 +25,7 @@ public class DateNotation : AngularNotation {
 		(456.25M - 109) * DecimalMath.Pi / 182.5M, // Taurus
 	};
 
-	public override bool Submit(decimal current) {
+	public override bool Submit(decimal current, bool log = true) {
 		decimal margin = ((172799.0M / 86400.0M) / 182.5M) * DecimalMath.Pi;
 		DecimalVector2 center = new DecimalVector2(DecimalMath.Cos(0), DecimalMath.Sin(0));
 		DecimalVector2 edge = new DecimalVector2(DecimalMath.Cos(margin), DecimalMath.Sin(margin));
@@ -35,10 +35,12 @@ public class DateNotation : AngularNotation {
 
 		decimal degrees = current / DecimalMath.Pi * 182.5M;
 		string answer = string.Format("{0:0.#######} degrees", degrees);
-		Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
-		Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
-			submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
-		);
+		if (log) {
+			Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
+			Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
+				submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
+			);
+		}
 		return submittedDistance <= maxDistance;
 	}
 
@@ -79,6 +81,7 @@ public class DateNotation : AngularNotation {
 
 	public override decimal MediumReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((7.0M / 182.5M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -89,6 +92,7 @@ public class DateNotation : AngularNotation {
 
 	public override decimal SmallReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((1.0M / 182.5M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;

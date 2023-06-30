@@ -16,7 +16,7 @@ public class Slopes : AngularNotation {
 	private readonly float BIG_ODDS = 0.2f;
 	private readonly float UPPER_ODDS = 0.4f;
 
-	public override bool Submit(decimal current) {
+	public override bool Submit(decimal current, bool log = true) {
 		decimal margin = (15.0M / 180.0M) * DecimalMath.Pi;
 		DecimalVector2 center = new DecimalVector2(DecimalMath.Cos(0), DecimalMath.Sin(0));
 		DecimalVector2 edge = new DecimalVector2(DecimalMath.Cos(margin), DecimalMath.Sin(margin));
@@ -26,10 +26,12 @@ public class Slopes : AngularNotation {
 
 		decimal degrees = current / DecimalMath.Pi * 180.0M;
 		string answer = string.Format("{0:0.#######} degrees", degrees);
-		Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
-		Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
-			submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
-		);
+		if (log) {
+			Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
+			Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
+				submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
+			);
+		}
 		return submittedDistance <= maxDistance;
 	}
 
@@ -50,6 +52,7 @@ public class Slopes : AngularNotation {
 
 	public override decimal LargeReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((30.0M / 180.0M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -60,6 +63,7 @@ public class Slopes : AngularNotation {
 
 	public override decimal MediumReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((15.0M / 180.0M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -70,6 +74,7 @@ public class Slopes : AngularNotation {
 
 	public override decimal SmallReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((1.0M / 180.0M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -121,8 +126,11 @@ public class Slopes : AngularNotation {
 			int r = Random.Range(0, 60);
 			y = (decimal)r / 2.0M;
 		}
-		Position = new DecimalVector2(x, y).Normalized;
-		if (left) Name = string.Format("%{0:0.#}", y);
-		else Name = string.Format("{0:0.#}%", y);
+		DecimalVector2 pos = new DecimalVector2(x, y).Normalized;
+		if (left) pos.X *= -1;
+		if (negate) pos.Y *= -1;
+		Position = pos;
+		if (left) Name = string.Format("%{1}{0:0.#}", y, negate ? "-" : "");
+		else Name = string.Format("{1}{0:0.#}%", y, negate ? "-" : "");
 	}
 }

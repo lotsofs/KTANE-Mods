@@ -18,7 +18,7 @@ public class Degrees : AngularNotation {
 
 	private const decimal Deg2Rad = DecimalMath.Pi / 180;
 
-	public override bool Submit(decimal current) {
+	public override bool Submit(decimal current, bool log = true) {
 		decimal margin = (30.0M / 648000.0M) * DecimalMath.Pi;
 		DecimalVector2 center = new DecimalVector2(DecimalMath.Cos(0), DecimalMath.Sin(0));
 		DecimalVector2 edge = new DecimalVector2(DecimalMath.Cos(margin), DecimalMath.Sin(margin));
@@ -30,10 +30,12 @@ public class Degrees : AngularNotation {
 		decimal minutes = seconds / 60.0M;
 		decimal degrees = minutes / 60.0M;
 		string answer = string.Format("{0:0}°{1:0}′{2:0.##}″", degrees, minutes, seconds);
-		Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
-		Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
-			submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
-		);
+		if (log) {
+			Bomb.LogFormat("Submitted '{0}'. Correct answer: '{1}'", answer, Name);
+			Bomb.LogFormat("Submitted coordinate ({0:0.#######}, {1:0.#######}) to solution coordinate ({2:0.#######}, {3:0.#######}) yields distance {4:0.#######} out of max allowed {5:0.#######}",
+				submitted.X, submitted.Y, Position.X, Position.Y, submittedDistance, maxDistance
+			);
+		}
 		return submittedDistance <= maxDistance;
 	}
 
@@ -54,6 +56,7 @@ public class Degrees : AngularNotation {
 
 	public override decimal LargeReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((1.0M / 180) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -64,6 +67,7 @@ public class Degrees : AngularNotation {
 
 	public override decimal MediumReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((6.0M / 180.0M / 60.0M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;
@@ -74,6 +78,7 @@ public class Degrees : AngularNotation {
 
 	public override decimal SmallReset(bool positive, decimal current) {
 		while (current < 0) { current += DecimalMath.Pi * 2; }
+		current %= DecimalMath.Pi * 2;
 		decimal subtractionValue = ((6.0M / 180.0M / 60.0M / 60.0M) * DecimalMath.Pi);
 		decimal remainder = current % subtractionValue;
 		decimal solution = current - remainder;

@@ -16,7 +16,7 @@ public class Grades : AngularNotation {
 	private readonly float BIG_ODDS = 0.2f;
 	private readonly float UPPER_ODDS = 0.4f;
 
-	public override bool Submit(decimal current) {
+	public override bool Submit(decimal current, bool log = true) {
 		throw new System.NotImplementedException();
 	}
 

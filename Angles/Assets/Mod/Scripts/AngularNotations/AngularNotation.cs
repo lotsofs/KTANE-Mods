@@ -14,7 +14,7 @@ public abstract class AngularNotation {
 	public abstract decimal LargeReset(bool positive, decimal current);
 	public abstract decimal MediumReset(bool positive, decimal current);
 	public abstract decimal SmallReset(bool positive, decimal current);
-	public abstract bool Submit(decimal current);
+	public abstract bool Submit(decimal current, bool log = true);
 
 	public string PointName;
 
