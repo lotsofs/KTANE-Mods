@@ -95,54 +95,72 @@ public class FlagSemaphore : AngularNotation {
 		{ 'B', DecimalVector2.Down },
 		{ 'C', DecimalVector2.Down },
 		{ 'D', DecimalVector2.Down },
-		{ 'E', TopRight },
-		{ 'F', DecimalVector2.Right },
-		{ 'G', BottomRight },
+		{ 'E', DecimalVector2.Down },
+		{ 'F', DecimalVector2.Down },
+		{ 'G', DecimalVector2.Down },
+
 		{ 'H', BottomLeft },
 		{ 'I', BottomLeft },
-		{ 'K', DecimalVector2.Up },
-		{ 'L', TopRight },
-		{ 'M', DecimalVector2.Right },
-		{ 'N', BottomRight },
-		{ 'O', TopLeft },
-		{ 'P', DecimalVector2.Up },
-		{ 'Q', TopRight },
-		{ 'R', DecimalVector2.Right },
-		{ 'S', BottomRight },
-		{ 'T', DecimalVector2.Up },
-		{ 'U', TopRight },
-		{ 'Y', DecimalVector2.Right },
-		{ 'J', DecimalVector2.Right },
-		{ 'V', BottomRight },
-		{ 'W', DecimalVector2.Right },
-		{ 'X', BottomRight },
+		{ 'K', BottomLeft },
+		{ 'L', BottomLeft },
+		{ 'M', BottomLeft },
+		{ 'N', BottomLeft },
+
+		{ 'O', DecimalVector2.Left },
+		{ 'P', DecimalVector2.Left },
+		{ 'Q', DecimalVector2.Left },
+		{ 'R', DecimalVector2.Left },
+		{ 'S', DecimalVector2.Left },
+
+		{ 'T', TopLeft },
+		{ 'U', TopLeft },
+		{ 'Y', TopLeft },
+		// Cancel
+
+		// Numerals
+		{ 'J', DecimalVector2.Up },
+		{ 'V', DecimalVector2.Up },
+
+		{ 'W', TopRight },
+		{ 'X', TopRight },
+
 		{ 'Z', DecimalVector2.Right },
+
+
 
 		{ 'a', BottomLeft },
 		{ 'b', DecimalVector2.Left },
 		{ 'c', TopLeft },
 		{ 'd', DecimalVector2.Up },
-		{ 'e', DecimalVector2.Down },
-		{ 'f', DecimalVector2.Down },
-		{ 'g', DecimalVector2.Down },
+		{ 'e', TopRight },
+		{ 'f', DecimalVector2.Right },
+		{ 'g', BottomRight },
+
 		{ 'h', DecimalVector2.Left },
 		{ 'i', TopLeft },
-		{ 'k', BottomLeft },
-		{ 'l', BottomLeft },
-		{ 'm', BottomLeft },
-		{ 'n', BottomLeft },
-		{ 'o', DecimalVector2.Left },
-		{ 'p', DecimalVector2.Left },
-		{ 'q', DecimalVector2.Left },
-		{ 'r', DecimalVector2.Left },
-		{ 's', DecimalVector2.Left },
-		{ 't', TopLeft },
-		{ 'u', TopLeft },
-		{ 'y', TopLeft },
-		{ 'j', DecimalVector2.Up },
-		{ 'v', DecimalVector2.Up },
-		{ 'w', TopRight },
-		{ 'x', TopRight },
+		{ 'k', DecimalVector2.Up },
+		{ 'l', TopRight },
+		{ 'm', DecimalVector2.Right },
+		{ 'n', BottomRight },
+
+		{ 'o', TopLeft },
+		{ 'p', DecimalVector2.Up},
+		{ 'q', TopRight},
+		{ 'r', DecimalVector2.Right},
+		{ 's', BottomRight},
+
+		{ 't', DecimalVector2.Up },
+		{ 'u', TopRight },
+		{ 'y', DecimalVector2.Right },
+		// cancel
+
+		// numerals
+		{ 'j', DecimalVector2.Right },
+		{ 'v', BottomRight },
+
+		{ 'w', DecimalVector2.Right },
+		{ 'x', BottomRight },
+
 		{ 'z', BottomRight },
 	};
 
