@@ -114,7 +114,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	int CalculateDeafSpot() {
 		int deafSpot = _initialKnobPosition;
-		Debug.LogFormat("[Microphone #{0}] Volume knob initial position: {1}.", _bombHelper.ModuleId, _initialKnobPosition);
+		Debug.LogFormat("[Microphone #{0}] Initial position of volume knob: {1}.", _bombHelper.ModuleId, _initialKnobPosition);
 		int portCount = _bombInfo.GetPortCount(Port.StereoRCA);
 		deafSpot = _initialKnobPosition - portCount;
 		Debug.LogFormat("[Microphone #{0}] Subtract {1} (Stereo RCA port count) gives {2}.", _bombHelper.ModuleId, portCount, deafSpot);
@@ -584,7 +584,7 @@ public class MicrophoneModule : MonoBehaviour {
 			return false;
 		}
 		if (_stepFourVolumeShouldEndAt != _currentKnobPosition) {
-			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was changed to {1}, but should have remained at {2}.", _bombHelper.ModuleId, _currentKnobPosition, _stepFourVolumeShouldEndAt);
+			Debug.LogFormat("[Microphone #{0}] Strike: Recording volume was changed to {1}, but should have remained at {2}!", _bombHelper.ModuleId, _currentKnobPosition, _stepFourVolumeShouldEndAt);
 			StartStepThree();
 			Strike();
 			return false;
@@ -603,6 +603,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	bool StepFourPointFive() {
 		if (!_bombInfo.IsIndicatorPresent(Indicator.SND)) {
+			Debug.LogFormat("[Microphone #{0}] Skipping step four point five because there is no SND indicator.", _bombHelper.ModuleId);
 			return true;
 		}
 		if (_stepFourVolumeShouldEndAt != _currentKnobPosition) {
@@ -632,6 +633,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	bool StepFourPointFour() {
 		if (_deafSpot != 0) {
+			Debug.LogFormat("[Microphone #{0}] Skipping step four point four because the deaf spot is not 0.", _bombHelper.ModuleId);
 			return true;
 		}
 		if (!StepFourIsAlarmStillRunning()) {
@@ -671,6 +673,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	bool StepFourPointThree() {
 		if (_deafSpot != 1) {
+			Debug.LogFormat("[Microphone #{0}] Skipping step four point three because the deaf spot is not 1.", _bombHelper.ModuleId);
 			return true;
 		}
 		if (!StepFourIsAlarmStillRunning()) {
@@ -696,7 +699,7 @@ public class MicrophoneModule : MonoBehaviour {
 		}
 		if (_stepFourSubSubstep == 1 && _currentKnobPosition == 1) {
 			Debug.LogFormat("[Microphone #{0}] Recording volume succesfully set back to 1 after one but before four ticks of the bomb's timer.", _bombHelper.ModuleId);
-			_stepFourSubSubstep = 2;
+			_stepFourSubSubstep = 0;
 			_timerTicks = 0;
 			_stepFourVolumeShouldEndAt = 1;
 			return true;
@@ -710,6 +713,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	bool StepFourPointTwo() {
 		if (_deafSpot != 2) {
+			Debug.LogFormat("[Microphone #{0}] Skipping step four point two because the deaf spot is not 2.", _bombHelper.ModuleId);
 			return true;
 		}
 		if (!StepFourIsAlarmStillRunning()) {
@@ -737,6 +741,7 @@ public class MicrophoneModule : MonoBehaviour {
 	/// <returns></returns>
 	bool StepFourPointOne() {
 		if (_deafSpot != 5) {
+			Debug.LogFormat("[Microphone #{0}] Skipping step four point one because the deaf spot is not 5.", _bombHelper.ModuleId);
 			return true;
 		}
 		if (!StepFourIsAlarmStillRunning()) {
@@ -804,9 +809,12 @@ public class MicrophoneModule : MonoBehaviour {
 	bool _tpAbort = false;
 
 	public IEnumerator TpPlayPinkNoise() {
+		Debug.LogFormat("<Microphone #{0}> Attempting to play pink noise.", _bombHelper.ModuleId);
 		if (_tpNoise != null && _tpNoise.StopSound != null) {
+			Debug.LogFormat("<Microphone #{0}> Stopping existing pink noise.", _bombHelper.ModuleId);
 			_tpNoise.StopSound();
 		}
+		Debug.LogFormat("<Microphone #{0}> Attempting to play pink noise...", _bombHelper.ModuleId);
 		_tpNoise = null;
 		Debug.LogFormat("[Microphone #{0}] A pink noise sound is being played. This will be registered as an alarm clock.", _bombHelper.ModuleId);
 		_tpNoise = _bombAudio.PlaySoundAtTransformWithRef("PinkNoise", this.transform);
@@ -820,8 +828,10 @@ public class MicrophoneModule : MonoBehaviour {
 	public IEnumerator ProcessTwitchCommand(string command) {
 		command = command.ToLowerInvariant().Trim();
 		if (command == "request twitch plays to please play a loud sound.") {
-			yield return "sendtochat Request granted, playing a loud sound for twenty seconds.";
+			Debug.LogFormat("<Microphone #{0}> Received request for pink noise.", _bombHelper.ModuleId);
 			StartCoroutine(TpPlayPinkNoise());
+			Debug.LogFormat("<Microphone #{0}> Request granted, playing a loud sound for twenty seconds.", _bombHelper.ModuleId);
+			yield return "sendtochat Request granted, playing a loud sound for twenty seconds.";
 		}
 		command = command.Replace("volume ", "v");
 		command = command.Replace("wait ", "w");

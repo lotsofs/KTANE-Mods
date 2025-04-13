@@ -37,7 +37,7 @@ public class AnglesModule : MonoBehaviour {
 	bool _buttonHeld = false;
 	Coroutine _needleTurnCoroutine;
 	Coroutine _needleEjectCoroutine;
-	[SerializeField] Rigidbody _needlePhysics;
+	//[SerializeField] Rigidbody _needlePhysics;
 
 	AngularNotation GenerateAnyAngle() {
 		//return new RelativeDirections(_b);
@@ -191,13 +191,19 @@ public class AnglesModule : MonoBehaviour {
 			timeElapsed += Time.deltaTime;
 			yield return null;
 		}
-		_needlePhysics.isKinematic = false;
-		_needle.Parent = null;
+		while (timeElapsed < 4.0f) {
+			timeElapsed += Time.deltaTime;
+			Vector3 pos = _needle.transform.position;
+			pos.z -= Time.deltaTime;
+			_needle.transform.position = pos;
+			yield return null;
+		}
+		//_needle.Parent = null;
 		while (timeElapsed < 5.0f) {
 			timeElapsed += Time.deltaTime;
 			yield return null;
 		}
-		Destroy(_needlePhysics.gameObject);
+		_needle.gameObject.SetActive(false);
 		_needleEjectCoroutine = null;
 	}
 
@@ -466,7 +472,7 @@ public class AnglesModule : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-		if (_needlePhysics != null) Destroy(_needlePhysics.gameObject);
+		//if (_needlePhysics != null) Destroy(_needlePhysics.gameObject);
 		if (_needleTurnCoroutine != null) { StopCoroutine(_needleTurnCoroutine); }
 		if (_needleEjectCoroutine != null) { StopCoroutine(_needleEjectCoroutine); }
 	}
